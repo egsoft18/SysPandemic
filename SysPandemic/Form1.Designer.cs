@@ -220,6 +220,7 @@
             this.administrarSegurosToolStripMenuItem.Name = "administrarSegurosToolStripMenuItem";
             this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.administrarSegurosToolStripMenuItem.Text = "Administrar Seguros";
+            this.administrarSegurosToolStripMenuItem.Click += new System.EventHandler(this.administrarSegurosToolStripMenuItem_Click);
             // 
             // Homeform
             // 

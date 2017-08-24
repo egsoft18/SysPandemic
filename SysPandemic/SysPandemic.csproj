@@ -183,6 +183,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="insuranceadmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insuranceadmi.Designer.cs">
+      <DependentUpon>insuranceadmi.cs</DependentUpon>
+    </Compile>
     <Compile Include="listpatient.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,6 +249,12 @@
     </Compile>
     <Compile Include="reportview.Designer.cs">
       <DependentUpon>reportview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seeinsurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seeinsurance.Designer.cs">
+      <DependentUpon>seeinsurance.cs</DependentUpon>
     </Compile>
     <Compile Include="spatient.cs">
       <SubType>Form</SubType>
@@ -318,6 +330,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="insuranceadmi.resx">
+      <DependentUpon>insuranceadmi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="listpatient.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>listpatient.cs</LastGenOutput>
@@ -363,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportview.resx">
       <DependentUpon>reportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seeinsurance.resx">
+      <DependentUpon>seeinsurance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="spatient.resx">
       <DependentUpon>spatient.cs</DependentUpon>
