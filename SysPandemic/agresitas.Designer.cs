@@ -315,6 +315,7 @@
             this.txtbuscarp.Size = new System.Drawing.Size(294, 20);
             this.txtbuscarp.TabIndex = 26;
             this.txtbuscarp.Tag = "name";
+            this.txtbuscarp.TextChanged += new System.EventHandler(this.txtbuscarp_TextChanged);
             // 
             // txtbuscardoc
             // 
@@ -322,6 +323,7 @@
             this.txtbuscardoc.Name = "txtbuscardoc";
             this.txtbuscardoc.Size = new System.Drawing.Size(294, 20);
             this.txtbuscardoc.TabIndex = 27;
+            this.txtbuscardoc.TextChanged += new System.EventHandler(this.txtbuscardoc_TextChanged);
             // 
             // button2
             // 

@@ -24,7 +24,7 @@ namespace SysPandemic
         }
         private void loadprocedure()
         {
-            sprocedure_rbtn.PerformClick();
+            spatient_rbtn.PerformClick();
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
@@ -41,6 +41,10 @@ namespace SysPandemic
         }
 
         private void search_btn_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
+        private void buscar()
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
@@ -140,6 +144,11 @@ namespace SysPandemic
             }
             frm.addsubprodecure_btn.Hide();
             frm.Show();
+        }
+
+        private void search_txt_TextChanged(object sender, EventArgs e)
+        {
+            buscar();
         }
     }
 }

@@ -16,12 +16,12 @@ namespace SysPandemic
         public emerpatv()
         {
             InitializeComponent();
-            rdbid.PerformClick();
+            rdbnom.PerformClick();
         }
 
         private void emerpatv_Load(object sender, EventArgs e)
         {
-            rdbid.PerformClick();
+            rdbnom.PerformClick();
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
@@ -39,53 +39,8 @@ namespace SysPandemic
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                if (rdbfe.Checked == true)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where time like '%" + dtpfec.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes de Emergencia");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (txtbuscar.Text.Length < 0)
-                {
-                    
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat", cnx);
-                    DataTable tabla = new DataTable("Pacientes de Emergencia");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-
-                }
-                else if (rdbid.Checked == true)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where idep like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes de Emergencia");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-
-                }
-
-                else if (rdbnom.Checked == true)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where name like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes de Emergencia");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-
-                
-            }
-
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-
-            }
+            burcaram();
+        }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -121,6 +76,67 @@ namespace SysPandemic
                 frm.seebill_btn.Hide();
             }
             frm.Show();
+        }
+
+        private void txtbuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                burcaram();
+            }
+        }
+        private void burcaram()
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                if (rdbfe.Checked == true)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where time like '%" + dtpfec.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Pacientes de Emergencia");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (txtbuscar.Text.Length < 0)
+                {
+
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat", cnx);
+                    DataTable tabla = new DataTable("Pacientes de Emergencia");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+
+                }
+                else if (rdbid.Checked == true)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where idep like '%" + txtbuscar.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Pacientes de Emergencia");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+
+                }
+
+                else if (rdbnom.Checked == true)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat where name like '%" + txtbuscar.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Pacientes de Emergencia");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            burcaram();
         }
     }
 }

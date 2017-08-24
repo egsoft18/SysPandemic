@@ -47,17 +47,17 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 36);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(939, 327);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // sid_rbtn
             // 
             this.sid_rbtn.AutoSize = true;
-            this.sid_rbtn.Location = new System.Drawing.Point(13, 29);
+            this.sid_rbtn.Location = new System.Drawing.Point(16, 12);
             this.sid_rbtn.Name = "sid_rbtn";
             this.sid_rbtn.Size = new System.Drawing.Size(36, 17);
             this.sid_rbtn.TabIndex = 1;
@@ -68,7 +68,7 @@
             // spatient_rbtn
             // 
             this.spatient_rbtn.AutoSize = true;
-            this.spatient_rbtn.Location = new System.Drawing.Point(55, 29);
+            this.spatient_rbtn.Location = new System.Drawing.Point(58, 12);
             this.spatient_rbtn.Name = "spatient_rbtn";
             this.spatient_rbtn.Size = new System.Drawing.Size(67, 17);
             this.spatient_rbtn.TabIndex = 2;
@@ -79,7 +79,7 @@
             // sdoctor_rbtn
             // 
             this.sdoctor_rbtn.AutoSize = true;
-            this.sdoctor_rbtn.Location = new System.Drawing.Point(128, 29);
+            this.sdoctor_rbtn.Location = new System.Drawing.Point(131, 12);
             this.sdoctor_rbtn.Name = "sdoctor_rbtn";
             this.sdoctor_rbtn.Size = new System.Drawing.Size(68, 17);
             this.sdoctor_rbtn.TabIndex = 3;
@@ -90,7 +90,7 @@
             // sprocedure_rbtn
             // 
             this.sprocedure_rbtn.AutoSize = true;
-            this.sprocedure_rbtn.Location = new System.Drawing.Point(202, 29);
+            this.sprocedure_rbtn.Location = new System.Drawing.Point(205, 12);
             this.sprocedure_rbtn.Name = "sprocedure_rbtn";
             this.sprocedure_rbtn.Size = new System.Drawing.Size(86, 17);
             this.sprocedure_rbtn.TabIndex = 4;
@@ -100,14 +100,16 @@
             // 
             // search_txt
             // 
-            this.search_txt.Location = new System.Drawing.Point(450, 26);
+            this.search_txt.Location = new System.Drawing.Point(453, 9);
             this.search_txt.Name = "search_txt";
             this.search_txt.Size = new System.Drawing.Size(340, 20);
             this.search_txt.TabIndex = 5;
+            this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
+            this.search_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_txt_KeyDown);
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(796, 26);
+            this.search_btn.Location = new System.Drawing.Point(799, 9);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(75, 20);
             this.search_btn.TabIndex = 6;
@@ -128,7 +130,7 @@
             // spay_rbtn
             // 
             this.spay_rbtn.AutoSize = true;
-            this.spay_rbtn.Location = new System.Drawing.Point(285, 29);
+            this.spay_rbtn.Location = new System.Drawing.Point(288, 12);
             this.spay_rbtn.Name = "spay_rbtn";
             this.spay_rbtn.Size = new System.Drawing.Size(67, 17);
             this.spay_rbtn.TabIndex = 8;
@@ -139,7 +141,7 @@
             // snopay_rbtn
             // 
             this.snopay_rbtn.AutoSize = true;
-            this.snopay_rbtn.Location = new System.Drawing.Point(358, 29);
+            this.snopay_rbtn.Location = new System.Drawing.Point(361, 12);
             this.snopay_rbtn.Name = "snopay_rbtn";
             this.snopay_rbtn.Size = new System.Drawing.Size(86, 17);
             this.snopay_rbtn.TabIndex = 9;
@@ -149,7 +151,7 @@
             // 
             // refresh_btn
             // 
-            this.refresh_btn.Location = new System.Drawing.Point(877, 27);
+            this.refresh_btn.Location = new System.Drawing.Point(880, 10);
             this.refresh_btn.Name = "refresh_btn";
             this.refresh_btn.Size = new System.Drawing.Size(75, 20);
             this.refresh_btn.TabIndex = 10;

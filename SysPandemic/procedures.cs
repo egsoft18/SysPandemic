@@ -20,7 +20,7 @@ namespace SysPandemic
 
         private void procedures_Load(object sender, EventArgs e)
         {
-            sprocedure_rbtn.PerformClick();
+            spatient_rbtn.PerformClick();
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
@@ -38,69 +38,7 @@ namespace SysPandemic
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                if (snopay_rbtn.Checked)
-                {
-                    string status = "NO PAGADO";
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (spay_rbtn.Checked)
-                {
-                    string status = "PAGADO";
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (search_txt.Text.Length == 0)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sid_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where idprocedure like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (spatient_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namepatient like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sdoctor_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namedoctor like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sprocedure_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where procedure like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-
-            }
+            buscar();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -284,6 +222,85 @@ namespace SysPandemic
             {
                 MessageBox.Show(ex.Message, "Error");
 
+            }
+        }
+
+        private void search_txt_TextChanged(object sender, EventArgs e)
+        {
+            buscar();
+        }
+        private void buscar()
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                if (snopay_rbtn.Checked)
+                {
+                    string status = "NO PAGADO";
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (spay_rbtn.Checked)
+                {
+                    string status = "PAGADO";
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (search_txt.Text.Length == 0)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (sid_rbtn.Checked)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where idprocedure like '%" + search_txt.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (spatient_rbtn.Checked)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namepatient like '%" + search_txt.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (sdoctor_rbtn.Checked)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namedoctor like '%" + search_txt.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+                else if (sprocedure_rbtn.Checked)
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where procedure like '%" + search_txt.Text + "%'", cnx);
+                    DataTable tabla = new DataTable("Procedure");
+                    adac.Fill(tabla);
+                    dataGridView1.DataSource = tabla;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
+
+        private void search_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buscar();
             }
         }
     }

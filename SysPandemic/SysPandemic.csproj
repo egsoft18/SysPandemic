@@ -89,11 +89,11 @@
     <Compile Include="adddoctor.Designer.cs">
       <DependentUpon>adddoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="addinsurace.cs">
+    <Compile Include="addinsurance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addinsurace.Designer.cs">
-      <DependentUpon>addinsurace.cs</DependentUpon>
+    <Compile Include="addinsurance.Designer.cs">
+      <DependentUpon>addinsurance.cs</DependentUpon>
     </Compile>
     <Compile Include="AddPatient.cs">
       <SubType>Form</SubType>
@@ -265,8 +265,8 @@
     <EmbeddedResource Include="adddoctor.resx">
       <DependentUpon>adddoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addinsurace.resx">
-      <DependentUpon>addinsurace.cs</DependentUpon>
+    <EmbeddedResource Include="addinsurance.resx">
+      <DependentUpon>addinsurance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>

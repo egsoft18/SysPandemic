@@ -162,6 +162,13 @@ namespace SysPandemic
         {
             
         }
+
+        private void agregarSeguroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addinsurance frm = new addinsurance();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
     }
 

@@ -97,11 +97,11 @@ namespace SysPandemic
                     
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
 
-            }
+                }
         }
 
         private void updatepatient_btn_Click(object sender, EventArgs e)

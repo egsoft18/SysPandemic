@@ -48,6 +48,7 @@
             this.passtxt.PasswordChar = '*';
             this.passtxt.Size = new System.Drawing.Size(248, 20);
             this.passtxt.TabIndex = 1;
+            this.passtxt.Text = "Nolopiense0";
             this.passtxt.TextChanged += new System.EventHandler(this.passtxt_TextChanged);
             this.passtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
             // 

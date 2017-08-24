@@ -124,6 +124,8 @@
             this.search_txt.Name = "search_txt";
             this.search_txt.Size = new System.Drawing.Size(359, 20);
             this.search_txt.TabIndex = 7;
+            this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
+            this.search_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_txt_KeyDown);
             // 
             // search_btn
             // 

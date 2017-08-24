@@ -119,23 +119,15 @@ namespace SysPandemic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where name like '%" + txtbuscarp.Text + "%'", cnx);
-                DataTable tabla = new DataTable("Pacientes");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            buscard();
+        }
+        private void buscard()
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
@@ -210,6 +202,32 @@ namespace SysPandemic
         private void btncanc_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtbuscarp_TextChanged(object sender, EventArgs e)
+        {
+            buscarp();
+        }
+        private void buscarp()
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where name like '%" + txtbuscarp.Text + "%'", cnx);
+                DataTable tabla = new DataTable("Pacientes");
+                adac.Fill(tabla);
+                dataGridView1.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtbuscardoc_TextChanged(object sender, EventArgs e)
+        {
+            buscard();
         }
     }
 }

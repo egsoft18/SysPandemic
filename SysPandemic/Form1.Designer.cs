@@ -213,6 +213,7 @@
             this.agregarSeguroToolStripMenuItem.Name = "agregarSeguroToolStripMenuItem";
             this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.agregarSeguroToolStripMenuItem.Text = "Agregar Seguro";
+            this.agregarSeguroToolStripMenuItem.Click += new System.EventHandler(this.agregarSeguroToolStripMenuItem_Click);
             // 
             // administrarSegurosToolStripMenuItem
             // 
