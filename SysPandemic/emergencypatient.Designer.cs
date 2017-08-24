@@ -209,7 +209,8 @@
             // 
             // dtptime
             // 
-            this.dtptime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtptime.CustomFormat = "dd/MM/yyyy";
+            this.dtptime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtptime.Location = new System.Drawing.Point(509, 28);
             this.dtptime.Name = "dtptime";
             this.dtptime.Size = new System.Drawing.Size(109, 20);

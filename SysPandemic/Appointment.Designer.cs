@@ -166,7 +166,8 @@
             // 
             // dtpfecha
             // 
-            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfecha.CustomFormat = "dd/MM/yyyy";
+            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfecha.Location = new System.Drawing.Point(419, 13);
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(92, 20);

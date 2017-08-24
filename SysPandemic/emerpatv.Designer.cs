@@ -105,7 +105,8 @@
             // 
             // dtpfec
             // 
-            this.dtpfec.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfec.CustomFormat = "dd/MM/yyyy";
+            this.dtpfec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfec.Location = new System.Drawing.Point(185, 7);
             this.dtpfec.Name = "dtpfec";
             this.dtpfec.Size = new System.Drawing.Size(89, 20);

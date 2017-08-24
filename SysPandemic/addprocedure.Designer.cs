@@ -194,7 +194,8 @@
             // 
             // dateprocedure_dtp
             // 
-            this.dateprocedure_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateprocedure_dtp.CustomFormat = "dd/MM/yyyy";
+            this.dateprocedure_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateprocedure_dtp.Location = new System.Drawing.Point(252, 16);
             this.dateprocedure_dtp.Name = "dateprocedure_dtp";
             this.dateprocedure_dtp.Size = new System.Drawing.Size(105, 20);

@@ -350,6 +350,7 @@
             // 
             this.spdate.CalendarTrailingForeColor = System.Drawing.Color.Gray;
             this.spdate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.spdate.CustomFormat = "dd/MM/yyyy";
             this.spdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.spdate.Location = new System.Drawing.Point(355, 11);
             this.spdate.Name = "spdate";

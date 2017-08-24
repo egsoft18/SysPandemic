@@ -46,6 +46,9 @@
             this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.segurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +60,8 @@
             this.procedimientosToolStripMenuItem,
             this.agendaToolStripMenuItem,
             this.facturacionToolStripMenuItem,
-            this.doctoresToolStripMenuItem});
+            this.doctoresToolStripMenuItem,
+            this.segurosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
@@ -153,14 +157,14 @@
             // agregarCitaToolStripMenuItem
             // 
             this.agregarCitaToolStripMenuItem.Name = "agregarCitaToolStripMenuItem";
-            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.agregarCitaToolStripMenuItem.Text = "Agregar Cita";
             this.agregarCitaToolStripMenuItem.Click += new System.EventHandler(this.agregarCitaToolStripMenuItem_Click);
             // 
             // verCitasToolStripMenuItem
             // 
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             this.verCitasToolStripMenuItem.Click += new System.EventHandler(this.verCitasToolStripMenuItem_Click);
             // 
@@ -177,14 +181,14 @@
             // facturarToolStripMenuItem
             // 
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.facturarToolStripMenuItem.Text = "Facturar";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.cToolStripMenuItem.Text = "CxC/CP";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
             // 
@@ -194,6 +198,27 @@
             this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.doctoresToolStripMenuItem.Text = "Doctores";
             this.doctoresToolStripMenuItem.Click += new System.EventHandler(this.doctoresToolStripMenuItem_Click);
+            // 
+            // segurosToolStripMenuItem
+            // 
+            this.segurosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarSeguroToolStripMenuItem,
+            this.administrarSegurosToolStripMenuItem});
+            this.segurosToolStripMenuItem.Name = "segurosToolStripMenuItem";
+            this.segurosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.segurosToolStripMenuItem.Text = "Seguros";
+            // 
+            // agregarSeguroToolStripMenuItem
+            // 
+            this.agregarSeguroToolStripMenuItem.Name = "agregarSeguroToolStripMenuItem";
+            this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.agregarSeguroToolStripMenuItem.Text = "Agregar Seguro";
+            // 
+            // administrarSegurosToolStripMenuItem
+            // 
+            this.administrarSegurosToolStripMenuItem.Name = "administrarSegurosToolStripMenuItem";
+            this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.administrarSegurosToolStripMenuItem.Text = "Administrar Seguros";
             // 
             // Homeform
             // 
@@ -236,6 +261,9 @@
         private System.Windows.Forms.ToolStripMenuItem verPacientesDeEmergenciaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem segurosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarSeguroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarSegurosToolStripMenuItem;
     }
 }
 

@@ -95,7 +95,8 @@
             // 
             // startrank_dtp
             // 
-            this.startrank_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startrank_dtp.CustomFormat = "dd/MM/yyyy";
+            this.startrank_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.startrank_dtp.Location = new System.Drawing.Point(19, 108);
             this.startrank_dtp.Name = "startrank_dtp";
             this.startrank_dtp.Size = new System.Drawing.Size(87, 20);
@@ -103,7 +104,8 @@
             // 
             // endrank_dtp
             // 
-            this.endrank_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endrank_dtp.CustomFormat = "dd/MM/yyyy";
+            this.endrank_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endrank_dtp.Location = new System.Drawing.Point(185, 108);
             this.endrank_dtp.Name = "endrank_dtp";
             this.endrank_dtp.Size = new System.Drawing.Size(87, 20);

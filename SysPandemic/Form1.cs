@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Deployment.Application;
 
 namespace SysPandemic
 {
@@ -16,6 +17,7 @@ namespace SysPandemic
         public Homeform()
         {
             InitializeComponent();
+           
         }
 
         private void agregarProcedimientoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,7 +106,8 @@ namespace SysPandemic
         }
 
         private void Homeform_Load(object sender, EventArgs e)
-        {  
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,6 +156,11 @@ namespace SysPandemic
             frm.allcxc_rbtn.PerformClick();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     }
