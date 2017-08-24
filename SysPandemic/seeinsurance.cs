@@ -81,7 +81,6 @@ namespace SysPandemic
             frm.pmailinsurance_txt.Text = act.Cells["Correo"].Value.ToString();
             frm.pcontractinsurance_txt.Text = act.Cells["Conrato"].Value.ToString();
             frm.ppssinsurance_txt.Text = act.Cells["PSS"].Value.ToString();
-
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -143,6 +143,7 @@ namespace SysPandemic
                 frm.checkout_btn.Hide();
             }
             frm.addsubprodecure_btn.Hide();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

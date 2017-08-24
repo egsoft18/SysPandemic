@@ -57,7 +57,7 @@ namespace SysPandemic
             frm.groupBox3.Hide();
             frm.saveprocedure_btn.Hide();
             frm.clear_btn.Hide();
-           
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

@@ -75,6 +75,7 @@ namespace SysPandemic
             {
                 frm.seebill_btn.Hide();
             }
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

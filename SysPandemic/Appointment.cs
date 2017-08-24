@@ -258,7 +258,7 @@ namespace SysPandemic
             frm.dtpfecha.Text = act.Cells["Fecha"].Value.ToString();
             frm.dtphora.Text = act.Cells["Hora"].Value.ToString();
             frm.btnguardar.Hide();
-
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

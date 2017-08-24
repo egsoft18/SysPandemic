@@ -54,7 +54,7 @@ namespace SysPandemic
             frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
 
             frm.savepatient_txt.Hide();
-            
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

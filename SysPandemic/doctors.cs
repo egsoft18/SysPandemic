@@ -48,6 +48,7 @@ namespace SysPandemic
             frm.teldoctor_txt.Text = act.Cells["Telefono"].Value.ToString();
             frm.celdoctor_txt.Text = act.Cells["Celular"].Value.ToString();
             frm.savedoctor_btn.Hide();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

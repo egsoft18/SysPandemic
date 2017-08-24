@@ -89,7 +89,7 @@ namespace SysPandemic
                 {
                     MessageBox.Show(ex.Message, "Error");
                 }
-
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
             catch (Exception ex)
