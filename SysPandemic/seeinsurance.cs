@@ -73,16 +73,23 @@ namespace SysPandemic
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            insuranceadmi frm = new insuranceadmi();
-            DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-            frm.pidinsurance_txt.Text = act.Cells["ID"].Value.ToString();
-            frm.pnameinsurance_txt.Text = act.Cells["Seguro"].Value.ToString();
-            frm.ptelinsurance_txt.Text = act.Cells["Telefono"].Value.ToString();
-            frm.pmailinsurance_txt.Text = act.Cells["Correo"].Value.ToString();
-            frm.pcontractinsurance_txt.Text = act.Cells["Conrato"].Value.ToString();
-            frm.ppssinsurance_txt.Text = act.Cells["PSS"].Value.ToString();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            try
+            {
+                insuranceadmi frm = new insuranceadmi();
+                DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
+                frm.pidinsurance_txt.Text = act.Cells["ID"].Value.ToString();
+                frm.pnameinsurance_txt.Text = act.Cells["Seguro"].Value.ToString();
+                frm.ptelinsurance_txt.Text = act.Cells["Telefono"].Value.ToString();
+                frm.pmailinsurance_txt.Text = act.Cells["Correo"].Value.ToString();
+                frm.pcontractinsurance_txt.Text = act.Cells["Conrato"].Value.ToString();
+                frm.ppssinsurance_txt.Text = act.Cells["PSS"].Value.ToString();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

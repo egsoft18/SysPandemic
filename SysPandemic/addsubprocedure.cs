@@ -22,7 +22,7 @@ namespace SysPandemic
 
         private void addsubprocedure_Load(object sender, EventArgs e)
         {
-            //cargarDGV();
+            cargarDGV();
         }
 
         private void button1_Click(object sender, EventArgs e)
