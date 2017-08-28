@@ -38,7 +38,7 @@ namespace SysPandemic
             try
             {
                 cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient", cnx);
+                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
                 dataGridView1.DataSource = tabla;
@@ -60,6 +60,8 @@ namespace SysPandemic
             DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
             pidpatient_txt.Text = act.Cells["ID"].Value.ToString();
             pnamepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
+            insurance_txt.Text = act.Cells["Seguro"].Value.ToString();
+            affiliate_txt.Text = act.Cells["Afiliado"].Value.ToString();
             
         }
 
@@ -71,6 +73,11 @@ namespace SysPandemic
         }
 
         private void sp_btn_Click(object sender, EventArgs e)
+        {
+            searchpatient();
+        }
+
+        private void searchpatient()
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
@@ -119,8 +126,12 @@ namespace SysPandemic
 
             }
         }
-
         private void sd_btn_Click(object sender, EventArgs e)
+        {
+            searchdoctor();
+        }
+
+        private void searchdoctor()
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
@@ -169,7 +180,6 @@ namespace SysPandemic
 
             }
         }
-
         private void saveprocedure_btn_Click(object sender, EventArgs e)
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
@@ -317,7 +327,12 @@ namespace SysPandemic
 
         private void sp_txt_TextChanged(object sender, EventArgs e)
         {
+            searchpatient();
+        }
 
+        private void sd_txt_TextChanged(object sender, EventArgs e)
+        {
+            searchdoctor();
         }
     }
 }

@@ -74,16 +74,31 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
+            this.insurance_txt = new System.Windows.Forms.TextBox();
+            this.affiliate_txt = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.affiliate_txt);
+            this.groupBox1.Controls.Add(this.insurance_txt);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pnamedoctor_txt);
             this.groupBox1.Controls.Add(this.piddoctor_txt);
@@ -94,7 +109,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 114);
+            this.groupBox1.Size = new System.Drawing.Size(881, 86);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personas";
@@ -102,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 73);
+            this.label3.Location = new System.Drawing.Point(556, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 9;
@@ -111,7 +126,7 @@
             // pnamedoctor_txt
             // 
             this.pnamedoctor_txt.Enabled = false;
-            this.pnamedoctor_txt.Location = new System.Drawing.Point(243, 70);
+            this.pnamedoctor_txt.Location = new System.Drawing.Point(644, 31);
             this.pnamedoctor_txt.Name = "pnamedoctor_txt";
             this.pnamedoctor_txt.Size = new System.Drawing.Size(226, 20);
             this.pnamedoctor_txt.TabIndex = 8;
@@ -119,15 +134,15 @@
             // piddoctor_txt
             // 
             this.piddoctor_txt.Enabled = false;
-            this.piddoctor_txt.Location = new System.Drawing.Point(65, 70);
+            this.piddoctor_txt.Location = new System.Drawing.Point(504, 31);
             this.piddoctor_txt.Name = "piddoctor_txt";
-            this.piddoctor_txt.Size = new System.Drawing.Size(73, 20);
+            this.piddoctor_txt.Size = new System.Drawing.Size(46, 20);
             this.piddoctor_txt.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 73);
+            this.label4.Location = new System.Drawing.Point(446, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 5;
@@ -136,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(155, 34);
+            this.label2.Location = new System.Drawing.Point(126, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 4;
@@ -145,7 +160,7 @@
             // pnamepatient_txt
             // 
             this.pnamepatient_txt.Enabled = false;
-            this.pnamepatient_txt.Location = new System.Drawing.Point(253, 31);
+            this.pnamepatient_txt.Location = new System.Drawing.Point(224, 31);
             this.pnamepatient_txt.Name = "pnamepatient_txt";
             this.pnamepatient_txt.Size = new System.Drawing.Size(216, 20);
             this.pnamepatient_txt.TabIndex = 3;
@@ -155,7 +170,7 @@
             this.pidpatient_txt.Enabled = false;
             this.pidpatient_txt.Location = new System.Drawing.Point(75, 31);
             this.pidpatient_txt.Name = "pidpatient_txt";
-            this.pidpatient_txt.Size = new System.Drawing.Size(73, 20);
+            this.pidpatient_txt.Size = new System.Drawing.Size(39, 20);
             this.pidpatient_txt.TabIndex = 1;
             // 
             // label1
@@ -169,6 +184,11 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.label16);
+            this.groud2.Controls.Add(this.textBox1);
+            this.groud2.Controls.Add(this.label17);
+            this.groud2.Controls.Add(this.dataGridView4);
+            this.groud2.Controls.Add(this.dataGridView3);
             this.groud2.Controls.Add(this.dateprocedure_dtp);
             this.groud2.Controls.Add(this.dateprocedure);
             this.groud2.Controls.Add(this.calcule_btn);
@@ -185,9 +205,9 @@
             this.groud2.Controls.Add(this.label6);
             this.groud2.Controls.Add(this.idprocedure_txt);
             this.groud2.Controls.Add(this.label5);
-            this.groud2.Location = new System.Drawing.Point(13, 156);
+            this.groud2.Location = new System.Drawing.Point(12, 264);
             this.groud2.Name = "groud2";
-            this.groud2.Size = new System.Drawing.Size(555, 157);
+            this.groud2.Size = new System.Drawing.Size(880, 340);
             this.groud2.TabIndex = 1;
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
@@ -212,7 +232,7 @@
             // 
             // calcule_btn
             // 
-            this.calcule_btn.Location = new System.Drawing.Point(223, 129);
+            this.calcule_btn.Location = new System.Drawing.Point(226, 311);
             this.calcule_btn.Name = "calcule_btn";
             this.calcule_btn.Size = new System.Drawing.Size(75, 23);
             this.calcule_btn.TabIndex = 20;
@@ -223,7 +243,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(397, 134);
+            this.label12.Location = new System.Drawing.Point(400, 316);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 19;
@@ -233,7 +253,7 @@
             // 
             this.pricepay_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pricepay_txt.Enabled = false;
-            this.pricepay_txt.Location = new System.Drawing.Point(432, 131);
+            this.pricepay_txt.Location = new System.Drawing.Point(435, 313);
             this.pricepay_txt.Name = "pricepay_txt";
             this.pricepay_txt.Size = new System.Drawing.Size(117, 20);
             this.pricepay_txt.TabIndex = 18;
@@ -242,7 +262,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(314, 134);
+            this.label11.Location = new System.Drawing.Point(317, 316);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 13);
             this.label11.TabIndex = 17;
@@ -251,7 +271,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(399, 89);
+            this.label10.Location = new System.Drawing.Point(402, 288);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 16;
@@ -260,7 +280,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(139, 89);
+            this.label9.Location = new System.Drawing.Point(142, 288);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 15;
@@ -268,7 +288,7 @@
             // 
             // iscoverage_txt
             // 
-            this.iscoverage_txt.Location = new System.Drawing.Point(432, 86);
+            this.iscoverage_txt.Location = new System.Drawing.Point(435, 285);
             this.iscoverage_txt.Name = "iscoverage_txt";
             this.iscoverage_txt.Size = new System.Drawing.Size(117, 20);
             this.iscoverage_txt.TabIndex = 14;
@@ -276,7 +296,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(287, 89);
+            this.label8.Location = new System.Drawing.Point(290, 288);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 13);
             this.label8.TabIndex = 13;
@@ -284,7 +304,7 @@
             // 
             // realpay_txt
             // 
-            this.realpay_txt.Location = new System.Drawing.Point(174, 86);
+            this.realpay_txt.Location = new System.Drawing.Point(177, 285);
             this.realpay_txt.Name = "realpay_txt";
             this.realpay_txt.Size = new System.Drawing.Size(107, 20);
             this.realpay_txt.TabIndex = 12;
@@ -292,7 +312,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 89);
+            this.label7.Location = new System.Drawing.Point(9, 288);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 13);
             this.label7.TabIndex = 11;
@@ -302,7 +322,7 @@
             // 
             this.procedure_txt.Location = new System.Drawing.Point(89, 50);
             this.procedure_txt.Name = "procedure_txt";
-            this.procedure_txt.Size = new System.Drawing.Size(460, 20);
+            this.procedure_txt.Size = new System.Drawing.Size(401, 20);
             this.procedure_txt.TabIndex = 10;
             // 
             // label6
@@ -333,7 +353,7 @@
             // 
             // saveprocedure_btn
             // 
-            this.saveprocedure_btn.Location = new System.Drawing.Point(214, 322);
+            this.saveprocedure_btn.Location = new System.Drawing.Point(395, 610);
             this.saveprocedure_btn.Name = "saveprocedure_btn";
             this.saveprocedure_btn.Size = new System.Drawing.Size(75, 23);
             this.saveprocedure_btn.TabIndex = 3;
@@ -343,7 +363,7 @@
             // 
             // clear_btn
             // 
-            this.clear_btn.Location = new System.Drawing.Point(295, 322);
+            this.clear_btn.Location = new System.Drawing.Point(476, 610);
             this.clear_btn.Name = "clear_btn";
             this.clear_btn.Size = new System.Drawing.Size(75, 23);
             this.clear_btn.TabIndex = 4;
@@ -353,7 +373,7 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(376, 322);
+            this.cancel_btn.Location = new System.Drawing.Point(557, 610);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 23);
             this.cancel_btn.TabIndex = 5;
@@ -375,10 +395,10 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 114);
+            this.dataGridView1.Size = new System.Drawing.Size(419, 79);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -386,17 +406,17 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 38);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(616, 125);
+            this.dataGridView2.Size = new System.Drawing.Size(413, 80);
             this.dataGridView2.TabIndex = 8;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // spid_rbtn
             // 
             this.spid_rbtn.AutoSize = true;
-            this.spid_rbtn.Location = new System.Drawing.Point(33, 18);
+            this.spid_rbtn.Location = new System.Drawing.Point(10, 18);
             this.spid_rbtn.Name = "spid_rbtn";
             this.spid_rbtn.Size = new System.Drawing.Size(36, 17);
             this.spid_rbtn.TabIndex = 9;
@@ -407,7 +427,7 @@
             // spname_rbtn
             // 
             this.spname_rbtn.AutoSize = true;
-            this.spname_rbtn.Location = new System.Drawing.Point(75, 17);
+            this.spname_rbtn.Location = new System.Drawing.Point(52, 18);
             this.spname_rbtn.Name = "spname_rbtn";
             this.spname_rbtn.Size = new System.Drawing.Size(62, 17);
             this.spname_rbtn.TabIndex = 10;
@@ -418,7 +438,7 @@
             // spidperson_rbtn
             // 
             this.spidperson_rbtn.AutoSize = true;
-            this.spidperson_rbtn.Location = new System.Drawing.Point(143, 18);
+            this.spidperson_rbtn.Location = new System.Drawing.Point(120, 18);
             this.spidperson_rbtn.Name = "spidperson_rbtn";
             this.spidperson_rbtn.Size = new System.Drawing.Size(58, 17);
             this.spidperson_rbtn.TabIndex = 11;
@@ -428,7 +448,7 @@
             // 
             // sp_btn
             // 
-            this.sp_btn.Location = new System.Drawing.Point(512, 15);
+            this.sp_btn.Location = new System.Drawing.Point(350, 15);
             this.sp_btn.Name = "sp_btn";
             this.sp_btn.Size = new System.Drawing.Size(75, 23);
             this.sp_btn.TabIndex = 12;
@@ -438,22 +458,23 @@
             // 
             // sp_txt
             // 
-            this.sp_txt.Location = new System.Drawing.Point(207, 17);
+            this.sp_txt.Location = new System.Drawing.Point(184, 17);
             this.sp_txt.Name = "sp_txt";
-            this.sp_txt.Size = new System.Drawing.Size(284, 20);
+            this.sp_txt.Size = new System.Drawing.Size(158, 20);
             this.sp_txt.TabIndex = 13;
             this.sp_txt.TextChanged += new System.EventHandler(this.sp_txt_TextChanged);
             // 
             // sd_txt
             // 
-            this.sd_txt.Location = new System.Drawing.Point(207, 16);
+            this.sd_txt.Location = new System.Drawing.Point(180, 14);
             this.sd_txt.Name = "sd_txt";
-            this.sd_txt.Size = new System.Drawing.Size(284, 20);
+            this.sd_txt.Size = new System.Drawing.Size(149, 20);
             this.sd_txt.TabIndex = 18;
+            this.sd_txt.TextChanged += new System.EventHandler(this.sd_txt_TextChanged);
             // 
             // sd_btn
             // 
-            this.sd_btn.Location = new System.Drawing.Point(512, 14);
+            this.sd_btn.Location = new System.Drawing.Point(344, 12);
             this.sd_btn.Name = "sd_btn";
             this.sd_btn.Size = new System.Drawing.Size(75, 23);
             this.sd_btn.TabIndex = 17;
@@ -464,7 +485,7 @@
             // sdidperson_rbtn
             // 
             this.sdidperson_rbtn.AutoSize = true;
-            this.sdidperson_rbtn.Location = new System.Drawing.Point(143, 17);
+            this.sdidperson_rbtn.Location = new System.Drawing.Point(116, 15);
             this.sdidperson_rbtn.Name = "sdidperson_rbtn";
             this.sdidperson_rbtn.Size = new System.Drawing.Size(58, 17);
             this.sdidperson_rbtn.TabIndex = 16;
@@ -475,7 +496,7 @@
             // sdname_rbtn
             // 
             this.sdname_rbtn.AutoSize = true;
-            this.sdname_rbtn.Location = new System.Drawing.Point(75, 16);
+            this.sdname_rbtn.Location = new System.Drawing.Point(48, 15);
             this.sdname_rbtn.Name = "sdname_rbtn";
             this.sdname_rbtn.Size = new System.Drawing.Size(62, 17);
             this.sdname_rbtn.TabIndex = 15;
@@ -486,7 +507,7 @@
             // sdid_rbtn
             // 
             this.sdid_rbtn.AutoSize = true;
-            this.sdid_rbtn.Location = new System.Drawing.Point(33, 17);
+            this.sdid_rbtn.Location = new System.Drawing.Point(8, 15);
             this.sdid_rbtn.Name = "sdid_rbtn";
             this.sdid_rbtn.Size = new System.Drawing.Size(36, 17);
             this.sdid_rbtn.TabIndex = 14;
@@ -502,15 +523,15 @@
             this.groupBox3.Controls.Add(this.spname_rbtn);
             this.groupBox3.Controls.Add(this.spidperson_rbtn);
             this.groupBox3.Controls.Add(this.sp_btn);
-            this.groupBox3.Location = new System.Drawing.Point(574, 4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 127);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(616, 145);
+            this.groupBox3.Size = new System.Drawing.Size(440, 131);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             // 
             // updateprocedure_btn
             // 
-            this.updateprocedure_btn.Location = new System.Drawing.Point(136, 322);
+            this.updateprocedure_btn.Location = new System.Drawing.Point(317, 610);
             this.updateprocedure_btn.Name = "updateprocedure_btn";
             this.updateprocedure_btn.Size = new System.Drawing.Size(75, 23);
             this.updateprocedure_btn.TabIndex = 20;
@@ -526,15 +547,15 @@
             this.groupBox4.Controls.Add(this.sdname_rbtn);
             this.groupBox4.Controls.Add(this.sd_btn);
             this.groupBox4.Controls.Add(this.sdidperson_rbtn);
-            this.groupBox4.Location = new System.Drawing.Point(574, 154);
+            this.groupBox4.Location = new System.Drawing.Point(458, 127);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(616, 159);
+            this.groupBox4.Size = new System.Drawing.Size(435, 131);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
             // delateprocedure_btn
             // 
-            this.delateprocedure_btn.Location = new System.Drawing.Point(55, 322);
+            this.delateprocedure_btn.Location = new System.Drawing.Point(236, 610);
             this.delateprocedure_btn.Name = "delateprocedure_btn";
             this.delateprocedure_btn.Size = new System.Drawing.Size(75, 23);
             this.delateprocedure_btn.TabIndex = 22;
@@ -542,12 +563,91 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
+            // insurance_txt
+            // 
+            this.insurance_txt.Enabled = false;
+            this.insurance_txt.Location = new System.Drawing.Point(152, 57);
+            this.insurance_txt.Name = "insurance_txt";
+            this.insurance_txt.Size = new System.Drawing.Size(132, 20);
+            this.insurance_txt.TabIndex = 10;
+            // 
+            // affiliate_txt
+            // 
+            this.affiliate_txt.Enabled = false;
+            this.affiliate_txt.Location = new System.Drawing.Point(340, 57);
+            this.affiliate_txt.Name = "affiliate_txt";
+            this.affiliate_txt.Size = new System.Drawing.Size(100, 20);
+            this.affiliate_txt.TabIndex = 11;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(290, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Afiliado:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(102, 60);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Seguro:";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(12, 76);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(478, 203);
+            this.dataGridView3.TabIndex = 23;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(496, 76);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(378, 203);
+            this.dataGridView4.TabIndex = 24;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(625, 288);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 27;
+            this.label16.Text = "RD$";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(658, 285);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 26;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(558, 288);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Descuento:";
+            // 
             // addprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1199, 357);
+            this.ClientSize = new System.Drawing.Size(905, 645);
             this.Controls.Add(this.delateprocedure_btn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.updateprocedure_btn);
@@ -572,6 +672,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,5 +727,14 @@
         public System.Windows.Forms.Button delateprocedure_btn;
         private System.Windows.Forms.DateTimePicker dateprocedure_dtp;
         private System.Windows.Forms.Label dateprocedure;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox affiliate_txt;
+        private System.Windows.Forms.TextBox insurance_txt;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
     }
 }
