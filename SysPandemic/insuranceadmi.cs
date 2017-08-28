@@ -41,7 +41,12 @@ namespace SysPandemic
 
         private void adddetail_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            if (procedure_txt.Text.Length == 0)
+            {
+                MessageBox.Show("Debe de introducir la informacion requerida.", "Error");
+            }
+            else { 
+                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
                 if (id_txt.Text == "")
@@ -93,7 +98,8 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
-       
+
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -131,7 +137,7 @@ namespace SysPandemic
                         SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
                         if (insertion.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Se ha actualizado!");
+                            MessageBox.Show("Se ha Borrado!");
                             id_txt.Clear();
                             code_txt.Clear();
                             procedure_txt.Clear();
