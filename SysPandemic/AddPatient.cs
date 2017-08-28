@@ -41,7 +41,21 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                string cmd = "Select idinsurance, nameinsurance from insurances";
+                SQLiteDataAdapter dept = new SQLiteDataAdapter(cmd, cnx);
+                DataTable user = new DataTable();
+                dept.Fill(user);
+                insurancepatient_txt.DataSource = user;
+                insurancepatient_txt.DisplayMember = "nameinsurance";
+                insurancepatient_txt.ValueMember = "idinsurance";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void printpatient_btn_Click(object sender, EventArgs e)

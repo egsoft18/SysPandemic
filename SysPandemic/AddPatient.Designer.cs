@@ -299,11 +299,6 @@
             // 
             this.insurancepatient_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.insurancepatient_txt.FormattingEnabled = true;
-            this.insurancepatient_txt.Items.AddRange(new object[] {
-            "",
-            "Palic Salud",
-            "ARS Humano",
-            "Monumental de seguros"});
             this.insurancepatient_txt.Location = new System.Drawing.Point(56, 24);
             this.insurancepatient_txt.Name = "insurancepatient_txt";
             this.insurancepatient_txt.Size = new System.Drawing.Size(127, 21);
