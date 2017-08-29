@@ -189,6 +189,12 @@
     <Compile Include="insuranceadmi.Designer.cs">
       <DependentUpon>insuranceadmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="insurancedata.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>insurancedata.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="listpatient.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -332,6 +338,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="insuranceadmi.resx">
       <DependentUpon>insuranceadmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insurancedata.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>insurancedata.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="listpatient.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
