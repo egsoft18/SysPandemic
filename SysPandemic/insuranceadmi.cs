@@ -275,6 +275,54 @@ namespace SysPandemic
         {
             calcule();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                SQLiteDataAdapter ad;
+                DataTable dt = new DataTable();
+                SQLiteCommand cmd = cnx.CreateCommand();
+                cmd.CommandText = "Select * from insurances where idinsurance = '" + pidinsurance_txt.Text + "'";
+                ad = new SQLiteDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                ad.Fill(dt);
+                ds.Tables.Add(dt);
+                ds.Tables[0].TableName = "Seguros";
+                ds.WriteXml(@"C:\SysPandemic\xml\titleinsurance.xml");
+                MessageBox.Show("Done");
+
+                SQLiteDataAdapter ad2;
+                DataTable dt2 = new DataTable();
+                SQLiteCommand cmd2 = cnx.CreateCommand();
+                cmd2.CommandText = "Select * from detailsinsurance where idinsurance = '" + pidinsurance_txt.Text + "'";
+                ad2 = new SQLiteDataAdapter(cmd2);
+                DataSet ds2 = new DataSet();
+                ad2.Fill(dt2);
+                ds2.Tables.Add(dt2);
+
+                if (dt2.Rows.Count <= 0)
+                {
+                    MessageBox.Show("No puede impirmir los detalles de un seguro si este no tiene coberturas guardas.", "Error");
+                }
+                else
+                {
+                    ds2.Tables[0].TableName = "procedimientosseguros";
+                    ds2.WriteXml(@"C:\SysPandemic\xml\procedureinsurance.xml");
+                    MessageBox.Show("Done");
+                    reportview rv = new reportview("insurancedata.rpt");
+                    rv.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
         
     }
 }
