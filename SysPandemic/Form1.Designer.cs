@@ -49,6 +49,7 @@
             this.segurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarProcesosSinSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.segurosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1354, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -203,7 +204,8 @@
             // 
             this.segurosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarSeguroToolStripMenuItem,
-            this.administrarSegurosToolStripMenuItem});
+            this.administrarSegurosToolStripMenuItem,
+            this.administrarProcesosSinSeguroToolStripMenuItem});
             this.segurosToolStripMenuItem.Name = "segurosToolStripMenuItem";
             this.segurosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.segurosToolStripMenuItem.Text = "Seguros";
@@ -211,23 +213,30 @@
             // agregarSeguroToolStripMenuItem
             // 
             this.agregarSeguroToolStripMenuItem.Name = "agregarSeguroToolStripMenuItem";
-            this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.agregarSeguroToolStripMenuItem.Text = "Agregar Seguro";
             this.agregarSeguroToolStripMenuItem.Click += new System.EventHandler(this.agregarSeguroToolStripMenuItem_Click);
             // 
             // administrarSegurosToolStripMenuItem
             // 
             this.administrarSegurosToolStripMenuItem.Name = "administrarSegurosToolStripMenuItem";
-            this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.administrarSegurosToolStripMenuItem.Text = "Administrar Seguros";
             this.administrarSegurosToolStripMenuItem.Click += new System.EventHandler(this.administrarSegurosToolStripMenuItem_Click);
+            // 
+            // administrarProcesosSinSeguroToolStripMenuItem
+            // 
+            this.administrarProcesosSinSeguroToolStripMenuItem.Name = "administrarProcesosSinSeguroToolStripMenuItem";
+            this.administrarProcesosSinSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.administrarProcesosSinSeguroToolStripMenuItem.Text = "Administrar procesos sin seguro";
+            this.administrarProcesosSinSeguroToolStripMenuItem.Click += new System.EventHandler(this.administrarProcesosSinSeguroToolStripMenuItem_Click);
             // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -266,6 +275,7 @@
         private System.Windows.Forms.ToolStripMenuItem segurosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarSeguroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarSegurosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarProcesosSinSeguroToolStripMenuItem;
     }
 }
 

@@ -107,6 +107,12 @@
     <Compile Include="addprocedure.Designer.cs">
       <DependentUpon>addprocedure.cs</DependentUpon>
     </Compile>
+    <Compile Include="addpwi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addpwi.Designer.cs">
+      <DependentUpon>addpwi.cs</DependentUpon>
+    </Compile>
     <Compile Include="addsubprocedure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,12 @@
     <Compile Include="seeinsurance.Designer.cs">
       <DependentUpon>seeinsurance.cs</DependentUpon>
     </Compile>
+    <Compile Include="seepwi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seepwi.Designer.cs">
+      <DependentUpon>seepwi.cs</DependentUpon>
+    </Compile>
     <Compile Include="spatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addprocedure.resx">
       <DependentUpon>addprocedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addpwi.resx">
+      <DependentUpon>addpwi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addsubprocedure.resx">
       <DependentUpon>addsubprocedure.cs</DependentUpon>
@@ -392,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seeinsurance.resx">
       <DependentUpon>seeinsurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seepwi.resx">
+      <DependentUpon>seepwi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="spatient.resx">
       <DependentUpon>spatient.cs</DependentUpon>
