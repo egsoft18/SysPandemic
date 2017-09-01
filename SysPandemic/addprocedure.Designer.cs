@@ -42,6 +42,8 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
+            this.searchprocess_txt = new System.Windows.Forms.TextBox();
+            this.option_cb = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -83,8 +85,6 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
-            this.option_cb = new System.Windows.Forms.ComboBox();
-            this.searchprocess_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -250,6 +250,26 @@
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
             // 
+            // searchprocess_txt
+            // 
+            this.searchprocess_txt.Location = new System.Drawing.Point(610, 49);
+            this.searchprocess_txt.Name = "searchprocess_txt";
+            this.searchprocess_txt.Size = new System.Drawing.Size(255, 20);
+            this.searchprocess_txt.TabIndex = 29;
+            // 
+            // option_cb
+            // 
+            this.option_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.option_cb.FormattingEnabled = true;
+            this.option_cb.Items.AddRange(new object[] {
+            "Seguro",
+            "Sin seguro"});
+            this.option_cb.Location = new System.Drawing.Point(499, 49);
+            this.option_cb.Name = "option_cb";
+            this.option_cb.Size = new System.Drawing.Size(105, 21);
+            this.option_cb.TabIndex = 28;
+            this.option_cb.TextChanged += new System.EventHandler(this.option_cb_TextChanged);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -295,6 +315,7 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(478, 203);
             this.dataGridView3.TabIndex = 23;
+            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             // 
             // dateprocedure_dtp
             // 
@@ -646,26 +667,6 @@
             this.delateprocedure_btn.Text = "Borrar";
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
-            // 
-            // option_cb
-            // 
-            this.option_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.option_cb.FormattingEnabled = true;
-            this.option_cb.Items.AddRange(new object[] {
-            "Seguro",
-            "Sin seguro"});
-            this.option_cb.Location = new System.Drawing.Point(499, 49);
-            this.option_cb.Name = "option_cb";
-            this.option_cb.Size = new System.Drawing.Size(105, 21);
-            this.option_cb.TabIndex = 28;
-            this.option_cb.TextChanged += new System.EventHandler(this.option_cb_TextChanged);
-            // 
-            // searchprocess_txt
-            // 
-            this.searchprocess_txt.Location = new System.Drawing.Point(610, 49);
-            this.searchprocess_txt.Name = "searchprocess_txt";
-            this.searchprocess_txt.Size = new System.Drawing.Size(255, 20);
-            this.searchprocess_txt.TabIndex = 29;
             // 
             // addprocedure
             // 

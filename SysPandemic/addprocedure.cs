@@ -401,7 +401,7 @@ namespace SysPandemic
             try
             {
                 cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
+                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
                 DataTable tabla = new DataTable("Subprocesos");
                 adac.Fill(tabla);
                 dataGridView3.DataSource = tabla;
@@ -413,8 +413,40 @@ namespace SysPandemic
         }
         public void sums()
         {
-            int result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["tariff"].Value));
+            int result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Tarifa"].Value));
             realpay_txt.Text = Convert.ToString(result);
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
+                    string description = act.Cells["IDProcedimiento"].Value.ToString();
+                    string comando = "DELETE FROM subprocedure WHERE idprocedure = '" + description + "'";
+                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        loadsubprocedure();
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+
         }
         }
     }
