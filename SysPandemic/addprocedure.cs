@@ -32,6 +32,8 @@ namespace SysPandemic
 
         private void addprocedure_Load(object sender, EventArgs e)
         {
+            loadsubprocedure();
+            sums();
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
@@ -47,6 +49,9 @@ namespace SysPandemic
                 DataTable tabla2 = new DataTable("doctors");
                 adac2.Fill(tabla2);
                 dataGridView2.DataSource = tabla2;
+
+                
+
             }
             catch (Exception ex)
             {
@@ -334,5 +339,82 @@ namespace SysPandemic
         {
             searchdoctor();
         }
+
+        private void option_cb_TextChanged(object sender, EventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                string option = option_cb.Text;
+                if (option == "Seguro") {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "'", cnx);
+                DataTable tabla = new DataTable("Pacientes");
+                adac.Fill(tabla);
+                dataGridView4.DataSource = tabla;
+                }
+                else if (option == "Sin seguro")
+                {
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO'", cnx);
+                    DataTable tabla = new DataTable("Pacientes");
+                    adac.Fill(tabla);
+                    dataGridView4.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
+                string description = act.Cells["Descripcion"].Value.ToString();
+                string tariff = act.Cells["Tarifa"].Value.ToString();
+                string coverage = act.Cells["Cobertura"].Value.ToString();
+                string difference = act.Cells["Diferencia"].Value.ToString();
+                string code = act.Cells["Codigo"].Value.ToString();
+                string insurance = act.Cells["Seguro"].Value.ToString();
+                string paystatus = "No Pagado";
+                string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "');";
+                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                   loadsubprocedure();
+                   sums();
+                }
+            }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+        public void loadsubprocedure()
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
+                DataTable tabla = new DataTable("Subprocesos");
+                adac.Fill(tabla);
+                dataGridView3.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+        public void sums()
+        {
+            int result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["tariff"].Value));
+            realpay_txt.Text = Convert.ToString(result);
+        }
+        }
     }
-}

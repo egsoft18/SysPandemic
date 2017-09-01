@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.affiliate_txt = new System.Windows.Forms.TextBox();
+            this.insurance_txt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pnamedoctor_txt = new System.Windows.Forms.TextBox();
             this.piddoctor_txt = new System.Windows.Forms.TextBox();
@@ -38,6 +42,11 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dateprocedure_dtp = new System.Windows.Forms.DateTimePicker();
             this.dateprocedure = new System.Windows.Forms.Label();
             this.calcule_btn = new System.Windows.Forms.Button();
@@ -74,23 +83,16 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
-            this.insurance_txt = new System.Windows.Forms.TextBox();
-            this.affiliate_txt = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.option_cb = new System.Windows.Forms.ComboBox();
+            this.searchprocess_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -113,6 +115,40 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personas";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(102, 60);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Seguro:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(290, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Afiliado:";
+            // 
+            // affiliate_txt
+            // 
+            this.affiliate_txt.Enabled = false;
+            this.affiliate_txt.Location = new System.Drawing.Point(340, 57);
+            this.affiliate_txt.Name = "affiliate_txt";
+            this.affiliate_txt.Size = new System.Drawing.Size(100, 20);
+            this.affiliate_txt.TabIndex = 11;
+            // 
+            // insurance_txt
+            // 
+            this.insurance_txt.Enabled = false;
+            this.insurance_txt.Location = new System.Drawing.Point(152, 57);
+            this.insurance_txt.Name = "insurance_txt";
+            this.insurance_txt.Size = new System.Drawing.Size(132, 20);
+            this.insurance_txt.TabIndex = 10;
             // 
             // label3
             // 
@@ -184,6 +220,8 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.searchprocess_txt);
+            this.groud2.Controls.Add(this.option_cb);
             this.groud2.Controls.Add(this.label16);
             this.groud2.Controls.Add(this.textBox1);
             this.groud2.Controls.Add(this.label17);
@@ -211,6 +249,52 @@
             this.groud2.TabIndex = 1;
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(625, 288);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 27;
+            this.label16.Text = "RD$";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(658, 285);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 26;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(558, 288);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Descuento:";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(496, 76);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(378, 203);
+            this.dataGridView4.TabIndex = 24;
+            this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(12, 76);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(478, 203);
+            this.dataGridView3.TabIndex = 23;
             // 
             // dateprocedure_dtp
             // 
@@ -563,84 +647,25 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
-            // insurance_txt
+            // option_cb
             // 
-            this.insurance_txt.Enabled = false;
-            this.insurance_txt.Location = new System.Drawing.Point(152, 57);
-            this.insurance_txt.Name = "insurance_txt";
-            this.insurance_txt.Size = new System.Drawing.Size(132, 20);
-            this.insurance_txt.TabIndex = 10;
+            this.option_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.option_cb.FormattingEnabled = true;
+            this.option_cb.Items.AddRange(new object[] {
+            "Seguro",
+            "Sin seguro"});
+            this.option_cb.Location = new System.Drawing.Point(499, 49);
+            this.option_cb.Name = "option_cb";
+            this.option_cb.Size = new System.Drawing.Size(105, 21);
+            this.option_cb.TabIndex = 28;
+            this.option_cb.TextChanged += new System.EventHandler(this.option_cb_TextChanged);
             // 
-            // affiliate_txt
+            // searchprocess_txt
             // 
-            this.affiliate_txt.Enabled = false;
-            this.affiliate_txt.Location = new System.Drawing.Point(340, 57);
-            this.affiliate_txt.Name = "affiliate_txt";
-            this.affiliate_txt.Size = new System.Drawing.Size(100, 20);
-            this.affiliate_txt.TabIndex = 11;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(290, 60);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Afiliado:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(102, 60);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Seguro:";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 76);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(478, 203);
-            this.dataGridView3.TabIndex = 23;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(496, 76);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(378, 203);
-            this.dataGridView4.TabIndex = 24;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(625, 288);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 13);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "RD$";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(658, 285);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 26;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(558, 288);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "Descuento:";
+            this.searchprocess_txt.Location = new System.Drawing.Point(610, 49);
+            this.searchprocess_txt.Name = "searchprocess_txt";
+            this.searchprocess_txt.Size = new System.Drawing.Size(255, 20);
+            this.searchprocess_txt.TabIndex = 29;
             // 
             // addprocedure
             // 
@@ -666,14 +691,14 @@
             this.groupBox1.PerformLayout();
             this.groud2.ResumeLayout(false);
             this.groud2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,5 +761,7 @@
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox searchprocess_txt;
+        private System.Windows.Forms.ComboBox option_cb;
     }
 }

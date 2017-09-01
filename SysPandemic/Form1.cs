@@ -48,6 +48,26 @@ namespace SysPandemic
             frm.MdiParent = this;
             frm.updateprocedure_btn.Hide();
             frm.delateprocedure_btn.Hide();
+
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try {
+                cnx.Open();
+            string comando = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
+            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            SQLiteDataReader leer = insertion.ExecuteReader();
+            if (leer.Read() == true)
+            {
+                decimal value = Convert.ToDecimal(leer["idprocedure"].ToString()) + 1;
+                string ms = value.ToString();
+                frm.idprocedure_txt.Text = ms;
+            }
+                }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+
             frm.Show();
         }
 
