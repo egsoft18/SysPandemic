@@ -16,12 +16,12 @@ namespace SysPandemic
         public addprocedure()
         {
             InitializeComponent();
-            
+
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            Close();
+            deleteclose();
         }
 
         private void searchpatient_btn_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace SysPandemic
 
         private void addprocedure_Load(object sender, EventArgs e)
         {
-            loadsubprocedure();
+            //loadsubprocedure();
             sums();
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
@@ -49,25 +49,26 @@ namespace SysPandemic
                 DataTable tabla2 = new DataTable("doctors");
                 adac2.Fill(tabla2);
                 dataGridView2.DataSource = tabla2;
-
-                
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            finally
+            {
+                cnx.Close();
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
             pidpatient_txt.Text = act.Cells["ID"].Value.ToString();
             pnamepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
             insurance_txt.Text = act.Cells["Seguro"].Value.ToString();
             affiliate_txt.Text = act.Cells["Afiliado"].Value.ToString();
-            
+
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +95,7 @@ namespace SysPandemic
                     DataTable tabla = new DataTable("Pacientes");
                     adac.Fill(tabla);
                     dataGridView1.DataSource = tabla;
+
                 }
                 else if (spid_rbtn.Checked)
                 {
@@ -130,6 +132,10 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
+            finally
+            {
+                cnx.Close();
+            }
         }
         private void sd_btn_Click(object sender, EventArgs e)
         {
@@ -144,7 +150,7 @@ namespace SysPandemic
                 cnx.Open();
                 if (sd_txt.Text.Length == 0)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
+                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
                     DataTable tabla = new DataTable("Doctores");
                     adac.Fill(tabla);
                     dataGridView2.DataSource = tabla;
@@ -184,6 +190,10 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
+            finally
+            {
+                cnx.Close();
+            }
         }
         private void saveprocedure_btn_Click(object sender, EventArgs e)
         {
@@ -206,7 +216,7 @@ namespace SysPandemic
                     realpay_txt.Clear();
                     pricepay_txt.Clear();
                     iscoverage_txt.Text = "";
-                   
+
 
                 }
             }
@@ -215,14 +225,14 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
+            finally
+            {
+                cnx.Close();
+            }
         }
 
         private void pricepay_txt_TextChanged(object sender, EventArgs e)
         {
-            
-                
-            
-           
         }
 
         private void calcule_btn_Click(object sender, EventArgs e)
@@ -295,6 +305,10 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
+            finally
+            {
+                cnx.Close();
+            }
         }
 
         private void delateprocedure_btn_Click(object sender, EventArgs e)
@@ -323,6 +337,10 @@ namespace SysPandemic
                 {
                     MessageBox.Show(ex.Message, "Error");
                 }
+                finally
+                {
+                    cnx.Close();
+                }
 
             }
             else if (result == DialogResult.No)
@@ -347,11 +365,13 @@ namespace SysPandemic
             {
                 cnx.Open();
                 string option = option_cb.Text;
-                if (option == "Seguro") {
+                if (option == "Seguro")
+                {
                     SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "'", cnx);
-                DataTable tabla = new DataTable("Pacientes");
-                adac.Fill(tabla);
-                dataGridView4.DataSource = tabla;
+                    DataTable tabla = new DataTable("Pacientes");
+                    adac.Fill(tabla);
+                    dataGridView4.DataSource = tabla;
+                    cnx.Close();
                 }
                 else if (option == "Sin seguro")
                 {
@@ -359,11 +379,16 @@ namespace SysPandemic
                     DataTable tabla = new DataTable("Pacientes");
                     adac.Fill(tabla);
                     dataGridView4.DataSource = tabla;
+                    cnx.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                cnx.Close();
             }
         }
 
@@ -373,28 +398,50 @@ namespace SysPandemic
             try
             {
                 cnx.Open();
-                DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
-                string description = act.Cells["Descripcion"].Value.ToString();
-                string tariff = act.Cells["Tarifa"].Value.ToString();
-                string coverage = act.Cells["Cobertura"].Value.ToString();
-                string difference = act.Cells["Diferencia"].Value.ToString();
-                string code = act.Cells["Codigo"].Value.ToString();
-                string insurance = act.Cells["Seguro"].Value.ToString();
-                string paystatus = "No Pagado";
-                string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "');";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                //DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
+                //subprocedure_txt.Text = act.Cells["Descripcion"].Value.ToString();
+                //tariff_txt.Text = act.Cells["Tarifa"].Value.ToString();
+                //coverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
+                //difference_txt.Text= act.Cells["Diferencia"].Value.ToString();
+                //codeinsurance_txt.Text = act.Cells["Codigo"].Value.ToString();
+                //insurance.Text = act.Cells["Seguro"].Value.ToString();
+                //paystatus_txt.Text = "No Pagado";
 
-                if (insertion.ExecuteNonQuery() > 0)
+                try
                 {
-                   loadsubprocedure();
-                   sums();
+                    DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
+                    string description = act.Cells["Descripcion"].Value.ToString();
+                    string tariff = act.Cells["Tarifa"].Value.ToString();
+                    string coverage = act.Cells["Cobertura"].Value.ToString();
+                    string difference = act.Cells["Diferencia"].Value.ToString();
+                    string code = act.Cells["Codigo"].Value.ToString();
+                    string insurance = act.Cells["Seguro"].Value.ToString();
+                    string paystatus = "No Pagado";
+
+                    string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "')";
+                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Done");
+                        loadsubprocedure();
+                        sums();
+                    }
+
                 }
-            }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error");
                 }
+                finally
+                {
+                    cnx.Close();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Algo va mal.");
+            }
+        }
         public void loadsubprocedure()
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
@@ -405,16 +452,27 @@ namespace SysPandemic
                 DataTable tabla = new DataTable("Subprocesos");
                 adac.Fill(tabla);
                 dataGridView3.DataSource = tabla;
+                cnx.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                cnx.Close();
             }
         }
         public void sums()
         {
             int result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Tarifa"].Value));
             realpay_txt.Text = Convert.ToString(result);
+
+            int result2 = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Cobertura"].Value));
+            iscoverage_txt.Text = Convert.ToString(result2);
+
+            decimal result3 = Convert.ToDecimal(realpay_txt.Text) - Convert.ToDecimal(iscoverage_txt.Text);
+            pricepay_txt.Text = Convert.ToString(result3);
         }
 
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -427,11 +485,12 @@ namespace SysPandemic
                 if (result == DialogResult.Yes)
                 {
                     DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
-                    string description = act.Cells["IDProcedimiento"].Value.ToString();
-                    string comando = "DELETE FROM subprocedure WHERE idprocedure = '" + description + "'";
+                    string description = act.Cells["ID"].Value.ToString();
+                    string comando = "DELETE FROM subprocedure WHERE id = '" + description + "'";
                     SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
                     if (insertion.ExecuteNonQuery() > 0)
                     {
+                        cnx.Close();
                         loadsubprocedure();
                     }
                 }
@@ -446,7 +505,132 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
 
             }
+            finally
+            {
+                cnx.Close();
+            }
 
         }
+        private void deleteclose()
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+                    {
+                        cnx.Open();
+                        if (idprocedure_txt.Text.Length > 0)
+                        {
+                            string comando = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                            if (insertion.ExecuteNonQuery() > 0)
+                            {
+                                cnx.Close();
+                                sums();
+                            }
+                        }
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Delete catch");
+                    }
+            finally{
+                cnx.Close();
+            }
+                }
+        private void addprocedure_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            deleteclose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + codeinsurance_txt.Text + "','" + subprocedure_txt.Text + "','" + tariff_txt.Text + "', '" + coverage_txt.Text + "', '" + difference_txt.Text + "', '" + paystatus_txt.Text + "', '" + insurance.Text + "')";
+                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Done");
+                    //loadsubprocedure();
+                    //sums();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                cnx.Close();
+            }
+        }
+
+        private void dataGridView3_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                cnx.Open();
+                DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
+                    string description = act.Cells["ID"].Value.ToString();
+                    string comando = "DELETE FROM subprocedure WHERE id = '" + description + "'";
+                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        cnx.Close();
+                        loadsubprocedure();
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+            finally
+            {
+                cnx.Close();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal price = Convert.ToDecimal(pricepay_txt.Text);
+                if (descuent_txt.Text.Length == 0)
+                {
+                    decimal result3 = Convert.ToDecimal(realpay_txt.Text) - Convert.ToDecimal(iscoverage_txt.Text);
+                    pricepay_txt.Text = Convert.ToString(result3);
+                }
+                else if (price > 0)
+                {
+                    decimal des = Convert.ToDecimal(descuent_txt.Text);
+                    int result3 = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Diferencia"].Value));
+                    decimal re = result3 - des;
+                    pricepay_txt.Text = Convert.ToString(re);
+                }
+                else if (price < 0)
+                {
+                    decimal result3 = Convert.ToDecimal(realpay_txt.Text) - Convert.ToDecimal(iscoverage_txt.Text);
+                    pricepay_txt.Text = Convert.ToString(result3);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error", "Error Catch");
+            }
         }
     }
+}
