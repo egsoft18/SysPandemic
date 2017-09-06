@@ -67,6 +67,10 @@ namespace SysPandemic
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            finally
+            {
+                cnx.Close();
+            }
 
             frm.Show();
         }
