@@ -53,7 +53,7 @@ namespace SysPandemic
                     cnx.Open();
                     string idinsurance = "0";
                     string insurance = "NO SEGURO";
-                    string comando = "INSERT INTO detailsinsurance(pinsurance, tariff,  idinsurance, insurance) VALUES('" + process_txt.Text + "', '" + priceprocess_txt.Text + "','" + idinsurance + "', '" + insurance + "');";
+                    string comando = "INSERT INTO detailsinsurance(pinsurance, tariff, coverage, difference,  idinsurance, insurance) VALUES('" + process_txt.Text + "', '" + priceprocess_txt.Text + "', '00', '"+ priceprocess_txt.Text +"', '" + idinsurance + "', '" + insurance + "');";
                     SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
 
                     if (insertion.ExecuteNonQuery() > 0)
@@ -62,7 +62,7 @@ namespace SysPandemic
                         process_txt.Clear();
                         priceprocess_txt.Clear();
                         process_txt.Focus();
-
+                        cnx.Close();
                     }
                 }
                 catch (Exception ex)
@@ -75,26 +75,69 @@ namespace SysPandemic
 
         private void updatepwi_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-
             try
             {
-                
+                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
                 cnx.Open();
-                string comando = "UPDATE detailsinsurance set pinsurance = '" + process_txt.Text + "', tariff = '" + priceprocess_txt.Text + "' where id= '" +idprocess_txt+"'";
+                string comando = "UPDATE detailsinsurance set pinsurance = '" + process_txt.Text + "', tariff = '" + priceprocess_txt.Text + "' where id= '" +idprocess_txt.Text+"'";
                 SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
                 if (insertion.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Se ha actualizado!");
-                    Close();
+                    cnx.Close();
                     seepwi frm = new seepwi();
                     frm.loaddgv();
+                    MessageBox.Show("Se ha actualizado!");
+                    Close();
+                   
+                }
+                else
+                {
+                    MessageBox.Show("No se consiguio");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void deletepwi_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea eliminar este proceso?", "Eliminar proceso", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+                try
+                {
+                    cnx.Open();
+                    string comando = "DELETE FROM detailsinsurance WHERE id = '" + idprocess_txt.Text + "'";
+                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Se ha eliminado!");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo fue mal");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+
+            }
+            else if (result == DialogResult.No)
+            {
+            }
+        }
+
+        private void addpwi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            seepwi frm = new seepwi();
+            frm.loaddgv();
         }
 }
     }
