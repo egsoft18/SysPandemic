@@ -88,34 +88,60 @@ namespace SysPandemic
 
         private void savepatient_txt_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient_txt.Text + "', '" + bdaypatient_dtp.Text + "','" + sexpatient_cb.Text + "','" + idperson_txt.Text + "', '" + addresspatient_txt.Text + "', '" + telpatient_txt.Text + "', '" + celpatient_txt.Text + "', '" + tworkpatient_txt.Text + "', '" + insurancepatient_txt.Text + "', '" + affiliatepatient_txt.Text + "');";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
 
-                if (insertion.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Se agrego correctamente");
-                    namepatient_txt.Clear();
-                    sexpatient_cb.Text = "";
-                    idperson_txt.Clear();
-                    addresspatient_txt.Clear();
-                    telpatient_txt.Clear();
-                    celpatient_txt.Clear();
-                    tworkpatient_txt.Clear();
-                    insurancepatient_txt.Text = "";
-                    affiliatepatient_txt.Clear();
-                    namepatient_txt.Focus();
+            DBManager c = new DBManager();
+            string namepatient = namepatient_txt.Text;
+            string bdaypatient = bdaypatient_dtp.Text;
+            string sexpatient = sexpatient_cb.Text;
+            string idperson = idperson_txt.Text;
+            string addresspatient = addresspatient_txt.Text;
+            string telpatient = telpatient_txt.Text;
+            string celpatient = celpatient_txt.Text;
+            string tworkpatient = tworkpatient_txt.Text;
+            string insurancepatient = insurancepatient_txt.Text;
+            string affiliatepatient = affiliatepatient_txt.Text;
+
+            c.addpatient(namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
+            
+            namepatient_txt.Clear();
+            sexpatient_cb.Text = "";
+            idperson_txt.Clear();
+            addresspatient_txt.Clear();
+            telpatient_txt.Clear();
+            celpatient_txt.Clear();
+            tworkpatient_txt.Clear();
+            insurancepatient_txt.Text = "";
+            affiliatepatient_txt.Clear();
+            namepatient_txt.Focus();
+            
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient_txt.Text + "', '" + bdaypatient_dtp.Text + "','" + sexpatient_cb.Text + "','" + idperson_txt.Text + "', '" + addresspatient_txt.Text + "', '" + telpatient_txt.Text + "', '" + celpatient_txt.Text + "', '" + tworkpatient_txt.Text + "', '" + insurancepatient_txt.Text + "', '" + affiliatepatient_txt.Text + "');";
+            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+            //    if (insertion.ExecuteNonQuery() > 0)
+            //    {
+            //        MessageBox.Show("Se agrego correctamente");
+            //        namepatient_txt.Clear();
+            //        sexpatient_cb.Text = "";
+            //        idperson_txt.Clear();
+            //        addresspatient_txt.Clear();
+            //        telpatient_txt.Clear();
+            //        celpatient_txt.Clear();
+            //        tworkpatient_txt.Clear();
+            //        insurancepatient_txt.Text = "";
+            //        affiliatepatient_txt.Clear();
+            //        namepatient_txt.Focus();
                     
-                }
-            }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
+            //    }
+            //}
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Error");
 
-                }
+            //    }
         }
 
         private void updatepatient_btn_Click(object sender, EventArgs e)

@@ -82,5 +82,24 @@ namespace SysPandemic
             }
         }
 
+        public void addpatient(String namepatient, String bdaypatient, String sexpatient, String idperson, String addresspatient, String telpatient, String celpatient, String tworkpatient, String insurancepatient, String affiliatepatient)
+        {
+            try { 
+            AddPatient frm = new AddPatient();
+            string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient + "','" + bdaypatient + "','" + sexpatient + "','" + idperson + "','" + addresspatient + "','" + telpatient + "','" + celpatient + "','" + tworkpatient + "','" + insurancepatient + "','" + affiliatepatient + "')";
+            SqlCommand insertion = new SqlCommand(comando, cnx);
+
+            if (insertion.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Se agrego correctamente");
+               
+            }
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo insertar la infromacion del paciente: " + ex.Message);
+            }
+        }
+
     }
 }
