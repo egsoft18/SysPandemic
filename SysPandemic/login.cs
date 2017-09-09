@@ -34,35 +34,7 @@ namespace SysPandemic
 
         private void login_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DBManager cnx = new DBManager();
-            //    cnx.open();
-            //    MessageBox.Show("Se consiguo");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("NO" + ex.Message);
-            //}
-            //try
-            //{
-                
-            //    DBManager cnx = new DBManager();
-            //    cnx.cnxOpen();
-                
-            //    string query = "Select id, user from userpass";
-            //    SqlCommand cmd = new SqlCommand(query, cnx);
-            //    SqlDataAdapter dept = new SqlDataAdapter();
-            //    DataTable user = new DataTable();
-            //    dept.Fill(user);
-            //    usercb1.DataSource = user;
-            //    usercb1.DisplayMember = "user";
-            //    usercb1.ValueMember = "id";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            
             DBManager c = new DBManager();
             c.cbusers(usercb1);
 
