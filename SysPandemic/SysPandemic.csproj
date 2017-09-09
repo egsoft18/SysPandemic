@@ -165,6 +165,7 @@
     <Compile Include="cxcp.Designer.cs">
       <DependentUpon>cxcp.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBManager.cs" />
     <Compile Include="doctors.cs">
       <SubType>Form</SubType>
     </Compile>

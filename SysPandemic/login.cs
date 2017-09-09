@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SysPandemic
 {
@@ -19,37 +20,12 @@ namespace SysPandemic
         }
         public void startseccion()
         {
-            string actuser = Convert.ToString(usercb1.Text);
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter ad;
-                DataTable dt = new DataTable();
-                SQLiteCommand cmd = cnx.CreateCommand();
-                cmd.CommandText = "Select * from userpass  where user = '" + usercb1.Text + "' and pass = '" + passtxt.Text + "'";
-                ad = new SQLiteDataAdapter(cmd);
 
-                DataSet ds = new DataSet();
-                ad.Fill(dt);
-                ds.Tables.Add(dt);
-                if (dt.Rows.Count <= 0)
-                {
-                    MessageBox.Show("Usuario o contraseña invalida, intente de nuevo.");
-                }
-                else
-                {
-                    Homeform frm = new Homeform();
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
-                    passtxt.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            DBManager c = new DBManager();
+            string user = Convert.ToString(usercb1.Text);
+            string pass = Convert.ToString(passtxt.Text);
+            c.startseccion(user,pass);
+
         }
         private void loginbtn_Click(object sender, EventArgs e)
         {
@@ -58,20 +34,38 @@ namespace SysPandemic
 
         private void login_Load(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                string cmd = "Select id, user from userpass";
-                SQLiteDataAdapter dept = new SQLiteDataAdapter(cmd, cnx);
-                DataTable user = new DataTable();
-                dept.Fill(user);
-                usercb1.DataSource = user;
-                usercb1.DisplayMember = "user";
-                usercb1.ValueMember = "id";
-            }
-            catch(Exception ex){
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    DBManager cnx = new DBManager();
+            //    cnx.open();
+            //    MessageBox.Show("Se consiguo");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("NO" + ex.Message);
+            //}
+            //try
+            //{
+                
+            //    DBManager cnx = new DBManager();
+            //    cnx.cnxOpen();
+                
+            //    string query = "Select id, user from userpass";
+            //    SqlCommand cmd = new SqlCommand(query, cnx);
+            //    SqlDataAdapter dept = new SqlDataAdapter();
+            //    DataTable user = new DataTable();
+            //    dept.Fill(user);
+            //    usercb1.DataSource = user;
+            //    usercb1.DisplayMember = "user";
+            //    usercb1.ValueMember = "id";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            DBManager c = new DBManager();
+            c.cbusers(usercb1);
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

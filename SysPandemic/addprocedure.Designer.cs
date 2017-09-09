@@ -85,15 +85,6 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
-            this.coverage_txt = new System.Windows.Forms.TextBox();
-            this.difference_txt = new System.Windows.Forms.TextBox();
-            this.paystatus_txt = new System.Windows.Forms.TextBox();
-            this.insurance = new System.Windows.Forms.TextBox();
-            this.idprocedure_text = new System.Windows.Forms.TextBox();
-            this.codeinsurance_txt = new System.Windows.Forms.TextBox();
-            this.subprocedure_txt = new System.Windows.Forms.TextBox();
-            this.tariff_txt = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -229,15 +220,6 @@
             // 
             // groud2
             // 
-            this.groud2.Controls.Add(this.button1);
-            this.groud2.Controls.Add(this.tariff_txt);
-            this.groud2.Controls.Add(this.subprocedure_txt);
-            this.groud2.Controls.Add(this.codeinsurance_txt);
-            this.groud2.Controls.Add(this.idprocedure_text);
-            this.groud2.Controls.Add(this.insurance);
-            this.groud2.Controls.Add(this.paystatus_txt);
-            this.groud2.Controls.Add(this.difference_txt);
-            this.groud2.Controls.Add(this.coverage_txt);
             this.groud2.Controls.Add(this.searchprocess_txt);
             this.groud2.Controls.Add(this.option_cb);
             this.groud2.Controls.Add(this.label16);
@@ -451,6 +433,8 @@
             this.procedure_txt.Name = "procedure_txt";
             this.procedure_txt.Size = new System.Drawing.Size(401, 20);
             this.procedure_txt.TabIndex = 10;
+            this.procedure_txt.TextChanged += new System.EventHandler(this.procedure_txt_TextChanged);
+            this.procedure_txt.DoubleClick += new System.EventHandler(this.procedure_txt_DoubleClick);
             // 
             // label6
             // 
@@ -690,72 +674,6 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
-            // coverage_txt
-            // 
-            this.coverage_txt.Location = new System.Drawing.Point(383, 15);
-            this.coverage_txt.Name = "coverage_txt";
-            this.coverage_txt.Size = new System.Drawing.Size(100, 20);
-            this.coverage_txt.TabIndex = 30;
-            // 
-            // difference_txt
-            // 
-            this.difference_txt.Location = new System.Drawing.Point(494, 15);
-            this.difference_txt.Name = "difference_txt";
-            this.difference_txt.Size = new System.Drawing.Size(100, 20);
-            this.difference_txt.TabIndex = 31;
-            // 
-            // paystatus_txt
-            // 
-            this.paystatus_txt.Location = new System.Drawing.Point(610, 15);
-            this.paystatus_txt.Name = "paystatus_txt";
-            this.paystatus_txt.Size = new System.Drawing.Size(100, 20);
-            this.paystatus_txt.TabIndex = 32;
-            // 
-            // insurance
-            // 
-            this.insurance.Location = new System.Drawing.Point(716, 15);
-            this.insurance.Name = "insurance";
-            this.insurance.Size = new System.Drawing.Size(100, 20);
-            this.insurance.TabIndex = 33;
-            // 
-            // idprocedure_text
-            // 
-            this.idprocedure_text.Location = new System.Drawing.Point(383, 0);
-            this.idprocedure_text.Name = "idprocedure_text";
-            this.idprocedure_text.Size = new System.Drawing.Size(100, 20);
-            this.idprocedure_text.TabIndex = 34;
-            // 
-            // codeinsurance_txt
-            // 
-            this.codeinsurance_txt.Location = new System.Drawing.Point(494, 0);
-            this.codeinsurance_txt.Name = "codeinsurance_txt";
-            this.codeinsurance_txt.Size = new System.Drawing.Size(100, 20);
-            this.codeinsurance_txt.TabIndex = 35;
-            // 
-            // subprocedure_txt
-            // 
-            this.subprocedure_txt.Location = new System.Drawing.Point(610, 0);
-            this.subprocedure_txt.Name = "subprocedure_txt";
-            this.subprocedure_txt.Size = new System.Drawing.Size(100, 20);
-            this.subprocedure_txt.TabIndex = 36;
-            // 
-            // tariff_txt
-            // 
-            this.tariff_txt.Location = new System.Drawing.Point(716, 0);
-            this.tariff_txt.Name = "tariff_txt";
-            this.tariff_txt.Size = new System.Drawing.Size(100, 20);
-            this.tariff_txt.TabIndex = 37;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(827, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // addprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,14 +770,5 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox searchprocess_txt;
         private System.Windows.Forms.ComboBox option_cb;
-        private System.Windows.Forms.TextBox coverage_txt;
-        private System.Windows.Forms.TextBox tariff_txt;
-        private System.Windows.Forms.TextBox subprocedure_txt;
-        private System.Windows.Forms.TextBox codeinsurance_txt;
-        private System.Windows.Forms.TextBox idprocedure_text;
-        private System.Windows.Forms.TextBox insurance;
-        private System.Windows.Forms.TextBox paystatus_txt;
-        private System.Windows.Forms.TextBox difference_txt;
-        private System.Windows.Forms.Button button1;
     }
 }

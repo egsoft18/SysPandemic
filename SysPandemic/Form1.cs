@@ -50,6 +50,37 @@ namespace SysPandemic
             frm.delateprocedure_btn.Hide();
 
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                if (frm2 != null)
+                {
+                    frm.BringToFront();
+                    MessageBox.Show("El formuario ya esta abierto.", "Error");
+                    return;
+                }
+                cnx.Open();
+                string status = "NO PAGADO";
+                string comando = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
+                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    cnx.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error New Procedure");
+
+            }
+            finally
+            {
+                cnx.Close();
+            }
+
+
+
             try {
                 cnx.Open();
             string comando = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
@@ -57,20 +88,23 @@ namespace SysPandemic
             SQLiteDataReader leer = insertion.ExecuteReader();
             if (leer.Read() == true)
             {
-                decimal value = Convert.ToDecimal(leer["idprocedure"].ToString()) + 1;
+                decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
                 string ms = value.ToString();
                 frm.idprocedure_txt.Text = ms;
+                cnx.Close();
             }
                 }
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error TXT");
             }
             finally
             {
                 cnx.Close();
             }
+
+            
 
             frm.Show();
         }

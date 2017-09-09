@@ -16,6 +16,7 @@ namespace SysPandemic
         public addprocedure()
         {
             InitializeComponent();
+           
 
         }
 
@@ -33,9 +34,14 @@ namespace SysPandemic
         private void addprocedure_Load(object sender, EventArgs e)
         {
             //loadsubprocedure();
-            sums();
+            //sums();
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
+            SQLiteConnection cnx1 = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            cnx1.Open();
+            cnx1.Close();
+
+
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
@@ -49,6 +55,13 @@ namespace SysPandemic
                 DataTable tabla2 = new DataTable("doctors");
                 adac2.Fill(tabla2);
                 dataGridView2.DataSource = tabla2;
+
+                SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
+                DataTable tabla3 = new DataTable("Subprocesos");
+                adac3.Fill(tabla3);
+                dataGridView3.DataSource = tabla3;
+
+                cnx.Close();
             }
             catch (Exception ex)
             {
@@ -217,7 +230,7 @@ namespace SysPandemic
                     pricepay_txt.Clear();
                     iscoverage_txt.Text = "";
 
-
+                    cnx.Close();
                 }
             }
             catch (Exception ex)
@@ -237,28 +250,7 @@ namespace SysPandemic
 
         private void calcule_btn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (string.IsNullOrEmpty(iscoverage_txt.Text))
-                {
-                    double realpay = Convert.ToDouble(realpay_txt.Text);
-                    pricepay_txt.Text = Convert.ToString(realpay);
-                    iscoverage_txt.Text = "0";
-                }
-                else
-                {
-                    double realpay = Convert.ToDouble(realpay_txt.Text);
-                    double iscoverage = Convert.ToDouble(iscoverage_txt.Text);
-                    double pricepay;
-                    pricepay = realpay - iscoverage;
-                    pricepay_txt.Text = Convert.ToString(pricepay);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ha insertado un o varios valores invalidos: favor revise!", "Error");
-
-            }
+            sums();
         }
 
         private void clear_btn_Click(object sender, EventArgs e)
@@ -288,6 +280,7 @@ namespace SysPandemic
                     {
                         MessageBox.Show("Se ha actualizado!");
                         Close();
+                        cnx.Close();
                     }
                     else
                     {
@@ -327,6 +320,7 @@ namespace SysPandemic
                     {
                         MessageBox.Show("Se ha eliminado!");
                         Close();
+                        cnx.Close();
                     }
                     else
                     {
@@ -395,20 +389,9 @@ namespace SysPandemic
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                //DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
-                //subprocedure_txt.Text = act.Cells["Descripcion"].Value.ToString();
-                //tariff_txt.Text = act.Cells["Tarifa"].Value.ToString();
-                //coverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
-                //difference_txt.Text= act.Cells["Diferencia"].Value.ToString();
-                //codeinsurance_txt.Text = act.Cells["Codigo"].Value.ToString();
-                //insurance.Text = act.Cells["Seguro"].Value.ToString();
-                //paystatus_txt.Text = "No Pagado";
-
                 try
                 {
+                    cnx.Open();
                     DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
                     string description = act.Cells["Descripcion"].Value.ToString();
                     string tariff = act.Cells["Tarifa"].Value.ToString();
@@ -423,24 +406,26 @@ namespace SysPandemic
                     if (insertion.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Done");
-                        loadsubprocedure();
-                        sums();
                     }
-
+                    cnx.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error");
+                    MessageBox.Show(ex.Message, "Error Insert");
                 }
                 finally
                 {
                     cnx.Close();
+                    //sums();
+                    try
+                    {
+                        loadsubprocedure();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No mando a cargar.");
+                    }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Algo va mal.");
-            }
         }
         public void loadsubprocedure()
         {
@@ -456,7 +441,7 @@ namespace SysPandemic
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error Load");
             }
             finally
             {
@@ -465,10 +450,10 @@ namespace SysPandemic
         }
         public void sums()
         {
-            int result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Tarifa"].Value));
+            Decimal result = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDecimal(x.Cells["Tarifa"].Value));
             realpay_txt.Text = Convert.ToString(result);
 
-            int result2 = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Cobertura"].Value));
+            Decimal result2 = dataGridView3.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToDecimal(x.Cells["Cobertura"].Value));
             iscoverage_txt.Text = Convert.ToString(result2);
 
             decimal result3 = Convert.ToDecimal(realpay_txt.Text) - Convert.ToDecimal(iscoverage_txt.Text);
@@ -513,29 +498,31 @@ namespace SysPandemic
         }
         private void deleteclose()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-                    {
-                        cnx.Open();
-                        if (idprocedure_txt.Text.Length > 0)
-                        {
-                            string comando = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-                            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                            if (insertion.ExecuteNonQuery() > 0)
-                            {
-                                cnx.Close();
-                                sums();
-                            }
-                        }
-                        Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Delete catch");
-                    }
-            finally{
-                cnx.Close();
-            }
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //        {
+            //            cnx.Open();
+            //            if (idprocedure_txt.Text.Length > 0)
+            //            {
+            //                string comando = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //                if (insertion.ExecuteNonQuery() > 0)
+            //                {
+            //                    cnx.Close();
+
+            //                    MessageBox.Show("Cerrado");
+            //                }
+            //            }  
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show(ex.Message, "Delete catch");
+            //        }
+            //finally
+            //{
+            //    cnx.Close();
+            //}
+            Close();
                 }
         private void addprocedure_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -544,28 +531,7 @@ namespace SysPandemic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + codeinsurance_txt.Text + "','" + subprocedure_txt.Text + "','" + tariff_txt.Text + "', '" + coverage_txt.Text + "', '" + difference_txt.Text + "', '" + paystatus_txt.Text + "', '" + insurance.Text + "')";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                if (insertion.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Done");
-                    //loadsubprocedure();
-                    //sums();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                cnx.Close();
-            }
+            
         }
 
         private void dataGridView3_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -631,6 +597,16 @@ namespace SysPandemic
             {
                 MessageBox.Show("Error", "Error Catch");
             }
+        }
+
+        private void procedure_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void procedure_txt_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
