@@ -282,7 +282,7 @@ namespace SysPandemic
                     {
                         MessageBox.Show("Se ha Borrado correctamente", "Hecho");
                         frm.Close();
-
+                       
                     }
                 }
                 catch (Exception ex)
@@ -293,6 +293,21 @@ namespace SysPandemic
             }
             else if (result == DialogResult.No)
             {
+            }
+        }
+        public void search_staff_doctor(DataGridView dgv, string condition, string value)
+        {
+            try
+            {
+                searchpatient frm = new searchpatient();
+                SqlDataAdapter adac = new SqlDataAdapter("Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula, addressstaff as Direccion, telstaff as Telefono, celstaff as Celular, salarystaff as Salario from staff where " + condition + " like '%" + value + "%'", cnx);
+                DataTable tabla = new DataTable("Pacientes");
+                adac.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
             }
         }
     }
