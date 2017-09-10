@@ -110,7 +110,7 @@ namespace SysPandemic
                 if (result == DialogResult.Yes)
                 {
                     AddPatient frm = new AddPatient();
-                    string comando = "UPDATE patient set name = '" + namepatient + "', sex = '" + bdaypatient + "', bday = '" + bdaypatient + "', idperson = '" + idperson + "', address = '" + addresspatient + "', tel = '" + telpatient + "', cel = '" + celpatient + "', telwork = '" + tworkpatient + "', insurance = '" + insurancepatient + "', affiliate = '" + affiliatepatient + "' WHERE idpatient = '" + idpatient + "'";
+                    string comando = "UPDATE patient set name = '" + namepatient + "', sex = '" + sexpatient + "', bday = '" + bdaypatient + "', idperson = '" + idperson + "', address = '" + addresspatient + "', tel = '" + telpatient + "', cel = '" + celpatient + "', telwork = '" + tworkpatient + "', insurance = '" + insurancepatient + "', affiliate = '" + affiliatepatient + "' WHERE idpatient = '" + idpatient + "'";
                     SqlCommand insertion = new SqlCommand(comando, cnx);
 
                     if (insertion.ExecuteNonQuery() > 0)
@@ -218,7 +218,7 @@ namespace SysPandemic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo agregar la infromacion del paciente: " + ex.Message);
+                MessageBox.Show("No se pudo agregar la infromacion del Doctor: " + ex.Message);
             }
         }
         public void doctor_administrator(DataGridView dgv)
@@ -234,6 +234,65 @@ namespace SysPandemic
             catch (Exception ex)
             {
                 MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
+            }
+        }
+        public void update_doctor(string iddoctor, string namedoctor, string sexdoctor, string idperson, string addressdoctor, string teldoctor, string celdoctor, string role, string salary)
+        {
+            try
+            {
+                AddPatient frm = new AddPatient();
+                string comando = "UPDATE staff set namestaff = '" + namedoctor + "', sexstaff = '" + sexdoctor + "', idpersonstaff = '" + idperson + "', addressstaff = '" + addressdoctor + "', telstaff = '" + teldoctor + "', celstaff = '" + celdoctor + "', rolestaff = '" + role + "', salarystaff = '" + salary + "' WHERE idstaff = '" + iddoctor + "'";
+                SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Se actualizo correctamente", "Hecho");
+                    adddoctor f = new adddoctor();
+                    f.Close();
+
+                    //f.Close();
+                    //f.namedoctor_txt.Text = "";
+                    //f.sexdoctor_cb.Text = "";
+                    //f.idperson_txt.Text = "";
+                    //f.addressdoctor_txt.Text = "";
+                    //f.teldoctor_txt.Text = "";
+                    //f.celdoctor_txt.Text = "";
+                    //f.salary_txt.Text = "";
+                    //condition = "yes";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se logro actualizar el Doctor. Causa: " + ex.Message);
+            }
+        }
+        public void delete_staff(string idstaff)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea eliminar este registro?", "Eliminar registro", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    AddPatient frm = new AddPatient();
+                    string comando = "DELETE FROM staff WHERE idstaff = '" + idstaff + "'";
+                    SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Se ha Borrado correctamente", "Hecho");
+                        frm.Close();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+
+            }
+            else if (result == DialogResult.No)
+            {
             }
         }
     }
