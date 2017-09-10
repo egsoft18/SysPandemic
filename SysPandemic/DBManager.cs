@@ -221,5 +221,20 @@ namespace SysPandemic
                 MessageBox.Show("No se pudo agregar la infromacion del paciente: " + ex.Message);
             }
         }
+        public void doctor_administrator(DataGridView dgv)
+        {
+            try
+            {
+                searchpatient frm = new searchpatient();
+                SqlDataAdapter adac = new SqlDataAdapter("Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula, addressstaff as Direccion, telstaff as Telefono, celstaff as Celular, salarystaff as Salario from staff where rolestaff = 'Doctor'", cnx);
+                DataTable tabla = new DataTable("Doctors");
+                adac.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
+            }
+        }
     }
 }
