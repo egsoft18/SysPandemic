@@ -49,11 +49,15 @@
             this.savedoctor_btn = new System.Windows.Forms.Button();
             this.clear_btn = new System.Windows.Forms.Button();
             this.Cancel_btn = new System.Windows.Forms.Button();
+            this.salary_txt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.salary_txt);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.iddoctor_txt);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.idperson_txt);
@@ -253,6 +257,23 @@
             this.Cancel_btn.UseVisualStyleBackColor = true;
             this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
+            // salary_txt
+            // 
+            this.salary_txt.Location = new System.Drawing.Point(390, 72);
+            this.salary_txt.Name = "salary_txt";
+            this.salary_txt.Size = new System.Drawing.Size(122, 20);
+            this.salary_txt.TabIndex = 19;
+            this.salary_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(342, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Salario:";
+            // 
             // adddoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +321,8 @@
         public System.Windows.Forms.Button savedoctor_btn;
         public System.Windows.Forms.Button clear_btn;
         public System.Windows.Forms.Button Cancel_btn;
+        public System.Windows.Forms.TextBox salary_txt;
+        private System.Windows.Forms.Label label3;
 
     }
 }

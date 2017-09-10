@@ -89,31 +89,56 @@ namespace SysPandemic
 
         private void savedoctor_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
+
+            string namedoctor = namedoctor_txt.Text;
+            string sexdoctor = sexdoctor_cb.Text;
+            string idperson = idperson_txt.Text;
+            string addressdoctor = addressdoctor_txt.Text;
+            string teldoctor = teldoctor_txt.Text;
+            string celdoctor = celdoctor_txt.Text;
+            string salary = salary_txt.Text;
+            string role = "Doctor";
+            string condition= "";
+
+            DBManager c = new DBManager();
+            c.add_staff(namedoctor, sexdoctor, idperson, addressdoctor, teldoctor, celdoctor, role, salary, condition);
+
+            if (condition == "yes")
             {
-                cnx.Open();
-                string comando = "INSERT INTO doctors(name, sex, idperson, address, tel, cel) VALUES('" + namedoctor_txt.Text + "', '" + sexdoctor_cb.Text + "','" + idperson_txt.Text + "', '" + addressdoctor_txt.Text + "', '" + teldoctor_txt.Text + "', '" + celdoctor_txt.Text + "');";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-                if (insertion.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Se agrego correctamente");
-                    namedoctor_txt.Clear();
-                    sexdoctor_cb.Text = "";
-                    idperson_txt.Clear();
-                    addressdoctor_txt.Clear();
-                    teldoctor_txt.Clear();
-                    celdoctor_txt.Clear();
-                    namedoctor_txt.Focus();
-
-                }
+                namedoctor_txt.Text = "";
+                sexdoctor_cb.Text = "";
+                idperson_txt.Text = "";
+                addressdoctor_txt.Text = "";
+                teldoctor_txt.Text = "";
+                celdoctor_txt.Text = "";
+                salary_txt.Text = "";
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
 
-            }
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    string comando = "INSERT INTO doctors(name, sex, idperson, address, tel, cel) VALUES('" + namedoctor_txt.Text + "', '" + sexdoctor_cb.Text + "','" + idperson_txt.Text + "', '" + addressdoctor_txt.Text + "', '" + teldoctor_txt.Text + "', '" + celdoctor_txt.Text + "');";
+            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+            //    if (insertion.ExecuteNonQuery() > 0)
+            //    {
+            //        MessageBox.Show("Se agrego correctamente");
+            //        namedoctor_txt.Clear();
+            //        sexdoctor_cb.Text = "";
+            //        idperson_txt.Clear();
+            //        addressdoctor_txt.Clear();
+            //        teldoctor_txt.Clear();
+            //        celdoctor_txt.Clear();
+            //        namedoctor_txt.Focus();
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
         }
 
         private void clear_btn_Click(object sender, EventArgs e)
@@ -130,6 +155,23 @@ namespace SysPandemic
         private void adddoctor_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

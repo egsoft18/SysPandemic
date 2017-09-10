@@ -193,5 +193,33 @@ namespace SysPandemic
                 MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
             }
         }
+        public void add_staff(string namedoctor, string sexdoctor, string idperson, string addressdoctor, string teldoctor, string celdoctor, string role, string salary, string condition)
+        {
+            try
+            {
+                AddPatient frm = new AddPatient();
+                string comando = "INSERT INTO staff(namestaff, sexstaff, idpersonstaff, addressstaff, telstaff, celstaff, rolestaff, salarystaff) VALUES('" + namedoctor + "','" + sexdoctor + "','" + idperson + "','" + addressdoctor + "','" + teldoctor + "','" + celdoctor + "','" + role + "','" + salary + "')";
+                SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Se agrego correctamente", "Hecho");
+                    adddoctor f = new adddoctor();
+                    f.Close();
+                    //f.namedoctor_txt.Text = "";
+                    //f.sexdoctor_cb.Text = "";
+                    //f.idperson_txt.Text = "";
+                    //f.addressdoctor_txt.Text = "";
+                    //f.teldoctor_txt.Text = "";
+                    //f.celdoctor_txt.Text = "";
+                    //f.salary_txt.Text = "";
+                    //condition = "yes";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo agregar la infromacion del paciente: " + ex.Message);
+            }
+        }
     }
 }

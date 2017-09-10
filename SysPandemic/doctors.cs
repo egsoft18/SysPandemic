@@ -57,7 +57,7 @@ namespace SysPandemic
             adddoctor frm = new adddoctor();
             frm.updatedoctor_btn.Hide();
             frm.delatedoctor_btn.Hide();
-
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
