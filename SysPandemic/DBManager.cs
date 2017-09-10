@@ -300,7 +300,7 @@ namespace SysPandemic
             try
             {
                 searchpatient frm = new searchpatient();
-                SqlDataAdapter adac = new SqlDataAdapter("Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula, addressstaff as Direccion, telstaff as Telefono, celstaff as Celular, salarystaff as Salario from staff where " + condition + " like '%" + value + "%'", cnx);
+                SqlDataAdapter adac = new SqlDataAdapter("Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula, addressstaff as Direccion, telstaff as Telefono, celstaff as Celular, salarystaff as Salario from staff where " + condition + " like '%" + value + "%' and rolestaff = 'Doctor'", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
                 dgv.DataSource = tabla;
