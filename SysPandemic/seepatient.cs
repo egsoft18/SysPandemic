@@ -22,19 +22,22 @@ namespace SysPandemic
         private void seepatient_Load(object sender, EventArgs e)
         {
             sname_rbtn.PerformClick();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                DataTable tabla = new DataTable("Pacientes");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            DBManager c = new DBManager();
+            c.patient_administrator(dataGridView1);
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+            //    DataTable tabla = new DataTable("Pacientes");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -71,19 +74,25 @@ namespace SysPandemic
 
         private void refreshpatient_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                DataTable tabla = new DataTable("Pacientes");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+
+            sname_rbtn.PerformClick();
+            DBManager c = new DBManager();
+            c.patient_administrator(dataGridView1);
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+            //    DataTable tabla = new DataTable("Pacientes");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void addpatient_btn_Click(object sender, EventArgs e)
@@ -227,52 +236,86 @@ namespace SysPandemic
         }
         private void buscar()
         {
-             SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
+           string txtsearch = search_txt.Text;
+            if (search_txt.Text.Length == 0)
             {
-                cnx.Open();
-                if (search_txt.Text.Length == 0)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sid_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sname_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else if (sidperson_rbtn.Checked)
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-                else
-                {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
-                }
-
+                DBManager c = new DBManager();
+                c.patient_administrator(dataGridView1);
             }
-            catch (Exception ex)
+            else if (sid_rbtn.Checked)
             {
-                MessageBox.Show(ex.Message, "Error");
-
+                string condition = "idpatient";
+                DBManager c = new DBManager();
+                c.search_patient(dataGridView1,condition, txtsearch);
             }
+            else if (sname_rbtn.Checked)
+            {
+                string condition = "name";
+                DBManager c = new DBManager();
+                c.search_patient(dataGridView1, condition, txtsearch);
+            }
+            else if (sidperson_rbtn.Checked)
+            {
+                string condition = "idperson";
+                DBManager c = new DBManager();
+                c.search_patient(dataGridView1, condition, txtsearch);
+            }
+            else
+            {
+                DBManager c = new DBManager();
+                c.patient_administrator(dataGridView1);
+            }
+
+
+
+
+
+            // SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    if (search_txt.Text.Length == 0)
+            //    {
+            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+            //        DataTable tabla = new DataTable("Pacientes");
+            //        adac.Fill(tabla);
+            //        dataGridView1.DataSource = tabla;
+            //    }
+            //    else if (sid_rbtn.Checked)
+            //    {
+            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'", cnx);
+            //        DataTable tabla = new DataTable("Pacientes");
+            //        adac.Fill(tabla);
+            //        dataGridView1.DataSource = tabla;
+            //    }
+            //    else if (sname_rbtn.Checked)
+            //    {
+            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'", cnx);
+            //        DataTable tabla = new DataTable("Pacientes");
+            //        adac.Fill(tabla);
+            //        dataGridView1.DataSource = tabla;
+            //    }
+            //    else if (sidperson_rbtn.Checked)
+            //    {
+            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'", cnx);
+            //        DataTable tabla = new DataTable("Pacientes");
+            //        adac.Fill(tabla);
+            //        dataGridView1.DataSource = tabla;
+            //    }
+            //    else
+            //    {
+            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+            //        DataTable tabla = new DataTable("Pacientes");
+            //        adac.Fill(tabla);
+            //        dataGridView1.DataSource = tabla;
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
         }
 
         private void search_txt_KeyDown(object sender, KeyEventArgs e)

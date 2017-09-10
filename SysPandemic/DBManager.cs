@@ -69,6 +69,7 @@ namespace SysPandemic
                 }
                 else
                 {
+                    MessageBox.Show("Bienvenido a SysPandemic " + user);
                     Homeform frm = new Homeform();
                     login lfrm = new login();
                     lfrm.Hide();
@@ -82,7 +83,7 @@ namespace SysPandemic
             }
         }
 
-        public void addpatient(String namepatient, String bdaypatient, String sexpatient, String idperson, String addresspatient, String telpatient, String celpatient, String tworkpatient, String insurancepatient, String affiliatepatient)
+        public void add_patient(String namepatient, String bdaypatient, String sexpatient, String idperson, String addresspatient, String telpatient, String celpatient, String tworkpatient, String insurancepatient, String affiliatepatient)
         {
             try { 
             AddPatient frm = new AddPatient();
@@ -91,15 +92,106 @@ namespace SysPandemic
 
             if (insertion.ExecuteNonQuery() > 0)
             {
-                MessageBox.Show("Se agrego correctamente");
+                MessageBox.Show("Se agrego correctamente", "Hecho");
                
             }
                 }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo insertar la infromacion del paciente: " + ex.Message);
+                MessageBox.Show("No se pudo agregar la infromacion del paciente: " + ex.Message);
             }
         }
 
+        public void update_patient(String idpatient, String namepatient, String bdaypatient, String sexpatient, String idperson, String addresspatient, String telpatient, String celpatient, String tworkpatient, String insurancepatient, String affiliatepatient)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    AddPatient frm = new AddPatient();
+                    string comando = "UPDATE patient set name = '" + namepatient + "', sex = '" + bdaypatient + "', bday = '" + bdaypatient + "', idperson = '" + idperson + "', address = '" + addresspatient + "', tel = '" + telpatient + "', cel = '" + celpatient + "', telwork = '" + tworkpatient + "', insurance = '" + insurancepatient + "', affiliate = '" + affiliatepatient + "' WHERE idpatient = '" + idpatient + "'";
+                    SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Se ha actualizado correctamente", "Hecho");
+                        frm.Close();
+
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se llego a actualizar. Causa: "+ex.Message);
+
+            }
+        }
+        public void delete_patient(string idpatient)
+        {
+            DialogResult result = MessageBox.Show("Seguro que desea eliminar este Paciente?", "Eliminar paciente", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    AddPatient frm = new AddPatient();
+                    string comando = "DELETE FROM patient WHERE idpatient = '" + idpatient + "'";
+                    SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                    if (insertion.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Se ha Borrado correctamente", "Hecho");
+                        frm.Close();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+
+            }
+            else if (result == DialogResult.No)
+            {
+            }
+        }
+
+        public void patient_administrator(DataGridView dgv)
+        {
+            
+            try
+            {
+                searchpatient frm = new searchpatient(); 
+                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+                DataTable tabla = new DataTable("Pacientes");
+                adac.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se logro cargar el visor. Causa: "+ex.Message);
+            }
+        }
+        public void search_patient(DataGridView dgv, string condition, string value)
+        {
+            try
+            {
+                searchpatient frm = new searchpatient();
+                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where "+condition+" like '%"+value+"%'", cnx);
+                DataTable tabla = new DataTable("Pacientes");
+                adac.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
+            }
+        }
     }
 }

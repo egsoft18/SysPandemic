@@ -101,7 +101,7 @@ namespace SysPandemic
             string insurancepatient = insurancepatient_txt.Text;
             string affiliatepatient = affiliatepatient_txt.Text;
 
-            c.addpatient(namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
+            c.add_patient(namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
             
             namepatient_txt.Clear();
             sexpatient_cb.Text = "";
@@ -146,36 +146,51 @@ namespace SysPandemic
 
         private void updatepatient_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    string comando = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE id = '" + idpatient_txt.Text + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Se ha actualizado!");
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Algo fallo!!!");
-                    }
-                }
-                else if (result == DialogResult.No)
-                {
+            string idpatient = idpatient_txt.Text;
+            string namepatient = namepatient_txt.Text;
+            string bdaypatient = bdaypatient_dtp.Text;
+            string sexpatient = sexpatient_cb.Text;
+            string idperson = idperson_txt.Text;
+            string addresspatient = addresspatient_txt.Text;
+            string telpatient = telpatient_txt.Text;
+            string celpatient = celpatient_txt.Text;
+            string tworkpatient = tworkpatient_txt.Text;
+            string insurancepatient = insurancepatient_txt.Text;
+            string affiliatepatient = affiliatepatient_txt.Text;
 
-                }
+            DBManager c = new DBManager();
+            c.update_patient(idpatient, namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        string comando = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE id = '" + idpatient_txt.Text + "'";
+            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //        if (insertion.ExecuteNonQuery() > 0)
+            //        {
+            //            MessageBox.Show("Se ha actualizado!");
+            //            Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Algo fallo!!!");
+            //        }
+            //    }
+            //    else if (result == DialogResult.No)
+            //    {
+
+            //    }
               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
 
-            }
+            //}
         }
 
         private void clearform_btn_Click(object sender, EventArgs e)
@@ -194,35 +209,41 @@ namespace SysPandemic
 
         private void delatepatient_btn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seguro que desea eliminar este Paciente?", "Eliminar paciente", MessageBoxButtons.YesNo);
+            string idpatient = idpatient_txt.Text;
 
-            if (result == DialogResult.Yes)
-            {
-                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-                try
-                {
-                    cnx.Open();
-                    string comando = "DELETE FROM patient WHERE id = '" + idpatient_txt.Text + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Se ha eliminado!");
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Algo fue mal");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
+            DBManager c = new DBManager();
+            c.delete_patient(idpatient);
+
+
+            //DialogResult result = MessageBox.Show("Seguro que desea eliminar este Paciente?", "Eliminar paciente", MessageBoxButtons.YesNo);
+
+            //if (result == DialogResult.Yes)
+            //{
+            //    SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //    try
+            //    {
+            //        cnx.Open();
+            //        string comando = "DELETE FROM patient WHERE id = '" + idpatient_txt.Text + "'";
+            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //        if (insertion.ExecuteNonQuery() > 0)
+            //        {
+            //            MessageBox.Show("Se ha eliminado!");
+            //            Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Algo fue mal");
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Error");
+            //    }
                 
-            }
-            else if (result == DialogResult.No)
-            {
-            }
+            //}
+            //else if (result == DialogResult.No)
+            //{
+            //}
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)

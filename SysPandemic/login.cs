@@ -25,6 +25,11 @@ namespace SysPandemic
             string user = Convert.ToString(usercb1.Text);
             string pass = Convert.ToString(passtxt.Text);
             c.startseccion(user,pass);
+            //Homeform frm = new Homeform();
+            //this.Hide();
+            //frm.ShowDialog();
+            //this.Show();
+            //passtxt.Clear();
 
         }
         private void loginbtn_Click(object sender, EventArgs e)
@@ -57,6 +62,11 @@ namespace SysPandemic
                 startseccion();
                 
             }
+        }
+
+        private void usercb1_TextChanged(object sender, EventArgs e)
+        {
+            //passtxt.Text = "";
         }
     }
 }

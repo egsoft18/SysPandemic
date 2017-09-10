@@ -129,6 +129,7 @@
             this.usercb1.Name = "usercb1";
             this.usercb1.Size = new System.Drawing.Size(245, 21);
             this.usercb1.TabIndex = 3;
+            this.usercb1.TextChanged += new System.EventHandler(this.usercb1_TextChanged);
             // 
             // label2
             // 

@@ -163,7 +163,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RadioButton sid_rbtn;
         private System.Windows.Forms.RadioButton sname_rbtn;
         private System.Windows.Forms.RadioButton sidperson_rbtn;
@@ -172,5 +171,6 @@
         private System.Windows.Forms.Button addpatient_btn;
         private System.Windows.Forms.Button refreshpatient_btn;
         private System.Windows.Forms.Button printpatientlist_btn;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
