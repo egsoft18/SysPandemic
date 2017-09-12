@@ -310,5 +310,47 @@ namespace SysPandemic
                 MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
             }
         }
+        public void insert(string query)
+        {
+            try
+            {
+                //string comando = "INSERT INTO staff(namestaff, sexstaff, idpersonstaff, addressstaff, telstaff, celstaff, rolestaff, salarystaff) VALUES('" + namedoctor + "','" + sexdoctor + "','" + idperson + "','" + addressdoctor + "','" + teldoctor + "','" + celdoctor + "','" + role + "','" + salary + "')";
+                SqlCommand insertion = new SqlCommand(query, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Se agrego correctamente", "Hecho");
+                    
+
+                    //f.namedoctor_txt.Text = "";
+                    //f.sexdoctor_cb.Text = "";
+                    //f.idperson_txt.Text = "";
+                    //f.addressdoctor_txt.Text = "";
+                    //f.teldoctor_txt.Text = "";
+                    //f.celdoctor_txt.Text = "";
+                    //f.salary_txt.Text = "";
+                    //condition = "yes";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo agregar la infromacion. La causa: " + ex.Message);
+            }
+        }
+        public void load_dgv(DataGridView dgv, string query)
+        {
+            try
+            {
+                searchpatient frm = new searchpatient();
+                SqlDataAdapter adac = new SqlDataAdapter(query, cnx);
+                DataTable tabla = new DataTable("table");
+                adac.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
+            }
+        }
     }
 }
