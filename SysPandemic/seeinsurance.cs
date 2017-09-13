@@ -24,19 +24,25 @@ namespace SysPandemic
         }
         private void DGVload()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances", cnx);
-                DataTable tabla = new DataTable("Seguros");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            string query = "Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances";
+            DBManager c = new DBManager();
+            c.load_dgv(dataGridView1,query);
+
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances", cnx);
+            //    DataTable tabla = new DataTable("Seguros");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void refresh_Click(object sender, EventArgs e)
@@ -51,19 +57,24 @@ namespace SysPandemic
         }
         private void buscar()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances where nameinsurance like '%" + search_txt.Text + "%'", cnx);
-                DataTable tabla = new DataTable("Seguros");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            string query = "Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances where nameinsurance like '%" + search_txt.Text + "%'";
+            DBManager c = new DBManager();
+            c.load_dgv(dataGridView1, query);
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances where nameinsurance like '%" + search_txt.Text + "%'", cnx);
+            //    DataTable tabla = new DataTable("Seguros");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void searchinsurance_btn_Click(object sender, EventArgs e)
