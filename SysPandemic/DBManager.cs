@@ -310,7 +310,7 @@ namespace SysPandemic
                 MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
             }
         }
-        public void insert(string query)
+        public void command(string query)
         {
             try
             {

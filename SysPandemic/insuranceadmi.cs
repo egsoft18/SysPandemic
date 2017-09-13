@@ -24,82 +24,135 @@ namespace SysPandemic
         }
         private void loadDGV()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, Code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia from detailsinsurance where  idinsurance = '" + pidinsurance_txt.Text + "'", cnx);
-                DataTable tabla = new DataTable("Detallesdeseguro");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            string query = "Select id as ID, Code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia from detailsinsurance where  idinsurance = '" + pidinsurance_txt.Text + "'";
+            DBManager c = new DBManager();
+            c.load_dgv(dataGridView1, query);
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, Code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia from detailsinsurance where  idinsurance = '" + pidinsurance_txt.Text + "'", cnx);
+            //    DataTable tabla = new DataTable("Detallesdeseguro");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void adddetail_Click(object sender, EventArgs e)
         {
+
+            string query;
             if (procedure_txt.Text.Length == 0)
             {
                 MessageBox.Show("Debe de introducir la informacion requerida.", "Error");
             }
-            else { 
-                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
+            else
             {
-                if (id_txt.Text == "")
-                {
-                    cnx.Open();
-                    string comando = "INSERT INTO detailsinsurance(Code, pinsurance, tariff, coverage, difference, idinsurance, insurance) VALUES('" + code_txt.Text + "', '" + procedure_txt.Text + "','" + tariff_txt.Text + "', '" + coverage_txt.Text + "', '" + difference_txt.Text + "', '" + pidinsurance_txt.Text + "', '" + pnameinsurance_txt.Text + "');";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-                    if (insertion.ExecuteNonQuery() > 0)
+                    if (id_txt.Text == "")
                     {
-                        MessageBox.Show("Se agrego correctamente");
-                        code_txt.Clear();
-                        procedure_txt.Clear();
-                        tariff_txt.Clear();
-                        coverage_txt.Clear();
-                        difference_txt.Clear();
-                        loadDGV();
-
-                    }
-                }
-                else
-                {
-                    cnx.Open();
-                    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        string comando = "UPDATE detailsinsurance set code = '" + code_txt.Text + "', pinsurance = '" + procedure_txt.Text + "', tariff = '" + tariff_txt.Text + "', coverage = '" + coverage_txt.Text + "', difference = '" + difference_txt.Text + "' WHERE id = '" + id_txt.Text + "'";
-                        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                        if (insertion.ExecuteNonQuery() > 0)
-                        {
-                            MessageBox.Show("Se ha actualizado!");
-                            id_txt.Clear();
+                        query = "INSERT INTO detailsinsurance(Code, pinsurance, tariff, coverage, difference, idinsurance, insurance) VALUES('" + code_txt.Text + "', '" + procedure_txt.Text + "','" + tariff_txt.Text + "', '" + coverage_txt.Text + "', '" + difference_txt.Text + "', '" + pidinsurance_txt.Text + "', '" + pnameinsurance_txt.Text + "')";
+                        DBManager c = new DBManager();
+                        c.command(query);
                             code_txt.Clear();
                             procedure_txt.Clear();
                             tariff_txt.Clear();
                             coverage_txt.Clear();
                             difference_txt.Clear();
                             loadDGV();
-                        }
-                        else
+
+                        
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
                         {
-                            MessageBox.Show("Algo fallo!!!");
+                            query = "UPDATE detailsinsurance set code = '" + code_txt.Text + "', pinsurance = '" + procedure_txt.Text + "', tariff = '" + tariff_txt.Text + "', coverage = '" + coverage_txt.Text + "', difference = '" + difference_txt.Text + "' WHERE id = '" + id_txt.Text + "'";
+                            DBManager c = new DBManager();
+                            c.command(query);
+                                id_txt.Clear();
+                                code_txt.Clear();
+                                procedure_txt.Clear();
+                                tariff_txt.Clear();
+                                coverage_txt.Clear();
+                                difference_txt.Clear();
+                                loadDGV();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Algo fallo!!!");
+                            }
                         }
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+            
 
-            }
 
-            }
+
+
+            //if (procedure_txt.Text.Length == 0)
+            //{
+            //    MessageBox.Show("Debe de introducir la informacion requerida.", "Error");
+            //}
+            //else { 
+            //    SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    if (id_txt.Text == "")
+            //    {
+            //        cnx.Open();
+            //        string comando = "INSERT INTO detailsinsurance(Code, pinsurance, tariff, coverage, difference, idinsurance, insurance) VALUES('" + code_txt.Text + "', '" + procedure_txt.Text + "','" + tariff_txt.Text + "', '" + coverage_txt.Text + "', '" + difference_txt.Text + "', '" + pidinsurance_txt.Text + "', '" + pnameinsurance_txt.Text + "');";
+            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+            //        if (insertion.ExecuteNonQuery() > 0)
+            //        {
+            //            MessageBox.Show("Se agrego correctamente");
+            //            code_txt.Clear();
+            //            procedure_txt.Clear();
+            //            tariff_txt.Clear();
+            //            coverage_txt.Clear();
+            //            difference_txt.Clear();
+            //            loadDGV();
+
+            //        }
+            //    }
+            //    else
+            //    {
+            //        cnx.Open();
+            //        DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos", MessageBoxButtons.YesNo);
+            //        if (result == DialogResult.Yes)
+            //        {
+            //            string comando = "UPDATE detailsinsurance set code = '" + code_txt.Text + "', pinsurance = '" + procedure_txt.Text + "', tariff = '" + tariff_txt.Text + "', coverage = '" + coverage_txt.Text + "', difference = '" + difference_txt.Text + "' WHERE id = '" + id_txt.Text + "'";
+            //            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //            if (insertion.ExecuteNonQuery() > 0)
+            //            {
+            //                MessageBox.Show("Se ha actualizado!");
+            //                id_txt.Clear();
+            //                code_txt.Clear();
+            //                procedure_txt.Clear();
+            //                tariff_txt.Clear();
+            //                coverage_txt.Clear();
+            //                difference_txt.Clear();
+            //                loadDGV();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Algo fallo!!!");
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
+
+            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -128,34 +181,56 @@ namespace SysPandemic
                 {
                     MessageBox.Show("No puede borrar este registro; no ha seleccionado uno de los del visor para esto.", "Error");
                 }
-                else{
-                    try
-                    {
-                        SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-                        cnx.Open();
-                        string comando = "DELETE FROM detailsinsurance WHERE id = '" + id_txt.Text + "'";
-                        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                        if (insertion.ExecuteNonQuery() > 0)
-                        {
-                            MessageBox.Show("Se ha Borrado!");
-                            id_txt.Clear();
-                            code_txt.Clear();
-                            procedure_txt.Clear();
-                            tariff_txt.Clear();
-                            coverage_txt.Clear();
-                            difference_txt.Clear();
-                            loadDGV();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Algo fallo!!!");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Errror");
-                    }
+                else
+                {
+                    string query = "DELETE FROM detailsinsurance WHERE id = '" + id_txt.Text + "'";
+                    DBManager c = new DBManager();
+                    c.command(query);
+                    id_txt.Clear();
+                    code_txt.Clear();
+                    procedure_txt.Clear();
+                    tariff_txt.Clear();
+                    coverage_txt.Clear();
+                    difference_txt.Clear();
+                    loadDGV();
                 }
+
+
+
+            //try
+            //{
+            //    if (id_txt.Text == "")
+            //    {
+            //        MessageBox.Show("No puede borrar este registro; no ha seleccionado uno de los del visor para esto.", "Error");
+            //    }
+            //    else{
+            //        try
+            //        {
+            //            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //            cnx.Open();
+            //            string comando = "DELETE FROM detailsinsurance WHERE id = '" + id_txt.Text + "'";
+            //            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //            if (insertion.ExecuteNonQuery() > 0)
+            //            {
+            //                MessageBox.Show("Se ha Borrado!");
+            //                id_txt.Clear();
+            //                code_txt.Clear();
+            //                procedure_txt.Clear();
+            //                tariff_txt.Clear();
+            //                coverage_txt.Clear();
+            //                difference_txt.Clear();
+            //                loadDGV();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Algo fallo!!!");
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show(ex.Message, "Errror");
+            //        }
+            //    }
             }
             catch(Exception ex)
             {
@@ -165,52 +240,72 @@ namespace SysPandemic
 
         private void updateinsurance_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            cnx.Open();
             DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                string comando = "UPDATE insurances set nameinsurance = '" + pnameinsurance_txt.Text + "', telinsurance = '" + ptelinsurance_txt.Text + "', emailinsurance = '" + pmailinsurance_txt.Text + "', contractinsurance = '" + pcontractinsurance_txt.Text + "', pssinsurance = '" + ppssinsurance_txt.Text + "' WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                if (insertion.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Se ha actualizado!");
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Algo fallo!!!");
-                }
+                string query = "UPDATE insurances set nameinsurance = '" + pnameinsurance_txt.Text + "', telinsurance = '" + ptelinsurance_txt.Text + "', emailinsurance = '" + pmailinsurance_txt.Text + "', contractinsurance = '" + pcontractinsurance_txt.Text + "', pssinsurance = '" + ppssinsurance_txt.Text + "' WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
+                DBManager c = new DBManager();
+                c.command(query);
+                Close();
+            
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //cnx.Open();
+            //DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos", MessageBoxButtons.YesNo);
+            //if (result == DialogResult.Yes)
+            //{
+            //    string comando = "UPDATE insurances set nameinsurance = '" + pnameinsurance_txt.Text + "', telinsurance = '" + ptelinsurance_txt.Text + "', emailinsurance = '" + pmailinsurance_txt.Text + "', contractinsurance = '" + pcontractinsurance_txt.Text + "', pssinsurance = '" + ppssinsurance_txt.Text + "' WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
+            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //    if (insertion.ExecuteNonQuery() > 0)
+            //    {
+            //        MessageBox.Show("Se ha actualizado!");
+            //        Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Algo fallo!!!");
+            //    }
             }
         }
 
         private void deleteinsurance_txt_Click(object sender, EventArgs e)
         {
+
             DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar datos", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                try
-                {
-                    SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-                    cnx.Open();
-                    string comando = "DELETE FROM insurances WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Se ha actualizado!");
-                        Close();
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
+                string query = "DELETE FROM insurances WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
+                DBManager c = new DBManager();
+                c.command(query);
+                Close();
             }
-            else
-            {
+            
+            
+            
+            //DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar datos", MessageBoxButtons.YesNo);
+            //if (result == DialogResult.Yes)
+            //{
+            //    try
+            //    {
+            //        SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //        cnx.Open();
+            //        string comando = "DELETE FROM insurances WHERE idinsurance = '" + pidinsurance_txt.Text + "'";
+            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //        if (insertion.ExecuteNonQuery() > 0)
+            //        {
+            //            MessageBox.Show("Se ha actualizado!");
+            //            Close();
+            //        }
+            //    }
 
-            }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Error");
+            //    }
+            //}
+            //else
+            //{
+
+            //}
         }
 
         private void tariff_txt_KeyPress(object sender, KeyPressEventArgs e)

@@ -22,7 +22,7 @@ namespace SysPandemic
         {
             DGVload();
         }
-        private void DGVload()
+        public void DGVload()
         {
             string query = "Select idinsurance as ID, nameinsurance as Seguro, telinsurance as Telefono, emailinsurance as Correo, contractinsurance as Conrato, pssinsurance as PSS from insurances";
             DBManager c = new DBManager();
