@@ -232,18 +232,10 @@ namespace SysPandemic
         private void Appointment_Load(object sender, EventArgs e)
         {
             rdbfecha.PerformClick();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem " ,cnx);
-                DataTable tabla = new DataTable("Citas");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
+            DBManager c = new DBManager();
+            c.command(query);
+                
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -268,84 +260,63 @@ namespace SysPandemic
         }
         private void buscar()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
                 if (txtbuscar.Text.Length < 0)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
+                    DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (rdbid.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where id like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                   string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where id like '%" + txtbuscar.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
 
 
                 else if (rdbpac.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namepa like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namepa like '%" + txtbuscar.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
 
 
                 else if (rdbidp.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where idpatient like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where idpatient like '%" + txtbuscar.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
 
 
                 else if (rdbid.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
 
                 else if (rdbdoct.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namedoctor like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query =  "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namedoctor like '%" + txtbuscar.Text + "%'";
+                    DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
 
                 else if (rdbfecha.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date like '%" + dtpfecha.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date like '%" + dtpfecha.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (rdbiddoc.Checked == true)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Citas");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
+                     DBManager c = new DBManager();
+                    c.load_dgv(dataGridView1, query);
                 }
-
-            }
-
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        }       
 
         private void txtbuscar_KeyDown(object sender, KeyEventArgs e)
         {
