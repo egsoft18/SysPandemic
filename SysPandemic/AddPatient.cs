@@ -41,21 +41,31 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                string cmd = "Select idinsurance, nameinsurance from insurances";
-                SQLiteDataAdapter dept = new SQLiteDataAdapter(cmd, cnx);
-                DataTable user = new DataTable();
-                dept.Fill(user);
-                insurancepatient_txt.DataSource = user;
-                insurancepatient_txt.DisplayMember = "nameinsurance";
-                insurancepatient_txt.ValueMember = "idinsurance";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
+                string query = "Select idinsurance, nameinsurance from insurances";
+                string item = "nameinsurance";
+                DBManager c = new DBManager();
+                c.fill_CB(insurancepatient_txt, query, item);
+            
+            
+            
+            
+            
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    string cmd = "Select idinsurance, nameinsurance from insurances";
+            //    SQLiteDataAdapter dept = new SQLiteDataAdapter(cmd, cnx);
+            //    DataTable user = new DataTable();
+            //    dept.Fill(user);
+            //    insurancepatient_txt.DataSource = user;
+            //    insurancepatient_txt.DisplayMember = "nameinsurance";
+            //    insurancepatient_txt.ValueMember = "idinsurance";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void printpatient_btn_Click(object sender, EventArgs e)
@@ -90,29 +100,28 @@ namespace SysPandemic
         {
 
             DBManager c = new DBManager();
-            string namepatient = namepatient_txt.Text;
-            string bdaypatient = bdaypatient_dtp.Text;
-            string sexpatient = sexpatient_cb.Text;
-            string idperson = idperson_txt.Text;
-            string addresspatient = addresspatient_txt.Text;
-            string telpatient = telpatient_txt.Text;
-            string celpatient = celpatient_txt.Text;
-            string tworkpatient = tworkpatient_txt.Text;
-            string insurancepatient = insurancepatient_txt.Text;
-            string affiliatepatient = affiliatepatient_txt.Text;
+            string query = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient_txt.Text + "', '" + bdaypatient_dtp.Text + "','" + sexpatient_cb.Text + "','" + idperson_txt.Text + "', '" + addresspatient_txt.Text + "', '" + telpatient_txt.Text + "', '" + celpatient_txt.Text + "', '" + tworkpatient_txt.Text + "', '" + insurancepatient_txt.Text + "', '" + affiliatepatient_txt.Text + "');";
+            c.command(query);
 
-            c.add_patient(namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
+            if (c.valor == "si")
+            {
+                namepatient_txt.Clear();
+                sexpatient_cb.Text = "";
+                idperson_txt.Clear();
+                addresspatient_txt.Clear();
+                telpatient_txt.Clear();
+                celpatient_txt.Clear();
+                tworkpatient_txt.Clear();
+                insurancepatient_txt.Text = "";
+                affiliatepatient_txt.Clear();
+                namepatient_txt.Focus();
+                c.valor = "";
+            }
+            else
+            {
+
+            }
             
-            namepatient_txt.Clear();
-            sexpatient_cb.Text = "";
-            idperson_txt.Clear();
-            addresspatient_txt.Clear();
-            telpatient_txt.Clear();
-            celpatient_txt.Clear();
-            tworkpatient_txt.Clear();
-            insurancepatient_txt.Text = "";
-            affiliatepatient_txt.Clear();
-            namepatient_txt.Focus();
             
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
@@ -146,21 +155,15 @@ namespace SysPandemic
 
         private void updatepatient_btn_Click(object sender, EventArgs e)
         {
-            string idpatient = idpatient_txt.Text;
-            string namepatient = namepatient_txt.Text;
-            string bdaypatient = bdaypatient_dtp.Text;
-            string sexpatient = sexpatient_cb.Text;
-            string idperson = idperson_txt.Text;
-            string addresspatient = addresspatient_txt.Text;
-            string telpatient = telpatient_txt.Text;
-            string celpatient = celpatient_txt.Text;
-            string tworkpatient = tworkpatient_txt.Text;
-            string insurancepatient = insurancepatient_txt.Text;
-            string affiliatepatient = affiliatepatient_txt.Text;
 
             DBManager c = new DBManager();
-            c.update_patient(idpatient, namepatient, bdaypatient, sexpatient, idperson, addresspatient, telpatient, celpatient, tworkpatient, insurancepatient, affiliatepatient);
+            string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE id = '" + idpatient_txt.Text + "'";
+            c.command(query);
 
+            if (c.valor == "si")
+            {
+                Close();
+            }
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
             //{
@@ -209,10 +212,14 @@ namespace SysPandemic
 
         private void delatepatient_btn_Click(object sender, EventArgs e)
         {
-            string idpatient = idpatient_txt.Text;
+         
 
             DBManager c = new DBManager();
-            c.delete_patient(idpatient);
+             string query = "DELETE FROM patient WHERE id = '" + idpatient_txt.Text + "'";
+             c.command(query);
+            if (c.valor == "si"){
+                this.Close();
+            }
 
 
             //DialogResult result = MessageBox.Show("Seguro que desea eliminar este Paciente?", "Eliminar paciente", MessageBoxButtons.YesNo);

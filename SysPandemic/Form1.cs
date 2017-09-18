@@ -49,7 +49,6 @@ namespace SysPandemic
             frm.updateprocedure_btn.Hide();
             frm.delateprocedure_btn.Hide();
 
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             try
             {
                 Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
@@ -59,14 +58,12 @@ namespace SysPandemic
                     MessageBox.Show("El formuario ya esta abierto.", "Error");
                     return;
                 }
-                cnx.Open();
-                string status = "NO PAGADO";
-                string comando = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-                if (insertion.ExecuteNonQuery() > 0)
+                else
                 {
-                    cnx.Close();
+                    string status = "NO PAGADO";
+                    string query = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
+                    DBManager c = new DBManager();
+                    c.command(query);
                 }
             }
             catch (Exception ex)
@@ -76,24 +73,20 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
+                
             }
 
 
 
-            try {
-                cnx.Open();
-            string comando = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
-            SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            SQLiteDataReader leer = insertion.ExecuteReader();
-            if (leer.Read() == true)
+            try
             {
-                decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
-                string ms = value.ToString();
-                frm.idprocedure_txt.Text = ms;
-                cnx.Close();
+               
+                string query = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
+          
+                DBManager c = new DBManager();
+                c.last_id(frm.idprocedure_txt, query);
+                
             }
-                }
 
             catch (Exception ex)
             {
@@ -101,12 +94,81 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
+                
             }
+
+
+
+            frm.Show();
+
+
+
+
+
+
+
+
+
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+            //    if (frm2 != null)
+            //    {
+            //        frm.BringToFront();
+            //        MessageBox.Show("El formuario ya esta abierto.", "Error");
+            //        return;
+            //    }
+            //    cnx.Open();
+            //    string status = "NO PAGADO";
+            //    string comando = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
+            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+
+            //    if (insertion.ExecuteNonQuery() > 0)
+            //    {
+            //        cnx.Close();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error New Procedure");
+
+            //}
+            //finally
+            //{
+            //    cnx.Close();
+            //}
+
+
+
+            //try {
+            //    cnx.Open();
+            //string comando = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
+            //SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //SQLiteDataReader leer = insertion.ExecuteReader();
+            //if (leer.Read() == true)
+            //{
+            //    decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
+            //    string ms = value.ToString();
+            //    frm.idprocedure_txt.Text = ms;
+            //    cnx.Close();
+            //}
+            //    }
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error TXT");
+            //}
+            //finally
+            //{
+            //    cnx.Close();
+            //}
 
             
 
-            frm.Show();
+            //frm.Show();
         }
 
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)

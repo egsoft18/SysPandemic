@@ -219,6 +219,7 @@
             this.bdaypatient_dtp.Name = "bdaypatient_dtp";
             this.bdaypatient_dtp.Size = new System.Drawing.Size(100, 20);
             this.bdaypatient_dtp.TabIndex = 3;
+            this.bdaypatient_dtp.Value = new System.DateTime(2017, 9, 17, 20, 21, 49, 0);
             // 
             // label3
             // 

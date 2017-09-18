@@ -7,12 +7,15 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 
+
 namespace SysPandemic
 {
     class DBManager
     {
         //string cadena = "Data Surce=DELLPC;Initial Catalog=SysPandemic; Integrated Security=True";
         //public SqlConnection cnx = new SqlConnection();
+
+        public string valor = "";
 
         SqlConnection cnx;
         SqlCommand cmd;
@@ -65,16 +68,21 @@ namespace SysPandemic
                 ds.Tables.Add(dt);
                 if (dt.Rows.Count <= 0)
                 {
+                   
+                    //MessageBoxTemporal.Show("Mensaje de prueba para karmany.NET", "Título", 22, true);
                     MessageBox.Show("Usuario o contraseña invalida, intente de nuevo.");
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Bienvenido a SysPandemic " + user);
-                    Homeform frm = new Homeform();
-                    login lfrm = new login();
-                    lfrm.Hide();
-                    frm.ShowDialog();
-                    lfrm.passtxt.Clear();
+                    valor = "si";
+
+                    //MessageBox.Show("Bienvenido a SysPandemic " + user);
+                    //Homeform frm = new Homeform();
+                    //login lfrm = new login();
+                    //lfrm.Hide();
+                    //frm.ShowDialog();
+                    //lfrm.passtxt.Clear();
                 }
             }
             catch (Exception ex)
@@ -314,22 +322,14 @@ namespace SysPandemic
         {
             try
             {
-                //string comando = "INSERT INTO staff(namestaff, sexstaff, idpersonstaff, addressstaff, telstaff, celstaff, rolestaff, salarystaff) VALUES('" + namedoctor + "','" + sexdoctor + "','" + idperson + "','" + addressdoctor + "','" + teldoctor + "','" + celdoctor + "','" + role + "','" + salary + "')";
+                
                 SqlCommand insertion = new SqlCommand(query, cnx);
 
                 if (insertion.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Se agrego correctamente", "Hecho");
+                    valor = "si"; 
                     
-
-                    //f.namedoctor_txt.Text = "";
-                    //f.sexdoctor_cb.Text = "";
-                    //f.idperson_txt.Text = "";
-                    //f.addressdoctor_txt.Text = "";
-                    //f.teldoctor_txt.Text = "";
-                    //f.celdoctor_txt.Text = "";
-                    //f.salary_txt.Text = "";
-                    //condition = "yes";
                 }
             }
             catch (Exception ex)
@@ -350,6 +350,48 @@ namespace SysPandemic
             catch (Exception ex)
             {
                 MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
+            }
+        }
+        public void fill_CB(ComboBox cb, string query, string item)
+        {
+            try
+            {
+                cmd = new SqlCommand(query, cnx);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr[item].ToString());
+                }
+                cb.SelectedIndex = 0;
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar " + ex.Message);
+
+            }
+            finally
+            {
+            }
+        }
+        public void last_id(TextBox ms, string query)
+        {
+            try
+            {
+
+                SqlCommand insertion = new SqlCommand(query, cnx);
+                SqlDataReader leer = insertion.ExecuteReader();
+                if (leer.Read() == true)
+                {
+                    decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
+                    string nun = value.ToString();
+                    ms.Text = nun;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cargar el proceso. La causa: " + ex.Message);
             }
         }
     }

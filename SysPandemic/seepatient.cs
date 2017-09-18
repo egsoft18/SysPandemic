@@ -43,22 +43,33 @@ namespace SysPandemic
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AddPatient frm = new AddPatient();
-            DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-            frm.idpatient_txt.Text = act.Cells["ID"].Value.ToString();
-            frm.namepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
-            frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
-            frm.sexpatient_cb.Text = act.Cells["Sexo"].Value.ToString();
-            frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
-            frm.addresspatient_txt.Text = act.Cells["Direccion"].Value.ToString();
-            frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
-            frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
-            frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
-            frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
-            frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
+            try
+            {
+                DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
 
-            frm.savepatient_txt.Hide();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+                DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
+                MessageBox.Show("Hey " +date);
+                frm.idpatient_txt.Text = act.Cells["ID"].Value.ToString();
+                frm.namepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
+                //frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
+                frm.bdaypatient_dtp.Value = date;
+                frm.sexpatient_cb.Text = act.Cells["Sexo"].Value.ToString();
+                frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
+                frm.addresspatient_txt.Text = act.Cells["Direccion"].Value.ToString();
+                frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
+                frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
+                frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
+                frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
+                frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
+
+                frm.savepatient_txt.Hide();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir a editar. La causa: " + ex.Message, "Error");
+            }
         }
 
         private void sid_rbtn_CheckedChanged(object sender, EventArgs e)
@@ -98,6 +109,7 @@ namespace SysPandemic
         private void addpatient_btn_Click(object sender, EventArgs e)
         {
             AddPatient frm = new AddPatient();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
