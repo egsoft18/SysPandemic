@@ -444,6 +444,7 @@ namespace SysPandemic
                     if (c.valor == "si")
                     {
                         MessageBox.Show("Done");
+
                     }
                 }
                 catch (Exception ex)
@@ -576,20 +577,18 @@ namespace SysPandemic
 
         private void dataGridView3_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
             try
             {
-                cnx.Open();
                 DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
                     string description = act.Cells["ID"].Value.ToString();
-                    string comando = "DELETE FROM subprocedure WHERE id = '" + description + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
+                    string query = "DELETE FROM subprocedure WHERE id = '" + description + "'";
+                    c.command3(query);
+                    if (c.valor == "si")
                     {
-                        cnx.Close();
                         loadsubprocedure();
                     }
                 }
@@ -606,7 +605,6 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
 
