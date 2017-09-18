@@ -22,7 +22,20 @@ namespace SysPandemic
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            deleteclose();
+            try
+            {
+                DBManager c = new DBManager();
+                string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                c.command3(query);
+                string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                c.command3(query2);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cerrar ventana. Causa " + ex.Message);
+            }
+            
         }
 
         private void searchpatient_btn_Click(object sender, EventArgs e)
@@ -33,44 +46,77 @@ namespace SysPandemic
 
         private void addprocedure_Load(object sender, EventArgs e)
         {
-            //loadsubprocedure();
-            //sums();
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
-            SQLiteConnection cnx1 = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            cnx1.Open();
-            cnx1.Close();
+            DBManager c = new DBManager();
+            string pacients = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient";
+            c.load_dgv(dataGridView1, pacients);
+            string doctors = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where rolestaff like 'Doctor'";
+            c.load_dgv(dataGridView2, doctors);
+            string sprocedure = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+            c.load_dgv(dataGridView3, sprocedure);
+        
 
 
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                DataTable tabla = new DataTable("Pacientes");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
+                //SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+                //DataTable tabla = new DataTable("Pacientes");
+                //adac.Fill(tabla);
+                //dataGridView1.DataSource = tabla;
 
-                SQLiteDataAdapter adac2 = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
-                DataTable tabla2 = new DataTable("doctors");
-                adac2.Fill(tabla2);
-                dataGridView2.DataSource = tabla2;
+                //SQLiteDataAdapter adac2 = new SQLiteDataAdapter(, cnx);
+                //DataTable tabla2 = new DataTable("doctors");
+                //adac2.Fill(tabla2);
+                //dataGridView2.DataSource = tabla2;
 
-                SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
-                DataTable tabla3 = new DataTable("Subprocesos");
-                adac3.Fill(tabla3);
-                dataGridView3.DataSource = tabla3;
+                //SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
+                //DataTable tabla3 = new DataTable("Subprocesos");
+                //adac3.Fill(tabla3);
+                //dataGridView3.DataSource = tabla3;
 
-                cnx.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                cnx.Close();
-            }
+              
+
+
+
+
+
+            //loadsubprocedure();
+            //sums();
+            //spname_rbtn.PerformClick();
+            //sdname_rbtn.PerformClick();
+            //SQLiteConnection cnx1 = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //cnx1.Open();
+            //cnx1.Close();
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+            //    DataTable tabla = new DataTable("Pacientes");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+
+            //    SQLiteDataAdapter adac2 = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
+            //    DataTable tabla2 = new DataTable("doctors");
+            //    adac2.Fill(tabla2);
+            //    dataGridView2.DataSource = tabla2;
+
+            //    SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
+            //    DataTable tabla3 = new DataTable("Subprocesos");
+            //    adac3.Fill(tabla3);
+            //    dataGridView3.DataSource = tabla3;
+
+            //    cnx.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
+            //finally
+            //{
+            //    cnx.Close();
+            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -354,26 +400,20 @@ namespace SysPandemic
 
         private void option_cb_TextChanged(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            
             try
             {
-                cnx.Open();
+                DBManager c = new DBManager();
                 string option = option_cb.Text;
                 if (option == "Seguro")
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView4.DataSource = tabla;
-                    cnx.Close();
+                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "'";
+                    c.load_dgv(dataGridView4, query);
                 }
                 else if (option == "Sin seguro")
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView4.DataSource = tabla;
-                    cnx.Close();
+                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO'";
+                    c.load_dgv(dataGridView4, query);
                 }
             }
             catch (Exception ex)
@@ -382,16 +422,14 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-                try
+            try
                 {
-                    cnx.Open();
+                    DBManager c = new DBManager();
                     DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
                     string description = act.Cells["Descripcion"].Value.ToString();
                     string tariff = act.Cells["Tarifa"].Value.ToString();
@@ -401,13 +439,12 @@ namespace SysPandemic
                     string insurance = act.Cells["Seguro"].Value.ToString();
                     string paystatus = "No Pagado";
 
-                    string comando = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "')";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
+                    string query = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "')";
+                    c.command3(query);
+                    if (c.valor == "si")
                     {
                         MessageBox.Show("Done");
                     }
-                    cnx.Close();
                 }
                 catch (Exception ex)
                 {
@@ -415,8 +452,8 @@ namespace SysPandemic
                 }
                 finally
                 {
-                    cnx.Close();
-                    //sums();
+
+                    sums();
                     try
                     {
                         loadsubprocedure();
@@ -429,15 +466,12 @@ namespace SysPandemic
         }
         public void loadsubprocedure()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
+
             try
             {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
-                DataTable tabla = new DataTable("Subprocesos");
-                adac.Fill(tabla);
-                dataGridView3.DataSource = tabla;
-                cnx.Close();
+                string query = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+                c.load_dgv(dataGridView3, query);
             }
             catch (Exception ex)
             {
@@ -445,7 +479,6 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
         public void sums()
@@ -462,22 +495,20 @@ namespace SysPandemic
 
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
             try
             {
-                cnx.Open();
                 DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
                     string description = act.Cells["ID"].Value.ToString();
-                    string comando = "DELETE FROM subprocedure WHERE id = '" + description + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
-                    {
-                        cnx.Close();
-                        loadsubprocedure();
-                    }
+                    string query = "DELETE FROM subprocedure WHERE id = '" + description + "'";
+                    c.command3(query);
+
+                    string query2 = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+                    c.load_dgv(dataGridView3, query2);
+                    
                 }
                 else if (result == DialogResult.No)
                 {
@@ -492,12 +523,17 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
 
         }
         private void deleteclose()
         {
+            DBManager c = new DBManager();
+            string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            c.command3(query);
+            string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            c.command3(query2);
+
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
             //        {
@@ -526,7 +562,11 @@ namespace SysPandemic
                 }
         private void addprocedure_FormClosing(object sender, FormClosingEventArgs e)
         {
-            deleteclose();
+            //DBManager c = new DBManager();
+            //string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //c.command3(query);
+            //string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //c.command3(query2);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -607,6 +647,23 @@ namespace SysPandemic
         private void procedure_txt_DoubleClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void addprocedure_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            //try
+            //{
+            //    DBManager c = new DBManager();
+            //    string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //    c.command3(query);
+            //    string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //    c.command3(query2);
+            //    Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al cerrar ventana. Causa " + ex.Message);
+            //}
         }
     }
 }

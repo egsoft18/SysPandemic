@@ -212,16 +212,7 @@ namespace SysPandemic
                 if (insertion.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Se agrego correctamente", "Hecho");
-                    adddoctor f = new adddoctor();
-                    f.Close();
-                    //f.namedoctor_txt.Text = "";
-                    //f.sexdoctor_cb.Text = "";
-                    //f.idperson_txt.Text = "";
-                    //f.addressdoctor_txt.Text = "";
-                    //f.teldoctor_txt.Text = "";
-                    //f.celdoctor_txt.Text = "";
-                    //f.salary_txt.Text = "";
-                    //condition = "yes";
+                    valor = "si";
                 }
             }
             catch (Exception ex)
@@ -327,7 +318,7 @@ namespace SysPandemic
 
                 if (insertion.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Se agrego correctamente", "Hecho");
+                    MessageBox.Show("Se ha realizado la accion", "Hecho");
                     valor = "si"; 
                     
                 }
@@ -391,7 +382,25 @@ namespace SysPandemic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cargar el proceso. La causa: " + ex.Message);
+                MessageBox.Show("No consiguio el ID. La causa: " + ex.Message);
+            }
+        }
+        public void command3(string query)
+        {
+            try
+            {
+
+                SqlCommand insertion = new SqlCommand(query, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    valor = "si";
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo agregar la infromacion. La causa: " + ex.Message);
             }
         }
     }

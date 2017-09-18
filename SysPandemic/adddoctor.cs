@@ -26,39 +26,10 @@ namespace SysPandemic
 
         private void delatedoctor_btn_Click(object sender, EventArgs e)
         {
-
-
-            string idstaff = iddoctor_txt.Text;
-
             DBManager c = new DBManager();
-            c.delete_staff(idstaff);
+            string query = "DELETE FROM staff WHERE idstaff = '" + iddoctor_txt.Text + "'";
+            c.command(query);
             this.Close();
-
-            //DialogResult result = MessageBox.Show("Seguro que desea eliminar este Doctor/a?", "Eliminar Doctor", MessageBoxButtons.YesNo);
-
-            //if (result == DialogResult.Yes)
-            //{
-            //    SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //    try
-            //    {
-            //        cnx.Open();
-            //        string comando = "DELETE FROM doctors WHERE id = '" + iddoctor_txt.Text + "'";
-            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            //        if (insertion.ExecuteNonQuery() > 0)
-            //        {
-            //            MessageBox.Show("Se ha eliminado!");
-            //            Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Algo fue mal");
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Error");
-            //    }
-            //}
         }
 
         private void updatedoctor_btn_Click(object sender, EventArgs e)
@@ -75,39 +46,11 @@ namespace SysPandemic
             //string condition = "";
 
             DBManager c = new DBManager();
+
             c.update_doctor(iddoctor, namedoctor, sexdoctor, idperson, addressdoctor, teldoctor, celdoctor, role, salary);
             this.Close();
             
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        string comando = "UPDATE doctors set name = '" + namedoctor_txt.Text + "', sex = '" + sexdoctor_cb.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addressdoctor_txt.Text + "', tel = '" + teldoctor_txt.Text + "', cel = '" + celdoctor_txt.Text + "' WHERE id = '" + iddoctor_txt.Text + "'";
-            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            //        if (insertion.ExecuteNonQuery() > 0)
-            //        {
-            //            MessageBox.Show("Se ha actualizado!");
-            //            Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Algo fallo!!!");
-            //        }
-            //    }
-            //    else if (result == DialogResult.No)
-            //    {
-
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-
-            //}
+           
         }
 
         private void savedoctor_btn_Click(object sender, EventArgs e)
@@ -126,7 +69,7 @@ namespace SysPandemic
             DBManager c = new DBManager();
             c.add_staff(namedoctor, sexdoctor, idperson, addressdoctor, teldoctor, celdoctor, role, salary, condition);
 
-            if (condition == "yes")
+            if (c.valor == "si")
             {
                 namedoctor_txt.Text = "";
                 sexdoctor_cb.Text = "";
@@ -137,31 +80,6 @@ namespace SysPandemic
                 salary_txt.Text = "";
             }
 
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    string comando = "INSERT INTO doctors(name, sex, idperson, address, tel, cel) VALUES('" + namedoctor_txt.Text + "', '" + sexdoctor_cb.Text + "','" + idperson_txt.Text + "', '" + addressdoctor_txt.Text + "', '" + teldoctor_txt.Text + "', '" + celdoctor_txt.Text + "');";
-            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-            //    if (insertion.ExecuteNonQuery() > 0)
-            //    {
-            //        MessageBox.Show("Se agrego correctamente");
-            //        namedoctor_txt.Clear();
-            //        sexdoctor_cb.Text = "";
-            //        idperson_txt.Clear();
-            //        addressdoctor_txt.Clear();
-            //        teldoctor_txt.Clear();
-            //        celdoctor_txt.Clear();
-            //        namedoctor_txt.Focus();
-
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-
-            //}
         }
 
         private void clear_btn_Click(object sender, EventArgs e)

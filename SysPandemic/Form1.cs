@@ -61,9 +61,9 @@ namespace SysPandemic
                 else
                 {
                     string status = "NO PAGADO";
-                    string query = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
+                    string query = "INSERT INTO [procedure](statuspay) VALUES('" + status + "');";
                     DBManager c = new DBManager();
-                    c.command(query);
+                    c.command3(query);
                 }
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace SysPandemic
             try
             {
                
-                string query = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
+                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
           
                 DBManager c = new DBManager();
                 c.last_id(frm.idprocedure_txt, query);
@@ -97,19 +97,7 @@ namespace SysPandemic
                 
             }
 
-
-
             frm.Show();
-
-
-
-
-
-
-
-
-
-
 
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try

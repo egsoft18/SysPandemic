@@ -693,6 +693,7 @@
             this.MaximizeBox = false;
             this.Name = "addprocedure";
             this.Text = "Información del procedimiento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addprocedure_FormClosing_1);
             this.Load += new System.EventHandler(this.addprocedure_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
