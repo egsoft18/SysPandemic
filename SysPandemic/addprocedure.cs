@@ -144,45 +144,35 @@ namespace SysPandemic
 
         private void searchpatient()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
+           
             try
             {
-                cnx.Open();
                 if (sp_txt.Text.Length == 0)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                   string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient";
+                   c.load_dgv(dataGridView1, query);
 
                 }
                 else if (spid_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where id like '%" + sp_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where id like '%" + sp_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (spname_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where name like '%" + sp_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                   string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where name like '%" + sp_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (spidperson_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where idperson like '%" + sp_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where idperson like '%" + sp_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient", cnx);
-                    DataTable tabla = new DataTable("Pacientes");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient";
+                    c.load_dgv(dataGridView1, query);
                 }
 
             }
@@ -193,7 +183,7 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
+               
             }
         }
         private void sd_btn_Click(object sender, EventArgs e)
@@ -203,44 +193,33 @@ namespace SysPandemic
 
         private void searchdoctor()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
             try
             {
-                cnx.Open();
                 if (sd_txt.Text.Length == 0)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
-                    DataTable tabla = new DataTable("Doctores");
-                    adac.Fill(tabla);
-                    dataGridView2.DataSource = tabla;
+                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors";
+                    c.load_dgv(dataGridView2, query);
                 }
                 else if (sdid_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where id like '%" + sd_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Doctores");
-                    adac.Fill(tabla);
-                    dataGridView2.DataSource = tabla;
+                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where id like '%" + sd_txt.Text + "%'";
+                    c.load_dgv(dataGridView2, query);
                 }
                 else if (sdname_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where name like '%" + sd_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Doctores");
-                    adac.Fill(tabla);
-                    dataGridView2.DataSource = tabla;
+                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where name like '%" + sd_txt.Text + "%'";
+                    c.load_dgv(dataGridView2, query);
                 }
                 else if (sdidperson_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where idperson like '%" + sd_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Doctores");
-                    adac.Fill(tabla);
-                    dataGridView2.DataSource = tabla;
+                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where idperson like '%" + sd_txt.Text + "%'";
+                    c.load_dgv(dataGridView2, query);
                 }
                 else
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
-                    DataTable tabla = new DataTable("Doctores");
-                    adac.Fill(tabla);
-                    dataGridView2.DataSource = tabla;
+                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors";
+                    c.load_dgv(dataGridView2, query);
                 }
 
             }
@@ -251,33 +230,33 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
         private void saveprocedure_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
             try
             {
-                cnx.Open();
-                string status = "NO PAGADO";
-                string comando = "INSERT INTO procedure(idpatient, namepatient, iddoctor, namedoctor, procedure, realprice, iscoverage, pricepay, statuspay, dateprocedure) VALUES('" + pidpatient_txt.Text + "', '" + pnamepatient_txt.Text + "','" + piddoctor_txt.Text + "','" + pnamedoctor_txt.Text + "', '" + procedure_txt.Text + "', '" + realpay_txt.Text + "', '" + iscoverage_txt.Text + "', '" + pricepay_txt.Text + "', '" + status + "', '" + dateprocedure_dtp.Text + "' );";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
 
-                if (insertion.ExecuteNonQuery() > 0)
+                DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Se agrego correctamente");
-                    pidpatient_txt.Clear();
-                    pnamepatient_txt.Text = "";
-                    piddoctor_txt.Clear();
-                    pnamedoctor_txt.Clear();
-                    procedure_txt.Clear();
-                    realpay_txt.Clear();
-                    pricepay_txt.Clear();
-                    iscoverage_txt.Text = "";
-
-                    cnx.Close();
+                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    c.command(query);
+                    if (c.valor == "si")
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo fallo!!!");
+                    }
                 }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -286,7 +265,6 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
 
@@ -313,20 +291,17 @@ namespace SysPandemic
 
         private void updateprocedure_btn_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
             try
             {
-                cnx.Open();
                 DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    string comando = "UPDATE procedure set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', procedure = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
+                    string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    c.command(comando);
+                    if (c.valor == "si")
                     {
-                        MessageBox.Show("Se ha actualizado!");
                         Close();
-                        cnx.Close();
                     }
                     else
                     {
@@ -346,7 +321,6 @@ namespace SysPandemic
             }
             finally
             {
-                cnx.Close();
             }
         }
 
@@ -356,17 +330,14 @@ namespace SysPandemic
 
             if (result == DialogResult.Yes)
             {
-                SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+                DBManager c = new DBManager();
                 try
                 {
-                    cnx.Open();
-                    string comando = "DELETE FROM procedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
+                    string comando = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    c.command(comando);
+                    if (c.valor == "si")
                     {
-                        MessageBox.Show("Se ha eliminado!");
                         Close();
-                        cnx.Close();
                     }
                     else
                     {
@@ -379,7 +350,6 @@ namespace SysPandemic
                 }
                 finally
                 {
-                    cnx.Close();
                 }
 
             }
@@ -454,10 +424,11 @@ namespace SysPandemic
                 finally
                 {
 
-                    sums();
+                    
                     try
                     {
                         loadsubprocedure();
+                        sums();
                     }
                     catch
                     {
@@ -509,6 +480,7 @@ namespace SysPandemic
 
                     string query2 = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
                     c.load_dgv(dataGridView3, query2);
+                    sums();
                     
                 }
                 else if (result == DialogResult.No)
@@ -587,10 +559,11 @@ namespace SysPandemic
                     string description = act.Cells["ID"].Value.ToString();
                     string query = "DELETE FROM subprocedure WHERE id = '" + description + "'";
                     c.command3(query);
-                    if (c.valor == "si")
-                    {
-                        loadsubprocedure();
-                    }
+
+                    string query2 = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+                    c.load_dgv(dataGridView3, query2);
+                    sums();
+
                 }
                 else if (result == DialogResult.No)
                 {
