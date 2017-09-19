@@ -27,7 +27,7 @@ namespace SysPandemic
                 DBManager c = new DBManager();
                 string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                 c.command3(query);
-                string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                string query2 = "DELETE FROM [procedure] WHERE idpatient  is null";
                 c.command3(query2);
                 Close();
             }
@@ -533,14 +533,14 @@ namespace SysPandemic
             //}
             Close();
                 }
-        private void addprocedure_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //DBManager c = new DBManager();
-            //string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-            //c.command3(query);
-            //string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-            //c.command3(query2);
-        }
+        //private void addprocedure_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    //DBManager c = new DBManager();
+        //    //string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+        //    //c.command3(query);
+        //    //string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+        //    //c.command3(query2);
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -63,7 +63,10 @@ namespace SysPandemic
                     string status = "NO PAGADO";
                     string query = "INSERT INTO [procedure](statuspay) VALUES('" + status + "');";
                     DBManager c = new DBManager();
+                    string query2 = "DELETE FROM [procedure] WHERE idpatient  is null";
+                    c.command3(query2);
                     c.command3(query);
+                    
                 }
             }
             catch (Exception ex)
