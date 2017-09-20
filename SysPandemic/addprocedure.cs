@@ -636,5 +636,31 @@ namespace SysPandemic
             //    MessageBox.Show("Error al cerrar ventana. Causa " + ex.Message);
             //}
         }
+
+        private void searchprocess_txt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DBManager c = new DBManager();
+                string option = option_cb.Text;
+                if (option == "Seguro")
+                {
+                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "' and pinsurance like '%"+searchprocess_txt.Text+"%'";
+                    c.load_dgv(dataGridView4, query);
+                }
+                else if (option == "Sin seguro")
+                {
+                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO' and pinsurance like '%" + searchprocess_txt.Text + "%'";
+                    c.load_dgv(dataGridView4, query);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+            }
+        }
     }
 }

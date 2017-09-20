@@ -32,6 +32,7 @@ namespace SysPandemic
                 frm.ShowDialog();
                 this.Show();
                 passtxt.Clear();
+                frm.label2.Text = user;
             }
 
         }

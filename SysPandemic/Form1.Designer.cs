@@ -50,6 +50,7 @@
             this.agregarSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarProcesosSinSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,12 +232,21 @@
             this.administrarProcesosSinSeguroToolStripMenuItem.Text = "Administrar procesos sin seguro";
             this.administrarProcesosSinSeguroToolStripMenuItem.Click += new System.EventHandler(this.administrarProcesosSinSeguroToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1209, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 3;
+            // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -276,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem agregarSeguroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarSegurosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarProcesosSinSeguroToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

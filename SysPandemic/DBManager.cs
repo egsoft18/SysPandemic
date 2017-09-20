@@ -16,6 +16,7 @@ namespace SysPandemic
         //public SqlConnection cnx = new SqlConnection();
 
         public string valor = "";
+        public string actuser = "";
 
         SqlConnection cnx;
         SqlCommand cmd;
@@ -76,6 +77,7 @@ namespace SysPandemic
                 else
                 {
                     valor = "si";
+                   
 
                     //MessageBox.Show("Bienvenido a SysPandemic " + user);
                     //Homeform frm = new Homeform();

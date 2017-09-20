@@ -256,6 +256,7 @@
             this.searchprocess_txt.Name = "searchprocess_txt";
             this.searchprocess_txt.Size = new System.Drawing.Size(255, 20);
             this.searchprocess_txt.TabIndex = 29;
+            this.searchprocess_txt.TextChanged += new System.EventHandler(this.searchprocess_txt_TextChanged);
             // 
             // option_cb
             // 
