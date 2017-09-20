@@ -134,7 +134,7 @@
             this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfecha.Location = new System.Drawing.Point(45, 26);
             this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(97, 20);
+            this.dtpfecha.Size = new System.Drawing.Size(87, 20);
             this.dtpfecha.TabIndex = 10;
             this.dtpfecha.Value = new System.DateTime(2017, 8, 22, 22, 0, 7, 0);
             // 

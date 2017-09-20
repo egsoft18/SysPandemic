@@ -234,14 +234,19 @@ namespace SysPandemic
             rdbfecha.PerformClick();
             string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
             DBManager c = new DBManager();
-            c.command(query);
+            c.load_dgv(dataGridView1, query);
                 
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             agrescitas frm = new agrescitas();
             DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
+            //string fecha = act.Cells["Fecha"].Value.ToString();
+            
+            //DateTime time = DateTime.ParseExact(fecha,)
+            //DateTime dt = Convert.ToDateTime(time);
             frm.txtid.Text = act.Cells["id"].Value.ToString();
             frm.txtidpa.Text = act.Cells["Idpaciente"].Value.ToString();
             frm.txtpaciente.Text = act.Cells["Paciente"].Value.ToString();
@@ -252,6 +257,16 @@ namespace SysPandemic
             frm.btnguardar.Hide();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private DateTime DateTime(string time, string p, System.Globalization.CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+
+        private DateTime DateTime(string time, string p)
+        {
+            throw new NotImplementedException();
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)

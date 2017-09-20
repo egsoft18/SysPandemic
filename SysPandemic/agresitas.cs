@@ -31,6 +31,8 @@ namespace SysPandemic
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            
+
             string query = "INSERT INTO datem(idpatient,namepa,iddoctor,namedoctor,assist,date,time) values('" + txtidpa.Text + "','" + txtpaciente.Text + "','" + txtiddo.Text + "','" + txtdoct.Text + "','Pendiente','" + dtpfecha.Text + "','" + dtphora.Text + "')";
             DBManager c = new DBManager();
             c.command(query);
