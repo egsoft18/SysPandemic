@@ -41,7 +41,7 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-           
+            
                 string query = "Select idinsurance, nameinsurance from insurances";
                 string item = "nameinsurance";
                 DBManager c = new DBManager();
@@ -70,30 +70,41 @@ namespace SysPandemic
 
         private void printpatient_btn_Click(object sender, EventArgs e)
         {
-            SQLiteDataAdapter ad;
-            DataTable dt = new DataTable();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteCommand cmd = cnx.CreateCommand();
-                cmd.CommandText = "Select * from patient where id = '" + idpatient_txt.Text + "'";
-                ad = new SQLiteDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                ad.Fill(dt);
-                ds.Tables.Add(dt);
-                ds.Tables[0].TableName = "Empleados";
-                ds.WriteXml(@"C:\SysPandemic\xml\patient.xml");
-                //MessageBox.Show("Done");
-                reportview rv = new reportview("patient.rpt");
-                rv.Show();
+            DBManager c = new DBManager();
+            string query = "Select * from patient where idpatient = '" + idpatient_txt.Text + "'";
+            string tablename = "Empleados";
+            string xml = "patient.xml";
+            string report = "patient.rpt";
+            c.printreport(query, tablename, xml, report);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+            
+            
+            
+            
+            //SQLiteDataAdapter ad;
+            //DataTable dt = new DataTable();
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteCommand cmd = cnx.CreateCommand();
+            //    cmd.CommandText = "Select * from patient where id = '" + idpatient_txt.Text + "'";
+            //    ad = new SQLiteDataAdapter(cmd);
+            //    DataSet ds = new DataSet();
+            //    ad.Fill(dt);
+            //    ds.Tables.Add(dt);
+            //    ds.Tables[0].TableName = "Empleados";
+            //    ds.WriteXml(@"C:\SysPandemic\xml\patient.xml");
+            //    //MessageBox.Show("Done");
+            //    reportview rv = new reportview("patient.rpt");
+            //    rv.Show();
 
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
         }
 
         private void savepatient_txt_Click(object sender, EventArgs e)
@@ -259,6 +270,16 @@ namespace SysPandemic
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }

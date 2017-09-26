@@ -25,7 +25,7 @@ namespace SysPandemic
         {
             try
             {
-                cnx = new SqlConnection("Data Source=DELLPC;Initial Catalog=SysPandemic; Integrated Security=True");
+                cnx = new SqlConnection("Data Source=DELLPc;Initial Catalog=SysPandemic; Integrated Security=True");
                 cnx.Open();
                 //MessageBox.Show("Conectado");
             }
@@ -405,5 +405,39 @@ namespace SysPandemic
                 MessageBox.Show("No se pudo agregar la infromacion. La causa: " + ex.Message);
             }
         }
+        public void printreport(string query, string tablename, string xml, string reportrpt)
+        {
+            
+            try
+            {
+                SqlCommand cmd = cnx.CreateCommand();
+                cmd.CommandText = query;
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                ds.Tables.Add(dt);
+                if (dt.Rows.Count <= 0)
+                {
+                    MessageBox.Show("No hay datos que imprimir.");
+                }
+                else
+                {
+                    ds.Tables[0].TableName = tablename;
+                    ds.WriteXml(@"C:\SysPandemic server\xml\" + xml + "");
+                    //MessageBox.Show("Done");
+                    reportview rv = new reportview(reportrpt);
+                    rv.Show();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
+
+
     }
 }
