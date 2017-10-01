@@ -32,6 +32,57 @@ namespace SysPandemic
             f.delatepatient_btn.Hide();
             f.updatepatient_btn.Hide();
             f.printpatient_btn.Hide();
+
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                if (frm2 != null)
+                {
+                    f.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    string query = "INSERT INTO [patient](idperson) VALUES('empty');";
+                    DBManager c = new DBManager();
+                    string query2 = "DELETE FROM [patient] WHERE name is null";
+                    c.command3(query2);
+                    c.command3(query);
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error New Procedure");
+
+            }
+            finally
+            {
+
+            }
+
+
+
+            try
+            {
+
+                string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
+                string condition = "idpatient";
+                DBManager c = new DBManager();
+                c.last_id(f.idpatient_txt, query, condition);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error TXT");
+            }
+            finally
+            {
+
+            }
+
             f.Show();
         }
 
@@ -63,7 +114,7 @@ namespace SysPandemic
                     string status = "NO PAGADO";
                     string query = "INSERT INTO [procedure](statuspay) VALUES('" + status + "');";
                     DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [procedure] WHERE idpatient  is null";
+                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
                     c.command3(query2);
                     c.command3(query);
                     
@@ -85,9 +136,9 @@ namespace SysPandemic
             {
                
                 string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
-          
+                string condition = "idprocedure";
                 DBManager c = new DBManager();
-                c.last_id(frm.idprocedure_txt, query);
+                c.last_id(frm.idprocedure_txt, query, condition);
                 
             }
 

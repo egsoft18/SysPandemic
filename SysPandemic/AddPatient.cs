@@ -46,8 +46,9 @@ namespace SysPandemic
                 string item = "nameinsurance";
                 DBManager c = new DBManager();
                 c.fill_CB(insurancepatient_txt, query, item);
-            
-            
+
+                idpatient_md_txt.Text = idpatient_txt.Text;
+                namep_md_txt.Text = namepatient_txt.Text;
             
             
             
@@ -111,8 +112,11 @@ namespace SysPandemic
         {
 
             DBManager c = new DBManager();
-            string query = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient_txt.Text + "', '" + bdaypatient_dtp.Text + "','" + sexpatient_cb.Text + "','" + idperson_txt.Text + "', '" + addresspatient_txt.Text + "', '" + telpatient_txt.Text + "', '" + celpatient_txt.Text + "', '" + tworkpatient_txt.Text + "', '" + insurancepatient_txt.Text + "', '" + affiliatepatient_txt.Text + "');";
+            string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
             c.command(query);
+            string query5 = "INSERT INTO medicald(idpatient, tmed, tmedcom, mica, micacom, ps, diab, hep, hepcom, pr, pe, pecom, pa, pacom, hemo, aler, alercom) VALUES ('" + idpatient_md_txt.Text + "', '" + tmed_cb.Text + "', '" + tmedcom_txt.Text + "', '" + mica_cb.Text + "', '" + micacom_txt.Text + "', '" + ps_cb.Text + "', '" + diab_cb.Text + "', '" + hep_cb.Text + "', '" + hepcom_txt.Text + "', '" + pr_cb.Text + "', '" + pe_cb.Text + "', '" + pecom_txt.Text + "', '" + pa_cb.Text + "', '" + pacom_txt.Text + "', '" + hemo_cb.Text + "', '" + aler_cb.Text + "', '" + alercom_txt.Text + "')";
+            c.command3(query5);
+
 
             if (c.valor == "si")
             {
@@ -127,6 +131,39 @@ namespace SysPandemic
                 affiliatepatient_txt.Clear();
                 namepatient_txt.Focus();
                 c.valor = "";
+                //Borrar los datos del diagnostico de la ventana
+                tmed_cb.Text = "";
+                tmedcom_txt.Clear();
+                mica_cb.Text = "";
+                micacom_txt.Clear();
+                ps_cb.Text = "";
+                diab_cb.Text = "";
+                hep_cb.Text = "";
+                hepcom_txt.Clear();
+                pr_cb.Text = "";
+                pe_cb.Text = "";
+                pecom_txt.Clear();
+                pa_cb.Text = "";
+                pacom_txt.Clear();
+                hemo_cb.Text = "";
+                aler_cb.Text = "";
+                alercom_txt.Clear();
+
+                try
+                {
+                    string query2 = "INSERT INTO [patient](idperson) VALUES('empty');";
+                    string query3 = "DELETE FROM [patient] WHERE name is null";
+                    c.command3(query3);
+                    c.command3(query2);
+                    string query4 = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
+                    string condition = "idpatient";
+                    c.last_id(idpatient_txt, query4, condition);
+                    idpatient_md_txt.Text = idpatient_txt.Text;
+                }
+                catch
+                {
+
+                }
             }
             else
             {
@@ -168,12 +205,15 @@ namespace SysPandemic
         {
 
             DBManager c = new DBManager();
-            string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE id = '" + idpatient_txt.Text + "'";
+            string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
             c.command(query);
+            string query2 = "UPDATE medicald Set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
+            c.command3(query2);
 
             if (c.valor == "si")
             {
                 Close();
+                
             }
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
@@ -226,7 +266,7 @@ namespace SysPandemic
          
 
             DBManager c = new DBManager();
-             string query = "DELETE FROM patient WHERE id = '" + idpatient_txt.Text + "'";
+             string query = "DELETE FROM patient WHERE idpatient = '" + idpatient_txt.Text + "'";
              c.command(query);
             if (c.valor == "si"){
                 this.Close();
@@ -282,6 +322,30 @@ namespace SysPandemic
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+                DBManager c = new DBManager();
+                //string query = "select * from medicald where idpatient = '" + idpatient_md_txt.Text + "'";
+                //c.command3(query);
+                //MessageBox.Show("valor de valor " + c.valor);
+                try
+                {
+                    string query2 = "UPDATE medicald Set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
+                    c.command(query2);
+                    //c.valor = "no";
+                }
+                catch
+                {
+                    string query3 = "INSERT INTO medicald(idpatient, tmed, tmedcom, mica, micacom, ps, diab, hep, hepcom, pr, pe, pecom, pa, pacom, hemo, aler, alercom) VALUES ('" + idpatient_md_txt.Text + "', '" + tmed_cb.Text + "', '" + tmedcom_txt.Text + "', '" + mica_cb.Text + "', '" + micacom_txt.Text + "', '" + ps_cb.Text + "', '" + diab_cb.Text + "', '" + hep_cb.Text + "', '" + hepcom_txt.Text + "', '" + pr_cb.Text + "', '" + pe_cb.Text + "', '" + pecom_txt.Text + "', '" + pa_cb.Text + "', '" + pacom_txt.Text + "', '" + hemo_cb.Text + "', '" + aler_cb.Text + "', '" + alercom_txt.Text + "')";
+                    c.command(query3);
+                }
+        }
+
+        private void namep_md_txt_TextChanged(object sender, EventArgs e)
+        {
+            
         }
       
     }

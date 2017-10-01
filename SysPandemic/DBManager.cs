@@ -41,7 +41,7 @@ namespace SysPandemic
             {
                 cmd = new SqlCommand("Select usu from userpass", cnx);
                 dr = cmd.ExecuteReader();
-                while(dr.Read())
+                while (dr.Read())
                 {
                     cb.Items.Add(dr["usu"].ToString());
                 }
@@ -51,7 +51,7 @@ namespace SysPandemic
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar " + ex.Message);
-                
+
             }
             finally
             {
@@ -61,7 +61,7 @@ namespace SysPandemic
         {
             try
             {
-                cmd = new SqlCommand("Select usu, pass from userpass where usu = '"+user+"' and pass = '"+pass+"'", cnx);
+                cmd = new SqlCommand("Select usu, pass from userpass where usu = '" + user + "' and pass = '" + pass + "'", cnx);
                 DataSet ds = new DataSet();
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -69,15 +69,15 @@ namespace SysPandemic
                 ds.Tables.Add(dt);
                 if (dt.Rows.Count <= 0)
                 {
-                   
+
                     //MessageBoxTemporal.Show("Mensaje de prueba para karmany.NET", "Título", 22, true);
                     MessageBox.Show("Usuario o contraseña invalida, intente de nuevo.");
-                    
+
                 }
                 else
                 {
                     valor = "si";
-                   
+
 
                     //MessageBox.Show("Bienvenido a SysPandemic " + user);
                     //Homeform frm = new Homeform();
@@ -95,17 +95,18 @@ namespace SysPandemic
 
         public void add_patient(String namepatient, String bdaypatient, String sexpatient, String idperson, String addresspatient, String telpatient, String celpatient, String tworkpatient, String insurancepatient, String affiliatepatient)
         {
-            try { 
-            AddPatient frm = new AddPatient();
-            string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient + "','" + bdaypatient + "','" + sexpatient + "','" + idperson + "','" + addresspatient + "','" + telpatient + "','" + celpatient + "','" + tworkpatient + "','" + insurancepatient + "','" + affiliatepatient + "')";
-            SqlCommand insertion = new SqlCommand(comando, cnx);
-
-            if (insertion.ExecuteNonQuery() > 0)
+            try
             {
-                MessageBox.Show("Se agrego correctamente", "Hecho");
-               
-            }
+                AddPatient frm = new AddPatient();
+                string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient + "','" + bdaypatient + "','" + sexpatient + "','" + idperson + "','" + addresspatient + "','" + telpatient + "','" + celpatient + "','" + tworkpatient + "','" + insurancepatient + "','" + affiliatepatient + "')";
+                SqlCommand insertion = new SqlCommand(comando, cnx);
+
+                if (insertion.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Se agrego correctamente", "Hecho");
+
                 }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo agregar la infromacion del paciente: " + ex.Message);
@@ -138,7 +139,7 @@ namespace SysPandemic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se llego a actualizar. Causa: "+ex.Message);
+                MessageBox.Show("No se llego a actualizar. Causa: " + ex.Message);
 
             }
         }
@@ -174,10 +175,10 @@ namespace SysPandemic
 
         public void patient_administrator(DataGridView dgv)
         {
-            
+
             try
             {
-                searchpatient frm = new searchpatient(); 
+                searchpatient frm = new searchpatient();
                 SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
@@ -185,7 +186,7 @@ namespace SysPandemic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se logro cargar el visor. Causa: "+ex.Message);
+                MessageBox.Show("No se logro cargar el visor. Causa: " + ex.Message);
             }
         }
         public void search_patient(DataGridView dgv, string condition, string value)
@@ -193,7 +194,7 @@ namespace SysPandemic
             try
             {
                 searchpatient frm = new searchpatient();
-                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where "+condition+" like '%"+value+"%'", cnx);
+                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where " + condition + " like '%" + value + "%'", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
                 dgv.DataSource = tabla;
@@ -262,7 +263,7 @@ namespace SysPandemic
                     //condition = "yes";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("No se logro actualizar el Doctor. Causa: " + ex.Message);
             }
@@ -283,7 +284,7 @@ namespace SysPandemic
                     {
                         MessageBox.Show("Se ha Borrado correctamente", "Hecho");
                         frm.Close();
-                       
+
                     }
                 }
                 catch (Exception ex)
@@ -315,14 +316,14 @@ namespace SysPandemic
         {
             try
             {
-                
+
                 SqlCommand insertion = new SqlCommand(query, cnx);
 
                 if (insertion.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Se ha realizado la accion", "Hecho");
-                    valor = "si"; 
-                    
+                    valor = "si";
+
                 }
             }
             catch (Exception ex)
@@ -367,7 +368,7 @@ namespace SysPandemic
             {
             }
         }
-        public void last_id(TextBox ms, string query)
+        public void last_id(TextBox ms, string query, string condition)
         {
             try
             {
@@ -376,7 +377,7 @@ namespace SysPandemic
                 SqlDataReader leer = insertion.ExecuteReader();
                 if (leer.Read() == true)
                 {
-                    decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
+                    decimal value = Convert.ToDecimal(leer[condition].ToString());
                     string nun = value.ToString();
                     ms.Text = nun;
 
@@ -407,7 +408,7 @@ namespace SysPandemic
         }
         public void printreport(string query, string tablename, string xml, string reportrpt)
         {
-            
+
             try
             {
                 SqlCommand cmd = cnx.CreateCommand();
@@ -438,6 +439,61 @@ namespace SysPandemic
             }
         }
 
+        public void fill_txt(TextBox txt, string query, string condition)
+        {
+            try
+            {
 
+                SqlCommand insertion = new SqlCommand(query, cnx);
+                SqlDataReader leer = insertion.ExecuteReader();
+                if (leer.Read() == true)
+                {
+                    string text = Convert.ToString(leer[condition]);
+                    txt.Text = text;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
+        public void fill_diag(string query, ComboBox tmed_cb, TextBox tmedcom_txt, ComboBox mica_cb, TextBox micacom_txt, ComboBox ps_cb, ComboBox diab_cb, ComboBox hep_cb, TextBox hepcom_txt, ComboBox pr_cb, ComboBox pe_cb, TextBox pecom_txt, ComboBox pa_cb, TextBox pacom_txt, ComboBox hemo_cb, ComboBox aler_cb, TextBox alercom_txt)
+        {
+            try
+            {
+
+                SqlCommand insertion = new SqlCommand(query, cnx);
+                SqlDataReader leer = insertion.ExecuteReader();
+                if (leer.Read() == true)
+                {
+
+                    tmed_cb.Text = Convert.ToString(leer["tmed"]);
+                    tmedcom_txt.Text = Convert.ToString(leer["tmedcom"]);
+                    mica_cb.Text = Convert.ToString(leer["mica"]);
+                    micacom_txt.Text = Convert.ToString(leer["micacom"]);
+                    ps_cb.Text = Convert.ToString(leer["ps"]);
+                    diab_cb.Text = Convert.ToString(leer["diab"]);
+                    hep_cb.Text = Convert.ToString(leer["hep"]);
+                    hepcom_txt.Text = Convert.ToString(leer["hepcom"]);
+                    pr_cb.Text = Convert.ToString(leer["pr"]);
+                    pe_cb.Text = Convert.ToString(leer["pe"]);
+                    pecom_txt.Text = Convert.ToString(leer["pecom"]);
+                    pa_cb.Text = Convert.ToString(leer["pa"]);
+                    pacom_txt.Text = Convert.ToString(leer["pacom"]);
+                    hemo_cb.Text = Convert.ToString(leer["hemo"]);
+                    aler_cb.Text = Convert.ToString(leer["aler"]);
+                    alercom_txt.Text = Convert.ToString(leer["alercom"]);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
     }
 }
+

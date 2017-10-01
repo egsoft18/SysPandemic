@@ -62,39 +62,40 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.idpatient_md_txt = new System.Windows.Forms.TextBox();
-            this.namep_md_txt = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.tmed_cb = new System.Windows.Forms.ComboBox();
-            this.tmedcom_txt = new System.Windows.Forms.TextBox();
-            this.ps_cb = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.hep_cb = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pecom_txt = new System.Windows.Forms.TextBox();
-            this.pe_cb = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.hemo_cb = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.micacom_txt = new System.Windows.Forms.TextBox();
-            this.mica_cb = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.alercom_txt = new System.Windows.Forms.TextBox();
-            this.aler_cb = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pr_cb = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.hepcom_txt = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.diab_cb = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.pacom_txt = new System.Windows.Forms.TextBox();
             this.pa_cb = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.diab_cb = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.hepcom_txt = new System.Windows.Forms.TextBox();
+            this.pr_cb = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.alercom_txt = new System.Windows.Forms.TextBox();
+            this.aler_cb = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.micacom_txt = new System.Windows.Forms.TextBox();
+            this.mica_cb = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.hemo_cb = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.pecom_txt = new System.Windows.Forms.TextBox();
+            this.pe_cb = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.hep_cb = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.ps_cb = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tmedcom_txt = new System.Windows.Forms.TextBox();
+            this.tmed_cb = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.namep_md_txt = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.idpatient_md_txt = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -346,7 +347,7 @@
             // 
             // delatepatient_btn
             // 
-            this.delatepatient_btn.Location = new System.Drawing.Point(62, 278);
+            this.delatepatient_btn.Location = new System.Drawing.Point(76, 294);
             this.delatepatient_btn.Name = "delatepatient_btn";
             this.delatepatient_btn.Size = new System.Drawing.Size(75, 23);
             this.delatepatient_btn.TabIndex = 3;
@@ -356,7 +357,7 @@
             // 
             // updatepatient_btn
             // 
-            this.updatepatient_btn.Location = new System.Drawing.Point(143, 278);
+            this.updatepatient_btn.Location = new System.Drawing.Point(157, 294);
             this.updatepatient_btn.Name = "updatepatient_btn";
             this.updatepatient_btn.Size = new System.Drawing.Size(75, 23);
             this.updatepatient_btn.TabIndex = 4;
@@ -366,7 +367,7 @@
             // 
             // savepatient_txt
             // 
-            this.savepatient_txt.Location = new System.Drawing.Point(227, 278);
+            this.savepatient_txt.Location = new System.Drawing.Point(241, 294);
             this.savepatient_txt.Name = "savepatient_txt";
             this.savepatient_txt.Size = new System.Drawing.Size(75, 23);
             this.savepatient_txt.TabIndex = 5;
@@ -376,7 +377,7 @@
             // 
             // clearform_btn
             // 
-            this.clearform_btn.Location = new System.Drawing.Point(308, 278);
+            this.clearform_btn.Location = new System.Drawing.Point(322, 294);
             this.clearform_btn.Name = "clearform_btn";
             this.clearform_btn.Size = new System.Drawing.Size(75, 23);
             this.clearform_btn.TabIndex = 6;
@@ -386,7 +387,7 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(394, 278);
+            this.cancel_btn.Location = new System.Drawing.Point(408, 294);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 23);
             this.cancel_btn.TabIndex = 7;
@@ -396,7 +397,7 @@
             // 
             // printpatient_btn
             // 
-            this.printpatient_btn.Location = new System.Drawing.Point(512, 278);
+            this.printpatient_btn.Location = new System.Drawing.Point(526, 294);
             this.printpatient_btn.Name = "printpatient_btn";
             this.printpatient_btn.Size = new System.Drawing.Size(75, 23);
             this.printpatient_btn.TabIndex = 8;
@@ -412,30 +413,25 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(618, 340);
+            this.tabControl1.Size = new System.Drawing.Size(618, 288);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.printpatient_btn);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.cancel_btn);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.clearform_btn);
-            this.tabPage1.Controls.Add(this.delatepatient_btn);
-            this.tabPage1.Controls.Add(this.savepatient_txt);
-            this.tabPage1.Controls.Add(this.updatepatient_btn);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(610, 314);
+            this.tabPage1.Size = new System.Drawing.Size(610, 262);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.diab_cb);
             this.tabPage2.Controls.Add(this.label25);
@@ -471,262 +467,29 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(610, 314);
+            this.tabPage2.Size = new System.Drawing.Size(610, 262);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Diagnostico";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPage3
+            // button1
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(610, 314);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Odontograma";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(150, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(302, 29);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Diagnostico del paciente";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 44);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(21, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "ID:";
-            // 
-            // idpatient_md_txt
-            // 
-            this.idpatient_md_txt.Location = new System.Drawing.Point(34, 41);
-            this.idpatient_md_txt.Name = "idpatient_md_txt";
-            this.idpatient_md_txt.Size = new System.Drawing.Size(83, 20);
-            this.idpatient_md_txt.TabIndex = 4;
-            this.idpatient_md_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // namep_md_txt
-            // 
-            this.namep_md_txt.Location = new System.Drawing.Point(260, 41);
-            this.namep_md_txt.Name = "namep_md_txt";
-            this.namep_md_txt.Size = new System.Drawing.Size(291, 20);
-            this.namep_md_txt.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(145, 44);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Nombre del Paciente:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 79);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(149, 13);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Esta bajo tratamiento medico?";
-            // 
-            // tmed_cb
-            // 
-            this.tmed_cb.FormattingEnabled = true;
-            this.tmed_cb.Location = new System.Drawing.Point(162, 76);
-            this.tmed_cb.Name = "tmed_cb";
-            this.tmed_cb.Size = new System.Drawing.Size(79, 21);
-            this.tmed_cb.TabIndex = 8;
-            // 
-            // tmedcom_txt
-            // 
-            this.tmedcom_txt.Location = new System.Drawing.Point(260, 76);
-            this.tmedcom_txt.Name = "tmedcom_txt";
-            this.tmedcom_txt.Size = new System.Drawing.Size(291, 20);
-            this.tmedcom_txt.TabIndex = 9;
-            // 
-            // ps_cb
-            // 
-            this.ps_cb.FormattingEnabled = true;
-            this.ps_cb.Location = new System.Drawing.Point(197, 103);
-            this.ps_cb.Name = "ps_cb";
-            this.ps_cb.Size = new System.Drawing.Size(79, 21);
-            this.ps_cb.TabIndex = 11;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 106);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 13);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Problemas con la Presion sanguinea?";
-            // 
-            // hep_cb
-            // 
-            this.hep_cb.FormattingEnabled = true;
-            this.hep_cb.Location = new System.Drawing.Point(67, 129);
-            this.hep_cb.Name = "hep_cb";
-            this.hep_cb.Size = new System.Drawing.Size(79, 21);
-            this.hep_cb.TabIndex = 14;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 132);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 13);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Hepatitis?";
-            // 
-            // pecom_txt
-            // 
-            this.pecom_txt.Location = new System.Drawing.Point(222, 155);
-            this.pecom_txt.Name = "pecom_txt";
-            this.pecom_txt.Size = new System.Drawing.Size(329, 20);
-            this.pecom_txt.TabIndex = 18;
-            // 
-            // pe_cb
-            // 
-            this.pe_cb.FormattingEnabled = true;
-            this.pe_cb.Location = new System.Drawing.Point(137, 155);
-            this.pe_cb.Name = "pe_cb";
-            this.pe_cb.Size = new System.Drawing.Size(79, 21);
-            this.pe_cb.TabIndex = 17;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 158);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(124, 13);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "Problemas estomacales?";
-            // 
-            // hemo_cb
-            // 
-            this.hemo_cb.FormattingEnabled = true;
-            this.hemo_cb.Location = new System.Drawing.Point(85, 182);
-            this.hemo_cb.Name = "hemo_cb";
-            this.hemo_cb.Size = new System.Drawing.Size(79, 21);
-            this.hemo_cb.TabIndex = 20;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 185);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 13);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "Hemorragias?";
-            // 
-            // micacom_txt
-            // 
-            this.micacom_txt.Location = new System.Drawing.Point(260, 209);
-            this.micacom_txt.Name = "micacom_txt";
-            this.micacom_txt.Size = new System.Drawing.Size(291, 20);
-            this.micacom_txt.TabIndex = 24;
-            // 
-            // mica_cb
-            // 
-            this.mica_cb.FormattingEnabled = true;
-            this.mica_cb.Location = new System.Drawing.Point(162, 209);
-            this.mica_cb.Name = "mica_cb";
-            this.mica_cb.Size = new System.Drawing.Size(79, 21);
-            this.mica_cb.TabIndex = 23;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(7, 212);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(150, 13);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "Esta tomando Medicamentos?";
-            // 
-            // alercom_txt
-            // 
-            this.alercom_txt.Location = new System.Drawing.Point(199, 235);
-            this.alercom_txt.Name = "alercom_txt";
-            this.alercom_txt.Size = new System.Drawing.Size(291, 20);
-            this.alercom_txt.TabIndex = 27;
-            // 
-            // aler_cb
-            // 
-            this.aler_cb.FormattingEnabled = true;
-            this.aler_cb.Location = new System.Drawing.Point(112, 235);
-            this.aler_cb.Name = "aler_cb";
-            this.aler_cb.Size = new System.Drawing.Size(79, 21);
-            this.aler_cb.TabIndex = 26;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(7, 238);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(83, 13);
-            this.label22.TabIndex = 25;
-            this.label22.Text = "Alergico a algo?";
-            // 
-            // pr_cb
-            // 
-            this.pr_cb.FormattingEnabled = true;
-            this.pr_cb.Location = new System.Drawing.Point(413, 129);
-            this.pr_cb.Name = "pr_cb";
-            this.pr_cb.Size = new System.Drawing.Size(79, 21);
-            this.pr_cb.TabIndex = 29;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(327, 132);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(80, 13);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "Prob. Renales?";
-            // 
-            // hepcom_txt
-            // 
-            this.hepcom_txt.Location = new System.Drawing.Point(152, 129);
-            this.hepcom_txt.Name = "hepcom_txt";
-            this.hepcom_txt.Size = new System.Drawing.Size(169, 20);
-            this.hepcom_txt.TabIndex = 30;
-            // 
-            // pacom_txt
-            // 
-            this.pacom_txt.Location = new System.Drawing.Point(380, 182);
-            this.pacom_txt.Name = "pacom_txt";
-            this.pacom_txt.Size = new System.Drawing.Size(210, 20);
-            this.pacom_txt.TabIndex = 33;
-            // 
-            // pa_cb
-            // 
-            this.pa_cb.FormattingEnabled = true;
-            this.pa_cb.Location = new System.Drawing.Point(295, 182);
-            this.pa_cb.Name = "pa_cb";
-            this.pa_cb.Size = new System.Drawing.Size(79, 21);
-            this.pa_cb.TabIndex = 32;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(181, 185);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(108, 13);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "Prob. con Anestesia?";
+            this.button1.Location = new System.Drawing.Point(155, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 23);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Procesar Diagnostico";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // diab_cb
             // 
+            this.diab_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.diab_cb.FormattingEnabled = true;
+            this.diab_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
             this.diab_cb.Location = new System.Drawing.Point(357, 103);
             this.diab_cb.Name = "diab_cb";
             this.diab_cb.Size = new System.Drawing.Size(79, 21);
@@ -741,22 +504,314 @@
             this.label25.TabIndex = 34;
             this.label25.Text = "Diabetes?";
             // 
-            // button1
+            // pacom_txt
             // 
-            this.button1.Location = new System.Drawing.Point(159, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(293, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Procesar Diagnostico";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pacom_txt.Location = new System.Drawing.Point(380, 182);
+            this.pacom_txt.Name = "pacom_txt";
+            this.pacom_txt.Size = new System.Drawing.Size(210, 20);
+            this.pacom_txt.TabIndex = 33;
+            // 
+            // pa_cb
+            // 
+            this.pa_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pa_cb.FormattingEnabled = true;
+            this.pa_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.pa_cb.Location = new System.Drawing.Point(295, 182);
+            this.pa_cb.Name = "pa_cb";
+            this.pa_cb.Size = new System.Drawing.Size(79, 21);
+            this.pa_cb.TabIndex = 32;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(181, 185);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(108, 13);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "Prob. con Anestesia?";
+            // 
+            // hepcom_txt
+            // 
+            this.hepcom_txt.Location = new System.Drawing.Point(152, 129);
+            this.hepcom_txt.Name = "hepcom_txt";
+            this.hepcom_txt.Size = new System.Drawing.Size(169, 20);
+            this.hepcom_txt.TabIndex = 30;
+            // 
+            // pr_cb
+            // 
+            this.pr_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pr_cb.FormattingEnabled = true;
+            this.pr_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.pr_cb.Location = new System.Drawing.Point(413, 129);
+            this.pr_cb.Name = "pr_cb";
+            this.pr_cb.Size = new System.Drawing.Size(79, 21);
+            this.pr_cb.TabIndex = 29;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(327, 132);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(80, 13);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "Prob. Renales?";
+            // 
+            // alercom_txt
+            // 
+            this.alercom_txt.Location = new System.Drawing.Point(199, 235);
+            this.alercom_txt.Name = "alercom_txt";
+            this.alercom_txt.Size = new System.Drawing.Size(291, 20);
+            this.alercom_txt.TabIndex = 27;
+            // 
+            // aler_cb
+            // 
+            this.aler_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.aler_cb.FormattingEnabled = true;
+            this.aler_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.aler_cb.Location = new System.Drawing.Point(112, 235);
+            this.aler_cb.Name = "aler_cb";
+            this.aler_cb.Size = new System.Drawing.Size(79, 21);
+            this.aler_cb.TabIndex = 26;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 238);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(83, 13);
+            this.label22.TabIndex = 25;
+            this.label22.Text = "Alergico a algo?";
+            // 
+            // micacom_txt
+            // 
+            this.micacom_txt.Location = new System.Drawing.Point(260, 209);
+            this.micacom_txt.Name = "micacom_txt";
+            this.micacom_txt.Size = new System.Drawing.Size(291, 20);
+            this.micacom_txt.TabIndex = 24;
+            // 
+            // mica_cb
+            // 
+            this.mica_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mica_cb.FormattingEnabled = true;
+            this.mica_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.mica_cb.Location = new System.Drawing.Point(162, 209);
+            this.mica_cb.Name = "mica_cb";
+            this.mica_cb.Size = new System.Drawing.Size(79, 21);
+            this.mica_cb.TabIndex = 23;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 212);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(150, 13);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Esta tomando Medicamentos?";
+            // 
+            // hemo_cb
+            // 
+            this.hemo_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hemo_cb.FormattingEnabled = true;
+            this.hemo_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.hemo_cb.Location = new System.Drawing.Point(85, 182);
+            this.hemo_cb.Name = "hemo_cb";
+            this.hemo_cb.Size = new System.Drawing.Size(79, 21);
+            this.hemo_cb.TabIndex = 20;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 185);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Hemorragias?";
+            // 
+            // pecom_txt
+            // 
+            this.pecom_txt.Location = new System.Drawing.Point(222, 155);
+            this.pecom_txt.Name = "pecom_txt";
+            this.pecom_txt.Size = new System.Drawing.Size(329, 20);
+            this.pecom_txt.TabIndex = 18;
+            // 
+            // pe_cb
+            // 
+            this.pe_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pe_cb.FormattingEnabled = true;
+            this.pe_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.pe_cb.Location = new System.Drawing.Point(137, 155);
+            this.pe_cb.Name = "pe_cb";
+            this.pe_cb.Size = new System.Drawing.Size(79, 21);
+            this.pe_cb.TabIndex = 17;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 158);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(124, 13);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Problemas estomacales?";
+            // 
+            // hep_cb
+            // 
+            this.hep_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hep_cb.FormattingEnabled = true;
+            this.hep_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.hep_cb.Location = new System.Drawing.Point(67, 129);
+            this.hep_cb.Name = "hep_cb";
+            this.hep_cb.Size = new System.Drawing.Size(79, 21);
+            this.hep_cb.TabIndex = 14;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 132);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(54, 13);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Hepatitis?";
+            // 
+            // ps_cb
+            // 
+            this.ps_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ps_cb.FormattingEnabled = true;
+            this.ps_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.ps_cb.Location = new System.Drawing.Point(197, 103);
+            this.ps_cb.Name = "ps_cb";
+            this.ps_cb.Size = new System.Drawing.Size(79, 21);
+            this.ps_cb.TabIndex = 11;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 106);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(184, 13);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Problemas con la Presion sanguinea?";
+            // 
+            // tmedcom_txt
+            // 
+            this.tmedcom_txt.Location = new System.Drawing.Point(260, 76);
+            this.tmedcom_txt.Name = "tmedcom_txt";
+            this.tmedcom_txt.Size = new System.Drawing.Size(291, 20);
+            this.tmedcom_txt.TabIndex = 9;
+            // 
+            // tmed_cb
+            // 
+            this.tmed_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tmed_cb.FormattingEnabled = true;
+            this.tmed_cb.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.tmed_cb.Location = new System.Drawing.Point(162, 76);
+            this.tmed_cb.Name = "tmed_cb";
+            this.tmed_cb.Size = new System.Drawing.Size(79, 21);
+            this.tmed_cb.TabIndex = 8;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 79);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(149, 13);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Esta bajo tratamiento medico?";
+            // 
+            // namep_md_txt
+            // 
+            this.namep_md_txt.Enabled = false;
+            this.namep_md_txt.Location = new System.Drawing.Point(260, 41);
+            this.namep_md_txt.Name = "namep_md_txt";
+            this.namep_md_txt.Size = new System.Drawing.Size(291, 20);
+            this.namep_md_txt.TabIndex = 6;
+            this.namep_md_txt.TextChanged += new System.EventHandler(this.namep_md_txt_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(145, 44);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(109, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Nombre del Paciente:";
+            // 
+            // idpatient_md_txt
+            // 
+            this.idpatient_md_txt.Enabled = false;
+            this.idpatient_md_txt.Location = new System.Drawing.Point(34, 41);
+            this.idpatient_md_txt.Name = "idpatient_md_txt";
+            this.idpatient_md_txt.Size = new System.Drawing.Size(83, 20);
+            this.idpatient_md_txt.TabIndex = 4;
+            this.idpatient_md_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 44);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "ID:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(150, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(302, 29);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Diagnostico del paciente";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(610, 364);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Odontograma";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(317, 280);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 23);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Procesar Diagnostico";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(618, 337);
+            this.ClientSize = new System.Drawing.Size(618, 323);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.printpatient_btn);
+            this.Controls.Add(this.savepatient_txt);
+            this.Controls.Add(this.updatepatient_btn);
+            this.Controls.Add(this.cancel_btn);
+            this.Controls.Add(this.delatepatient_btn);
+            this.Controls.Add(this.clearform_btn);
             this.MaximizeBox = false;
             this.Name = "AddPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -811,38 +866,39 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox idpatient_md_txt;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox alercom_txt;
-        private System.Windows.Forms.ComboBox aler_cb;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox micacom_txt;
-        private System.Windows.Forms.ComboBox mica_cb;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox hemo_cb;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox pecom_txt;
-        private System.Windows.Forms.ComboBox pe_cb;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox hep_cb;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox ps_cb;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox tmedcom_txt;
-        private System.Windows.Forms.ComboBox tmed_cb;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox namep_md_txt;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox pr_cb;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox diab_cb;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox pacom_txt;
-        private System.Windows.Forms.ComboBox pa_cb;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox hepcom_txt;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox idpatient_md_txt;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox alercom_txt;
+        public System.Windows.Forms.ComboBox aler_cb;
+        public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.TextBox micacom_txt;
+        public System.Windows.Forms.ComboBox mica_cb;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.ComboBox hemo_cb;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox pecom_txt;
+        public System.Windows.Forms.ComboBox pe_cb;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.ComboBox hep_cb;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.ComboBox ps_cb;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox tmedcom_txt;
+        public System.Windows.Forms.ComboBox tmed_cb;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox namep_md_txt;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.ComboBox pr_cb;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.ComboBox diab_cb;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.TextBox pacom_txt;
+        public System.Windows.Forms.ComboBox pa_cb;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox hepcom_txt;
     }
 }

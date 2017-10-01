@@ -48,7 +48,7 @@ namespace SysPandemic
                 DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
 
                 DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
-                MessageBox.Show("Hey "+date.Day+"/"+date.Month+"/"+date.Year);
+                //MessageBox.Show("Hey "+date.Day+"/"+date.Month+"/"+date.Year);
 
                 string realdate = +date.Day+"/"+date.Month+"/"+date.Year;
 
@@ -64,6 +64,12 @@ namespace SysPandemic
                 frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
                 frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
                 frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
+
+                String idpatient = act.Cells["ID"].Value.ToString();
+               
+                DBManager c = new DBManager();
+                string query = "Select * from medicald where idpatient = '" + idpatient + "'";
+                c.fill_diag(query, frm.tmed_cb, frm.tmedcom_txt, frm.mica_cb, frm.micacom_txt, frm.ps_cb, frm.diab_cb, frm.hep_cb, frm.hepcom_txt, frm.pr_cb, frm.pe_cb, frm.pecom_txt, frm.pa_cb, frm.pacom_txt, frm.hemo_cb, frm.aler_cb, frm.alercom_txt);
 
                 frm.savepatient_txt.Hide();
                 frm.MdiParent = this.MdiParent;
