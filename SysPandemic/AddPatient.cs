@@ -72,14 +72,13 @@ namespace SysPandemic
         private void printpatient_btn_Click(object sender, EventArgs e)
         {
             DBManager c = new DBManager();
-            string query = "Select * from patient where idpatient = '" + idpatient_txt.Text + "'";
-            string tablename = "Empleados";
+            string query = "select * from patient p, medicald md where p.idpatient = md.idpatient and p.idpatient = '" + idpatient_txt.Text + "'";
+            
+            string tablename = "patient";
             string xml = "patient.xml";
             string report = "patient.rpt";
             c.printreport(query, tablename, xml, report);
 
-            
-            
             
             
             //SQLiteDataAdapter ad;
