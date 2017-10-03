@@ -204,6 +204,9 @@ namespace SysPandemic
         {
 
             DBManager c = new DBManager();
+            DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
             string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
             c.command(query);
             string query2 = "UPDATE medicald Set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
@@ -214,6 +217,11 @@ namespace SysPandemic
                 Close();
                 
             }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
             //{
@@ -265,12 +273,20 @@ namespace SysPandemic
          
 
             DBManager c = new DBManager();
+            DialogResult result = MessageBox.Show("Seguro que desea borra este paciente?, Al borrar el paciente solo se inhabilita la opción de agregarle procedimientos o citas, pero este seguirá apareciendo en los registros necesarios.", "Borrar datos del Paciente", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
              string query = "DELETE FROM patient WHERE idpatient = '" + idpatient_txt.Text + "'";
              c.command(query);
-            if (c.valor == "si"){
+            if (c.valor == "si")
+            {
                 this.Close();
             }
+                }
+                else if (result == DialogResult.No)
+                {
 
+                }
 
             //DialogResult result = MessageBox.Show("Seguro que desea eliminar este Paciente?", "Eliminar paciente", MessageBoxButtons.YesNo);
 

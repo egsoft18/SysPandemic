@@ -230,9 +230,10 @@ namespace SysPandemic
 
         private void subProcedimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            managesubprocedure frm = new managesubprocedure();
-            frm.MdiParent = this;
-            frm.Show();
+            MessageBox.Show("Modulo en revision", "No disponible");
+            //managesubprocedure frm = new managesubprocedure();
+            //frm.MdiParent = this;
+            //frm.Show();
         }
 
         private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
