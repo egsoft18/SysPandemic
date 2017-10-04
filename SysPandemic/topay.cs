@@ -24,20 +24,27 @@ namespace SysPandemic
         }
         private void loadprocedure()
         {
-            spatient_rbtn.PerformClick();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
-                DataTable tabla = new DataTable("Procedimientos");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            DBManager c = new DBManager();
+            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure]";
+            c.load_dgv(dataGridView1, query);
+
+
+
+
+            //spatient_rbtn.PerformClick();
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
+            //    DataTable tabla = new DataTable("Procedimientos");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -46,60 +53,46 @@ namespace SysPandemic
         }
         private void buscar()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            DBManager c = new DBManager();
+
             try
             {
-                cnx.Open();
                 if (snopay_rbtn.Checked)
                 {
                     string status = "NO PAGADO";
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (spay_rbtn.Checked)
                 {
                     string status = "PAGADO";
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where statuspay = '" + status + "'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (search_txt.Text.Length == 0)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (sid_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where idprocedure like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                   string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where idprocedure like '%" + search_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (spatient_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namepatient like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namepatient like '%" + search_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (sdoctor_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namedoctor like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where namedoctor like '%" + search_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
                 else if (sprocedure_rbtn.Checked)
                 {
-                    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where procedure like '%" + search_txt.Text + "%'", cnx);
-                    DataTable tabla = new DataTable("Procedure");
-                    adac.Fill(tabla);
-                    dataGridView1.DataSource = tabla;
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure where procedure like '%" + search_txt.Text + "%'";
+                    c.load_dgv(dataGridView1, query);
                 }
 
 

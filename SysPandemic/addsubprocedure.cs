@@ -51,57 +51,62 @@ namespace SysPandemic
         }
         public void cargarDGV()
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                string idpro = idsubprocedure_txt.Text;
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, date as Fecha from subprocedure where idprocedure = '" + idpro + "'", cnx);
-                DataTable tabla = new DataTable("Sub-Procedimientos");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            DBManager c = new DBManager();
+            string query = "Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, tariff as Tarifa, coverage as Covertura, difference as Diferencia from subprocedure where idprocedure = '" + idsubprocedure_txt.Text + "'";
+            c.load_dgv(dataGridView1, query);
+
+
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    string idpro = idsubprocedure_txt.Text;
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, date as Fecha from subprocedure where idprocedure = '" + idpro + "'", cnx);
+            //    DataTable tabla = new DataTable("Sub-Procedimientos");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                DialogResult result = MessageBox.Show("¿Seguro que desea eliminar este avance del procedimiento?", "Eliminar avance del procedimiento", MessageBoxButtons.YesNo);
+            //try
+            //{
+            //    DialogResult result = MessageBox.Show("¿Seguro que desea eliminar este avance del procedimiento?", "Eliminar avance del procedimiento", MessageBoxButtons.YesNo);
 
-                if (result == DialogResult.Yes)
-                {
-                    DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-                    string value = act.Cells["ID"].Value.ToString();
-                    SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-                    cnx.Open();
-                    string comando = "DELETE FROM subprocedure WHERE id = '" + value + "'";
-                    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-                    if (insertion.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Se ha eliminado!");
-                        cargarDGV();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Algo fue mal");
-                    }
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
+            //        string value = act.Cells["ID"].Value.ToString();
+            //        SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //        cnx.Open();
+            //        string comando = "DELETE FROM subprocedure WHERE id = '" + value + "'";
+            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
+            //        if (insertion.ExecuteNonQuery() > 0)
+            //        {
+            //            MessageBox.Show("Se ha eliminado!");
+            //            cargarDGV();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Algo fue mal");
+            //        }
 
 
 
-                }
-                else if (result == DialogResult.No)
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            //    }
+            //    else if (result == DialogResult.No)
+            //    {
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void checkout_btn_Click(object sender, EventArgs e)
