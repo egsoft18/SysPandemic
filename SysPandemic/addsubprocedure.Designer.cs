@@ -53,26 +53,39 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.subprocedure_txt = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.spdate = new System.Windows.Forms.DateTimePicker();
-            this.addsubprodecure_btn = new System.Windows.Forms.Button();
-            this.addgroud = new System.Windows.Forms.GroupBox();
             this.checkout_btn = new System.Windows.Forms.Button();
             this.printpurchase_btn = new System.Windows.Forms.Button();
             this.purchase_gb = new System.Windows.Forms.GroupBox();
             this.todaydtp = new System.Windows.Forms.DateTimePicker();
+            this.qtypay = new System.Windows.Forms.TextBox();
+            this.nowpay_txt = new System.Windows.Forms.TextBox();
+            this.addpay = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.balancepay_txt = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.typepay = new System.Windows.Forms.ComboBox();
+            this.datepay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.statuspay_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.addgroud.SuspendLayout();
             this.purchase_gb.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.balancepay_txt);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.nowpay_txt);
             this.groupBox1.Controls.Add(this.printprocedure_btn);
             this.groupBox1.Controls.Add(this.statuspay_gb);
             this.groupBox1.Controls.Add(this.label9);
@@ -94,7 +107,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(551, 161);
+            this.groupBox1.Size = new System.Drawing.Size(551, 198);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Procedimiento";
@@ -113,7 +126,7 @@
             // 
             this.statuspay_gb.Controls.Add(this.status_txt);
             this.statuspay_gb.Controls.Add(this.label13);
-            this.statuspay_gb.Location = new System.Drawing.Point(1, 125);
+            this.statuspay_gb.Location = new System.Drawing.Point(6, 155);
             this.statuspay_gb.Name = "statuspay_gb";
             this.statuspay_gb.Size = new System.Drawing.Size(289, 36);
             this.statuspay_gb.TabIndex = 17;
@@ -140,7 +153,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(384, 135);
+            this.label9.Location = new System.Drawing.Point(375, 106);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 16;
@@ -149,7 +162,7 @@
             // sppricepay_txt
             // 
             this.sppricepay_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sppricepay_txt.Location = new System.Drawing.Point(419, 132);
+            this.sppricepay_txt.Location = new System.Drawing.Point(410, 103);
             this.sppricepay_txt.Name = "sppricepay_txt";
             this.sppricepay_txt.ReadOnly = true;
             this.sppricepay_txt.Size = new System.Drawing.Size(98, 20);
@@ -158,7 +171,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(299, 135);
+            this.label10.Location = new System.Drawing.Point(290, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 13);
             this.label10.TabIndex = 14;
@@ -167,7 +180,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(384, 109);
+            this.label8.Location = new System.Drawing.Point(121, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 13;
@@ -185,7 +198,7 @@
             // spiscoverage_txt
             // 
             this.spiscoverage_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spiscoverage_txt.Location = new System.Drawing.Point(419, 106);
+            this.spiscoverage_txt.Location = new System.Drawing.Point(156, 129);
             this.spiscoverage_txt.Name = "spiscoverage_txt";
             this.spiscoverage_txt.ReadOnly = true;
             this.spiscoverage_txt.Size = new System.Drawing.Size(98, 20);
@@ -194,7 +207,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(270, 109);
+            this.label6.Location = new System.Drawing.Point(7, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 10;
@@ -294,7 +307,7 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 217);
+            this.groupBox2.Location = new System.Drawing.Point(12, 275);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(550, 261);
             this.groupBox2.TabIndex = 1;
@@ -321,65 +334,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Proceso:";
-            // 
-            // subprocedure_txt
-            // 
-            this.subprocedure_txt.Location = new System.Drawing.Point(55, 11);
-            this.subprocedure_txt.Name = "subprocedure_txt";
-            this.subprocedure_txt.Size = new System.Drawing.Size(248, 20);
-            this.subprocedure_txt.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(309, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Fecha:";
-            // 
-            // spdate
-            // 
-            this.spdate.CalendarTrailingForeColor = System.Drawing.Color.Gray;
-            this.spdate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.spdate.CustomFormat = "dd/MM/yyyy";
-            this.spdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.spdate.Location = new System.Drawing.Point(355, 11);
-            this.spdate.Name = "spdate";
-            this.spdate.Size = new System.Drawing.Size(102, 20);
-            this.spdate.TabIndex = 3;
-            // 
-            // addsubprodecure_btn
-            // 
-            this.addsubprodecure_btn.Location = new System.Drawing.Point(463, 9);
-            this.addsubprodecure_btn.Name = "addsubprodecure_btn";
-            this.addsubprodecure_btn.Size = new System.Drawing.Size(75, 23);
-            this.addsubprodecure_btn.TabIndex = 5;
-            this.addsubprodecure_btn.Text = "Agregar";
-            this.addsubprodecure_btn.UseVisualStyleBackColor = true;
-            this.addsubprodecure_btn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // addgroud
-            // 
-            this.addgroud.Controls.Add(this.subprocedure_txt);
-            this.addgroud.Controls.Add(this.label12);
-            this.addgroud.Controls.Add(this.addsubprodecure_btn);
-            this.addgroud.Controls.Add(this.label11);
-            this.addgroud.Controls.Add(this.spdate);
-            this.addgroud.Location = new System.Drawing.Point(13, 179);
-            this.addgroud.Name = "addgroud";
-            this.addgroud.Size = new System.Drawing.Size(550, 37);
-            this.addgroud.TabIndex = 6;
-            this.addgroud.TabStop = false;
-            // 
             // checkout_btn
             // 
             this.checkout_btn.Location = new System.Drawing.Point(6, 26);
@@ -404,7 +358,7 @@
             // 
             this.purchase_gb.Controls.Add(this.checkout_btn);
             this.purchase_gb.Controls.Add(this.printpurchase_btn);
-            this.purchase_gb.Location = new System.Drawing.Point(115, 478);
+            this.purchase_gb.Location = new System.Drawing.Point(115, 516);
             this.purchase_gb.Name = "purchase_gb";
             this.purchase_gb.Size = new System.Drawing.Size(318, 64);
             this.purchase_gb.TabIndex = 9;
@@ -414,20 +368,146 @@
             // todaydtp
             // 
             this.todaydtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.todaydtp.Location = new System.Drawing.Point(146, 563);
+            this.todaydtp.Location = new System.Drawing.Point(146, 601);
             this.todaydtp.Name = "todaydtp";
             this.todaydtp.Size = new System.Drawing.Size(97, 20);
             this.todaydtp.TabIndex = 10;
+            // 
+            // qtypay
+            // 
+            this.qtypay.Location = new System.Drawing.Point(127, 23);
+            this.qtypay.Name = "qtypay";
+            this.qtypay.Size = new System.Drawing.Size(100, 20);
+            this.qtypay.TabIndex = 19;
+            this.qtypay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // nowpay_txt
+            // 
+            this.nowpay_txt.Location = new System.Drawing.Point(410, 129);
+            this.nowpay_txt.Name = "nowpay_txt";
+            this.nowpay_txt.ReadOnly = true;
+            this.nowpay_txt.Size = new System.Drawing.Size(100, 20);
+            this.nowpay_txt.TabIndex = 20;
+            // 
+            // addpay
+            // 
+            this.addpay.Location = new System.Drawing.Point(469, 21);
+            this.addpay.Name = "addpay";
+            this.addpay.Size = new System.Drawing.Size(75, 23);
+            this.addpay.TabIndex = 21;
+            this.addpay.Text = "Agregar";
+            this.addpay.UseVisualStyleBackColor = true;
+            this.addpay.Click += new System.EventHandler(this.addpay_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(375, 132);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "RD$";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(296, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Total pagado:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(375, 155);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 13);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "RD$";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(320, 155);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Balance:";
+            // 
+            // balancepay_txt
+            // 
+            this.balancepay_txt.Location = new System.Drawing.Point(410, 152);
+            this.balancepay_txt.Name = "balancepay_txt";
+            this.balancepay_txt.ReadOnly = true;
+            this.balancepay_txt.Size = new System.Drawing.Size(100, 20);
+            this.balancepay_txt.TabIndex = 23;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.datepay);
+            this.groupBox3.Controls.Add(this.typepay);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.qtypay);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.addpay);
+            this.groupBox3.Location = new System.Drawing.Point(12, 209);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(551, 60);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Agregar abono";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(92, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 27;
+            this.label16.Text = "RD$";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 13);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "Valor abonado:";
+            // 
+            // typepay
+            // 
+            this.typepay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typepay.FormattingEnabled = true;
+            this.typepay.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta",
+            "Banco",
+            "Cheque"});
+            this.typepay.Location = new System.Drawing.Point(233, 23);
+            this.typepay.Name = "typepay";
+            this.typepay.Size = new System.Drawing.Size(121, 21);
+            this.typepay.TabIndex = 28;
+            // 
+            // datepay
+            // 
+            this.datepay.CustomFormat = "dd/MM/yyyy";
+            this.datepay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datepay.Location = new System.Drawing.Point(360, 24);
+            this.datepay.Name = "datepay";
+            this.datepay.Size = new System.Drawing.Size(85, 20);
+            this.datepay.TabIndex = 29;
             // 
             // addsubprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(575, 546);
+            this.ClientSize = new System.Drawing.Size(575, 622);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.todaydtp);
             this.Controls.Add(this.purchase_gb);
-            this.Controls.Add(this.addgroud);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -440,9 +520,9 @@
             this.statuspay_gb.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.addgroud.ResumeLayout(false);
-            this.addgroud.PerformLayout();
             this.purchase_gb.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -462,9 +542,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker spdate;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox spnamedoctor_txt;
         public System.Windows.Forms.TextBox spnamepatient_txt;
         public System.Windows.Forms.TextBox sprocedure_txt;
@@ -472,17 +549,27 @@
         public System.Windows.Forms.TextBox sprealpay_txt;
         public System.Windows.Forms.TextBox spiscoverage_txt;
         public System.Windows.Forms.TextBox sppricepay_txt;
-        public System.Windows.Forms.TextBox subprocedure_txt;
-        private System.Windows.Forms.GroupBox addgroud;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox status_txt;
         private System.Windows.Forms.Button printprocedure_btn;
         public System.Windows.Forms.GroupBox purchase_gb;
         public System.Windows.Forms.GroupBox statuspay_gb;
-        public System.Windows.Forms.Button addsubprodecure_btn;
         public System.Windows.Forms.Button checkout_btn;
         public System.Windows.Forms.Button printpurchase_btn;
         private System.Windows.Forms.DateTimePicker todaydtp;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox balancepay_txt;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox nowpay_txt;
+        private System.Windows.Forms.TextBox qtypay;
+        private System.Windows.Forms.Button addpay;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker datepay;
+        private System.Windows.Forms.ComboBox typepay;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

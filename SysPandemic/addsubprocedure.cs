@@ -16,37 +16,25 @@ namespace SysPandemic
         public addsubprocedure()
         {
             InitializeComponent();
-            subprocedure_txt.Focus();
            
         }
 
         private void addsubprocedure_Load(object sender, EventArgs e)
         {
             cargarDGV();
+            DBManager c = new DBManager();
+            string query = "SELECT sum(entry) as qty FROM [SysPandemic].[dbo].[transaction] where ref = '" + idsubprocedure_txt.Text+ "'";
+            string condition = "qty";
+            c.fill_txt(nowpay_txt, query, condition);
+
+            decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+            decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
+            balancepay_txt.Text = Convert.ToString(ppay - nowpay);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                string comando = "INSERT INTO subprocedure(idprocedure, subprocedure, date) VALUES('" + idsubprocedure_txt.Text + "', '" + subprocedure_txt.Text + "','" + spdate.Text + "');";
-                SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-                if (insertion.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Se agrego correctamente");
-                    subprocedure_txt.Text = "";
-                    cargarDGV();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-
-            }
+            
             
         }
         public void cargarDGV()
@@ -56,57 +44,11 @@ namespace SysPandemic
             c.load_dgv(dataGridView1, query);
 
 
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    string idpro = idsubprocedure_txt.Text;
-            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, date as Fecha from subprocedure where idprocedure = '" + idpro + "'", cnx);
-            //    DataTable tabla = new DataTable("Sub-Procedimientos");
-            //    adac.Fill(tabla);
-            //    dataGridView1.DataSource = tabla;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
-            //    DialogResult result = MessageBox.Show("¿Seguro que desea eliminar este avance del procedimiento?", "Eliminar avance del procedimiento", MessageBoxButtons.YesNo);
-
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-            //        string value = act.Cells["ID"].Value.ToString();
-            //        SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //        cnx.Open();
-            //        string comando = "DELETE FROM subprocedure WHERE id = '" + value + "'";
-            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            //        if (insertion.ExecuteNonQuery() > 0)
-            //        {
-            //            MessageBox.Show("Se ha eliminado!");
-            //            cargarDGV();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Algo fue mal");
-            //        }
-
-
-
-            //    }
-            //    else if (result == DialogResult.No)
-            //    {
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
+            
         }
 
         private void checkout_btn_Click(object sender, EventArgs e)
@@ -272,6 +214,47 @@ namespace SysPandemic
             {
                 MessageBox.Show(ex.Message, "Error");
 
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void addpay_Click(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            string query = "INSERT INTO [transaction](ref, madebytran, reasontran, datetran, origin, entry) values('" + idsubprocedure_txt.Text + "', '" + spnamepatient_txt.Text + "', '" + sprocedure_txt.Text + "', '" + datepay.Text + "', '" + typepay.Text + "', '" + qtypay.Text + "')";
+            decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+            decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
+            decimal qty = Convert.ToDecimal(qtypay.Text);
+
+            if (ppay > nowpay)
+            {
+                if (ppay >= (nowpay + qty))
+                {
+                    c.command(query);
+                }
+                else
+                {
+                    MessageBox.Show("El monto ya abonado mas lo que agregara es mayor al monto a pagar, favor verifique y reintente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("NO puede abonar, debido a que el procedimiento ya esta pagado.");
             }
         }
     }
