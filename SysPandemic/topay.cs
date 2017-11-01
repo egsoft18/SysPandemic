@@ -121,8 +121,11 @@ namespace SysPandemic
             frm.spiscoverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
             frm.sppricepay_txt.Text = act.Cells["Total"].Value.ToString();
             frm.status_txt.Text = act.Cells["Credito"].Value.ToString();
-            frm.subprocedure_txt.Focus();
             string pay = act.Cells["Credito"].Value.ToString();
+
+           
+
+
             if (pay == "NO PAGADO")
             {
                 frm.printpurchase_btn.Hide();
@@ -135,7 +138,6 @@ namespace SysPandemic
             {
                 frm.checkout_btn.Hide();
             }
-            frm.addsubprodecure_btn.Hide();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

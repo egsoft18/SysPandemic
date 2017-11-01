@@ -80,7 +80,6 @@ namespace SysPandemic
                 frm.spiscoverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
                 frm.sppricepay_txt.Text = act.Cells["Total"].Value.ToString();
                 frm.status_txt.Text = act.Cells["Credito"].Value.ToString();
-                frm.subprocedure_txt.Focus();
                 frm.purchase_gb.Hide();
 
                 SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");

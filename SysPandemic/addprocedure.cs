@@ -56,67 +56,6 @@ namespace SysPandemic
             string sprocedure = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
             c.load_dgv(dataGridView3, sprocedure);
         
-
-
-                //SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-                //DataTable tabla = new DataTable("Pacientes");
-                //adac.Fill(tabla);
-                //dataGridView1.DataSource = tabla;
-
-                //SQLiteDataAdapter adac2 = new SQLiteDataAdapter(, cnx);
-                //DataTable tabla2 = new DataTable("doctors");
-                //adac2.Fill(tabla2);
-                //dataGridView2.DataSource = tabla2;
-
-                //SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
-                //DataTable tabla3 = new DataTable("Subprocesos");
-                //adac3.Fill(tabla3);
-                //dataGridView3.DataSource = tabla3;
-
-              
-
-
-
-
-
-            //loadsubprocedure();
-            //sums();
-            //spname_rbtn.PerformClick();
-            //sdname_rbtn.PerformClick();
-            //SQLiteConnection cnx1 = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //cnx1.Open();
-            //cnx1.Close();
-
-
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-            //    DataTable tabla = new DataTable("Pacientes");
-            //    adac.Fill(tabla);
-            //    dataGridView1.DataSource = tabla;
-
-            //    SQLiteDataAdapter adac2 = new SQLiteDataAdapter("Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors", cnx);
-            //    DataTable tabla2 = new DataTable("doctors");
-            //    adac2.Fill(tabla2);
-            //    dataGridView2.DataSource = tabla2;
-
-            //    SQLiteDataAdapter adac3 = new SQLiteDataAdapter("Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'", cnx);
-            //    DataTable tabla3 = new DataTable("Subprocesos");
-            //    adac3.Fill(tabla3);
-            //    dataGridView3.DataSource = tabla3;
-
-            //    cnx.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
-            //finally
-            //{
-            //    cnx.Close();
-            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -150,28 +89,28 @@ namespace SysPandemic
             {
                 if (sp_txt.Text.Length == 0)
                 {
-                   string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient";
                    c.load_dgv(dataGridView1, query);
 
                 }
                 else if (spid_rbtn.Checked)
                 {
-                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where id like '%" + sp_txt.Text + "%'";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + sp_txt.Text + "%'";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (spname_rbtn.Checked)
                 {
-                   string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where name like '%" + sp_txt.Text + "%'";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + sp_txt.Text + "%'";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (spidperson_rbtn.Checked)
                 {
-                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient where idperson like '%" + sp_txt.Text + "%'";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + sp_txt.Text + "%'";
                     c.load_dgv(dataGridView1, query);
                 }
                 else
                 {
-                    string query = "Select id as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient";
                     c.load_dgv(dataGridView1, query);
                 }
 
@@ -198,27 +137,27 @@ namespace SysPandemic
             {
                 if (sd_txt.Text.Length == 0)
                 {
-                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors";
+                    string query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff";
                     c.load_dgv(dataGridView2, query);
                 }
                 else if (sdid_rbtn.Checked)
                 {
-                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where id like '%" + sd_txt.Text + "%'";
+                    string query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where idstaff like '%" + sd_txt.Text + "%'";
                     c.load_dgv(dataGridView2, query);
                 }
                 else if (sdname_rbtn.Checked)
                 {
-                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where name like '%" + sd_txt.Text + "%'";
+                    string query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where namestaff like '%" + sd_txt.Text + "%'";
                     c.load_dgv(dataGridView2, query);
                 }
                 else if (sdidperson_rbtn.Checked)
                 {
-                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors where idperson like '%" + sd_txt.Text + "%'";
+                    string query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where idpersonstaff like '%" + sd_txt.Text + "%'";
                     c.load_dgv(dataGridView2, query);
                 }
                 else
                 {
-                    string query = "Select iddoctors as ID, name as Nombre, sex as Sexo, idperson as Cedula from doctors";
+                    string query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff";
                     c.load_dgv(dataGridView2, query);
                 }
 
@@ -622,19 +561,7 @@ namespace SysPandemic
 
         private void addprocedure_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            //try
-            //{
-            //    DBManager c = new DBManager();
-            //    string query = "DELETE FROM subprocedure WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-            //    c.command3(query);
-            //    string query2 = "DELETE FROM [procedure] WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-            //    c.command3(query2);
-            //    Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al cerrar ventana. Causa " + ex.Message);
-            //}
+           
         }
 
         private void searchprocess_txt_TextChanged(object sender, EventArgs e)

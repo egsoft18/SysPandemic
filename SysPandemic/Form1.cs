@@ -27,6 +27,9 @@ namespace SysPandemic
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            
+            
             AddPatient f = new AddPatient();
             f.MdiParent = this;
             f.delatepatient_btn.Hide();

@@ -373,7 +373,7 @@ namespace SysPandemic
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aun no disponble");
+            MessageBox.Show("Aun no dionble");
             
             //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
             //try
