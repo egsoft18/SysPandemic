@@ -62,6 +62,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.diab_cb = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -95,7 +96,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -170,6 +170,7 @@
             this.tworkpatient_txt.Size = new System.Drawing.Size(122, 20);
             this.tworkpatient_txt.TabIndex = 13;
             this.tworkpatient_txt.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.tworkpatient_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tworkpatient_txt_KeyPress);
             // 
             // label8
             // 
@@ -187,6 +188,7 @@
             this.celpatient_txt.Name = "celpatient_txt";
             this.celpatient_txt.Size = new System.Drawing.Size(122, 20);
             this.celpatient_txt.TabIndex = 11;
+            this.celpatient_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celpatient_txt_KeyPress);
             // 
             // label7
             // 
@@ -203,6 +205,7 @@
             this.telpatient_txt.Name = "telpatient_txt";
             this.telpatient_txt.Size = new System.Drawing.Size(122, 20);
             this.telpatient_txt.TabIndex = 9;
+            this.telpatient_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telpatient_txt_KeyPress);
             // 
             // label6
             // 
@@ -472,6 +475,15 @@
             this.tabPage2.Text = "Diagnostico";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(317, 280);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 23);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Procesar Diagnostico";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -785,19 +797,10 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(610, 364);
+            this.tabPage3.Size = new System.Drawing.Size(610, 262);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Odontograma";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(317, 280);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Procesar Diagnostico";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // AddPatient
             // 

@@ -41,11 +41,12 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-            
-                string query = "Select idinsurance, nameinsurance from insurances";
-                string item = "nameinsurance";
-                DBManager c = new DBManager();
-                c.fill_CB(insurancepatient_txt, query, item);
+
+            string query3 = "Select idinsurance, nameinsurance from insurances";
+            string item = "nameinsurance";
+            DBManager c2 = new DBManager();
+
+            c2.fill_CB(insurancepatient_txt, query3, item);
 
                 idpatient_md_txt.Text = idpatient_txt.Text;
                 namep_md_txt.Text = namepatient_txt.Text;
@@ -361,6 +362,54 @@ namespace SysPandemic
         private void namep_md_txt_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void telpatient_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void celpatient_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tworkpatient_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
       
     }
