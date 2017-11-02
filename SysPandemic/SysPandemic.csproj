@@ -184,6 +184,13 @@
     <Compile Include="emerpatv.Designer.cs">
       <DependentUpon>emerpatv.cs</DependentUpon>
     </Compile>
+    <Compile Include="entrybill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>entrybill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +355,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="emerpatv.resx">
       <DependentUpon>emerpatv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="entrybill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>entrybill.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

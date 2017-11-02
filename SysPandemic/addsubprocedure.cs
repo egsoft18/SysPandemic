@@ -23,15 +23,22 @@ namespace SysPandemic
         {
             cargarDGV();
             DBManager c = new DBManager();
-            string query = "SELECT sum(entry) as qty FROM [SysPandemic].[dbo].[transaction] where ref = '" + idsubprocedure_txt.Text+ "'";
+            string query = "SELECT sum(entry) as qty FROM [SysPandemic].[dbo].[transaction] where ref = '" + idsubprocedure_txt.Text + "'";
             string condition = "qty";
             c.fill_txt(nowpay_txt, query, condition);
 
-            decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
-            decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
-            balancepay_txt.Text = Convert.ToString(ppay - nowpay);
+            if (string.IsNullOrEmpty(nowpay_txt.Text))
+            {
+                decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+                balancepay_txt.Text = Convert.ToString(ppay);
+            }
+            else
+            {
+                decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+                decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
+                balancepay_txt.Text = Convert.ToString(ppay - nowpay);
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -117,8 +124,27 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
             }
         }
-        
 
+        private void loadbill()
+        {
+            cargarDGV();
+            DBManager c = new DBManager();
+            string query = "SELECT sum(entry) as qty FROM [SysPandemic].[dbo].[transaction] where ref = '" + idsubprocedure_txt.Text + "'";
+            string condition = "qty";
+            c.fill_txt(nowpay_txt, query, condition);
+
+            if (string.IsNullOrEmpty(nowpay_txt.Text))
+            {
+                decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+                balancepay_txt.Text = Convert.ToString(ppay);
+            }
+            else
+            {
+                decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+                decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
+                balancepay_txt.Text = Convert.ToString(ppay - nowpay);
+            }
+        }
 
         private void printpurchase_btn_Click(object sender, EventArgs e)
         {
@@ -235,26 +261,70 @@ namespace SysPandemic
 
         private void addpay_Click(object sender, EventArgs e)
         {
-            DBManager c = new DBManager();
-            string query = "INSERT INTO [transaction](ref, madebytran, reasontran, datetran, origin, entry) values('" + idsubprocedure_txt.Text + "', '" + spnamepatient_txt.Text + "', '" + sprocedure_txt.Text + "', '" + datepay.Text + "', '" + typepay.Text + "', '" + qtypay.Text + "')";
-            decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
-            decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
-            decimal qty = Convert.ToDecimal(qtypay.Text);
-
-            if (ppay > nowpay)
+            if (string.IsNullOrEmpty(typepay.Text))
             {
-                if (ppay >= (nowpay + qty))
-                {
-                    c.command(query);
-                }
-                else
-                {
-                    MessageBox.Show("El monto ya abonado mas lo que agregara es mayor al monto a pagar, favor verifique y reintente");
-                }
+                MessageBox.Show("Debe de elegir un metodo de pago.", "Error");
             }
             else
             {
-                MessageBox.Show("NO puede abonar, debido a que el procedimiento ya esta pagado.");
+                if (string.IsNullOrEmpty(qtypay.Text))
+                {
+                    MessageBox.Show("Debe de elegir una cantidad de pago.", "Error");
+                }
+                else
+                {
+                    DBManager c = new DBManager();
+                    string query = "INSERT INTO [transaction](ref, madebytran, reasontran, datetran, origin, entry) values('" + idsubprocedure_txt.Text + "', '" + spnamepatient_txt.Text + "', '" + sprocedure_txt.Text + "', '" + datepay.Text + "', '" + typepay.Text + "', '" + qtypay.Text + "')";
+                    decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
+
+                    decimal qty = Convert.ToDecimal(qtypay.Text);
+
+                    if (string.IsNullOrEmpty(nowpay_txt.Text))
+                    {
+                        if (ppay >= qty)
+                        {
+                            c.command(query);
+                            loadbill();
+                            string query2 = "Select top 1 * from [transaction] order by idtransactions desc";
+
+                            string tablename = "entrybill";
+                            string xml = "entrybill.xml";
+                            string report = "entrybill.rpt";
+                            c.printreport(query2, tablename, xml, report);
+                        }
+                        else
+                        {
+                            MessageBox.Show("El monto ha abonar mas lo ya abonado sobrepasa el precio del procedimiento, favor verifique y reintente");
+                        }
+                    }
+                    else
+                    {
+                        decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
+                        if (ppay > nowpay)
+                        {
+                            if (ppay >= (nowpay + qty))
+                            {
+                                c.command(query);
+                                loadbill();
+
+                                string query3 = "Select top 1 * from [transaction] order by idtransactions desc";
+
+                                string tablename = "entrybill";
+                                string xml = "entrybill.xml";
+                                string report = "entrybill.rpt";
+                                c.printreport(query3, tablename, xml, report);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El monto ha abonar mas lo ya abonado sobrepasa el precio del procedimiento, favor verifique y reintente");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("NO puede abonar, debido a que el procedimiento ya esta pagado.");
+                        }
+                    }
+                }
             }
         }
     }
