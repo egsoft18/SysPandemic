@@ -354,6 +354,13 @@ namespace SysPandemic
         {
            
         }
+
+        private void resetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            prescription frm = new prescription();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
     }
 

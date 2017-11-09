@@ -51,6 +51,10 @@
             this.administrarSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarProcesosSinSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.miselaneasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,8 @@
             this.agendaToolStripMenuItem,
             this.facturacionToolStripMenuItem,
             this.doctoresToolStripMenuItem,
-            this.segurosToolStripMenuItem});
+            this.segurosToolStripMenuItem,
+            this.miselaneasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1354, 24);
@@ -240,6 +245,35 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
+            // miselaneasToolStripMenuItem
+            // 
+            this.miselaneasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetaToolStripMenuItem,
+            this.cartaDeIncapacidadToolStripMenuItem,
+            this.cartaDeAltaToolStripMenuItem});
+            this.miselaneasToolStripMenuItem.Name = "miselaneasToolStripMenuItem";
+            this.miselaneasToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.miselaneasToolStripMenuItem.Text = "Impresiones";
+            // 
+            // resetaToolStripMenuItem
+            // 
+            this.resetaToolStripMenuItem.Name = "resetaToolStripMenuItem";
+            this.resetaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.resetaToolStripMenuItem.Text = "Prescripción";
+            this.resetaToolStripMenuItem.Click += new System.EventHandler(this.resetaToolStripMenuItem_Click);
+            // 
+            // cartaDeIncapacidadToolStripMenuItem
+            // 
+            this.cartaDeIncapacidadToolStripMenuItem.Name = "cartaDeIncapacidadToolStripMenuItem";
+            this.cartaDeIncapacidadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cartaDeIncapacidadToolStripMenuItem.Text = "Carta de Incapacidad";
+            // 
+            // cartaDeAltaToolStripMenuItem
+            // 
+            this.cartaDeAltaToolStripMenuItem.Name = "cartaDeAltaToolStripMenuItem";
+            this.cartaDeAltaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cartaDeAltaToolStripMenuItem.Text = "Carta de alta";
+            // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +321,10 @@
         private System.Windows.Forms.ToolStripMenuItem administrarSegurosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarProcesosSinSeguroToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem miselaneasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cartaDeIncapacidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cartaDeAltaToolStripMenuItem;
     }
 }
 

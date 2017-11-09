@@ -242,6 +242,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="prescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prescription.Designer.cs">
+      <DependentUpon>prescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="procedurelist.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -269,6 +275,12 @@
     </Compile>
     <Compile Include="reportview.Designer.cs">
       <DependentUpon>reportview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchpatientpre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchpatientpre.Designer.cs">
+      <DependentUpon>searchpatientpre.cs</DependentUpon>
     </Compile>
     <Compile Include="seeinsurance.cs">
       <SubType>Form</SubType>
@@ -393,6 +405,9 @@
       <LastGenOutput>cxccp2.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="prescription.resx">
+      <DependentUpon>prescription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="procedurelist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>procedurelist.cs</LastGenOutput>
@@ -417,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportview.resx">
       <DependentUpon>reportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchpatientpre.resx">
+      <DependentUpon>searchpatientpre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seeinsurance.resx">
       <DependentUpon>seeinsurance.cs</DependentUpon>
