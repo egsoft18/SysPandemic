@@ -39,6 +39,10 @@ namespace SysPandemic
                 {
                     m = m + 1;
                     dataGridView1.Rows.Add(m, medicine.Text, use.Text, time.Text);
+                    medicine.Clear();
+                    use.Clear();
+                    time.Clear();
+                    medicine.Focus();
                 }
             }
             catch
@@ -50,6 +54,52 @@ namespace SysPandemic
 
         private void dataGridView1_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
+        }
+
+        private DataTable GetDataTableFromDGV(DataGridView dgv)
+        {
+            var dt = new DataTable();
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                if (column.Visible)
+                {
+                    // You could potentially name the column based on the DGV column name (beware of dupes)
+                    // or assign a type based on the data type of the data bound to this DGV column.
+                    dt.Columns.Add();
+                }
+            }
+
+            object[] cellValues = new object[dgv.Columns.Count];
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                for (int i = 0; i < row.Cells.Count; i++)
+                {
+                    cellValues[i] = row.Cells[i].Value;
+                }
+                dt.Rows.Add(cellValues);
+            }
+
+            return dt;
+        }
+
+        private void printpre_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Add(patientpre.Text, bdaypre.Text, today.Text);
+
+
+            DataTable dT = GetDataTableFromDGV(dataGridView1);
+            DataSet dS = new DataSet();
+            dS.Tables.Add(dT);
+            dS.WriteXml(@"C:\SysPandemic server\xml\prescription.xml");
+
+
+            DataTable dT2 = GetDataTableFromDGV(dataGridView2);
+            DataSet dS2 = new DataSet();
+            dS2.Tables.Add(dT2);
+            dS2.WriteXml(@"C:\SysPandemic server\xml\prescriptioninfo.xml");
+
+            
+ 
         }
     }
 }

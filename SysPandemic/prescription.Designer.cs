@@ -35,6 +35,10 @@
             this.bdaypre = new System.Windows.Forms.TextBox();
             this.searchpatient = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicine = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,11 +46,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.TextBox();
             this.addmedicine = new System.Windows.Forms.Button();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printpre = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.today = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +124,30 @@
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridView1_CellValueNeeded);
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "No.";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Medicamento";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Uso";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Período";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // medicine
             // 
             this.medicine.Location = new System.Drawing.Point(94, 83);
@@ -175,36 +206,64 @@
             this.addmedicine.UseVisualStyleBackColor = true;
             this.addmedicine.Click += new System.EventHandler(this.addmedicine_Click);
             // 
-            // Column4
+            // printpre
             // 
-            this.Column4.HeaderText = "No.";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.printpre.Location = new System.Drawing.Point(281, 368);
+            this.printpre.Name = "printpre";
+            this.printpre.Size = new System.Drawing.Size(154, 29);
+            this.printpre.TabIndex = 14;
+            this.printpre.Text = "Imprimir";
+            this.printpre.UseVisualStyleBackColor = true;
+            this.printpre.Click += new System.EventHandler(this.printpre_Click);
             // 
-            // Column1
+            // dataGridView2
             // 
-            this.Column1.HeaderText = "Medicamento";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 449);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(349, 75);
+            this.dataGridView2.TabIndex = 15;
             // 
-            // Column2
+            // Column5
             // 
-            this.Column2.HeaderText = "Uso";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Column5.HeaderText = "Patient";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // Column3
+            // Column6
             // 
-            this.Column3.HeaderText = "Período";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Column6.HeaderText = "bday";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "today";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // today
+            // 
+            this.today.CustomFormat = "dd-MM-yyyy";
+            this.today.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.today.Location = new System.Drawing.Point(367, 449);
+            this.today.Name = "today";
+            this.today.Size = new System.Drawing.Size(95, 20);
+            this.today.TabIndex = 16;
             // 
             // prescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(729, 374);
+            this.ClientSize = new System.Drawing.Size(729, 536);
+            this.Controls.Add(this.today);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.printpre);
             this.Controls.Add(this.addmedicine);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.time);
@@ -223,6 +282,7 @@
             this.Name = "prescription";
             this.Text = "Crear Prescripcion";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +308,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button printpre;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DateTimePicker today;
     }
 }
