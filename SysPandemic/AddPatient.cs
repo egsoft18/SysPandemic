@@ -45,7 +45,7 @@ namespace SysPandemic
             string query3 = "Select idinsurance, nameinsurance from insurances";
             string item = "nameinsurance";
             DBManager c2 = new DBManager();
-            string query = "select idhistory as ID, diente as Diente, activity as Actividad, abono as Abono, date as Fecha from patienthistory where idpatient = '"+idph_txt.Text+"'";
+            string query = "select idhistory as ID, tooth as Diente, activity as Actividad, qtypay as Abono, date as Fecha from patienthistory where idpatient = '"+ idpatient_txt.Text+"'";
             c2.load_dgv(patienthistory, query);
             c2.fill_CB(insurancepatient_txt, query3, item);
 

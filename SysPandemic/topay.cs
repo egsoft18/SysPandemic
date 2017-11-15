@@ -122,8 +122,8 @@ namespace SysPandemic
             frm.sppricepay_txt.Text = act.Cells["Total"].Value.ToString();
             frm.status_txt.Text = act.Cells["Credito"].Value.ToString();
             string pay = act.Cells["Credito"].Value.ToString();
+            frm.sidpatient.Text = act.Cells["IdPaciente"].Value.ToString();
 
-           
 
 
             if (pay == "NO PAGADO")

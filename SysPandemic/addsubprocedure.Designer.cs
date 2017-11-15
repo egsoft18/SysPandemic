@@ -70,12 +70,12 @@
             this.typepay = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sidpatient = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sactivity_txt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.stooth_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.statuspay_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,10 +86,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.stooth_txt);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.sidpatient);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.balancepay_txt);
@@ -456,7 +456,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.sactivity_txt);
             this.groupBox3.Controls.Add(this.datepay);
             this.groupBox3.Controls.Add(this.typepay);
             this.groupBox3.Controls.Add(this.label16);
@@ -511,14 +511,14 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "Valor abonado:";
             // 
-            // textBox1
+            // sidpatient
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(79, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
-            this.textBox1.TabIndex = 26;
+            this.sidpatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidpatient.Location = new System.Drawing.Point(79, 77);
+            this.sidpatient.Name = "sidpatient";
+            this.sidpatient.ReadOnly = true;
+            this.sidpatient.Size = new System.Drawing.Size(75, 20);
+            this.sidpatient.TabIndex = 26;
             // 
             // label18
             // 
@@ -529,12 +529,12 @@
             this.label18.TabIndex = 27;
             this.label18.Text = "ID Paciente:";
             // 
-            // textBox2
+            // sactivity_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 20);
-            this.textBox2.TabIndex = 30;
+            this.sactivity_txt.Location = new System.Drawing.Point(66, 23);
+            this.sactivity_txt.Name = "sactivity_txt";
+            this.sactivity_txt.Size = new System.Drawing.Size(198, 20);
+            this.sactivity_txt.TabIndex = 30;
             // 
             // label19
             // 
@@ -554,14 +554,14 @@
             this.label20.TabIndex = 33;
             this.label20.Text = "Diente #:";
             // 
-            // textBox3
+            // stooth_txt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(698, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(65, 20);
-            this.textBox3.TabIndex = 34;
+            this.stooth_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stooth_txt.Location = new System.Drawing.Point(698, 54);
+            this.stooth_txt.Name = "stooth_txt";
+            this.stooth_txt.ReadOnly = true;
+            this.stooth_txt.Size = new System.Drawing.Size(65, 20);
+            this.stooth_txt.TabIndex = 34;
             // 
             // addsubprocedure
             // 
@@ -635,11 +635,11 @@
         private System.Windows.Forms.ComboBox typepay;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox stooth_txt;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox sidpatient;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sactivity_txt;
     }
 }

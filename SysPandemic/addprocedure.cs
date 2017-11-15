@@ -55,7 +55,16 @@ namespace SysPandemic
             c.load_dgv(dataGridView2, doctors);
             string sprocedure = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
             c.load_dgv(dataGridView3, sprocedure);
-        
+            if (string.IsNullOrEmpty(pidpatient_txt.Text))
+            {
+
+            }
+            else {
+                string query = "select insurance from patient where idpatient = '" + pidpatient_txt.Text + "'";
+                c.fill_txt(insurance_txt, query, "insurance");
+                string query2 = "select affiliate from patient where idpatient = '" + pidpatient_txt.Text + "'";
+                c.fill_txt(affiliate_txt, query2, "affiliate");
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -180,7 +189,7 @@ namespace SysPandemic
                 DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' tooth = '"+tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "', tooth = '"+tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                     c.command(query);
                     if (c.valor == "si")
                     {

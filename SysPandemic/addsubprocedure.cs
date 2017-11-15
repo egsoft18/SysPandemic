@@ -38,6 +38,15 @@ namespace SysPandemic
                 decimal nowpay = Convert.ToDecimal(nowpay_txt.Text);
                 balancepay_txt.Text = Convert.ToString(ppay - nowpay);
             }
+            if (string.IsNullOrEmpty(idsubprocedure_txt.Text))
+            {
+
+            }
+            else
+            {
+                string query5 = "select tooth from [procedure] where idprocedure = '" + idsubprocedure_txt.Text + "'";
+                c.fill_txt(stooth_txt, query5, "tooth");
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -284,6 +293,11 @@ namespace SysPandemic
                         if (ppay >= qty)
                         {
                             c.command(query);
+
+                            //Insertar en la tabla del historico del paciente
+                            string hquery = "insert into patienthistory(idpatient, tooth, activity, qtypay, date) values('" + sidpatient.Text + "', '" + stooth_txt.Text + "', '" + sactivity_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                            c.command3(hquery);
+
                             loadbill();
                             string query2 = "Select top 1 * from [transaction] order by idtransactions desc";
 
@@ -306,6 +320,10 @@ namespace SysPandemic
                             {
                                 c.command(query);
                                 loadbill();
+                                
+                                //Insertar en la tabla del historico del paciente
+                                string hquery = "insert into patienthistory(idpatient, tooth, activity, qtypay, date) values('" + sidpatient.Text + "', '" + stooth_txt.Text + "', '" + sactivity_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                                c.command3(hquery);
 
                                 string query3 = "Select top 1 * from [transaction] order by idtransactions desc";
 

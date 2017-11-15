@@ -24,7 +24,7 @@ namespace SysPandemic
             DBManager c = new DBManager();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
                 c.load_dgv(dataGridView1, query);
             }
             catch (Exception ex)
@@ -51,6 +51,8 @@ namespace SysPandemic
             frm.realpay_txt.Text = act.Cells["Precio"].Value.ToString();
             frm.iscoverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
             frm.pricepay_txt.Text = act.Cells["Total"].Value.ToString();
+            frm.tooth_txt.Text = act.Cells["Diente"].Value.ToString();
+            
             frm.groupBox3.Hide();
             frm.saveprocedure_btn.Hide();
             frm.clear_btn.Hide();
