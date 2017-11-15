@@ -180,7 +180,7 @@ namespace SysPandemic
                 DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' tooth = '"+tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                     c.command(query);
                     if (c.valor == "si")
                     {
@@ -236,7 +236,7 @@ namespace SysPandemic
                 DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                    string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                     c.command(comando);
                     if (c.valor == "si")
                     {

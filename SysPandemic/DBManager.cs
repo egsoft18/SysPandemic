@@ -26,7 +26,7 @@ namespace SysPandemic
             try
             {
                 //Conexion para la PC de desarrollo
-                cnx = new SqlConnection("Data Source=DELLPc;Initial Catalog=SysPandemic; Integrated Security=True");
+                cnx = new SqlConnection("Data Source=DESKTOP-RC55N5R;Initial Catalog=SysPandemic; Integrated Security=True");
 
                 //Conexion para la pc del consultorio
                 //cnx = new SqlConnection(@"Server=INOA-PC\EGSOFT;Database=SysPandemic;User Id=egsoft; Password=1234");

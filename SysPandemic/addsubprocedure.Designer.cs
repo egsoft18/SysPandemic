@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.balancepay_txt = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nowpay_txt = new System.Windows.Forms.TextBox();
             this.printprocedure_btn = new System.Windows.Forms.Button();
             this.statuspay_gb = new System.Windows.Forms.GroupBox();
             this.status_txt = new System.Windows.Forms.TextBox();
@@ -58,18 +64,18 @@
             this.purchase_gb = new System.Windows.Forms.GroupBox();
             this.todaydtp = new System.Windows.Forms.DateTimePicker();
             this.qtypay = new System.Windows.Forms.TextBox();
-            this.nowpay_txt = new System.Windows.Forms.TextBox();
             this.addpay = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.balancepay_txt = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.datepay = new System.Windows.Forms.DateTimePicker();
+            this.typepay = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.typepay = new System.Windows.Forms.ComboBox();
-            this.datepay = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.statuspay_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +86,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.balancepay_txt);
@@ -107,14 +117,66 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(551, 198);
+            this.groupBox1.Size = new System.Drawing.Size(779, 198);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Procedimiento";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(611, 129);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 13);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "RD$";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(556, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Balance:";
+            // 
+            // balancepay_txt
+            // 
+            this.balancepay_txt.Location = new System.Drawing.Point(646, 126);
+            this.balancepay_txt.Name = "balancepay_txt";
+            this.balancepay_txt.ReadOnly = true;
+            this.balancepay_txt.Size = new System.Drawing.Size(100, 20);
+            this.balancepay_txt.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(611, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "RD$";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(532, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Total pagado:";
+            // 
+            // nowpay_txt
+            // 
+            this.nowpay_txt.Location = new System.Drawing.Point(646, 103);
+            this.nowpay_txt.Name = "nowpay_txt";
+            this.nowpay_txt.ReadOnly = true;
+            this.nowpay_txt.Size = new System.Drawing.Size(100, 20);
+            this.nowpay_txt.TabIndex = 20;
+            // 
             // printprocedure_btn
             // 
-            this.printprocedure_btn.Location = new System.Drawing.Point(419, 10);
+            this.printprocedure_btn.Location = new System.Drawing.Point(648, 19);
             this.printprocedure_btn.Name = "printprocedure_btn";
             this.printprocedure_btn.Size = new System.Drawing.Size(125, 23);
             this.printprocedure_btn.TabIndex = 18;
@@ -234,16 +296,16 @@
             // spnamedoctor_txt
             // 
             this.spnamedoctor_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spnamedoctor_txt.Location = new System.Drawing.Point(338, 80);
+            this.spnamedoctor_txt.Location = new System.Drawing.Point(535, 77);
             this.spnamedoctor_txt.Name = "spnamedoctor_txt";
             this.spnamedoctor_txt.ReadOnly = true;
-            this.spnamedoctor_txt.Size = new System.Drawing.Size(207, 20);
+            this.spnamedoctor_txt.Size = new System.Drawing.Size(228, 20);
             this.spnamedoctor_txt.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(290, 83);
+            this.label4.Location = new System.Drawing.Point(487, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 6;
@@ -252,16 +314,16 @@
             // spnamepatient_txt
             // 
             this.spnamepatient_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spnamepatient_txt.Location = new System.Drawing.Point(65, 80);
+            this.spnamepatient_txt.Location = new System.Drawing.Point(218, 77);
             this.spnamepatient_txt.Name = "spnamepatient_txt";
             this.spnamepatient_txt.ReadOnly = true;
-            this.spnamepatient_txt.Size = new System.Drawing.Size(219, 20);
+            this.spnamepatient_txt.Size = new System.Drawing.Size(253, 20);
             this.spnamepatient_txt.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 83);
+            this.label3.Location = new System.Drawing.Point(160, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
@@ -273,7 +335,7 @@
             this.sprocedure_txt.Location = new System.Drawing.Point(90, 54);
             this.sprocedure_txt.Name = "sprocedure_txt";
             this.sprocedure_txt.ReadOnly = true;
-            this.sprocedure_txt.Size = new System.Drawing.Size(455, 20);
+            this.sprocedure_txt.Size = new System.Drawing.Size(550, 20);
             this.sprocedure_txt.TabIndex = 3;
             // 
             // label2
@@ -375,23 +437,15 @@
             // 
             // qtypay
             // 
-            this.qtypay.Location = new System.Drawing.Point(127, 23);
+            this.qtypay.Location = new System.Drawing.Point(374, 24);
             this.qtypay.Name = "qtypay";
             this.qtypay.Size = new System.Drawing.Size(100, 20);
             this.qtypay.TabIndex = 19;
             this.qtypay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // nowpay_txt
-            // 
-            this.nowpay_txt.Location = new System.Drawing.Point(410, 129);
-            this.nowpay_txt.Name = "nowpay_txt";
-            this.nowpay_txt.ReadOnly = true;
-            this.nowpay_txt.Size = new System.Drawing.Size(100, 20);
-            this.nowpay_txt.TabIndex = 20;
-            // 
             // addpay
             // 
-            this.addpay.Location = new System.Drawing.Point(469, 21);
+            this.addpay.Location = new System.Drawing.Point(698, 21);
             this.addpay.Name = "addpay";
             this.addpay.Size = new System.Drawing.Size(75, 23);
             this.addpay.TabIndex = 21;
@@ -399,52 +453,10 @@
             this.addpay.UseVisualStyleBackColor = true;
             this.addpay.Click += new System.EventHandler(this.addpay_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(375, 132);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 13);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "RD$";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(296, 132);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Total pagado:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(375, 155);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 13);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "RD$";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(320, 155);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 13);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "Balance:";
-            // 
-            // balancepay_txt
-            // 
-            this.balancepay_txt.Location = new System.Drawing.Point(410, 152);
-            this.balancepay_txt.Name = "balancepay_txt";
-            this.balancepay_txt.ReadOnly = true;
-            this.balancepay_txt.Size = new System.Drawing.Size(100, 20);
-            this.balancepay_txt.TabIndex = 23;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.datepay);
             this.groupBox3.Controls.Add(this.typepay);
             this.groupBox3.Controls.Add(this.label16);
@@ -453,28 +465,19 @@
             this.groupBox3.Controls.Add(this.addpay);
             this.groupBox3.Location = new System.Drawing.Point(12, 209);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(551, 60);
+            this.groupBox3.Size = new System.Drawing.Size(779, 60);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Agregar abono";
             // 
-            // label16
+            // datepay
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(92, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 13);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "RD$";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 26);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(79, 13);
-            this.label17.TabIndex = 26;
-            this.label17.Text = "Valor abonado:";
+            this.datepay.CustomFormat = "dd/MM/yyyy";
+            this.datepay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datepay.Location = new System.Drawing.Point(607, 24);
+            this.datepay.Name = "datepay";
+            this.datepay.Size = new System.Drawing.Size(85, 20);
+            this.datepay.TabIndex = 29;
             // 
             // typepay
             // 
@@ -485,26 +488,87 @@
             "Tarjeta",
             "Banco",
             "Cheque"});
-            this.typepay.Location = new System.Drawing.Point(233, 23);
+            this.typepay.Location = new System.Drawing.Point(480, 23);
             this.typepay.Name = "typepay";
             this.typepay.Size = new System.Drawing.Size(121, 21);
             this.typepay.TabIndex = 28;
             // 
-            // datepay
+            // label16
             // 
-            this.datepay.CustomFormat = "dd/MM/yyyy";
-            this.datepay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datepay.Location = new System.Drawing.Point(360, 24);
-            this.datepay.Name = "datepay";
-            this.datepay.Size = new System.Drawing.Size(85, 20);
-            this.datepay.TabIndex = 29;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(341, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 27;
+            this.label16.Text = "RD$";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(267, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 13);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "Valor abonado:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(79, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(75, 20);
+            this.textBox1.TabIndex = 26;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "ID Paciente:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(66, 23);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(198, 20);
+            this.textBox2.TabIndex = 30;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Actividad:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(643, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 13);
+            this.label20.TabIndex = 33;
+            this.label20.Text = "Diente #:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(698, 54);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(65, 20);
+            this.textBox3.TabIndex = 34;
             // 
             // addsubprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(575, 622);
+            this.ClientSize = new System.Drawing.Size(848, 622);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.todaydtp);
             this.Controls.Add(this.purchase_gb);
@@ -571,5 +635,11 @@
         private System.Windows.Forms.ComboBox typepay;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

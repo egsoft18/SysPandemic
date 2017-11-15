@@ -45,11 +45,13 @@ namespace SysPandemic
             string query3 = "Select idinsurance, nameinsurance from insurances";
             string item = "nameinsurance";
             DBManager c2 = new DBManager();
-
+            string query = "select idhistory as ID, diente as Diente, activity as Actividad, abono as Abono, date as Fecha from patienthistory where idpatient = '"+idph_txt.Text+"'";
+            c2.load_dgv(patienthistory, query);
             c2.fill_CB(insurancepatient_txt, query3, item);
 
                 idpatient_md_txt.Text = idpatient_txt.Text;
                 namep_md_txt.Text = namepatient_txt.Text;
+                idph_txt.Text = idpatient_txt.Text;
             
             
             
@@ -410,6 +412,13 @@ namespace SysPandemic
             {
                 e.Handled = true;
             }
+        }
+
+        private void searchhistory_txt_TextChanged(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            string query = "select idhistory as ID, diente as Diente, activity as Actividad, abono as Abono, date as Fecha from patienthistory where idpatient like '%" + searchhistory_txt.Text + "%'";
+            c.load_dgv(patienthistory, query);
         }
       
     }

@@ -96,11 +96,18 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.idph_txt = new System.Windows.Forms.TextBox();
+            this.patienthistory = new System.Windows.Forms.DataGridView();
+            this.searchhistory_txt = new System.Windows.Forms.TextBox();
+            this.searchhistory_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -413,6 +420,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -802,6 +810,54 @@
             this.tabPage3.Text = "Odontograma";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.searchhistory_btn);
+            this.tabPage4.Controls.Add(this.searchhistory_txt);
+            this.tabPage4.Controls.Add(this.patienthistory);
+            this.tabPage4.Controls.Add(this.idph_txt);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(610, 262);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Historial";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // idph_txt
+            // 
+            this.idph_txt.Enabled = false;
+            this.idph_txt.Location = new System.Drawing.Point(7, 6);
+            this.idph_txt.Name = "idph_txt";
+            this.idph_txt.ReadOnly = true;
+            this.idph_txt.Size = new System.Drawing.Size(100, 20);
+            this.idph_txt.TabIndex = 0;
+            // 
+            // patienthistory
+            // 
+            this.patienthistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patienthistory.Location = new System.Drawing.Point(8, 58);
+            this.patienthistory.Name = "patienthistory";
+            this.patienthistory.Size = new System.Drawing.Size(588, 198);
+            this.patienthistory.TabIndex = 1;
+            // 
+            // searchhistory_txt
+            // 
+            this.searchhistory_txt.Location = new System.Drawing.Point(145, 32);
+            this.searchhistory_txt.Name = "searchhistory_txt";
+            this.searchhistory_txt.Size = new System.Drawing.Size(333, 20);
+            this.searchhistory_txt.TabIndex = 2;
+            this.searchhistory_txt.TextChanged += new System.EventHandler(this.searchhistory_txt_TextChanged);
+            // 
+            // searchhistory_btn
+            // 
+            this.searchhistory_btn.Location = new System.Drawing.Point(484, 32);
+            this.searchhistory_btn.Name = "searchhistory_btn";
+            this.searchhistory_btn.Size = new System.Drawing.Size(75, 20);
+            this.searchhistory_btn.TabIndex = 3;
+            this.searchhistory_btn.Text = "Buscar";
+            this.searchhistory_btn.UseVisualStyleBackColor = true;
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,6 +885,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -903,5 +962,10 @@
         public System.Windows.Forms.ComboBox pa_cb;
         public System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox hepcom_txt;
+        private System.Windows.Forms.TabPage tabPage4;
+        public System.Windows.Forms.TextBox idph_txt;
+        private System.Windows.Forms.Button searchhistory_btn;
+        private System.Windows.Forms.DataGridView patienthistory;
+        public System.Windows.Forms.TextBox searchhistory_txt;
     }
 }

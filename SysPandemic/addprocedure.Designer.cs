@@ -85,6 +85,8 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
+            this.tooth_txt = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -220,6 +222,8 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.label18);
+            this.groud2.Controls.Add(this.tooth_txt);
             this.groud2.Controls.Add(this.searchprocess_txt);
             this.groud2.Controls.Add(this.option_cb);
             this.groud2.Controls.Add(this.label16);
@@ -323,7 +327,7 @@
             // 
             this.dateprocedure_dtp.CustomFormat = "dd/MM/yyyy";
             this.dateprocedure_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateprocedure_dtp.Location = new System.Drawing.Point(252, 16);
+            this.dateprocedure_dtp.Location = new System.Drawing.Point(385, 19);
             this.dateprocedure_dtp.Name = "dateprocedure_dtp";
             this.dateprocedure_dtp.Size = new System.Drawing.Size(105, 20);
             this.dateprocedure_dtp.TabIndex = 22;
@@ -331,7 +335,7 @@
             // dateprocedure
             // 
             this.dateprocedure.AutoSize = true;
-            this.dateprocedure.Location = new System.Drawing.Point(205, 22);
+            this.dateprocedure.Location = new System.Drawing.Point(337, 22);
             this.dateprocedure.Name = "dateprocedure";
             this.dateprocedure.Size = new System.Drawing.Size(40, 13);
             this.dateprocedure.TabIndex = 21;
@@ -497,7 +501,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(134, 3);
+            this.label13.Location = new System.Drawing.Point(264, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(368, 29);
             this.label13.TabIndex = 6;
@@ -675,6 +679,23 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
+            // tooth_txt
+            // 
+            this.tooth_txt.AcceptsReturn = true;
+            this.tooth_txt.Location = new System.Drawing.Point(243, 19);
+            this.tooth_txt.Name = "tooth_txt";
+            this.tooth_txt.Size = new System.Drawing.Size(83, 20);
+            this.tooth_txt.TabIndex = 19;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(197, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Diente:";
+            // 
             // addprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -772,5 +793,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox searchprocess_txt;
         private System.Windows.Forms.ComboBox option_cb;
+        private System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox tooth_txt;
     }
 }
