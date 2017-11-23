@@ -361,6 +361,13 @@ namespace SysPandemic
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void cierreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closing frm = new closing();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
     }
 

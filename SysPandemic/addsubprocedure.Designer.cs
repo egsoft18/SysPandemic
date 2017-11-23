@@ -525,7 +525,7 @@
             // 
             // datepay
             // 
-            this.datepay.CustomFormat = "dd/MM/yyyy";
+            this.datepay.CustomFormat = "yyyy-MM-dd";
             this.datepay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datepay.Location = new System.Drawing.Point(607, 24);
             this.datepay.Name = "datepay";
