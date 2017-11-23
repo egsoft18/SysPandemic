@@ -90,16 +90,19 @@ namespace SysPandemic
             DataTable dT = GetDataTableFromDGV(dataGridView1);
             DataSet dS = new DataSet();
             dS.Tables.Add(dT);
+            dS.Tables[0].TableName = "prescription";
             dS.WriteXml(@"C:\SysPandemic server\xml\prescription.xml");
 
 
             DataTable dT2 = GetDataTableFromDGV(dataGridView2);
             DataSet dS2 = new DataSet();
             dS2.Tables.Add(dT2);
+            dS2.Tables[0].TableName = "prescriptioninfo";
             dS2.WriteXml(@"C:\SysPandemic server\xml\prescriptioninfo.xml");
+            string rpt = "prescriptionr.rpt";
+            reportview rv = new reportview(rpt);
+            rv.Show();
 
-            
- 
         }
     }
 }

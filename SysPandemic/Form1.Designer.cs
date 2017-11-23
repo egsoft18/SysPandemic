@@ -50,11 +50,12 @@
             this.agregarSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarProcesosSinSeguroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.miselaneasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cierreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,23 +180,24 @@
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.facturarToolStripMenuItem,
-            this.cToolStripMenuItem});
+            this.cToolStripMenuItem,
+            this.cierreToolStripMenuItem});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.facturacionToolStripMenuItem.Text = "Facturación";
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.facturacionToolStripMenuItem.Text = "Finanzas";
             this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
             // facturarToolStripMenuItem
             // 
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.facturarToolStripMenuItem.Text = "Facturar";
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.facturarToolStripMenuItem.Text = "Facturar Procedimiento";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cToolStripMenuItem.Text = "CxC/CP";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
             // 
@@ -237,14 +239,6 @@
             this.administrarProcesosSinSeguroToolStripMenuItem.Text = "Administrar procesos sin seguro";
             this.administrarProcesosSinSeguroToolStripMenuItem.Click += new System.EventHandler(this.administrarProcesosSinSeguroToolStripMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1209, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 3;
-            // 
             // miselaneasToolStripMenuItem
             // 
             this.miselaneasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -273,6 +267,20 @@
             this.cartaDeAltaToolStripMenuItem.Name = "cartaDeAltaToolStripMenuItem";
             this.cartaDeAltaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cartaDeAltaToolStripMenuItem.Text = "Carta de alta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1209, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 3;
+            // 
+            // cierreToolStripMenuItem
+            // 
+            this.cierreToolStripMenuItem.Name = "cierreToolStripMenuItem";
+            this.cierreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cierreToolStripMenuItem.Text = "Cierre";
             // 
             // Homeform
             // 
@@ -325,6 +333,7 @@
         private System.Windows.Forms.ToolStripMenuItem resetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartaDeIncapacidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartaDeAltaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cierreToolStripMenuItem;
     }
 }
 

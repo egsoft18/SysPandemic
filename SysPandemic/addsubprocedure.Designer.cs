@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stooth_txt = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.sidpatient = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.balancepay_txt = new System.Windows.Forms.TextBox();
@@ -66,16 +70,12 @@
             this.qtypay = new System.Windows.Forms.TextBox();
             this.addpay = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.sactivity_txt = new System.Windows.Forms.TextBox();
             this.datepay = new System.Windows.Forms.DateTimePicker();
             this.typepay = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.sidpatient = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.sactivity_txt = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.stooth_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.statuspay_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,10 +117,46 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(779, 198);
+            this.groupBox1.Size = new System.Drawing.Size(779, 174);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Procedimiento";
+            // 
+            // stooth_txt
+            // 
+            this.stooth_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stooth_txt.Location = new System.Drawing.Point(698, 54);
+            this.stooth_txt.Name = "stooth_txt";
+            this.stooth_txt.ReadOnly = true;
+            this.stooth_txt.Size = new System.Drawing.Size(65, 20);
+            this.stooth_txt.TabIndex = 34;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(643, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 13);
+            this.label20.TabIndex = 33;
+            this.label20.Text = "Diente #:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "ID Paciente:";
+            // 
+            // sidpatient
+            // 
+            this.sidpatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidpatient.Location = new System.Drawing.Point(79, 77);
+            this.sidpatient.Name = "sidpatient";
+            this.sidpatient.ReadOnly = true;
+            this.sidpatient.Size = new System.Drawing.Size(75, 20);
+            this.sidpatient.TabIndex = 26;
             // 
             // label14
             // 
@@ -188,7 +224,7 @@
             // 
             this.statuspay_gb.Controls.Add(this.status_txt);
             this.statuspay_gb.Controls.Add(this.label13);
-            this.statuspay_gb.Location = new System.Drawing.Point(6, 155);
+            this.statuspay_gb.Location = new System.Drawing.Point(261, 129);
             this.statuspay_gb.Name = "statuspay_gb";
             this.statuspay_gb.Size = new System.Drawing.Size(289, 36);
             this.statuspay_gb.TabIndex = 17;
@@ -369,9 +405,9 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 275);
+            this.groupBox2.Location = new System.Drawing.Point(12, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(550, 261);
+            this.groupBox2.Size = new System.Drawing.Size(779, 261);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion de avances";
@@ -392,7 +428,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(538, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(767, 236);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -420,7 +456,7 @@
             // 
             this.purchase_gb.Controls.Add(this.checkout_btn);
             this.purchase_gb.Controls.Add(this.printpurchase_btn);
-            this.purchase_gb.Location = new System.Drawing.Point(115, 516);
+            this.purchase_gb.Location = new System.Drawing.Point(262, 525);
             this.purchase_gb.Name = "purchase_gb";
             this.purchase_gb.Size = new System.Drawing.Size(318, 64);
             this.purchase_gb.TabIndex = 9;
@@ -430,7 +466,7 @@
             // todaydtp
             // 
             this.todaydtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.todaydtp.Location = new System.Drawing.Point(146, 601);
+            this.todaydtp.Location = new System.Drawing.Point(146, 545);
             this.todaydtp.Name = "todaydtp";
             this.todaydtp.Size = new System.Drawing.Size(97, 20);
             this.todaydtp.TabIndex = 10;
@@ -463,12 +499,29 @@
             this.groupBox3.Controls.Add(this.qtypay);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.addpay);
-            this.groupBox3.Location = new System.Drawing.Point(12, 209);
+            this.groupBox3.Location = new System.Drawing.Point(12, 192);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(779, 60);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Agregar abono";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Actividad:";
+            // 
+            // sactivity_txt
+            // 
+            this.sactivity_txt.Location = new System.Drawing.Point(66, 23);
+            this.sactivity_txt.Name = "sactivity_txt";
+            this.sactivity_txt.Size = new System.Drawing.Size(198, 20);
+            this.sactivity_txt.TabIndex = 30;
             // 
             // datepay
             // 
@@ -511,64 +564,12 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "Valor abonado:";
             // 
-            // sidpatient
-            // 
-            this.sidpatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sidpatient.Location = new System.Drawing.Point(79, 77);
-            this.sidpatient.Name = "sidpatient";
-            this.sidpatient.ReadOnly = true;
-            this.sidpatient.Size = new System.Drawing.Size(75, 20);
-            this.sidpatient.TabIndex = 26;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 80);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 13);
-            this.label18.TabIndex = 27;
-            this.label18.Text = "ID Paciente:";
-            // 
-            // sactivity_txt
-            // 
-            this.sactivity_txt.Location = new System.Drawing.Point(66, 23);
-            this.sactivity_txt.Name = "sactivity_txt";
-            this.sactivity_txt.Size = new System.Drawing.Size(198, 20);
-            this.sactivity_txt.TabIndex = 30;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 26);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 13);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Actividad:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(643, 57);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 13);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "Diente #:";
-            // 
-            // stooth_txt
-            // 
-            this.stooth_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stooth_txt.Location = new System.Drawing.Point(698, 54);
-            this.stooth_txt.Name = "stooth_txt";
-            this.stooth_txt.ReadOnly = true;
-            this.stooth_txt.Size = new System.Drawing.Size(65, 20);
-            this.stooth_txt.TabIndex = 34;
-            // 
             // addsubprocedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(848, 622);
+            this.ClientSize = new System.Drawing.Size(803, 603);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.todaydtp);
             this.Controls.Add(this.purchase_gb);
