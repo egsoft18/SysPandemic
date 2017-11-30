@@ -63,10 +63,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkout_btn = new System.Windows.Forms.Button();
-            this.printpurchase_btn = new System.Windows.Forms.Button();
-            this.purchase_gb = new System.Windows.Forms.GroupBox();
-            this.todaydtp = new System.Windows.Forms.DateTimePicker();
             this.qtypay = new System.Windows.Forms.TextBox();
             this.addpay = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -80,7 +76,6 @@
             this.statuspay_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.purchase_gb.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -432,45 +427,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // checkout_btn
-            // 
-            this.checkout_btn.Location = new System.Drawing.Point(6, 26);
-            this.checkout_btn.Name = "checkout_btn";
-            this.checkout_btn.Size = new System.Drawing.Size(138, 23);
-            this.checkout_btn.TabIndex = 7;
-            this.checkout_btn.Text = "Facturar Procedimiento";
-            this.checkout_btn.UseVisualStyleBackColor = true;
-            this.checkout_btn.Click += new System.EventHandler(this.checkout_btn_Click);
-            // 
-            // printpurchase_btn
-            // 
-            this.printpurchase_btn.Location = new System.Drawing.Point(190, 26);
-            this.printpurchase_btn.Name = "printpurchase_btn";
-            this.printpurchase_btn.Size = new System.Drawing.Size(120, 23);
-            this.printpurchase_btn.TabIndex = 8;
-            this.printpurchase_btn.Text = "Impirmir Factura";
-            this.printpurchase_btn.UseVisualStyleBackColor = true;
-            this.printpurchase_btn.Click += new System.EventHandler(this.printpurchase_btn_Click);
-            // 
-            // purchase_gb
-            // 
-            this.purchase_gb.Controls.Add(this.checkout_btn);
-            this.purchase_gb.Controls.Add(this.printpurchase_btn);
-            this.purchase_gb.Location = new System.Drawing.Point(262, 525);
-            this.purchase_gb.Name = "purchase_gb";
-            this.purchase_gb.Size = new System.Drawing.Size(318, 64);
-            this.purchase_gb.TabIndex = 9;
-            this.purchase_gb.TabStop = false;
-            this.purchase_gb.Text = "Factura";
-            // 
-            // todaydtp
-            // 
-            this.todaydtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.todaydtp.Location = new System.Drawing.Point(146, 545);
-            this.todaydtp.Name = "todaydtp";
-            this.todaydtp.Size = new System.Drawing.Size(97, 20);
-            this.todaydtp.TabIndex = 10;
-            // 
             // qtypay
             // 
             this.qtypay.Location = new System.Drawing.Point(374, 24);
@@ -566,15 +522,16 @@
             // 
             // addsubprocedure
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(803, 603);
+            this.ClientSize = new System.Drawing.Size(803, 525);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.todaydtp);
-            this.Controls.Add(this.purchase_gb);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MaximizeBox = false;
             this.Name = "addsubprocedure";
             this.Text = "Detalles del Procedimiento";
@@ -585,7 +542,6 @@
             this.statuspay_gb.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.purchase_gb.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -617,11 +573,7 @@
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox status_txt;
         private System.Windows.Forms.Button printprocedure_btn;
-        public System.Windows.Forms.GroupBox purchase_gb;
         public System.Windows.Forms.GroupBox statuspay_gb;
-        public System.Windows.Forms.Button checkout_btn;
-        public System.Windows.Forms.Button printpurchase_btn;
-        private System.Windows.Forms.DateTimePicker todaydtp;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

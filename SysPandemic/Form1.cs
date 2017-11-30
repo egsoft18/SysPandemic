@@ -368,6 +368,11 @@ namespace SysPandemic
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

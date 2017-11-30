@@ -128,15 +128,13 @@ namespace SysPandemic
 
             if (pay == "NO PAGADO")
             {
-                frm.printpurchase_btn.Hide();
+                
             }
             else if (pay == "")
             {
-                frm.printpurchase_btn.Hide();
             }
             else if (pay == "PAGADO")
             {
-                frm.checkout_btn.Hide();
             }
             frm.MdiParent = this.MdiParent;
             frm.Show();

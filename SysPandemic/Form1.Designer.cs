@@ -56,6 +56,7 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +182,9 @@
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.facturarToolStripMenuItem,
             this.cToolStripMenuItem,
-            this.cierreToolStripMenuItem});
+            this.cierreToolStripMenuItem,
+            this.suplidoresToolStripMenuItem});
+            this.facturacionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.facturacionToolStripMenuItem.Text = "Finanzas";
@@ -283,6 +286,14 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
+            // suplidoresToolStripMenuItem
+            // 
+            this.suplidoresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.suplidoresToolStripMenuItem.Name = "suplidoresToolStripMenuItem";
+            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.suplidoresToolStripMenuItem.Text = "Suplidores";
+            this.suplidoresToolStripMenuItem.Click += new System.EventHandler(this.suplidoresToolStripMenuItem_Click);
+            // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +346,7 @@
         private System.Windows.Forms.ToolStripMenuItem cartaDeIncapacidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartaDeAltaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cierreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
     }
 }
 
