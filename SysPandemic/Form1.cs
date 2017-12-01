@@ -371,7 +371,9 @@ namespace SysPandemic
 
         private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            suppliers frm = new suppliers();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
     }

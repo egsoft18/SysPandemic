@@ -137,6 +137,12 @@
     <Compile Include="closing.Designer.cs">
       <DependentUpon>closing.cs</DependentUpon>
     </Compile>
+    <Compile Include="managerprovider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerprovider.Designer.cs">
+      <DependentUpon>managerprovider.cs</DependentUpon>
+    </Compile>
     <Compile Include="prescriptionr.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -327,6 +333,12 @@
     <Compile Include="seepatient.Designer.cs">
       <DependentUpon>seepatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suppliers.Designer.cs">
+      <DependentUpon>suppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="topay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="closing.resx">
       <DependentUpon>closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerprovider.resx">
+      <DependentUpon>managerprovider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="prescriptionr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -459,8 +474,6 @@
       <LastGenOutput>rclosing.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="reportprocedure.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportprocedure.cs</LastGenOutput>
@@ -483,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seepatient.resx">
       <DependentUpon>seepatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suppliers.resx">
+      <DependentUpon>suppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="topay.resx">
       <DependentUpon>topay.cs</DependentUpon>
