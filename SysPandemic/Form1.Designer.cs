@@ -44,7 +44,7 @@
             this.verCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,9 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.entradaDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaDeFacturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,7 +185,6 @@
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.facturarToolStripMenuItem,
             this.entradaDeFacturaToolStripMenuItem,
-            this.suplidoresToolStripMenuItem,
             this.cToolStripMenuItem,
             this.cierreToolStripMenuItem});
             this.facturacionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -199,13 +200,16 @@
             this.facturarToolStripMenuItem.Text = "Facturar Procedimiento";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
-            // suplidoresToolStripMenuItem
+            // entradaDeFacturaToolStripMenuItem
             // 
-            this.suplidoresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.suplidoresToolStripMenuItem.Name = "suplidoresToolStripMenuItem";
-            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.suplidoresToolStripMenuItem.Text = "Suplidores";
-            this.suplidoresToolStripMenuItem.Click += new System.EventHandler(this.suplidoresToolStripMenuItem_Click);
+            this.entradaDeFacturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.suplidoresToolStripMenuItem1,
+            this.entradaDeFacturaToolStripMenuItem1,
+            this.verFacturasToolStripMenuItem});
+            this.entradaDeFacturaToolStripMenuItem.Name = "entradaDeFacturaToolStripMenuItem";
+            this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.entradaDeFacturaToolStripMenuItem.Text = "Facturas";
+            this.entradaDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
@@ -296,11 +300,26 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
-            // entradaDeFacturaToolStripMenuItem
+            // entradaDeFacturaToolStripMenuItem1
             // 
-            this.entradaDeFacturaToolStripMenuItem.Name = "entradaDeFacturaToolStripMenuItem";
-            this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.entradaDeFacturaToolStripMenuItem.Text = "Entrada de factura";
+            this.entradaDeFacturaToolStripMenuItem1.Name = "entradaDeFacturaToolStripMenuItem1";
+            this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.entradaDeFacturaToolStripMenuItem1.Text = "Entrada de Factura";
+            this.entradaDeFacturaToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem1_Click);
+            // 
+            // suplidoresToolStripMenuItem1
+            // 
+            this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
+            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.suplidoresToolStripMenuItem1.Text = "Suplidores";
+            this.suplidoresToolStripMenuItem1.Click += new System.EventHandler(this.suplidoresToolStripMenuItem1_Click);
+            // 
+            // verFacturasToolStripMenuItem
+            // 
+            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
+            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
             // Homeform
             // 
@@ -354,8 +373,10 @@
         private System.Windows.Forms.ToolStripMenuItem cartaDeIncapacidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartaDeAltaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cierreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaDeFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entradaDeFacturaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
     }
 }
 

@@ -371,7 +371,31 @@ namespace SysPandemic
 
         private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void entradaDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void entradaDeFacturaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            enterinvoice frm = new enterinvoice();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void suplidoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             suppliers frm = new suppliers();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            seeinvoice frm = new seeinvoice();
             frm.MdiParent = this;
             frm.Show();
         }

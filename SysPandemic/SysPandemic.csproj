@@ -137,6 +137,12 @@
     <Compile Include="closing.Designer.cs">
       <DependentUpon>closing.cs</DependentUpon>
     </Compile>
+    <Compile Include="enterinvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enterinvoice.Designer.cs">
+      <DependentUpon>enterinvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="managerprovider.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="providerselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="providerselect.Designer.cs">
+      <DependentUpon>providerselect.cs</DependentUpon>
+    </Compile>
     <Compile Include="rclosing.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -314,6 +326,12 @@
     </Compile>
     <Compile Include="seeinsurance.Designer.cs">
       <DependentUpon>seeinsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seeinvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seeinvoice.Designer.cs">
+      <DependentUpon>seeinvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="seepwi.cs">
       <SubType>Form</SubType>
@@ -371,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="closing.resx">
       <DependentUpon>closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enterinvoice.resx">
+      <DependentUpon>enterinvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerprovider.resx">
       <DependentUpon>managerprovider.cs</DependentUpon>
@@ -469,6 +490,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="providerselect.resx">
+      <DependentUpon>providerselect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rclosing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rclosing.cs</LastGenOutput>
@@ -487,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seeinsurance.resx">
       <DependentUpon>seeinsurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seeinvoice.resx">
+      <DependentUpon>seeinvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seepwi.resx">
       <DependentUpon>seepwi.cs</DependentUpon>
