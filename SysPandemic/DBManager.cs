@@ -532,6 +532,31 @@ namespace SysPandemic
 
             }
         }
+
+        public void validation(string query)
+        {
+            try
+            {
+                cmd = new SqlCommand(query, cnx);
+                DataSet ds = new DataSet();
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                ds.Tables.Add(dt);
+                if (dt.Rows.Count <= 0)
+                {
+                    valor = "no";
+                }
+                else
+                {
+                    valor = "si";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo validar; " + ex.Message);
+            }
+        }
     }
 }
 

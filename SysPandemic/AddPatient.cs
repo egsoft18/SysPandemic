@@ -41,7 +41,7 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-
+            //if (idpatient_txt.Text )
             string query3 = "Select idinsurance, nameinsurance from insurances";
             string item = "nameinsurance";
             DBManager c2 = new DBManager();

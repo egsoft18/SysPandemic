@@ -13,6 +13,8 @@ namespace SysPandemic
 {
     public partial class Appointment : Form
     {
+        DBManager c = new DBManager();
+
         public Appointment()
         {
             InitializeComponent();
@@ -25,180 +27,67 @@ namespace SysPandemic
 
         private void btnimprimir_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            string tablename = "Citas";
+            string xml = "appointv.xml";
+            string rpt = "appointview.rpt";
+
             try
             {
-                cnx.Open();
-                if (rdbfecha.Checked == true)
+                if (txtbuscar.Text.Length < 0)
                 {
-                    
-                        SQLiteDataAdapter ad;
-                        DataTable dt = new DataTable();
-                        SQLiteCommand cmd = cnx.CreateCommand();
-                        cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem  where date like '%" + dtpfecha.Text + "%'";
-                        ad = new SQLiteDataAdapter(cmd);
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
 
-                        DataSet ds = new DataSet();
-                        ad.Fill(dt);
-                        ds.Tables.Add(dt);
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        { 
-                        ds.Tables[0].TableName = "Citas";
-                        ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                        reportview rv = new reportview("appointview.rpt");
-                        rv.Show();
-                        }
-                   
-                    
+                    c.printreport(query, tablename, xml, rpt);
                 }
-
-                else if (txtbuscar.Text.Length == 0 )
-                {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem";
-                    ad = new SQLiteDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    ad.Fill(dt);
-                    ds.Tables.Add(dt);
-
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        {
-                            ds.Tables[0].TableName = "Citas";
-                            ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                            reportview rv = new reportview("appointview.rpt");
-                            rv.Show();
-                        }
-                }
-
-
                 else if (rdbid.Checked == true)
                 {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem  where id = '%" + txtbuscar.Text+"'";
-                    ad = new SQLiteDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    ad.Fill(dt);
-                    ds.Tables.Add(dt);
-                    if (dt.Rows.Count <= 0)
-                    {
-                        MessageBox.Show("No hay datos que imprimir.");
-                    }
-                    else
-                    {
-                        ds.Tables[0].TableName = "Citas";
-                        ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                        reportview rv = new reportview("appointview.rpt");
-                        rv.Show();
-                    }
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where id like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
+                }
+
+
+                else if (rdbpac.Checked == true)
+                {
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namepa like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
                 }
 
 
                 else if (rdbidp.Checked == true)
                 {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem  where idpatient like '%" + txtbuscar.Text + "%'";
-                    ad = new SQLiteDataAdapter(cmd);
-                        DataSet ds = new DataSet();
-                        ad.Fill(dt);
-                        ds.Tables.Add(dt);
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        {
-                            ds.Tables[0].TableName = "Citas";
-                            ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                            reportview rv = new reportview("appointview.rpt");
-                            rv.Show();
-                        }
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where idpatient like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
                 }
-            
 
 
-                else if (rdbiddoc.Checked == true)
+                else if (rdbid.Checked == true)
                 {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem  where iddoctor like '%" + txtbuscar.Text + "%'";
-                    ad = new SQLiteDataAdapter(cmd);
-                        DataSet ds = new DataSet();
-                        ad.Fill(dt);
-                        ds.Tables.Add(dt);
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        {
-                            ds.Tables[0].TableName = "Citas";
-                            ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                            reportview rv = new reportview("appointview.rpt");
-                            rv.Show();
-                        }
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
                 }
 
                 else if (rdbdoct.Checked == true)
                 {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor, assist as Asistencia, date as Fecha, time as Hora from datem  where namedoctor like '%" + txtbuscar.Text + "%'";
-                    ad = new SQLiteDataAdapter(cmd);
-                   
-                        DataSet ds = new DataSet();
-                        ad.Fill(dt);
-                        ds.Tables.Add(dt);
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        {
-                            ds.Tables[0].TableName = "Citas";
-                            ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                            reportview rv = new reportview("appointview.rpt");
-                            rv.Show();
-                        }
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namedoctor like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
                 }
 
-                else if (rdbpac.Checked == true)
+                else if (rdbfecha.Checked == true)
                 {
-                    SQLiteDataAdapter ad;
-                    DataTable dt = new DataTable();
-                    SQLiteCommand cmd = cnx.CreateCommand();
-                    cmd.CommandText = "Select id as ID, idpatient as IDdelPaciente, namepa as Paciente, iddoctor as IDdelDoctor, namedoctor as Doctor, assist as Asistencia, date as Fecha, time as Hora from datem  where namepa like '%" + txtbuscar.Text + "%'";
-                    ad = new SQLiteDataAdapter(cmd);
-                    
-                        DataSet ds = new DataSet();
-                        ad.Fill(dt);
-                        ds.Tables.Add(dt);
-                        if (dt.Rows.Count <= 0)
-                        {
-                            MessageBox.Show("No hay datos que imprimir.");
-                        }
-                        else
-                        {
-                            ds.Tables[0].TableName = "Citas";
-                            ds.WriteXml(@"C:\SysPandemic\xml\appointv.xml");
-                            reportview rv = new reportview("appointview.rpt");
-                            rv.Show();
-                        }
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date like '%" + dtpfecha.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
+                }
+                else if (rdbiddoc.Checked == true)
+                {
+                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
+
+                    c.printreport(query, tablename, xml, rpt);
                 }
             }
             catch (Exception ex)
@@ -209,19 +98,9 @@ namespace SysPandemic
 
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ", cnx);
-                DataTable tabla = new DataTable("Citas");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
+           
+            c.load_dgv(dataGridView1, query);
         }
 
         private void btnborrar_Click(object sender, EventArgs e)
@@ -233,7 +112,7 @@ namespace SysPandemic
         {
             rdbfecha.PerformClick();
             string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
-            DBManager c = new DBManager();
+            
             c.load_dgv(dataGridView1, query);
                 
         }
@@ -243,10 +122,7 @@ namespace SysPandemic
 
             agrescitas frm = new agrescitas();
             DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-            //string fecha = act.Cells["Fecha"].Value.ToString();
-            
-            //DateTime time = DateTime.ParseExact(fecha,)
-            //DateTime dt = Convert.ToDateTime(time);
+           
             frm.txtid.Text = act.Cells["id"].Value.ToString();
             frm.txtidpa.Text = act.Cells["Idpaciente"].Value.ToString();
             frm.txtpaciente.Text = act.Cells["Paciente"].Value.ToString();
@@ -278,13 +154,13 @@ namespace SysPandemic
                 if (txtbuscar.Text.Length < 0)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
-                    DBManager c = new DBManager();
+                
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (rdbid.Checked == true)
                 {
                    string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where id like '%" + txtbuscar.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
 
@@ -292,7 +168,7 @@ namespace SysPandemic
                 else if (rdbpac.Checked == true)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namepa like '%" + txtbuscar.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
 
@@ -300,7 +176,7 @@ namespace SysPandemic
                 else if (rdbidp.Checked == true)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where idpatient like '%" + txtbuscar.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
 
@@ -308,27 +184,27 @@ namespace SysPandemic
                 else if (rdbid.Checked == true)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
 
                 else if (rdbdoct.Checked == true)
                 {
                     string query =  "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where namedoctor like '%" + txtbuscar.Text + "%'";
-                    DBManager c = new DBManager();
+                    
                     c.load_dgv(dataGridView1, query);
                 }
 
                 else if (rdbfecha.Checked == true)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date like '%" + dtpfecha.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (rdbiddoc.Checked == true)
                 {
                     string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where iddoctor like '%" + txtbuscar.Text + "%'";
-                     DBManager c = new DBManager();
+                     
                     c.load_dgv(dataGridView1, query);
                 }
         }       

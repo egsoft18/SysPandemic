@@ -136,7 +136,7 @@
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(87, 20);
             this.dtpfecha.TabIndex = 10;
-            this.dtpfecha.Value = new System.DateTime(2017, 8, 22, 22, 0, 7, 0);
+            this.dtpfecha.Value = new System.DateTime(2017, 12, 7, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -166,11 +166,13 @@
             // 
             // dtphora
             // 
-            this.dtphora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtphora.CustomFormat = "hh : tt";
+            this.dtphora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtphora.Location = new System.Drawing.Point(212, 26);
             this.dtphora.Name = "dtphora";
             this.dtphora.Size = new System.Drawing.Size(97, 20);
             this.dtphora.TabIndex = 14;
+            this.dtphora.Value = new System.DateTime(2017, 12, 7, 21, 39, 0, 0);
             // 
             // label9
             // 
