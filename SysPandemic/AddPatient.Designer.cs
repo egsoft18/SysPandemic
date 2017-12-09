@@ -97,10 +97,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.idph_txt = new System.Windows.Forms.TextBox();
-            this.patienthistory = new System.Windows.Forms.DataGridView();
-            this.searchhistory_txt = new System.Windows.Forms.TextBox();
             this.searchhistory_btn = new System.Windows.Forms.Button();
+            this.searchhistory_txt = new System.Windows.Forms.TextBox();
+            this.patienthistory = new System.Windows.Forms.DataGridView();
+            this.idph_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -263,8 +263,8 @@
             // 
             // bdaypatient_dtp
             // 
-            this.bdaypatient_dtp.CustomFormat = "";
-            this.bdaypatient_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.bdaypatient_dtp.CustomFormat = "dd/MM/yyyy";
+            this.bdaypatient_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.bdaypatient_dtp.Location = new System.Drawing.Point(130, 68);
             this.bdaypatient_dtp.Name = "bdaypatient_dtp";
             this.bdaypatient_dtp.Size = new System.Drawing.Size(100, 20);
@@ -348,12 +348,13 @@
             // 
             // insurancepatient_txt
             // 
-            this.insurancepatient_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.insurancepatient_txt.FormattingEnabled = true;
             this.insurancepatient_txt.Location = new System.Drawing.Point(56, 24);
             this.insurancepatient_txt.Name = "insurancepatient_txt";
             this.insurancepatient_txt.Size = new System.Drawing.Size(127, 21);
             this.insurancepatient_txt.TabIndex = 16;
+            this.insurancepatient_txt.Click += new System.EventHandler(this.insurancepatient_txt_Click);
+            this.insurancepatient_txt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.insurancepatient_txt_MouseClick);
             // 
             // delatepatient_btn
             // 
@@ -824,22 +825,14 @@
             this.tabPage4.Text = "Historial";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // idph_txt
+            // searchhistory_btn
             // 
-            this.idph_txt.Enabled = false;
-            this.idph_txt.Location = new System.Drawing.Point(7, 6);
-            this.idph_txt.Name = "idph_txt";
-            this.idph_txt.ReadOnly = true;
-            this.idph_txt.Size = new System.Drawing.Size(100, 20);
-            this.idph_txt.TabIndex = 0;
-            // 
-            // patienthistory
-            // 
-            this.patienthistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patienthistory.Location = new System.Drawing.Point(8, 58);
-            this.patienthistory.Name = "patienthistory";
-            this.patienthistory.Size = new System.Drawing.Size(588, 198);
-            this.patienthistory.TabIndex = 1;
+            this.searchhistory_btn.Location = new System.Drawing.Point(484, 32);
+            this.searchhistory_btn.Name = "searchhistory_btn";
+            this.searchhistory_btn.Size = new System.Drawing.Size(75, 20);
+            this.searchhistory_btn.TabIndex = 3;
+            this.searchhistory_btn.Text = "Buscar";
+            this.searchhistory_btn.UseVisualStyleBackColor = true;
             // 
             // searchhistory_txt
             // 
@@ -849,14 +842,22 @@
             this.searchhistory_txt.TabIndex = 2;
             this.searchhistory_txt.TextChanged += new System.EventHandler(this.searchhistory_txt_TextChanged);
             // 
-            // searchhistory_btn
+            // patienthistory
             // 
-            this.searchhistory_btn.Location = new System.Drawing.Point(484, 32);
-            this.searchhistory_btn.Name = "searchhistory_btn";
-            this.searchhistory_btn.Size = new System.Drawing.Size(75, 20);
-            this.searchhistory_btn.TabIndex = 3;
-            this.searchhistory_btn.Text = "Buscar";
-            this.searchhistory_btn.UseVisualStyleBackColor = true;
+            this.patienthistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patienthistory.Location = new System.Drawing.Point(8, 58);
+            this.patienthistory.Name = "patienthistory";
+            this.patienthistory.Size = new System.Drawing.Size(588, 198);
+            this.patienthistory.TabIndex = 1;
+            // 
+            // idph_txt
+            // 
+            this.idph_txt.Enabled = false;
+            this.idph_txt.Location = new System.Drawing.Point(7, 6);
+            this.idph_txt.Name = "idph_txt";
+            this.idph_txt.ReadOnly = true;
+            this.idph_txt.Size = new System.Drawing.Size(100, 20);
+            this.idph_txt.TabIndex = 0;
             // 
             // AddPatient
             // 
