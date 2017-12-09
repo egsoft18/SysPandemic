@@ -49,7 +49,7 @@ namespace SysPandemic
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
             DBManager c = new DBManager();
-            string pacients = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient";
+            string pacients = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where name is not null";
             c.load_dgv(dataGridView1, pacients);
             string doctors = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where rolestaff like 'Doctor'";
             c.load_dgv(dataGridView2, doctors);
@@ -104,7 +104,7 @@ namespace SysPandemic
                 }
                 else if (spid_rbtn.Checked)
                 {
-                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + sp_txt.Text + "%'";
+                    string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where idpatient like '%" + sp_txt.Text + "%'";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (spname_rbtn.Checked)

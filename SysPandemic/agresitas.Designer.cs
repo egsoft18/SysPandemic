@@ -166,13 +166,13 @@
             // 
             // dtphora
             // 
-            this.dtphora.CustomFormat = "hh : tt";
+            this.dtphora.CustomFormat = "hh:00 tt";
             this.dtphora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtphora.Location = new System.Drawing.Point(212, 26);
             this.dtphora.Name = "dtphora";
             this.dtphora.Size = new System.Drawing.Size(97, 20);
             this.dtphora.TabIndex = 14;
-            this.dtphora.Value = new System.DateTime(2017, 12, 7, 21, 39, 0, 0);
+            this.dtphora.Value = new System.DateTime(2017, 12, 7, 8, 0, 0, 0);
             // 
             // label9
             // 

@@ -184,7 +184,7 @@ namespace SysPandemic
             try
             {
                 searchpatient frm = new searchpatient();
-                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
+                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name is not null", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
                 dgv.DataSource = tabla;
@@ -199,7 +199,7 @@ namespace SysPandemic
             try
             {
                 searchpatient frm = new searchpatient();
-                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where " + condition + " like '%" + value + "%'", cnx);
+                SqlDataAdapter adac = new SqlDataAdapter("Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where " + condition + " like '%" + value + "%' and name is not null", cnx);
                 DataTable tabla = new DataTable("Pacientes");
                 adac.Fill(tabla);
                 dgv.DataSource = tabla;

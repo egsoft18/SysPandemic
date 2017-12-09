@@ -62,6 +62,7 @@ namespace SysPandemic
                     string query = "UPDATE datem  set idpatient ='" + txtidpa.Text + "', namepa ='" + txtpaciente.Text + "', iddoctor = '" + txtiddo.Text + "', namedoctor = '" + txtdoct.Text + "', date = '" + dtpfecha.Text + "', time = '" + dtphora.Text + "' where id = '" + txtid.Text + "'";
                     
                     c.command(query);
+                this.Close();
                 }
                 else if (result == DialogResult.No)
                 {
@@ -122,6 +123,7 @@ namespace SysPandemic
                 string asis = "Asistio";
                 string query = "UPDATE datem  set assist = '" + asis + "' where id = '" + txtid.Text + "'";
                 c.command(query);
+            this.Close();
         }
 
         private void btncanc_Click(object sender, EventArgs e)

@@ -24,20 +24,6 @@ namespace SysPandemic
             sname_rbtn.PerformClick();
             DBManager c = new DBManager();
             c.patient_administrator(dataGridView1);
-
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-            //    DataTable tabla = new DataTable("Pacientes");
-            //    adac.Fill(tabla);
-            //    dataGridView1.DataSource = tabla;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -46,35 +32,37 @@ namespace SysPandemic
             try
             {
                 DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
+                if (string.IsNullOrEmpty(act.Cells["ID"].Value.ToString()))
+                {
 
-                DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
-                //MessageBox.Show("Hey "+date.Day+"/"+date.Month+"/"+date.Year);
+                }
+                else
+                {
+                    DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
+                    string realdate = +date.Day + "/" + date.Month + "/" + date.Year;
 
-                string realdate = +date.Day+"/"+date.Month+"/"+date.Year;
+                    frm.idpatient_txt.Text = act.Cells["ID"].Value.ToString();
+                    frm.namepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
+                    frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
+                    //frm.bdaypatient_dtp.Text = realdate;
+                    frm.sexpatient_cb.Text = act.Cells["Sexo"].Value.ToString();
+                    frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
+                    frm.addresspatient_txt.Text = act.Cells["Direccion"].Value.ToString();
+                    frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
+                    frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
+                    frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
+                    frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
+                    frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
+                    String idpatient = act.Cells["ID"].Value.ToString();
+                    DBManager c = new DBManager();
+                    string query = "Select * from medicald where idpatient = '" + idpatient + "'";
+                    c.fill_diag(query, frm.tmed_cb, frm.tmedcom_txt, frm.mica_cb, frm.micacom_txt, frm.ps_cb, frm.diab_cb, frm.hep_cb, frm.hepcom_txt, frm.pr_cb, frm.pe_cb, frm.pecom_txt, frm.pa_cb, frm.pacom_txt, frm.hemo_cb, frm.aler_cb, frm.alercom_txt);
 
-                frm.idpatient_txt.Text = act.Cells["ID"].Value.ToString();
-                frm.namepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
-                frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
-                //frm.bdaypatient_dtp.Text = realdate;
-                frm.sexpatient_cb.Text = act.Cells["Sexo"].Value.ToString();
-                frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
-                frm.addresspatient_txt.Text = act.Cells["Direccion"].Value.ToString();
-                frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
-                frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
-                frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
-                frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
-                frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
-
-                String idpatient = act.Cells["ID"].Value.ToString();
-               
-                DBManager c = new DBManager();
-                string query = "Select * from medicald where idpatient = '" + idpatient + "'";
-                c.fill_diag(query, frm.tmed_cb, frm.tmedcom_txt, frm.mica_cb, frm.micacom_txt, frm.ps_cb, frm.diab_cb, frm.hep_cb, frm.hepcom_txt, frm.pr_cb, frm.pe_cb, frm.pecom_txt, frm.pa_cb, frm.pacom_txt, frm.hemo_cb, frm.aler_cb, frm.alercom_txt);
-
-                frm.savepatient_txt.Hide();
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
+                    frm.savepatient_txt.Hide();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show("No se puede abrir a editar. La causa: " + ex.Message, "Error");
@@ -83,42 +71,76 @@ namespace SysPandemic
 
         private void sid_rbtn_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void search_btn_Click(object sender, EventArgs e)
         {
             buscar();
-            
         }
 
         private void refreshpatient_btn_Click(object sender, EventArgs e)
         {
-
             sname_rbtn.PerformClick();
             DBManager c = new DBManager();
             c.patient_administrator(dataGridView1);
-
-
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-            //    DataTable tabla = new DataTable("Pacientes");
-            //    adac.Fill(tabla);
-            //    dataGridView1.DataSource = tabla;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
         }
 
         private void addpatient_btn_Click(object sender, EventArgs e)
         {
             AddPatient frm = new AddPatient();
             frm.MdiParent = this.MdiParent;
+            frm.Show();
+
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                if (frm2 != null)
+                {
+                    frm.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    string query = "INSERT INTO [patient](idperson) VALUES('empty');";
+                    DBManager c = new DBManager();
+                    string query2 = "DELETE FROM [patient] WHERE name is null";
+                    c.command3(query2);
+                    c.command3(query);
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error New Procedure");
+
+            }
+            finally
+            {
+
+            }
+
+
+
+            try
+            {
+
+                string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
+                string condition = "idpatient";
+                DBManager c = new DBManager();
+                c.last_id(frm.idpatient_txt, query, condition);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error TXT");
+            }
+            finally
+            {
+
+            }
+
             frm.Show();
         }
 
@@ -174,140 +196,11 @@ namespace SysPandemic
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
-
             }
-
-
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    if (search_txt.Text.Length == 0)
-            //    {
-            //        SQLiteDataAdapter ad;
-            //        DataTable dt = new DataTable();
-            //        SQLiteCommand cmd = cnx.CreateCommand();
-            //        cmd.CommandText = "Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
-            //        ad = new SQLiteDataAdapter(cmd);
-            //        DataSet ds = new DataSet();
-            //        ad.Fill(dt);
-            //        ds.Tables.Add(dt);
-            //        if (dt.Rows.Count <= 0)
-            //        {
-            //            MessageBox.Show("No hay datos que imprimir.");
-            //        }
-            //        else { 
-            //        ds.Tables[0].TableName = "Pacientes";
-            //        ds.WriteXml(@"C:\SysPandemic\xml\listpatient.xml");
-            //        //MessageBox.Show("Done");
-            //        reportview rv = new reportview("listpatient.rpt");
-            //        rv.Show();
-            //        }
-            //    }
-            //    else if (sid_rbtn.Checked)
-            //    {
-            //        SQLiteDataAdapter ad;
-            //        DataTable dt = new DataTable();
-            //        SQLiteCommand cmd = cnx.CreateCommand();
-            //        cmd.CommandText = "Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'";
-            //        ad = new SQLiteDataAdapter(cmd);
-            //        DataSet ds = new DataSet();
-            //        ad.Fill(dt);
-            //        ds.Tables.Add(dt);
-            //        if (dt.Rows.Count <= 0)
-            //        {
-            //            MessageBox.Show("No hay datos que imprimir.");
-            //        }
-            //        else
-            //        {
-            //            ds.Tables[0].TableName = "Pacientes";
-            //            ds.WriteXml(@"C:\SysPandemic\xml\listpatient.xml");
-            //            //MessageBox.Show("Done");
-            //            reportview rv = new reportview("listpatient.rpt");
-            //            rv.Show();
-            //        }
-            //    }
-            //    else if (sname_rbtn.Checked)
-            //    {
-            //        SQLiteDataAdapter ad;
-            //        DataTable dt = new DataTable();
-            //        SQLiteCommand cmd = cnx.CreateCommand();
-            //        cmd.CommandText = "Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'";
-            //        ad = new SQLiteDataAdapter(cmd);
-            //        DataSet ds = new DataSet();
-            //        ad.Fill(dt);
-            //        ds.Tables.Add(dt);
-            //        if (dt.Rows.Count <= 0)
-            //        {
-            //            MessageBox.Show("No hay datos que imprimir.");
-            //        }
-            //        else
-            //        {
-            //            ds.Tables[0].TableName = "Pacientes";
-            //            ds.WriteXml(@"C:\SysPandemic\xml\listpatient.xml");
-            //            //MessageBox.Show("Done");
-            //            reportview rv = new reportview("listpatient.rpt");
-            //            rv.Show();
-            //        }
-            //    }
-            //    else if (sidperson_rbtn.Checked)
-            //    {
-            //       SQLiteDataAdapter ad;
-            //        DataTable dt = new DataTable();
-            //        SQLiteCommand cmd = cnx.CreateCommand();
-            //        cmd.CommandText = "Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'";
-            //        ad = new SQLiteDataAdapter(cmd);
-            //        DataSet ds = new DataSet();
-            //        ad.Fill(dt);
-            //        ds.Tables.Add(dt);
-            //        if (dt.Rows.Count <= 0)
-            //        {
-            //            MessageBox.Show("No hay datos que imprimir.");
-            //        }
-            //        else
-            //        {
-            //            ds.Tables[0].TableName = "Pacientes";
-            //            ds.WriteXml(@"C:\SysPandemic\xml\listpatient.xml");
-            //            //MessageBox.Show("Done");
-            //            reportview rv = new reportview("listpatient.rpt");
-            //            rv.Show();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        SQLiteDataAdapter ad;
-            //        DataTable dt = new DataTable();
-            //        SQLiteCommand cmd = cnx.CreateCommand();
-            //        cmd.CommandText = "Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
-            //        ad = new SQLiteDataAdapter(cmd);
-            //        DataSet ds = new DataSet();
-            //        ad.Fill(dt);
-            //        ds.Tables.Add(dt);
-            //        if (dt.Rows.Count <= 0)
-            //        {
-            //            MessageBox.Show("No hay datos que imprimir.");
-            //        }
-            //        else
-            //        {
-            //            ds.Tables[0].TableName = "Pacientes";
-            //            ds.WriteXml(@"C:\SysPandemic\xml\listpatient.xml");
-            //            //MessageBox.Show("Done");
-            //            reportview rv = new reportview("listpatient.rpt");
-            //            rv.Show();
-            //        }
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-
-            //}
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
         private void buscar()
         {
@@ -340,57 +233,6 @@ namespace SysPandemic
                 DBManager c = new DBManager();
                 c.patient_administrator(dataGridView1);
             }
-
-
-
-
-
-            // SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    if (search_txt.Text.Length == 0)
-            //    {
-            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-            //        DataTable tabla = new DataTable("Pacientes");
-            //        adac.Fill(tabla);
-            //        dataGridView1.DataSource = tabla;
-            //    }
-            //    else if (sid_rbtn.Checked)
-            //    {
-            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'", cnx);
-            //        DataTable tabla = new DataTable("Pacientes");
-            //        adac.Fill(tabla);
-            //        dataGridView1.DataSource = tabla;
-            //    }
-            //    else if (sname_rbtn.Checked)
-            //    {
-            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'", cnx);
-            //        DataTable tabla = new DataTable("Pacientes");
-            //        adac.Fill(tabla);
-            //        dataGridView1.DataSource = tabla;
-            //    }
-            //    else if (sidperson_rbtn.Checked)
-            //    {
-            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'", cnx);
-            //        DataTable tabla = new DataTable("Pacientes");
-            //        adac.Fill(tabla);
-            //        dataGridView1.DataSource = tabla;
-            //    }
-            //    else
-            //    {
-            //        SQLiteDataAdapter adac = new SQLiteDataAdapter("Select id as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient", cnx);
-            //        DataTable tabla = new DataTable("Pacientes");
-            //        adac.Fill(tabla);
-            //        dataGridView1.DataSource = tabla;
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-
-            //}
         }
 
         private void search_txt_KeyDown(object sender, KeyEventArgs e)
