@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysPandemic", "SysPandemic\SysPandemic.csproj", "{88B0C985-64C5-48BB-920B-EC41F9F1EB5F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Syspandemic", "Setup Syspandemic\Setup Syspandemic.vdproj", "{EA010A11-5357-4FAE-BECE-85B5EB199BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{88B0C985-64C5-48BB-920B-EC41F9F1EB5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88B0C985-64C5-48BB-920B-EC41F9F1EB5F}.Release|x86.ActiveCfg = Release|x86
 		{88B0C985-64C5-48BB-920B-EC41F9F1EB5F}.Release|x86.Build.0 = Release|x86
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.Debug|Any CPU.ActiveCfg = Debug
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.Debug|x86.ActiveCfg = Debug
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.low|Any CPU.ActiveCfg = Release
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.low|x86.ActiveCfg = Release
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.Release|Any CPU.ActiveCfg = Release
+		{EA010A11-5357-4FAE-BECE-85B5EB199BAE}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
