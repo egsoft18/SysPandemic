@@ -36,15 +36,15 @@
             this.pacienteDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verPacientesDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.procedimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.subProcedimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaDeFacturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,9 +57,12 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.entradaDeFacturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearCotizacionDeProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarProcedimientoRegularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarProcedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,33 +132,11 @@
             // procedimientosToolStripMenuItem
             // 
             this.procedimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarProcedimientoToolStripMenuItem,
-            this.administrarToolStripMenuItem1,
-            this.subProcedimientosToolStripMenuItem});
+            this.procedimientosRegularesToolStripMenuItem,
+            this.cotizacionesToolStripMenuItem});
             this.procedimientosToolStripMenuItem.Name = "procedimientosToolStripMenuItem";
             this.procedimientosToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             this.procedimientosToolStripMenuItem.Text = "Procedimientos";
-            // 
-            // agregarProcedimientoToolStripMenuItem
-            // 
-            this.agregarProcedimientoToolStripMenuItem.Name = "agregarProcedimientoToolStripMenuItem";
-            this.agregarProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.agregarProcedimientoToolStripMenuItem.Text = "Agregar procedimiento";
-            this.agregarProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.agregarProcedimientoToolStripMenuItem_Click_1);
-            // 
-            // administrarToolStripMenuItem1
-            // 
-            this.administrarToolStripMenuItem1.Name = "administrarToolStripMenuItem1";
-            this.administrarToolStripMenuItem1.Size = new System.Drawing.Size(246, 22);
-            this.administrarToolStripMenuItem1.Text = "Administrar";
-            this.administrarToolStripMenuItem1.Click += new System.EventHandler(this.administrarToolStripMenuItem1_Click);
-            // 
-            // subProcedimientosToolStripMenuItem
-            // 
-            this.subProcedimientosToolStripMenuItem.Name = "subProcedimientosToolStripMenuItem";
-            this.subProcedimientosToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.subProcedimientosToolStripMenuItem.Text = "Agregar avance a procedimiento";
-            this.subProcedimientosToolStripMenuItem.Click += new System.EventHandler(this.subProcedimientosToolStripMenuItem_Click);
             // 
             // agendaToolStripMenuItem
             // 
@@ -210,6 +191,27 @@
             this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.entradaDeFacturaToolStripMenuItem.Text = "Facturas";
             this.entradaDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem_Click);
+            // 
+            // suplidoresToolStripMenuItem1
+            // 
+            this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
+            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.suplidoresToolStripMenuItem1.Text = "Suplidores";
+            this.suplidoresToolStripMenuItem1.Click += new System.EventHandler(this.suplidoresToolStripMenuItem1_Click);
+            // 
+            // entradaDeFacturaToolStripMenuItem1
+            // 
+            this.entradaDeFacturaToolStripMenuItem1.Name = "entradaDeFacturaToolStripMenuItem1";
+            this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.entradaDeFacturaToolStripMenuItem1.Text = "Entrada de Factura";
+            this.entradaDeFacturaToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem1_Click);
+            // 
+            // verFacturasToolStripMenuItem
+            // 
+            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
+            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
@@ -300,26 +302,51 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
-            // entradaDeFacturaToolStripMenuItem1
+            // cotizacionesToolStripMenuItem
             // 
-            this.entradaDeFacturaToolStripMenuItem1.Name = "entradaDeFacturaToolStripMenuItem1";
-            this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.entradaDeFacturaToolStripMenuItem1.Text = "Entrada de Factura";
-            this.entradaDeFacturaToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem1_Click);
+            this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearCotizacionDeProcedimientoToolStripMenuItem,
+            this.verCotizacionesToolStripMenuItem});
+            this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
             // 
-            // suplidoresToolStripMenuItem1
+            // crearCotizacionDeProcedimientoToolStripMenuItem
             // 
-            this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
-            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.suplidoresToolStripMenuItem1.Text = "Suplidores";
-            this.suplidoresToolStripMenuItem1.Click += new System.EventHandler(this.suplidoresToolStripMenuItem1_Click);
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear cotizacion de procedimiento";
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionDeProcedimientoToolStripMenuItem_Click);
             // 
-            // verFacturasToolStripMenuItem
+            // verCotizacionesToolStripMenuItem
             // 
-            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
-            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
+            this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
+            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.verCotizacionesToolStripMenuItem.Text = "Ver cotizaciones";
+            this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
+            // 
+            // procedimientosRegularesToolStripMenuItem
+            // 
+            this.procedimientosRegularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarProcedimientoRegularToolStripMenuItem,
+            this.administrarProcedimientosRegularesToolStripMenuItem});
+            this.procedimientosRegularesToolStripMenuItem.Name = "procedimientosRegularesToolStripMenuItem";
+            this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.procedimientosRegularesToolStripMenuItem.Text = "Procedimientos Regulares";
+            // 
+            // agregarProcedimientoRegularToolStripMenuItem
+            // 
+            this.agregarProcedimientoRegularToolStripMenuItem.Name = "agregarProcedimientoRegularToolStripMenuItem";
+            this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.agregarProcedimientoRegularToolStripMenuItem.Text = "Agregar Procedimiento Regular";
+            this.agregarProcedimientoRegularToolStripMenuItem.Click += new System.EventHandler(this.agregarProcedimientoRegularToolStripMenuItem_Click);
+            // 
+            // administrarProcedimientosRegularesToolStripMenuItem
+            // 
+            this.administrarProcedimientosRegularesToolStripMenuItem.Name = "administrarProcedimientosRegularesToolStripMenuItem";
+            this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.administrarProcedimientosRegularesToolStripMenuItem.Text = "Administrar procedimientos Regulares";
+            this.administrarProcedimientosRegularesToolStripMenuItem.Click += new System.EventHandler(this.administrarProcedimientosRegularesToolStripMenuItem_Click);
             // 
             // Homeform
             // 
@@ -350,14 +377,11 @@
         private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procedimientosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem agregarProcedimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCitasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarCitaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doctoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subProcedimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteAmbulanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteDeEmergenciaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verPacientesDeEmergenciaToolStripMenuItem1;
@@ -377,6 +401,12 @@
         private System.Windows.Forms.ToolStripMenuItem entradaDeFacturaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearCotizacionDeProcedimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verCotizacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procedimientosRegularesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarProcedimientoRegularToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarProcedimientosRegularesToolStripMenuItem;
     }
 }
 

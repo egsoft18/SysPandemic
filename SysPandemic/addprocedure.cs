@@ -46,9 +46,14 @@ namespace SysPandemic
 
         private void addprocedure_Load(object sender, EventArgs e)
         {
+            ptype_txt.BackColor = Color.White;
+            ptype_txt.ForeColor = Color.Red;
+
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
             DBManager c = new DBManager();
+            string ptype = "select ptype from [procedure] where idprocedure = '"+idprocedure_txt.Text+"'";
+            c.fill_txt(ptype_txt, ptype, "ptype");
             string pacients = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula, insurance as Seguro, affiliate as Afiliado from patient where name is not null";
             c.load_dgv(dataGridView1, pacients);
             string doctors = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where rolestaff like 'Doctor'";
@@ -597,6 +602,11 @@ namespace SysPandemic
             finally
             {
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }

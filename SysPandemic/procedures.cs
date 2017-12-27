@@ -20,17 +20,17 @@ namespace SysPandemic
 
         private void procedures_Load(object sender, EventArgs e)
         {
-            spatient_rbtn.PerformClick();
-            DBManager c = new DBManager();
-            try
-            {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
-                c.load_dgv(dataGridView1, query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            //spatient_rbtn.PerformClick();
+            //DBManager c = new DBManager();
+            //try
+            //{
+            //    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
+            //    c.load_dgv(dataGridView1, query);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void search_btn_Click(object sender, EventArgs e)

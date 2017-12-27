@@ -98,122 +98,8 @@ namespace SysPandemic
 
         private void agregarProcedimientoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            addprocedure frm = new addprocedure();
-            frm.MdiParent = this;
-            frm.updateprocedure_btn.Hide();
-            frm.delateprocedure_btn.Hide();
-
-            try
-            {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
-                if (frm2 != null)
-                {
-                    frm.BringToFront();
-                    MessageBox.Show("El formuario ya esta abierto.", "Error");
-                    return;
-                }
-                else
-                {
-                    string status = "NO PAGADO";
-                    string query = "INSERT INTO [procedure](statuspay) VALUES('" + status + "');";
-                    DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
-                    c.command3(query2);
-                    c.command3(query);
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error New Procedure");
-
-            }
-            finally
-            {
-                
-            }
-
-
-
-            try
-            {
-               
-                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
-                string condition = "idprocedure";
-                DBManager c = new DBManager();
-                c.last_id(frm.idprocedure_txt, query, condition);
-                
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error TXT");
-            }
-            finally
-            {
-                
-            }
-
-            frm.Show();
-
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
-            //    if (frm2 != null)
-            //    {
-            //        frm.BringToFront();
-            //        MessageBox.Show("El formuario ya esta abierto.", "Error");
-            //        return;
-            //    }
-            //    cnx.Open();
-            //    string status = "NO PAGADO";
-            //    string comando = "INSERT INTO procedure(statuspay) VALUES('" + status + "');";
-            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-            //    if (insertion.ExecuteNonQuery() > 0)
-            //    {
-            //        cnx.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error New Procedure");
-
-            //}
-            //finally
-            //{
-            //    cnx.Close();
-            //}
-
-
-
-            //try {
-            //    cnx.Open();
-            //string comando = "Select idprocedure from procedure where idprocedure = (select max(idprocedure) from procedure)";
-            //SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            //SQLiteDataReader leer = insertion.ExecuteReader();
-            //if (leer.Read() == true)
-            //{
-            //    decimal value = Convert.ToDecimal(leer["idprocedure"].ToString());
-            //    string ms = value.ToString();
-            //    frm.idprocedure_txt.Text = ms;
-            //    cnx.Close();
-            //}
-            //    }
-
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error TXT");
-            //}
-            //finally
-            //{
-            //    cnx.Close();
-            //}
-
+           
             
-
-            //frm.Show();
         }
 
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -225,10 +111,7 @@ namespace SysPandemic
 
         private void administrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            procedures frm = new procedures();
-            frm.MdiParent = this;
-            
-            frm.Show();
+           
         }
 
         private void subProcedimientosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -397,6 +280,167 @@ namespace SysPandemic
         {
             seeinvoice frm = new seeinvoice();
             frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void crearCotizacionDeProcedimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addprocedure frm = new addprocedure();
+            frm.MdiParent = this;
+            frm.updateprocedure_btn.Hide();
+            frm.delateprocedure_btn.Hide();
+            frm.turnregular_btn.Hide();
+
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                if (frm2 != null)
+                {
+                    frm.BringToFront();
+                    MessageBox.Show("El formuario ya esta abierto.", "Error");
+                    return;
+                }
+                else
+                {
+                    string status = "NO PAGADO";
+                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Cotizacion');";
+                    DBManager c = new DBManager();
+                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
+                    c.command3(query2);
+                    c.command3(query);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error New Procedure");
+
+            }
+            finally
+            {
+
+            }
+
+            try
+            {
+
+                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
+                string condition = "idprocedure";
+                DBManager c = new DBManager();
+                c.last_id(frm.idprocedure_txt, query, condition);
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error TXT");
+            }
+            finally
+            {
+
+            }
+
+            frm.Show();
+        }
+
+        private void agregarProcedimientoRegularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addprocedure frm = new addprocedure();
+            frm.MdiParent = this;
+            frm.updateprocedure_btn.Hide();
+            frm.delateprocedure_btn.Hide();
+            frm.turnregular_btn.Hide();
+
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                if (frm2 != null)
+                {
+                    frm.BringToFront();
+                    MessageBox.Show("El formuario ya esta abierto.", "Error");
+                    return;
+                }
+                else
+                {
+                    string status = "NO PAGADO";
+                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Regular');";
+                    DBManager c = new DBManager();
+                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
+                    c.command3(query2);
+                    c.command3(query);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error New Procedure");
+
+            }
+            finally
+            {
+
+            }
+
+            try
+            {
+
+                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
+                string condition = "idprocedure";
+                DBManager c = new DBManager();
+                c.last_id(frm.idprocedure_txt, query, condition);
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error TXT");
+            }
+            finally
+            {
+
+            }
+
+            frm.Show();
+        }
+
+        private void administrarProcedimientosRegularesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            procedures frm = new procedures();
+            frm.MdiParent = this;
+
+            frm.spatient_rbtn.PerformClick();
+            DBManager c = new DBManager();
+            try
+            {
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Regular'";
+                c.load_dgv(frm.dataGridView1, query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+
+            frm.Show();
+        }
+
+        private void verCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            procedures frm = new procedures();
+            frm.MdiParent = this;
+
+            frm.spatient_rbtn.PerformClick();
+            DBManager c = new DBManager();
+            try
+            {
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Cotizacion'";
+                c.load_dgv(frm.dataGridView1, query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+
             frm.Show();
         }
     }

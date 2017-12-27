@@ -42,6 +42,8 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tooth_txt = new System.Windows.Forms.TextBox();
             this.searchprocess_txt = new System.Windows.Forms.TextBox();
             this.option_cb = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -85,8 +87,10 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
-            this.tooth_txt = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.ptype_txt = new System.Windows.Forms.TextBox();
+            this.printprocedure_btn = new System.Windows.Forms.Button();
+            this.turnregular_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -99,6 +103,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.turnregular_btn);
+            this.groupBox1.Controls.Add(this.ptype_txt);
+            this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.affiliate_txt);
@@ -253,6 +260,23 @@
             this.groud2.TabIndex = 1;
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(197, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Diente:";
+            // 
+            // tooth_txt
+            // 
+            this.tooth_txt.AcceptsReturn = true;
+            this.tooth_txt.Location = new System.Drawing.Point(243, 19);
+            this.tooth_txt.Name = "tooth_txt";
+            this.tooth_txt.Size = new System.Drawing.Size(83, 20);
+            this.tooth_txt.TabIndex = 19;
             // 
             // searchprocess_txt
             // 
@@ -679,22 +703,45 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
-            // tooth_txt
+            // label19
             // 
-            this.tooth_txt.AcceptsReturn = true;
-            this.tooth_txt.Location = new System.Drawing.Point(243, 19);
-            this.tooth_txt.Name = "tooth_txt";
-            this.tooth_txt.Size = new System.Drawing.Size(83, 20);
-            this.tooth_txt.TabIndex = 19;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(446, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(109, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Tipo de procedimieto:";
             // 
-            // label18
+            // ptype_txt
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(197, 22);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Diente:";
+            this.ptype_txt.BackColor = System.Drawing.Color.Red;
+            this.ptype_txt.Enabled = false;
+            this.ptype_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptype_txt.ForeColor = System.Drawing.Color.White;
+            this.ptype_txt.Location = new System.Drawing.Point(559, 54);
+            this.ptype_txt.Name = "ptype_txt";
+            this.ptype_txt.ReadOnly = true;
+            this.ptype_txt.Size = new System.Drawing.Size(135, 26);
+            this.ptype_txt.TabIndex = 15;
+            // 
+            // printprocedure_btn
+            // 
+            this.printprocedure_btn.Location = new System.Drawing.Point(818, 610);
+            this.printprocedure_btn.Name = "printprocedure_btn";
+            this.printprocedure_btn.Size = new System.Drawing.Size(75, 23);
+            this.printprocedure_btn.TabIndex = 23;
+            this.printprocedure_btn.Text = "Imprimir";
+            this.printprocedure_btn.UseVisualStyleBackColor = true;
+            // 
+            // turnregular_btn
+            // 
+            this.turnregular_btn.Location = new System.Drawing.Point(717, 57);
+            this.turnregular_btn.Name = "turnregular_btn";
+            this.turnregular_btn.Size = new System.Drawing.Size(153, 23);
+            this.turnregular_btn.TabIndex = 16;
+            this.turnregular_btn.Text = "Pasar a Regular";
+            this.turnregular_btn.UseVisualStyleBackColor = true;
+            this.turnregular_btn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // addprocedure
             // 
@@ -702,6 +749,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(905, 645);
+            this.Controls.Add(this.printprocedure_btn);
             this.Controls.Add(this.delateprocedure_btn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.updateprocedure_btn);
@@ -795,5 +843,9 @@
         private System.Windows.Forms.ComboBox option_cb;
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox tooth_txt;
+        private System.Windows.Forms.TextBox ptype_txt;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button printprocedure_btn;
+        public System.Windows.Forms.Button turnregular_btn;
     }
 }

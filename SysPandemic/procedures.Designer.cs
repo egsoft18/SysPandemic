@@ -187,10 +187,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RadioButton sid_rbtn;
-        private System.Windows.Forms.RadioButton spatient_rbtn;
         private System.Windows.Forms.RadioButton sdoctor_rbtn;
         private System.Windows.Forms.TextBox search_txt;
         private System.Windows.Forms.Button search_btn;
@@ -199,5 +196,7 @@
         private System.Windows.Forms.RadioButton snopay_rbtn;
         public System.Windows.Forms.RadioButton sprocedure_rbtn;
         private System.Windows.Forms.Button refresh_btn;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.RadioButton spatient_rbtn;
     }
 }
