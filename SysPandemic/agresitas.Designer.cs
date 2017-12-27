@@ -166,7 +166,7 @@
             // 
             // dtphora
             // 
-            this.dtphora.CustomFormat = "hh:00 tt";
+            this.dtphora.CustomFormat = "hh:m0 tt";
             this.dtphora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtphora.Location = new System.Drawing.Point(212, 26);
             this.dtphora.Name = "dtphora";

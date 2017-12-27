@@ -240,6 +240,9 @@ namespace SysPandemic
                     }
                 }
             }
+            sactivity_txt.Clear();
+            qtypay.Clear();
+            typepay.Text = "";
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
