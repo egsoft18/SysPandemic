@@ -22,11 +22,13 @@ namespace SysPandemic
         private void agrescitas_Load(object sender, EventArgs e)
         {
             string query = "Select idpatient as ID, name as Nombre, sex as Sexo, idperson as Cedula from patient";
-            
             c.load_dgv(dataGridView1, query);
             
             query = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff";
             c.load_dgv(dataGridView2, query);
+
+            query = "Select id as ID, namepa as Paciente, namedoctor as Doctor, assist as Asistencia, date as Fecha, time as Hora from datem";
+            c.load_dgv(dataGridView3, query);
                
         }
 
@@ -145,6 +147,35 @@ namespace SysPandemic
         private void txtbuscardoc_TextChanged(object sender, EventArgs e)
         {
             buscard();
+        }
+
+        private void agent()
+        {
+            if (string.IsNullOrEmpty(txtiddo.Text))
+            {
+                string query = "Select id as ID, namepa as Paciente, namedoctor as Doctor, assist as Asistencia, date as Fecha, time as Hora from datem where date = '"+dtpfecha.Text+"' and time = '"+dtphora.Text+"'";
+                c.load_dgv(dataGridView3, query);
+            }
+            else
+            {
+                string query = "Select id as ID, namepa as Paciente, namedoctor as Doctor, assist as Asistencia, date as Fecha, time as Hora from datem where date = '" + dtpfecha.Text + "' and time = '" + dtphora.Text + "' and iddoctor = '"+txtiddo.Text+"'";
+                c.load_dgv(dataGridView3, query);
+            }
+        }
+
+        private void txtiddo_TextChanged(object sender, EventArgs e)
+        {
+            agent();
+        }
+
+        private void dtpfecha_ValueChanged(object sender, EventArgs e)
+        {
+            agent();
+        }
+
+        private void dtphora_ValueChanged(object sender, EventArgs e)
+        {
+            agent();
         }
     }
 }

@@ -70,6 +70,15 @@ namespace SysPandemic
                 string query2 = "select affiliate from patient where idpatient = '" + pidpatient_txt.Text + "'";
                 c.fill_txt(affiliate_txt, query2, "affiliate");
             }
+
+            if (ptype_txt.Text == "Regular")
+            {
+                turnregular_btn.Hide();
+            }
+            else if (ptype_txt.Text == "Cotizacion")
+            {
+                
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -606,7 +615,38 @@ namespace SysPandemic
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           
+            DBManager c = new DBManager();
+            try
+            {
+
+                DialogResult result = MessageBox.Show("Seguro que desea pasar a ser un procedimientoRegular?", "Pasar a Procedimiento Regular", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    string query = "UPDATE [procedure] set ptype = 'Regular'";
+                    c.command(query);
+                    if (c.valor == "si")
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo fallo!!!");
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+            finally
+            {
+            }
         }
     }
 }

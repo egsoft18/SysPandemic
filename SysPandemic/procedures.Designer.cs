@@ -39,6 +39,7 @@
             this.spay_rbtn = new System.Windows.Forms.RadioButton();
             this.snopay_rbtn = new System.Windows.Forms.RadioButton();
             this.refresh_btn = new System.Windows.Forms.Button();
+            this.scondition_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,12 +160,20 @@
             this.refresh_btn.UseVisualStyleBackColor = true;
             this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
+            // scondition_txt
+            // 
+            this.scondition_txt.Location = new System.Drawing.Point(852, 401);
+            this.scondition_txt.Name = "scondition_txt";
+            this.scondition_txt.Size = new System.Drawing.Size(100, 20);
+            this.scondition_txt.TabIndex = 11;
+            // 
             // procedures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(964, 394);
+            this.ClientSize = new System.Drawing.Size(964, 433);
+            this.Controls.Add(this.scondition_txt);
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.snopay_rbtn);
             this.Controls.Add(this.spay_rbtn);
@@ -198,5 +207,6 @@
         private System.Windows.Forms.Button refresh_btn;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.RadioButton spatient_rbtn;
+        public System.Windows.Forms.TextBox scondition_txt;
     }
 }

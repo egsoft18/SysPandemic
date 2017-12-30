@@ -20,17 +20,7 @@ namespace SysPandemic
 
         private void procedures_Load(object sender, EventArgs e)
         {
-            //spatient_rbtn.PerformClick();
-            //DBManager c = new DBManager();
-            //try
-            //{
-            //    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
-            //    c.load_dgv(dataGridView1, query);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
+            spatient_rbtn.PerformClick();
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -233,38 +223,38 @@ namespace SysPandemic
                 if (snopay_rbtn.Checked)
                 {
                     string status = "NO PAGADO";
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where statuspay = '" + status + "' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where statuspay = '" + status + "' and pricepay > 0 and ptype = '"+scondition_txt.Text+"' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (spay_rbtn.Checked)
                 {
                     string status = "PAGADO";
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where statuspay = '" + status + "' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where statuspay = '" + status + "' and pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (search_txt.Text.Length == 0)
                 {
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (sid_rbtn.Checked)
                 {
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where idprocedure like '%" + search_txt.Text + "%' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where idprocedure like '%" + search_txt.Text + "%' and pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (spatient_rbtn.Checked)
                 {
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where namepatient like '%" + search_txt.Text + "%' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where namepatient like '%" + search_txt.Text + "%' and pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (sdoctor_rbtn.Checked)
                 {
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where namedoctor like '%" + search_txt.Text + "%' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where namedoctor like '%" + search_txt.Text + "%' and pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
                 else if (sprocedure_rbtn.Checked)
                 {
-                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where procedure like '%" + search_txt.Text + "%' and pricepay > 0";
+                    string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where procedure like '%" + search_txt.Text + "%' and pricepay > 0 and ptype = '" + scondition_txt.Text + "' ";
                     c.load_dgv(dataGridView1, query);
                 }
 

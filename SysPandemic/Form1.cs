@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Deployment.Application;
+using System.Threading;
 
 namespace SysPandemic
 {
@@ -399,7 +400,6 @@ namespace SysPandemic
             {
 
             }
-
             frm.Show();
         }
 
@@ -414,6 +414,7 @@ namespace SysPandemic
             {
                 string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Regular'";
                 c.load_dgv(frm.dataGridView1, query);
+                frm.scondition_txt.Text = "Regular";
             }
             catch (Exception ex)
             {
@@ -435,6 +436,7 @@ namespace SysPandemic
             {
                 string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Cotizacion'";
                 c.load_dgv(frm.dataGridView1, query);
+                frm.scondition_txt.Text = "Cotizacion";
             }
             catch (Exception ex)
             {
