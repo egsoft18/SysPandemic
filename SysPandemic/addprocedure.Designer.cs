@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.turnregular_btn = new System.Windows.Forms.Button();
+            this.ptype_txt = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.affiliate_txt = new System.Windows.Forms.TextBox();
@@ -87,10 +90,9 @@
             this.updateprocedure_btn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.ptype_txt = new System.Windows.Forms.TextBox();
             this.printprocedure_btn = new System.Windows.Forms.Button();
-            this.turnregular_btn = new System.Windows.Forms.Button();
+            this.code_rbtn = new System.Windows.Forms.RadioButton();
+            this.des_rbtn = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -124,6 +126,37 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personas";
+            // 
+            // turnregular_btn
+            // 
+            this.turnregular_btn.Location = new System.Drawing.Point(717, 57);
+            this.turnregular_btn.Name = "turnregular_btn";
+            this.turnregular_btn.Size = new System.Drawing.Size(153, 23);
+            this.turnregular_btn.TabIndex = 16;
+            this.turnregular_btn.Text = "Pasar a Regular";
+            this.turnregular_btn.UseVisualStyleBackColor = true;
+            this.turnregular_btn.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // ptype_txt
+            // 
+            this.ptype_txt.BackColor = System.Drawing.Color.Red;
+            this.ptype_txt.Enabled = false;
+            this.ptype_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ptype_txt.ForeColor = System.Drawing.Color.White;
+            this.ptype_txt.Location = new System.Drawing.Point(559, 54);
+            this.ptype_txt.Name = "ptype_txt";
+            this.ptype_txt.ReadOnly = true;
+            this.ptype_txt.Size = new System.Drawing.Size(135, 26);
+            this.ptype_txt.TabIndex = 15;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(446, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(109, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Tipo de procedimieto:";
             // 
             // label15
             // 
@@ -229,6 +262,8 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.des_rbtn);
+            this.groud2.Controls.Add(this.code_rbtn);
             this.groud2.Controls.Add(this.label18);
             this.groud2.Controls.Add(this.tooth_txt);
             this.groud2.Controls.Add(this.searchprocess_txt);
@@ -280,9 +315,9 @@
             // 
             // searchprocess_txt
             // 
-            this.searchprocess_txt.Location = new System.Drawing.Point(610, 49);
+            this.searchprocess_txt.Location = new System.Drawing.Point(600, 49);
             this.searchprocess_txt.Name = "searchprocess_txt";
-            this.searchprocess_txt.Size = new System.Drawing.Size(255, 20);
+            this.searchprocess_txt.Size = new System.Drawing.Size(265, 20);
             this.searchprocess_txt.TabIndex = 29;
             this.searchprocess_txt.TextChanged += new System.EventHandler(this.searchprocess_txt_TextChanged);
             // 
@@ -293,9 +328,9 @@
             this.option_cb.Items.AddRange(new object[] {
             "Seguro",
             "Sin seguro"});
-            this.option_cb.Location = new System.Drawing.Point(499, 49);
+            this.option_cb.Location = new System.Drawing.Point(496, 48);
             this.option_cb.Name = "option_cb";
-            this.option_cb.Size = new System.Drawing.Size(105, 21);
+            this.option_cb.Size = new System.Drawing.Size(98, 21);
             this.option_cb.TabIndex = 28;
             this.option_cb.TextChanged += new System.EventHandler(this.option_cb_TextChanged);
             // 
@@ -703,27 +738,6 @@
             this.delateprocedure_btn.UseVisualStyleBackColor = true;
             this.delateprocedure_btn.Click += new System.EventHandler(this.delateprocedure_btn_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(446, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 13);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Tipo de procedimieto:";
-            // 
-            // ptype_txt
-            // 
-            this.ptype_txt.BackColor = System.Drawing.Color.Red;
-            this.ptype_txt.Enabled = false;
-            this.ptype_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ptype_txt.ForeColor = System.Drawing.Color.White;
-            this.ptype_txt.Location = new System.Drawing.Point(559, 54);
-            this.ptype_txt.Name = "ptype_txt";
-            this.ptype_txt.ReadOnly = true;
-            this.ptype_txt.Size = new System.Drawing.Size(135, 26);
-            this.ptype_txt.TabIndex = 15;
-            // 
             // printprocedure_btn
             // 
             this.printprocedure_btn.Location = new System.Drawing.Point(818, 610);
@@ -733,15 +747,27 @@
             this.printprocedure_btn.Text = "Imprimir";
             this.printprocedure_btn.UseVisualStyleBackColor = true;
             // 
-            // turnregular_btn
+            // code_rbtn
             // 
-            this.turnregular_btn.Location = new System.Drawing.Point(717, 57);
-            this.turnregular_btn.Name = "turnregular_btn";
-            this.turnregular_btn.Size = new System.Drawing.Size(153, 23);
-            this.turnregular_btn.TabIndex = 16;
-            this.turnregular_btn.Text = "Pasar a Regular";
-            this.turnregular_btn.UseVisualStyleBackColor = true;
-            this.turnregular_btn.Click += new System.EventHandler(this.button1_Click_1);
+            this.code_rbtn.AutoSize = true;
+            this.code_rbtn.Location = new System.Drawing.Point(720, 26);
+            this.code_rbtn.Name = "code_rbtn";
+            this.code_rbtn.Size = new System.Drawing.Size(58, 17);
+            this.code_rbtn.TabIndex = 31;
+            this.code_rbtn.TabStop = true;
+            this.code_rbtn.Text = "Codigo";
+            this.code_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // des_rbtn
+            // 
+            this.des_rbtn.AutoSize = true;
+            this.des_rbtn.Location = new System.Drawing.Point(784, 26);
+            this.des_rbtn.Name = "des_rbtn";
+            this.des_rbtn.Size = new System.Drawing.Size(81, 17);
+            this.des_rbtn.TabIndex = 32;
+            this.des_rbtn.TabStop = true;
+            this.des_rbtn.Text = "Descripcion";
+            this.des_rbtn.UseVisualStyleBackColor = true;
             // 
             // addprocedure
             // 
@@ -847,5 +873,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button printprocedure_btn;
         public System.Windows.Forms.Button turnregular_btn;
+        private System.Windows.Forms.RadioButton des_rbtn;
+        private System.Windows.Forms.RadioButton code_rbtn;
     }
 }

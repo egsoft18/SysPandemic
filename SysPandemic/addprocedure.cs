@@ -49,6 +49,7 @@ namespace SysPandemic
             ptype_txt.BackColor = Color.White;
             ptype_txt.ForeColor = Color.Red;
 
+            code_rbtn.PerformClick();
             spname_rbtn.PerformClick();
             sdname_rbtn.PerformClick();
             DBManager c = new DBManager();
@@ -595,13 +596,28 @@ namespace SysPandemic
                 string option = option_cb.Text;
                 if (option == "Seguro")
                 {
+                    if (code_rbtn.Checked)
+                    {
+                        string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "' and code like '%" + searchprocess_txt.Text + "%'";
+                        c.load_dgv(dataGridView4, query);
+                    }
+                    else if (des_rbtn.Checked) { 
                     string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = '" + insurance_txt.Text + "' and pinsurance like '%"+searchprocess_txt.Text+"%'";
                     c.load_dgv(dataGridView4, query);
+                    }
                 }
                 else if (option == "Sin seguro")
                 {
-                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO' and pinsurance like '%" + searchprocess_txt.Text + "%'";
-                    c.load_dgv(dataGridView4, query);
+                    if (code_rbtn.Checked)
+                    {
+                        string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO' and code like '%" + searchprocess_txt.Text + "%'";
+                        c.load_dgv(dataGridView4, query);
+                    }
+                    else if (des_rbtn.Checked)
+                    {
+                        string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO' and pinsurance like '%" + searchprocess_txt.Text + "%'";
+                        c.load_dgv(dataGridView4, query);
+                    }
                 }
             }
             catch (Exception ex)
