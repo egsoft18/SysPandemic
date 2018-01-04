@@ -198,37 +198,75 @@ namespace SysPandemic
         private void saveprocedure_btn_Click(object sender, EventArgs e)
         {
             DBManager c = new DBManager();
-            try
-            {
 
-                DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+            if (string.IsNullOrEmpty(pidpatient_txt.Text) == false)
+            {
+                if (string.IsNullOrEmpty(piddoctor_txt.Text) == false)
                 {
-                    string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '"+pnamepatient_txt.Text+"', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "', tooth = '"+tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-                    c.command(query);
-                    if (c.valor == "si")
+                    if (string.IsNullOrEmpty(tooth_txt.Text) == false)
                     {
-                        Close();
+                        if (string.IsNullOrEmpty(procedure_txt.Text) == false)
+                        {
+                            if(string.IsNullOrEmpty(pricepay_txt.Text) == false)
+                            {
+                                try
+                                {
+
+                                    DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
+                                    if (result == DialogResult.Yes)
+                                    {
+                                        string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '" + pnamepatient_txt.Text + "', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "', tooth = '" + tooth_txt.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                                        c.command(query);
+                                        if (c.valor == "si")
+                                        {
+                                            Close();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Algo fallo!!!");
+                                        }
+                                    }
+                                    else if (result == DialogResult.No)
+                                    {
+
+                                    }
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message, "Error");
+
+                                }
+                                finally
+                                {
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Al parecer no ha asignado Sub-Procesos a este procedimiento, favor revise.", "Falta informacion.");
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("No ha escrito el titulo del procedimiento, favor revise.", "Falta informacion.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Algo fallo!!!");
+                        MessageBox.Show("No ha asignado el diente de trabajo, favor revise.", "Falta informacion.");
                     }
                 }
-                else if (result == DialogResult.No)
+                else
                 {
-
+                    MessageBox.Show("No ha ingresado un Doctor, favor revise.", "Falta informacion.");
                 }
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error");
-
+                MessageBox.Show("No ha ingresado un Paciente, favor revise.", "Falta informacion.");
             }
-            finally
-            {
-            }
+           
         }
 
         private void pricepay_txt_TextChanged(object sender, EventArgs e)
@@ -255,36 +293,82 @@ namespace SysPandemic
         private void updateprocedure_btn_Click(object sender, EventArgs e)
         {
             DBManager c = new DBManager();
-            try
+
+            if (string.IsNullOrEmpty(piddoctor_txt.Text))
             {
-                DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (string.IsNullOrEmpty(tooth_txt.Text))
                 {
-                    string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
-                    c.command(comando);
-                    if (c.valor == "si")
+                    if (string.IsNullOrEmpty(procedure_txt.Text))
                     {
-                        Close();
+                        DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text + "' , dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                            c.command(comando);
+                            if (c.valor == "si")
+                            {
+                                Close();
+                                c.valor = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Algo fallo!!!");
+                            }
+                        }
+                        else if (result == DialogResult.No)
+                        {
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Algo fallo!!!");
+                        MessageBox.Show("No ha escrito el titulo del procedimiento, favor revise.", "Falta informacion.");
                     }
                 }
-                else if (result == DialogResult.No)
+                else
                 {
-
+                    MessageBox.Show("No ha asignado el diente de trabajo, favor revise.", "Falta informacion.");
                 }
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("No ha ingresado un Doctor, favor revise.", "Falta informacion.");
+            }
 
-            }
-            finally
-            {
-            }
+
+
+
+
+            //try
+            //{
+            //    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text +"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+            //        c.command(comando);
+            //        if (c.valor == "si")
+            //        {
+            //            Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Algo fallo!!!");
+            //        }
+            //    }
+            //    else if (result == DialogResult.No)
+            //    {
+
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
+            //finally
+            //{
+            //}
         }
 
         private void delateprocedure_btn_Click(object sender, EventArgs e)
@@ -585,7 +669,7 @@ namespace SysPandemic
 
         private void addprocedure_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-           
+            
         }
 
         private void searchprocess_txt_TextChanged(object sender, EventArgs e)
