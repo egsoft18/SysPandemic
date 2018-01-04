@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.salary_txt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.iddoctor_txt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.idperson_txt = new System.Windows.Forms.TextBox();
@@ -49,13 +51,13 @@
             this.savedoctor_btn = new System.Windows.Forms.Button();
             this.clear_btn = new System.Windows.Forms.Button();
             this.Cancel_btn = new System.Windows.Forms.Button();
-            this.salary_txt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.salary_txt);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.iddoctor_txt);
@@ -78,6 +80,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
+            // 
+            // salary_txt
+            // 
+            this.salary_txt.Location = new System.Drawing.Point(404, 72);
+            this.salary_txt.MaxLength = 2;
+            this.salary_txt.Name = "salary_txt";
+            this.salary_txt.Size = new System.Drawing.Size(67, 20);
+            this.salary_txt.TabIndex = 19;
+            this.salary_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(342, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Ganancia:";
             // 
             // iddoctor_txt
             // 
@@ -201,11 +221,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(210, 9);
+            this.label1.Location = new System.Drawing.Point(180, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 29);
+            this.label1.Size = new System.Drawing.Size(277, 29);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Informacion Doctor";
+            this.label1.Text = "Informacion del Doctor";
             // 
             // delatedoctor_btn
             // 
@@ -257,22 +277,16 @@
             this.Cancel_btn.UseVisualStyleBackColor = true;
             this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
-            // salary_txt
+            // label8
             // 
-            this.salary_txt.Location = new System.Drawing.Point(390, 72);
-            this.salary_txt.Name = "salary_txt";
-            this.salary_txt.Size = new System.Drawing.Size(122, 20);
-            this.salary_txt.TabIndex = 19;
-            this.salary_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Salario:";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(446, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "%";
             // 
             // adddoctor
             // 
@@ -323,6 +337,6 @@
         public System.Windows.Forms.Button Cancel_btn;
         public System.Windows.Forms.TextBox salary_txt;
         private System.Windows.Forms.Label label3;
-
+        private System.Windows.Forms.Label label8;
     }
 }
