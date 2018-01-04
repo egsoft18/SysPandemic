@@ -31,7 +31,7 @@ namespace SysPandemic
                 //Conexion para la pc del consultorio
                 //cnx = new SqlConnection(@"Server=INOA-PC\EGSOFT;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
-                //Conexion Con red
+                //Conexion con red
                 cnx = new SqlConnection("Server=DESKTOP-RC55N5R, 49172;Database=SysPandemic;User Id=invitado; Password=1234; MultipleActiveResultSets=True");
 
                 cnx.Open();

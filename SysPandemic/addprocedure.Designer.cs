@@ -45,6 +45,8 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
+            this.des_rbtn = new System.Windows.Forms.RadioButton();
+            this.code_rbtn = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
             this.tooth_txt = new System.Windows.Forms.TextBox();
             this.searchprocess_txt = new System.Windows.Forms.TextBox();
@@ -91,8 +93,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
             this.printprocedure_btn = new System.Windows.Forms.Button();
-            this.code_rbtn = new System.Windows.Forms.RadioButton();
-            this.des_rbtn = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -296,6 +296,28 @@
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
             // 
+            // des_rbtn
+            // 
+            this.des_rbtn.AutoSize = true;
+            this.des_rbtn.Location = new System.Drawing.Point(784, 26);
+            this.des_rbtn.Name = "des_rbtn";
+            this.des_rbtn.Size = new System.Drawing.Size(81, 17);
+            this.des_rbtn.TabIndex = 32;
+            this.des_rbtn.TabStop = true;
+            this.des_rbtn.Text = "Descripcion";
+            this.des_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // code_rbtn
+            // 
+            this.code_rbtn.AutoSize = true;
+            this.code_rbtn.Location = new System.Drawing.Point(720, 26);
+            this.code_rbtn.Name = "code_rbtn";
+            this.code_rbtn.Size = new System.Drawing.Size(58, 17);
+            this.code_rbtn.TabIndex = 31;
+            this.code_rbtn.TabStop = true;
+            this.code_rbtn.Text = "Codigo";
+            this.code_rbtn.UseVisualStyleBackColor = true;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -312,6 +334,7 @@
             this.tooth_txt.Name = "tooth_txt";
             this.tooth_txt.Size = new System.Drawing.Size(83, 20);
             this.tooth_txt.TabIndex = 19;
+            this.tooth_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tooth_txt_KeyPress);
             // 
             // searchprocess_txt
             // 
@@ -350,6 +373,7 @@
             this.descuent_txt.Size = new System.Drawing.Size(117, 20);
             this.descuent_txt.TabIndex = 26;
             this.descuent_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.descuent_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descuent_txt_KeyPress);
             // 
             // label17
             // 
@@ -746,28 +770,6 @@
             this.printprocedure_btn.TabIndex = 23;
             this.printprocedure_btn.Text = "Imprimir";
             this.printprocedure_btn.UseVisualStyleBackColor = true;
-            // 
-            // code_rbtn
-            // 
-            this.code_rbtn.AutoSize = true;
-            this.code_rbtn.Location = new System.Drawing.Point(720, 26);
-            this.code_rbtn.Name = "code_rbtn";
-            this.code_rbtn.Size = new System.Drawing.Size(58, 17);
-            this.code_rbtn.TabIndex = 31;
-            this.code_rbtn.TabStop = true;
-            this.code_rbtn.Text = "Codigo";
-            this.code_rbtn.UseVisualStyleBackColor = true;
-            // 
-            // des_rbtn
-            // 
-            this.des_rbtn.AutoSize = true;
-            this.des_rbtn.Location = new System.Drawing.Point(784, 26);
-            this.des_rbtn.Name = "des_rbtn";
-            this.des_rbtn.Size = new System.Drawing.Size(81, 17);
-            this.des_rbtn.TabIndex = 32;
-            this.des_rbtn.TabStop = true;
-            this.des_rbtn.Text = "Descripcion";
-            this.des_rbtn.UseVisualStyleBackColor = true;
             // 
             // addprocedure
             // 
