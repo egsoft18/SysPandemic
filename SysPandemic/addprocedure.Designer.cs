@@ -404,6 +404,7 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(478, 203);
             this.dataGridView3.TabIndex = 23;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick_1);
             // 
             // dateprocedure_dtp
@@ -791,6 +792,7 @@
             this.MaximizeBox = false;
             this.Name = "addprocedure";
             this.Text = "Información del procedimiento";
+            this.Activated += new System.EventHandler(this.addprocedure_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addprocedure_FormClosing_1);
             this.Load += new System.EventHandler(this.addprocedure_Load);
             this.groupBox1.ResumeLayout(false);

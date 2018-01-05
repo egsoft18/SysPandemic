@@ -38,11 +38,14 @@ namespace SysPandemic
                 else
                 {
                     m = m + 1;
-                    dataGridView1.Rows.Add(m, medicine.Text, use.Text, time.Text);
+                    dataGridView1.Rows.Add(m, medicine.Text, use.Text, time.Text, patientpre.Text, bdaypre.Text, today.Text);
                     medicine.Clear();
                     use.Clear();
                     time.Clear();
                     medicine.Focus();
+
+                    //DateTime nacimiento = new DateTime(bdaypre.long); //Fecha de nacimiento
+                    //int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
                 }
             }
             catch
@@ -93,13 +96,12 @@ namespace SysPandemic
             dS.Tables[0].TableName = "prescription";
             dS.WriteXml(@"C:\SysPandemic server\xml\prescription.xml");
 
-
-            DataTable dT2 = GetDataTableFromDGV(dataGridView2);
-            DataSet dS2 = new DataSet();
-            dS2.Tables.Add(dT2);
-            dS2.Tables[0].TableName = "prescriptioninfo";
-            dS2.WriteXml(@"C:\SysPandemic server\xml\prescriptioninfo.xml");
-            string rpt = "prescriptionr.rpt";
+            //DataTable dT2 = GetDataTableFromDGV(dataGridView2);
+            //DataSet dS2 = new DataSet();
+            //dS2.Tables.Add(dT2);
+            //dS2.Tables[0].TableName = "prescriptioninfo";
+            //dS2.WriteXml(@"C:\SysPandemic server\xml\prescriptioninfo.xml");
+            string rpt = "prescriptionr2.rpt";
             reportview rv = new reportview(rpt);
             rv.Show();
 

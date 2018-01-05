@@ -177,6 +177,12 @@
     <Compile Include="closing.Designer.cs">
       <DependentUpon>closing.cs</DependentUpon>
     </Compile>
+    <Compile Include="editsubprocedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editsubprocedure.Designer.cs">
+      <DependentUpon>editsubprocedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="enterinvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,13 @@
     <Compile Include="prescription.Designer.cs">
       <DependentUpon>prescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="prescriptionr2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prescriptionr2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="procedurelist.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -430,6 +443,9 @@
     <EmbeddedResource Include="closing.resx">
       <DependentUpon>closing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editsubprocedure.resx">
+      <DependentUpon>editsubprocedure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="enterinvoice.resx">
       <DependentUpon>enterinvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +528,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="prescription.resx">
       <DependentUpon>prescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prescriptionr2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>prescriptionr2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="procedurelist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

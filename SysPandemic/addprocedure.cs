@@ -17,7 +17,6 @@ namespace SysPandemic
         {
             InitializeComponent();
            
-
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -460,7 +459,8 @@ namespace SysPandemic
                     c.command3(query);
                     if (c.valor == "si")
                     {
-                        MessageBox.Show("Done");
+                    //MessageBox.Show("Done");
+                    c.valor = "";
 
                     }
                 }
@@ -597,35 +597,50 @@ namespace SysPandemic
         private void dataGridView3_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             DBManager c = new DBManager();
-            try
-            {
-                DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
-                    string description = act.Cells["ID"].Value.ToString();
-                    string query = "DELETE FROM subprocedure WHERE id = '" + description + "'";
-                    c.command3(query);
 
-                    string query2 = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
-                    c.load_dgv(dataGridView3, query2);
-                    sums();
+            editsubprocedure frm = new editsubprocedure();
 
-                }
-                else if (result == DialogResult.No)
-                {
+            DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
+            frm.ep_id_txt.Text = act.Cells["ID"].Value.ToString();
+            frm.ep_idpro_txt.Text = act.Cells["IDProcedimiento"].Value.ToString();
+            frm.ep_code_txt.Text = act.Cells["Codigo"].Value.ToString();
+            frm.ep_pro_txt.Text = act.Cells["Procedimiento"].Value.ToString();
+            frm.ep_ta_txt.Text = act.Cells["Tarifa"].Value.ToString();
+            frm.ep_cov_txt.Text = act.Cells["Cobertura"].Value.ToString();
 
-                }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            
+            //try
+            //{
+            //    DialogResult result = MessageBox.Show("Seguro que desea Borrar?", "Borrar Sub-Procedimiento", MessageBoxButtons.YesNo);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        DataGridViewRow act = dataGridView3.Rows[e.RowIndex];
+            //        string description = act.Cells["ID"].Value.ToString();
+            //        string query = "DELETE FROM subprocedure WHERE id = '" + description + "'";
+            //        c.command3(query);
 
-            }
-            finally
-            {
-            }
+            //        string query2 = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+            //        c.load_dgv(dataGridView3, query2);
+            //        sums();
+
+            //    }
+            //    else if (result == DialogResult.No)
+            //    {
+
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+
+            //}
+            //finally
+            //{
+            //}
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -781,6 +796,16 @@ namespace SysPandemic
                 e.Handled = true;
             }
 
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void addprocedure_Activated(object sender, EventArgs e)
+        {
+            loadsubprocedure();
         }
     }
 }
