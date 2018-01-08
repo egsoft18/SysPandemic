@@ -293,11 +293,11 @@ namespace SysPandemic
         {
             DBManager c = new DBManager();
 
-            if (string.IsNullOrEmpty(piddoctor_txt.Text))
+            if (string.IsNullOrEmpty(piddoctor_txt.Text) == false)
             {
-                if (string.IsNullOrEmpty(tooth_txt.Text))
+                if (string.IsNullOrEmpty(tooth_txt.Text) == false)
                 {
-                    if (string.IsNullOrEmpty(procedure_txt.Text))
+                    if (string.IsNullOrEmpty(procedure_txt.Text) == false)
                     {
                         DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
@@ -806,6 +806,37 @@ namespace SysPandemic
         private void addprocedure_Activated(object sender, EventArgs e)
         {
             loadsubprocedure();
+        }
+
+        private void printprocedure_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBManager c = new DBManager();
+                string query = "select * from [procedure] where idprocedure = '" + idprocedure_txt.Text + "'";
+                string tb = "Procedure";
+                string xml = "procedure.xml";
+                string rpt = "reportprocedure.rpt";
+                c.test_printreport(query, tb, xml, rpt);
+
+                string query3 = "select insurance, affiliate from patient where idpatient = '" + pidpatient_txt.Text + "'";
+                string tb3 = "insuranceafi";
+                string xml3 = "insuranceafi.xml";
+                string rpt3 = "reportprocedure.rpt";
+                c.test_printreport(query3, tb3, xml3, rpt3);
+
+                string query2 = "select * from [subprocedure] where idprocedure = '" + idprocedure_txt.Text + "'";
+                string tb2 = "SubProcedure";
+                string xml2 = "subprocedure.xml";
+                string rpt2 = "reportprocedure.rpt";
+                c.printreport(query2, tb2, xml2, rpt2);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errror al cargar el reporte, Causa: " + ex, "Error");
+            }
         }
     }
 }

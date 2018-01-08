@@ -771,6 +771,7 @@
             this.printprocedure_btn.TabIndex = 23;
             this.printprocedure_btn.Text = "Imprimir";
             this.printprocedure_btn.UseVisualStyleBackColor = true;
+            this.printprocedure_btn.Click += new System.EventHandler(this.printprocedure_btn_Click);
             // 
             // addprocedure
             // 
