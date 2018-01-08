@@ -195,13 +195,6 @@
     <Compile Include="managerprovider.Designer.cs">
       <DependentUpon>managerprovider.cs</DependentUpon>
     </Compile>
-    <Compile Include="prescriptionr.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>prescriptionr.rpt</DependentUpon>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="cxcpreport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -451,11 +444,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerprovider.resx">
       <DependentUpon>managerprovider.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="prescriptionr.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>prescriptionr.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="cxcpreport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
