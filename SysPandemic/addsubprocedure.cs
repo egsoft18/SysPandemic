@@ -201,6 +201,10 @@ namespace SysPandemic
                             string xml = "entrybill.xml";
                             string report = "entrybill.rpt";
                             c.printreport(query2, tablename, xml, report);
+
+                            sactivity_txt.Clear();
+                            qtypay.Clear();
+                            typepay.Text = "";
                         }
                         else
                         {
@@ -227,6 +231,10 @@ namespace SysPandemic
                                 string xml = "entrybill.xml";
                                 string report = "entrybill.rpt";
                                 c.printreport(query3, tablename, xml, report);
+
+                                sactivity_txt.Clear();
+                                qtypay.Clear();
+                                typepay.Text = "";
                             }
                             else
                             {
@@ -240,9 +248,6 @@ namespace SysPandemic
                     }
                 }
             }
-            sactivity_txt.Clear();
-            qtypay.Clear();
-            typepay.Text = "";
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
