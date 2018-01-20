@@ -101,7 +101,7 @@ namespace SysPandemic
             //dS2.Tables.Add(dT2);
             //dS2.Tables[0].TableName = "prescriptioninfo";
             //dS2.WriteXml(@"C:\SysPandemic server\xml\prescriptioninfo.xml");
-            string rpt = "prescriptionr2.rpt";
+            string rpt = "prescriptionr.rpt";
             reportview rv = new reportview(rpt);
             rv.Show();
 

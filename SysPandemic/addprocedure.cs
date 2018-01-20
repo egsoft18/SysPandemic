@@ -806,6 +806,7 @@ namespace SysPandemic
         private void addprocedure_Activated(object sender, EventArgs e)
         {
             loadsubprocedure();
+            sums();
         }
 
         private void printprocedure_btn_Click(object sender, EventArgs e)

@@ -16,14 +16,14 @@ namespace SysPandemic {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class prescriptionr2 : ReportClass {
+    public class prescriptionr : ReportClass {
         
-        public prescriptionr2() {
+        public prescriptionr() {
         }
         
         public override string ResourceName {
             get {
-                return "prescriptionr2.rpt";
+                return "prescriptionr.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SysPandemic {
         
         public override string FullResourceName {
             get {
-                return "SysPandemic.prescriptionr2.rpt";
+                return "SysPandemic.prescriptionr.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SysPandemic {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedprescriptionr2 : Component, ICachedReport {
+    public class Cachedprescriptionr : Component, ICachedReport {
         
-        public Cachedprescriptionr2() {
+        public Cachedprescriptionr() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SysPandemic {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            prescriptionr2 rpt = new prescriptionr2();
+            prescriptionr rpt = new prescriptionr();
             rpt.Site = this.Site;
             return rpt;
         }

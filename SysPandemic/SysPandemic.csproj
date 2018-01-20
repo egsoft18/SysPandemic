@@ -313,10 +313,10 @@
     <Compile Include="prescription.Designer.cs">
       <DependentUpon>prescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="prescriptionr2.cs">
+    <Compile Include="prescriptionr.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>prescriptionr2.rpt</DependentUpon>
+      <DependentUpon>prescriptionr.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -517,9 +517,9 @@
     <EmbeddedResource Include="prescription.resx">
       <DependentUpon>prescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="prescriptionr2.rpt">
+    <EmbeddedResource Include="prescriptionr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>prescriptionr2.cs</LastGenOutput>
+      <LastGenOutput>prescriptionr.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="procedurelist.rpt">
