@@ -36,6 +36,12 @@
             this.pacienteDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verPacientesDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.procedimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarProcedimientoRegularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarProcedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearCotizacionDeProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,12 +63,6 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearCotizacionDeProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarProcedimientoRegularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrarProcedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             this.miselaneasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1354, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(427, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,6 +137,52 @@
             this.procedimientosToolStripMenuItem.Name = "procedimientosToolStripMenuItem";
             this.procedimientosToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             this.procedimientosToolStripMenuItem.Text = "Procedimientos";
+            // 
+            // procedimientosRegularesToolStripMenuItem
+            // 
+            this.procedimientosRegularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarProcedimientoRegularToolStripMenuItem,
+            this.administrarProcedimientosRegularesToolStripMenuItem});
+            this.procedimientosRegularesToolStripMenuItem.Name = "procedimientosRegularesToolStripMenuItem";
+            this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.procedimientosRegularesToolStripMenuItem.Text = "Procedimientos Regulares";
+            // 
+            // agregarProcedimientoRegularToolStripMenuItem
+            // 
+            this.agregarProcedimientoRegularToolStripMenuItem.Name = "agregarProcedimientoRegularToolStripMenuItem";
+            this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.agregarProcedimientoRegularToolStripMenuItem.Text = "Agregar Procedimiento Regular";
+            this.agregarProcedimientoRegularToolStripMenuItem.Click += new System.EventHandler(this.agregarProcedimientoRegularToolStripMenuItem_Click);
+            // 
+            // administrarProcedimientosRegularesToolStripMenuItem
+            // 
+            this.administrarProcedimientosRegularesToolStripMenuItem.Name = "administrarProcedimientosRegularesToolStripMenuItem";
+            this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.administrarProcedimientosRegularesToolStripMenuItem.Text = "Administrar procedimientos Regulares";
+            this.administrarProcedimientosRegularesToolStripMenuItem.Click += new System.EventHandler(this.administrarProcedimientosRegularesToolStripMenuItem_Click);
+            // 
+            // cotizacionesToolStripMenuItem
+            // 
+            this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearCotizacionDeProcedimientoToolStripMenuItem,
+            this.verCotizacionesToolStripMenuItem});
+            this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
+            // 
+            // crearCotizacionDeProcedimientoToolStripMenuItem
+            // 
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear cotizacion de procedimiento";
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionDeProcedimientoToolStripMenuItem_Click);
+            // 
+            // verCotizacionesToolStripMenuItem
+            // 
+            this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
+            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.verCotizacionesToolStripMenuItem.Text = "Ver cotizaciones";
+            this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
             // 
             // agendaToolStripMenuItem
             // 
@@ -302,58 +348,12 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
-            // cotizacionesToolStripMenuItem
-            // 
-            this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearCotizacionDeProcedimientoToolStripMenuItem,
-            this.verCotizacionesToolStripMenuItem});
-            this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
-            // 
-            // crearCotizacionDeProcedimientoToolStripMenuItem
-            // 
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear cotizacion de procedimiento";
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionDeProcedimientoToolStripMenuItem_Click);
-            // 
-            // verCotizacionesToolStripMenuItem
-            // 
-            this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
-            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.verCotizacionesToolStripMenuItem.Text = "Ver cotizaciones";
-            this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
-            // 
-            // procedimientosRegularesToolStripMenuItem
-            // 
-            this.procedimientosRegularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarProcedimientoRegularToolStripMenuItem,
-            this.administrarProcedimientosRegularesToolStripMenuItem});
-            this.procedimientosRegularesToolStripMenuItem.Name = "procedimientosRegularesToolStripMenuItem";
-            this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.procedimientosRegularesToolStripMenuItem.Text = "Procedimientos Regulares";
-            // 
-            // agregarProcedimientoRegularToolStripMenuItem
-            // 
-            this.agregarProcedimientoRegularToolStripMenuItem.Name = "agregarProcedimientoRegularToolStripMenuItem";
-            this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.agregarProcedimientoRegularToolStripMenuItem.Text = "Agregar Procedimiento Regular";
-            this.agregarProcedimientoRegularToolStripMenuItem.Click += new System.EventHandler(this.agregarProcedimientoRegularToolStripMenuItem_Click);
-            // 
-            // administrarProcedimientosRegularesToolStripMenuItem
-            // 
-            this.administrarProcedimientosRegularesToolStripMenuItem.Name = "administrarProcedimientosRegularesToolStripMenuItem";
-            this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
-            this.administrarProcedimientosRegularesToolStripMenuItem.Text = "Administrar procedimientos Regulares";
-            this.administrarProcedimientosRegularesToolStripMenuItem.Click += new System.EventHandler(this.administrarProcedimientosRegularesToolStripMenuItem_Click);
-            // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(427, 331);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

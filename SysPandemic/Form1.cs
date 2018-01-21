@@ -304,7 +304,7 @@ namespace SysPandemic
                 else
                 {
                     string status = "NO PAGADO";
-                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Cotizacion');";
+                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Presupuesto');";
                     DBManager c = new DBManager();
                     string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
                     c.command3(query2);
@@ -434,7 +434,7 @@ namespace SysPandemic
             DBManager c = new DBManager();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Cotizacion'";
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Presupuesto'";
                 c.load_dgv(frm.dataGridView1, query);
                 frm.scondition_txt.Text = "Cotizacion";
             }
