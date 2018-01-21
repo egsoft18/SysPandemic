@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(964, 433);
+            this.ClientSize = new System.Drawing.Size(964, 398);
             this.Controls.Add(this.scondition_txt);
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.snopay_rbtn);

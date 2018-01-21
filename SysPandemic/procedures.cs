@@ -42,6 +42,7 @@ namespace SysPandemic
             frm.iscoverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
             frm.pricepay_txt.Text = act.Cells["Total"].Value.ToString();
             frm.tooth_txt.Text = act.Cells["Diente"].Value.ToString();
+            frm.dateprocedure_dtp.Text = act.Cells["Fecha"].Value.ToString();
             
             frm.groupBox3.Hide();
             frm.saveprocedure_btn.Hide();

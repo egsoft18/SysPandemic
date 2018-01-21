@@ -79,7 +79,7 @@
             this.miselaneasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(427, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -168,20 +168,20 @@
             this.verCotizacionesToolStripMenuItem});
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
             this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
+            this.cotizacionesToolStripMenuItem.Text = "Presupuestos";
             // 
             // crearCotizacionDeProcedimientoToolStripMenuItem
             // 
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear cotizacion de procedimiento";
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear presupuestos de procedimiento";
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionDeProcedimientoToolStripMenuItem_Click);
             // 
             // verCotizacionesToolStripMenuItem
             // 
             this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
-            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.verCotizacionesToolStripMenuItem.Text = "Ver cotizaciones";
+            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.verCotizacionesToolStripMenuItem.Text = "Ver presupuestos";
             this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
             // 
             // agendaToolStripMenuItem
@@ -353,7 +353,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(427, 331);
+            this.ClientSize = new System.Drawing.Size(908, 410);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

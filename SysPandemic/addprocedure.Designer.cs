@@ -859,7 +859,6 @@
         public System.Windows.Forms.TextBox realpay_txt;
         public System.Windows.Forms.TextBox procedure_txt;
         public System.Windows.Forms.Button delateprocedure_btn;
-        private System.Windows.Forms.DateTimePicker dateprocedure_dtp;
         private System.Windows.Forms.Label dateprocedure;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -880,5 +879,6 @@
         public System.Windows.Forms.Button turnregular_btn;
         private System.Windows.Forms.RadioButton des_rbtn;
         private System.Windows.Forms.RadioButton code_rbtn;
+        public System.Windows.Forms.DateTimePicker dateprocedure_dtp;
     }
 }
