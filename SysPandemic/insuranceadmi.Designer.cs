@@ -385,6 +385,7 @@
             this.MaximizeBox = false;
             this.Name = "insuranceadmi";
             this.Text = "Admiistrador de Seguros";
+            this.Activated += new System.EventHandler(this.insuranceadmi_Activated);
             this.Load += new System.EventHandler(this.insuranceadmi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

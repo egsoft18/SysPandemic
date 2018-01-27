@@ -196,6 +196,7 @@
             this.MaximizeBox = false;
             this.Name = "Appointment";
             this.Text = "Citas";
+            this.Activated += new System.EventHandler(this.Appointment_Activated);
             this.Load += new System.EventHandler(this.Appointment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

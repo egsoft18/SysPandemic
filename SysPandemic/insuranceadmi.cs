@@ -420,6 +420,12 @@ namespace SysPandemic
 
             //}
         }
-        
+
+        private void insuranceadmi_Activated(object sender, EventArgs e)
+        {
+            string query = "Select id as ID, Code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia from detailsinsurance where  idinsurance = '" + pidinsurance_txt.Text + "'";
+            DBManager c = new DBManager();
+            c.load_dgv(dataGridView1, query);
+        }
     }
 }

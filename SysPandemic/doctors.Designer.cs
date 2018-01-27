@@ -138,6 +138,7 @@
             this.MaximizeBox = false;
             this.Name = "doctors";
             this.Text = "Administar doctores";
+            this.Activated += new System.EventHandler(this.doctors_Activated);
             this.Load += new System.EventHandler(this.doctors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

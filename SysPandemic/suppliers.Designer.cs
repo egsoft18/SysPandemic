@@ -101,6 +101,7 @@
             this.MaximizeBox = false;
             this.Name = "suppliers";
             this.Text = "Suplidores";
+            this.Activated += new System.EventHandler(this.suppliers_Activated);
             this.Load += new System.EventHandler(this.suppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.providers_dgv)).EndInit();
             this.ResumeLayout(false);

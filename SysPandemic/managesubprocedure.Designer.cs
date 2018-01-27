@@ -166,6 +166,7 @@
             this.MaximizeBox = false;
             this.Name = "managesubprocedure";
             this.Text = "Lista de Procedimientos";
+            this.Activated += new System.EventHandler(this.managesubprocedure_Activated);
             this.Load += new System.EventHandler(this.managesubprocedure_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

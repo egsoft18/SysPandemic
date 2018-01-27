@@ -275,5 +275,19 @@ namespace SysPandemic
                 buscar();
             }
         }
+
+        private void procedures_Activated(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            try
+            {
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = '"+scondition_txt.Text+"'";
+                c.load_dgv(dataGridView1, query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
     }
 }

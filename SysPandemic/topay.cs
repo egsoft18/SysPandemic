@@ -25,26 +25,8 @@ namespace SysPandemic
         private void loadprocedure()
         {
             DBManager c = new DBManager();
-            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure]";
+            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure] where pricepay > 0 and ptype = 'Presupuesto'";
             c.load_dgv(dataGridView1, query);
-
-
-
-
-            //spatient_rbtn.PerformClick();
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from procedure", cnx);
-            //    DataTable tabla = new DataTable("Procedimientos");
-            //    adac.Fill(tabla);
-            //    dataGridView1.DataSource = tabla;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -143,6 +125,11 @@ namespace SysPandemic
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
             buscar();
+        }
+
+        private void topay_Activated(object sender, EventArgs e)
+        {
+            loadprocedure();
         }
     }
 }

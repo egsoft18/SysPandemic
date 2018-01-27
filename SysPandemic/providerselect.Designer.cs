@@ -74,6 +74,7 @@
             this.Name = "providerselect";
             this.Opacity = 0.5D;
             this.Text = "Seleccionar Proveedor";
+            this.Activated += new System.EventHandler(this.providerselect_Activated);
             this.Load += new System.EventHandler(this.providerselect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

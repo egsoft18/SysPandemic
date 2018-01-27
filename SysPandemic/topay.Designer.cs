@@ -165,6 +165,7 @@
             this.MaximizeBox = false;
             this.Name = "topay";
             this.Text = "Procedimiento a facturar";
+            this.Activated += new System.EventHandler(this.topay_Activated);
             this.Load += new System.EventHandler(this.topay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

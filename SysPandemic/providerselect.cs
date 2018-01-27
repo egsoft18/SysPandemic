@@ -41,5 +41,11 @@ namespace SysPandemic
            
 
         }
+
+        private void providerselect_Activated(object sender, EventArgs e)
+        {
+            string query = "select idprovider as ID, nameprovider as 'Nombre' from provider";
+            c.load_dgv(dataGridView1, query);
+        }
     }
 }

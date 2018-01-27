@@ -102,5 +102,10 @@ namespace SysPandemic
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void seeinsurance_Activated(object sender, EventArgs e)
+        {
+            DGVload();
+        }
     }
 }

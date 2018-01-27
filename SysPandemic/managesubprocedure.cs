@@ -182,5 +182,12 @@ namespace SysPandemic
             }
         }
 
+        private void managesubprocedure_Activated(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure]";
+
+            c.load_dgv(dataGridView1, query);
+        }
     }
 }

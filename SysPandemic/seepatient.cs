@@ -252,5 +252,11 @@ namespace SysPandemic
         {
             
         }
+
+        private void searchpatient_Activated(object sender, EventArgs e)
+        {
+            DBManager c = new DBManager();
+            c.patient_administrator(dataGridView1);
+        }
     }
 }

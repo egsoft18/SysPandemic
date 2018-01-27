@@ -48,5 +48,12 @@ namespace SysPandemic
                 MessageBox.Show("No se consiguio lo querido", "Error");
             }
         }
+
+        private void searchpatientpre_Activated(object sender, EventArgs e)
+        {
+            string query = "select idpatient as ID, name as Nombre, bday as FechaNac from patient";
+            DBManager c = new DBManager();
+            c.load_dgv(dataGridView1, query);
+        }
     }
 }

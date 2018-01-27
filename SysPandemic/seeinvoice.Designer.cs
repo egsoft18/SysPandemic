@@ -31,9 +31,9 @@
             this.provider_rbtn = new System.Windows.Forms.RadioButton();
             this.reason_rbtn = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.searchbill = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchbill = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,14 +77,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ver Facturas en el Sistema";
             // 
-            // searchbill
+            // dataGridView1
             // 
-            this.searchbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbill.Location = new System.Drawing.Point(379, 25);
-            this.searchbill.Name = "searchbill";
-            this.searchbill.Size = new System.Drawing.Size(517, 20);
-            this.searchbill.TabIndex = 3;
-            this.searchbill.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(970, 279);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button1
             // 
@@ -97,15 +98,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // searchbill
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 279);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.searchbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchbill.Location = new System.Drawing.Point(379, 25);
+            this.searchbill.Name = "searchbill";
+            this.searchbill.Size = new System.Drawing.Size(517, 20);
+            this.searchbill.TabIndex = 3;
+            this.searchbill.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // seeinvoice
             // 
@@ -117,6 +117,7 @@
             this.MaximizeBox = false;
             this.Name = "seeinvoice";
             this.Text = "seeinvoice";
+            this.Activated += new System.EventHandler(this.seeinvoice_Activated);
             this.Load += new System.EventHandler(this.seeinvoice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

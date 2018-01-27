@@ -21,20 +21,20 @@ namespace SysPandemic
 
         private void emerpatv_Load(object sender, EventArgs e)
         {
-            rdbnom.PerformClick();
-            SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            try
-            {
-                cnx.Open();
-                SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat", cnx);
-                DataTable tabla = new DataTable("Procedimientos");
-                adac.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+            //rdbnom.PerformClick();
+            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
+            //try
+            //{
+            //    cnx.Open();
+            //    SQLiteDataAdapter adac = new SQLiteDataAdapter("Select idep as ID,  name as Paciente, sex as Sexo, address as Direccion, tel as Telefono, procedure as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total,time as Fecha, statuspay as Credito from emerpat", cnx);
+            //    DataTable tabla = new DataTable("Procedimientos");
+            //    adac.Fill(tabla);
+            //    dataGridView1.DataSource = tabla;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error");
+            //}
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)

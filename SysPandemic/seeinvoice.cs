@@ -56,5 +56,11 @@ namespace SysPandemic
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void seeinvoice_Activated(object sender, EventArgs e)
+        {
+            string query = "select idtransactions as 'ID', ref as 'Referencia', madebytran as 'De', reasontran as 'Razon', datetran as 'Fecha', origin as 'Metodo',  expenses as 'Monto' from [transaction] where ref like 'F-%'";
+            c.load_dgv(dataGridView1, query);
+        }
     }
 }

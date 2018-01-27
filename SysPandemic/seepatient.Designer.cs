@@ -154,6 +154,7 @@
             this.MaximizeBox = false;
             this.Name = "searchpatient";
             this.Text = "Administrar Pacientes";
+            this.Activated += new System.EventHandler(this.searchpatient_Activated);
             this.Load += new System.EventHandler(this.seepatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

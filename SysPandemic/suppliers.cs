@@ -63,5 +63,11 @@ namespace SysPandemic
             string query = "select idprovider as ID, nameprovider as Nombre, addressprovider as Direccion, phoneprovider as Telefono, email as 'E-mail' from [provider]";
             c.load_dgv(providers_dgv, query);
         }
+
+        private void suppliers_Activated(object sender, EventArgs e)
+        {
+            string query = "select idprovider as ID, nameprovider as Nombre, addressprovider as Direccion, phoneprovider as Telefono, email as 'E-mail' from [provider]";
+            c.load_dgv(providers_dgv, query);
+        }
     }
 }
