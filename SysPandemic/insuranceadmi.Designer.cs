@@ -199,6 +199,7 @@
             this.ptelinsurance_txt.Name = "ptelinsurance_txt";
             this.ptelinsurance_txt.Size = new System.Drawing.Size(110, 20);
             this.ptelinsurance_txt.TabIndex = 2;
+            this.ptelinsurance_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ptelinsurance_txt_KeyPress);
             // 
             // pnameinsurance_txt
             // 

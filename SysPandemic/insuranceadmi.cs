@@ -427,5 +427,22 @@ namespace SysPandemic
             DBManager c = new DBManager();
             c.load_dgv(dataGridView1, query);
         }
+
+        private void ptelinsurance_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }
