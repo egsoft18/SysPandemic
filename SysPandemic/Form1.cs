@@ -157,7 +157,7 @@ namespace SysPandemic
 
         private void Homeform_Load(object sender, EventArgs e)
         {
-            
+            Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -180,7 +180,8 @@
             // verCotizacionesToolStripMenuItem
             // 
             this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
-            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.verCotizacionesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(272, 20);
             this.verCotizacionesToolStripMenuItem.Text = "Ver presupuestos";
             this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
             // 
