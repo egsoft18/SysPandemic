@@ -361,8 +361,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Homeform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SysPandemic";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Homeform_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
