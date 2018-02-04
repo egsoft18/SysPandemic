@@ -429,9 +429,12 @@ namespace SysPandemic
 
         private void insurancepatient_txt_MouseClick(object sender, MouseEventArgs e)
         {
-            string query3 = "Select idinsurance, nameinsurance from insurances";
-            string item = "nameinsurance";
-            c.fill_CB(insurancepatient_txt, query3, item);
+            if(insurancepatient_txt.Items.Count <= 0)
+            {
+                string query3 = "Select idinsurance, nameinsurance from insurances";
+                string item = "nameinsurance";
+                c.fill_CB(insurancepatient_txt, query3, item);
+            }
         }
     }
 }
