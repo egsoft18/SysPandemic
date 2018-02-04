@@ -51,7 +51,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(13, 36);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(939, 359);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -120,7 +120,7 @@
             // 
             // printlistprocedure_btn
             // 
-            this.printlistprocedure_btn.Location = new System.Drawing.Point(877, 369);
+            this.printlistprocedure_btn.Location = new System.Drawing.Point(877, 401);
             this.printlistprocedure_btn.Name = "printlistprocedure_btn";
             this.printlistprocedure_btn.Size = new System.Drawing.Size(75, 20);
             this.printlistprocedure_btn.TabIndex = 7;
@@ -162,7 +162,7 @@
             // 
             // scondition_txt
             // 
-            this.scondition_txt.Location = new System.Drawing.Point(852, 401);
+            this.scondition_txt.Location = new System.Drawing.Point(855, 427);
             this.scondition_txt.Name = "scondition_txt";
             this.scondition_txt.Size = new System.Drawing.Size(100, 20);
             this.scondition_txt.TabIndex = 11;
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(964, 445);
+            this.ClientSize = new System.Drawing.Size(964, 424);
             this.Controls.Add(this.scondition_txt);
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.snopay_rbtn);

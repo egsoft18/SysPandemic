@@ -412,7 +412,7 @@ namespace SysPandemic
             DBManager c = new DBManager();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Regular'";
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Regular' order by ID desc";
                 c.load_dgv(frm.dataGridView1, query);
                 frm.scondition_txt.Text = "Regular";
             }
@@ -434,7 +434,7 @@ namespace SysPandemic
             DBManager c = new DBManager();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Presupuesto'";
+                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Presupuesto' order by idprocedure desc";
                 c.load_dgv(frm.dataGridView1, query);
                 frm.scondition_txt.Text = "Presupuesto";
             }
