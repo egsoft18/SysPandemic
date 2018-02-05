@@ -25,7 +25,7 @@ namespace SysPandemic
         private void loadprocedure()
         {
             DBManager c = new DBManager();
-            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure] where pricepay > 0 and ptype = 'Presupuesto'";
+            string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito from [procedure] where pricepay > 0 and ptype = 'Regular' order by ID desc";
             c.load_dgv(dataGridView1, query);
         }
 

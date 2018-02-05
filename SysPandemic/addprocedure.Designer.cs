@@ -45,6 +45,8 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.gaindoctor_txt = new System.Windows.Forms.TextBox();
             this.des_rbtn = new System.Windows.Forms.RadioButton();
             this.code_rbtn = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
@@ -262,6 +264,8 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.label20);
+            this.groud2.Controls.Add(this.gaindoctor_txt);
             this.groud2.Controls.Add(this.des_rbtn);
             this.groud2.Controls.Add(this.code_rbtn);
             this.groud2.Controls.Add(this.label18);
@@ -296,6 +300,25 @@
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(458, 22);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(91, 13);
+            this.label20.TabIndex = 34;
+            this.label20.Text = "Ganancia Doctor:";
+            // 
+            // gaindoctor_txt
+            // 
+            this.gaindoctor_txt.AcceptsReturn = true;
+            this.gaindoctor_txt.Location = new System.Drawing.Point(555, 19);
+            this.gaindoctor_txt.MaxLength = 2;
+            this.gaindoctor_txt.Name = "gaindoctor_txt";
+            this.gaindoctor_txt.Size = new System.Drawing.Size(83, 20);
+            this.gaindoctor_txt.TabIndex = 33;
+            this.gaindoctor_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gaindoctor_txt_KeyPress);
+            // 
             // des_rbtn
             // 
             this.des_rbtn.AutoSize = true;
@@ -321,7 +344,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(197, 22);
+            this.label18.Location = new System.Drawing.Point(149, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 13);
             this.label18.TabIndex = 30;
@@ -330,7 +353,7 @@
             // tooth_txt
             // 
             this.tooth_txt.AcceptsReturn = true;
-            this.tooth_txt.Location = new System.Drawing.Point(243, 19);
+            this.tooth_txt.Location = new System.Drawing.Point(195, 19);
             this.tooth_txt.Name = "tooth_txt";
             this.tooth_txt.Size = new System.Drawing.Size(83, 20);
             this.tooth_txt.TabIndex = 19;
@@ -411,7 +434,7 @@
             // 
             this.dateprocedure_dtp.CustomFormat = "dd/MM/yyyy";
             this.dateprocedure_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateprocedure_dtp.Location = new System.Drawing.Point(385, 19);
+            this.dateprocedure_dtp.Location = new System.Drawing.Point(337, 19);
             this.dateprocedure_dtp.Name = "dateprocedure_dtp";
             this.dateprocedure_dtp.Size = new System.Drawing.Size(105, 20);
             this.dateprocedure_dtp.TabIndex = 22;
@@ -419,7 +442,7 @@
             // dateprocedure
             // 
             this.dateprocedure.AutoSize = true;
-            this.dateprocedure.Location = new System.Drawing.Point(337, 22);
+            this.dateprocedure.Location = new System.Drawing.Point(289, 22);
             this.dateprocedure.Name = "dateprocedure";
             this.dateprocedure.Size = new System.Drawing.Size(40, 13);
             this.dateprocedure.TabIndex = 21;
@@ -880,5 +903,7 @@
         private System.Windows.Forms.RadioButton des_rbtn;
         private System.Windows.Forms.RadioButton code_rbtn;
         public System.Windows.Forms.DateTimePicker dateprocedure_dtp;
+        private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox gaindoctor_txt;
     }
 }

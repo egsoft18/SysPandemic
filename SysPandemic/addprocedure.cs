@@ -79,6 +79,10 @@ namespace SysPandemic
             {
                 
             }
+            string querry8 = "select gaindoctor from [procedure] where idprocedure = '" + idprocedure_txt.Text + "'";
+            string condition = "gaindoctor";
+            c.fill_txt(gaindoctor_txt, querry8, condition);
+
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -214,7 +218,7 @@ namespace SysPandemic
                                     DialogResult result = MessageBox.Show("Seguro que desea Guardar?", "Guardar datos del Procedimiento", MessageBoxButtons.YesNo);
                                     if (result == DialogResult.Yes)
                                     {
-                                        string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '" + pnamepatient_txt.Text + "', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "', tooth = '" + tooth_txt.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                                        string query = "UPDATE [procedure] set idpatient = '" + pidpatient_txt.Text + "', namepatient = '" + pnamepatient_txt.Text + "', iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', dateprocedure = '" + dateprocedure_dtp.Text + "', tooth = '" + tooth_txt.Text + "', gaindoctor = '"+gaindoctor_txt.Text+"' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                                         c.command(query);
                                         if (c.valor == "si")
                                         {
@@ -302,7 +306,7 @@ namespace SysPandemic
                         DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Procedimiento", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
                         {
-                            string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text + "' , dateprocedure = '" + dateprocedure_dtp.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
+                            string comando = "UPDATE [procedure] set iddoctor = '" + piddoctor_txt.Text + "', namedoctor = '" + pnamedoctor_txt.Text + "', [procedure] = '" + procedure_txt.Text + "', realprice = '" + realpay_txt.Text + "', iscoverage = '" + iscoverage_txt.Text + "', pricepay = '" + pricepay_txt.Text + "', tooth = '" + tooth_txt.Text + "' , dateprocedure = '" + dateprocedure_dtp.Text + "', gaindoctor = '" + gaindoctor_txt.Text + "' WHERE idprocedure = '" + idprocedure_txt.Text + "'";
                             c.command(comando);
                             if (c.valor == "si")
                             {
@@ -838,6 +842,23 @@ namespace SysPandemic
             {
                 MessageBox.Show("Errror al cargar el reporte, Causa: " + ex, "Error");
             }
+        }
+
+        private void gaindoctor_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }
