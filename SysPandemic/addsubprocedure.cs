@@ -27,6 +27,10 @@ namespace SysPandemic
             string condition = "qty";
             c.fill_txt(nowpay_txt, query, condition);
 
+            string querry2 = "select idDoctor from [procedure] where idprocedure = '" + idsubprocedure_txt.Text + "'";
+            string condition2 = "idDoctor";
+            c.fill_txt(iddoctor_txt, querry2, condition2);
+
             if (string.IsNullOrEmpty(nowpay_txt.Text))
             {
                 decimal ppay = Convert.ToDecimal(sppricepay_txt.Text);
@@ -47,6 +51,10 @@ namespace SysPandemic
                 string query5 = "select tooth from [procedure] where idprocedure = '" + idsubprocedure_txt.Text + "'";
                 c.fill_txt(stooth_txt, query5, "tooth");
             }
+            query = "select gaindoctor from [procedure] where idprocedure = '" + idsubprocedure_txt.Text + "'";
+            condition = "gaindoctor";
+            c.fill_txt(gaindoctor_txt, query, condition);
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -190,6 +198,30 @@ namespace SysPandemic
                         {
                             c.command(query);
 
+                            //insertar en la tabla de pago a los doctores;
+
+                            if (Convert.ToInt32(iddoctor_txt.Text) == 1)
+                            {
+                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                                c.command3(querry2);
+                            }
+                            else
+                            {
+                                decimal gaindoctor = Convert.ToDecimal(gaindoctor_txt.Text) / 100;
+                                decimal gainfulldoctor = 1 - gaindoctor;
+                                decimal paygaindoctor = Convert.ToDecimal(qtypay.Text) * gaindoctor;
+                                decimal payfulldoctor = Convert.ToDecimal(qtypay.Text) * gainfulldoctor;
+
+                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
+                                c.command3(querry2);
+
+                                string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
+                                c.command3(querry3);
+                            }
+
+
+
+
                             //Insertar en la tabla del historico del paciente
                             string hquery = "insert into patienthistory(idpatient, tooth, activity, qtypay, date) values('" + sidpatient.Text + "', '" + stooth_txt.Text + "', '" + sactivity_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
                             c.command3(hquery);
@@ -219,6 +251,29 @@ namespace SysPandemic
                             if (ppay >= (nowpay + qty))
                             {
                                 c.command(query);
+
+                                //insertar en la tabla de pago a los doctores;
+
+                                if (Convert.ToInt32(iddoctor_txt.Text) == 1)
+                                {
+                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                                    c.command3(querry2);
+                                }
+                                else
+                                {
+                                    decimal gaindoctor = Convert.ToDecimal(gaindoctor_txt.Text) / 100;
+                                    decimal gainfulldoctor = 1 - gaindoctor;
+                                    decimal paygaindoctor = Convert.ToDecimal(qtypay.Text) * gaindoctor;
+                                    decimal payfulldoctor = Convert.ToDecimal(qtypay.Text) * gainfulldoctor;
+
+                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
+                                    c.command3(querry2);
+
+                                    string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
+                                    c.command3(querry3);
+                                }
+
+
                                 loadbill();
                                 
                                 //Insertar en la tabla del historico del paciente
@@ -251,6 +306,11 @@ namespace SysPandemic
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

@@ -177,6 +177,18 @@
     <Compile Include="closing.Designer.cs">
       <DependentUpon>closing.cs</DependentUpon>
     </Compile>
+    <Compile Include="descpayrolldocbypro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="descpayrolldocbypro.Designer.cs">
+      <DependentUpon>descpayrolldocbypro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="descpayrolldocext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="descpayrolldocext.Designer.cs">
+      <DependentUpon>descpayrolldocext.cs</DependentUpon>
+    </Compile>
     <Compile Include="editsubprocedure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="closing.resx">
       <DependentUpon>closing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="descpayrolldocbypro.resx">
+      <DependentUpon>descpayrolldocbypro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="descpayrolldocext.resx">
+      <DependentUpon>descpayrolldocext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editsubprocedure.resx">
       <DependentUpon>editsubprocedure.cs</DependentUpon>

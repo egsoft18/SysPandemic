@@ -445,6 +445,18 @@ namespace SysPandemic
 
             frm.Show();
         }
+
+        private void descuentosADoctoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void externoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            descpayrolldocext frm = new descpayrolldocext();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
     }
 
