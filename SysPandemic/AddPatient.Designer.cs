@@ -102,6 +102,7 @@
             this.searchhistory_txt = new System.Windows.Forms.TextBox();
             this.patienthistory = new System.Windows.Forms.DataGridView();
             this.idph_txt = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -444,6 +445,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.diab_cb);
@@ -860,6 +862,16 @@
             this.idph_txt.Size = new System.Drawing.Size(100, 20);
             this.idph_txt.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(491, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 23);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Todos son NO";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -970,5 +982,6 @@
         private System.Windows.Forms.Button searchhistory_btn;
         private System.Windows.Forms.DataGridView patienthistory;
         public System.Windows.Forms.TextBox searchhistory_txt;
+        private System.Windows.Forms.Button button3;
     }
 }

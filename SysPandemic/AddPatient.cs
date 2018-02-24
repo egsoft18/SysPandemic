@@ -172,36 +172,6 @@ namespace SysPandemic
             {
 
             }
-            
-            
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    string comando = "INSERT INTO patient(name, bday, sex, idperson, address, tel, cel, telwork, insurance, affiliate) VALUES('" + namepatient_txt.Text + "', '" + bdaypatient_dtp.Text + "','" + sexpatient_cb.Text + "','" + idperson_txt.Text + "', '" + addresspatient_txt.Text + "', '" + telpatient_txt.Text + "', '" + celpatient_txt.Text + "', '" + tworkpatient_txt.Text + "', '" + insurancepatient_txt.Text + "', '" + affiliatepatient_txt.Text + "');";
-            //    SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-
-            //    if (insertion.ExecuteNonQuery() > 0)
-            //    {
-            //        MessageBox.Show("Se agrego correctamente");
-            //        namepatient_txt.Clear();
-            //        sexpatient_cb.Text = "";
-            //        idperson_txt.Clear();
-            //        addresspatient_txt.Clear();
-            //        telpatient_txt.Clear();
-            //        celpatient_txt.Clear();
-            //        tworkpatient_txt.Clear();
-            //        insurancepatient_txt.Text = "";
-            //        affiliatepatient_txt.Clear();
-            //        namepatient_txt.Focus();
-                    
-            //    }
-            //}
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Error");
-
-            //    }
         }
 
         private void updatepatient_btn_Click(object sender, EventArgs e)
@@ -212,50 +182,20 @@ namespace SysPandemic
                 if (result == DialogResult.Yes)
                 {
             string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
-            c.command(query);
-            string query2 = "UPDATE medicald Set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
-            c.command3(query2);
+            c.command3(query);
+            string query2 = "UPDATE medicald set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
+            c.command(query2);
 
-            if (c.valor == "si")
-            {
-                Close();
-                
-            }
+                if (c.valor == "si")
+                {
+                    Close();
+
                 }
+            }
                 else if (result == DialogResult.No)
                 {
 
                 }
-            //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //try
-            //{
-            //    cnx.Open();
-            //    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        string comando = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE id = '" + idpatient_txt.Text + "'";
-            //        SQLiteCommand insertion = new SQLiteCommand(comando, cnx);
-            //        if (insertion.ExecuteNonQuery() > 0)
-            //        {
-            //            MessageBox.Show("Se ha actualizado!");
-            //            Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Algo fallo!!!");
-            //        }
-            //    }
-            //    else if (result == DialogResult.No)
-            //    {
-
-            //    }
-              
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-
-            //}
         }
 
         private void clearform_btn_Click(object sender, EventArgs e)
@@ -435,6 +375,21 @@ namespace SysPandemic
                 string item = "nameinsurance";
                 c.fill_CB(insurancepatient_txt, query3, item);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tmed_cb.Text = "No";
+            mica_cb.Text = "No";
+            ps_cb.Text = "No";
+            diab_cb.Text = "No";
+            hep_cb.Text = "No";
+            pr_cb.Text = "No";
+            pe_cb.Text = "No";
+            pa_cb.Text = "No";
+            hemo_cb.Text = "No";
+            aler_cb.Text = "No";
+
         }
     }
 }
