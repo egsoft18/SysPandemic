@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(managerprovider));
             this.idprovider_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nameprovider = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.addressprovider = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.telprovider = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.emailprovider = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.telprovider = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.addressprovider = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nameprovider = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.namecontactp = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.telcontactp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.positioncontactp = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.telcontactp = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.namecontactp = new System.Windows.Forms.TextBox();
             this.proccess_btn = new System.Windows.Forms.Button();
             this.deleteprovider = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -89,37 +90,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos generales:";
             // 
-            // nameprovider
+            // label5
             // 
-            this.nameprovider.Location = new System.Drawing.Point(148, 54);
-            this.nameprovider.Name = "nameprovider";
-            this.nameprovider.Size = new System.Drawing.Size(264, 20);
-            this.nameprovider.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(188, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "E-mail:";
             // 
-            // label2
+            // emailprovider
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre del proveedor:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Direccion:";
-            // 
-            // addressprovider
-            // 
-            this.addressprovider.Location = new System.Drawing.Point(77, 80);
-            this.addressprovider.Name = "addressprovider";
-            this.addressprovider.Size = new System.Drawing.Size(335, 20);
-            this.addressprovider.TabIndex = 4;
+            this.emailprovider.Location = new System.Drawing.Point(239, 106);
+            this.emailprovider.Name = "emailprovider";
+            this.emailprovider.Size = new System.Drawing.Size(173, 20);
+            this.emailprovider.TabIndex = 8;
             // 
             // label4
             // 
@@ -138,21 +123,37 @@
             this.telprovider.TabIndex = 6;
             this.telprovider.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "E-mail:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Direccion:";
             // 
-            // emailprovider
+            // addressprovider
             // 
-            this.emailprovider.Location = new System.Drawing.Point(239, 106);
-            this.emailprovider.Name = "emailprovider";
-            this.emailprovider.Size = new System.Drawing.Size(173, 20);
-            this.emailprovider.TabIndex = 8;
+            this.addressprovider.Location = new System.Drawing.Point(77, 80);
+            this.addressprovider.Name = "addressprovider";
+            this.addressprovider.Size = new System.Drawing.Size(335, 20);
+            this.addressprovider.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nombre del proveedor:";
+            // 
+            // nameprovider
+            // 
+            this.nameprovider.Location = new System.Drawing.Point(148, 54);
+            this.nameprovider.Name = "nameprovider";
+            this.nameprovider.Size = new System.Drawing.Size(264, 20);
+            this.nameprovider.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -170,22 +171,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto Empresa";
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Nombre del contacto:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Posicion del contacto:";
             // 
-            // namecontactp
+            // positioncontactp
             // 
-            this.namecontactp.Location = new System.Drawing.Point(143, 19);
-            this.namecontactp.Name = "namecontactp";
-            this.namecontactp.Size = new System.Drawing.Size(269, 20);
-            this.namecontactp.TabIndex = 10;
-            this.namecontactp.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.positioncontactp.Location = new System.Drawing.Point(148, 45);
+            this.positioncontactp.Name = "positioncontactp";
+            this.positioncontactp.Size = new System.Drawing.Size(262, 20);
+            this.positioncontactp.TabIndex = 14;
             // 
             // label7
             // 
@@ -203,21 +203,22 @@
             this.telcontactp.Size = new System.Drawing.Size(262, 20);
             this.telcontactp.TabIndex = 12;
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Posicion del contacto:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Nombre del contacto:";
             // 
-            // positioncontactp
+            // namecontactp
             // 
-            this.positioncontactp.Location = new System.Drawing.Point(148, 45);
-            this.positioncontactp.Name = "positioncontactp";
-            this.positioncontactp.Size = new System.Drawing.Size(262, 20);
-            this.positioncontactp.TabIndex = 14;
+            this.namecontactp.Location = new System.Drawing.Point(143, 19);
+            this.namecontactp.Name = "namecontactp";
+            this.namecontactp.Size = new System.Drawing.Size(269, 20);
+            this.namecontactp.TabIndex = 10;
+            this.namecontactp.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // proccess_btn
             // 
@@ -248,6 +249,7 @@
             this.Controls.Add(this.proccess_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "managerprovider";
             this.Text = "Manejador de proveedor";
             this.Load += new System.EventHandler(this.managerprovider_Load);

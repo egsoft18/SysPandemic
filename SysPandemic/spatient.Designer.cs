@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(spatient));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidperson_rbtn = new System.Windows.Forms.RadioButton();
             this.sname_rbtn = new System.Windows.Forms.RadioButton();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.sname_rbtn);
             this.Controls.Add(this.sidperson_rbtn);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "spatient";
             this.Text = "Buscar paciente";

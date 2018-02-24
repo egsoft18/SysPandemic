@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(closing));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.transall = new System.Windows.Forms.RadioButton();
-            this.transentry = new System.Windows.Forms.RadioButton();
             this.transout = new System.Windows.Forms.RadioButton();
+            this.transentry = new System.Windows.Forms.RadioButton();
+            this.transall = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rankall = new System.Windows.Forms.RadioButton();
-            this.rankdate = new System.Windows.Forms.RadioButton();
-            this.datestart = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.dateend = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.datestart = new System.Windows.Forms.DateTimePicker();
+            this.rankdate = new System.Windows.Forms.RadioButton();
+            this.rankall = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.paytype = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,16 +59,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Transacción";
             // 
-            // transall
+            // transout
             // 
-            this.transall.AutoSize = true;
-            this.transall.Location = new System.Drawing.Point(7, 32);
-            this.transall.Name = "transall";
-            this.transall.Size = new System.Drawing.Size(55, 17);
-            this.transall.TabIndex = 0;
-            this.transall.TabStop = true;
-            this.transall.Text = "Todas";
-            this.transall.UseVisualStyleBackColor = true;
+            this.transout.AutoSize = true;
+            this.transout.Location = new System.Drawing.Point(136, 32);
+            this.transout.Name = "transout";
+            this.transout.Size = new System.Drawing.Size(54, 17);
+            this.transout.TabIndex = 2;
+            this.transout.TabStop = true;
+            this.transout.Text = "Salida";
+            this.transout.UseVisualStyleBackColor = true;
             // 
             // transentry
             // 
@@ -80,16 +81,16 @@
             this.transentry.Text = "Entrada";
             this.transentry.UseVisualStyleBackColor = true;
             // 
-            // transout
+            // transall
             // 
-            this.transout.AutoSize = true;
-            this.transout.Location = new System.Drawing.Point(136, 32);
-            this.transout.Name = "transout";
-            this.transout.Size = new System.Drawing.Size(54, 17);
-            this.transout.TabIndex = 2;
-            this.transout.TabStop = true;
-            this.transout.Text = "Salida";
-            this.transout.UseVisualStyleBackColor = true;
+            this.transall.AutoSize = true;
+            this.transall.Location = new System.Drawing.Point(7, 32);
+            this.transall.Name = "transall";
+            this.transall.Size = new System.Drawing.Size(55, 17);
+            this.transall.TabIndex = 0;
+            this.transall.TabStop = true;
+            this.transall.Text = "Todas";
+            this.transall.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -105,16 +106,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rango";
             // 
-            // rankall
+            // dateend
             // 
-            this.rankall.AutoSize = true;
-            this.rankall.Location = new System.Drawing.Point(7, 32);
-            this.rankall.Name = "rankall";
-            this.rankall.Size = new System.Drawing.Size(55, 17);
-            this.rankall.TabIndex = 0;
-            this.rankall.TabStop = true;
-            this.rankall.Text = "Todas";
-            this.rankall.UseVisualStyleBackColor = true;
+            this.dateend.CustomFormat = "yyyy-MM-dd";
+            this.dateend.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateend.Location = new System.Drawing.Point(174, 55);
+            this.dateend.Name = "dateend";
+            this.dateend.Size = new System.Drawing.Size(100, 20);
+            this.dateend.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(155, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "a";
+            // 
+            // datestart
+            // 
+            this.datestart.CustomFormat = "yyyy-MM-dd";
+            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datestart.Location = new System.Drawing.Point(61, 55);
+            this.datestart.Name = "datestart";
+            this.datestart.Size = new System.Drawing.Size(88, 20);
+            this.datestart.TabIndex = 2;
             // 
             // rankdate
             // 
@@ -128,32 +145,16 @@
             this.rankdate.UseVisualStyleBackColor = true;
             this.rankdate.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // datestart
+            // rankall
             // 
-            this.datestart.CustomFormat = "yyyy-MM-dd";
-            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datestart.Location = new System.Drawing.Point(61, 55);
-            this.datestart.Name = "datestart";
-            this.datestart.Size = new System.Drawing.Size(88, 20);
-            this.datestart.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "a";
-            // 
-            // dateend
-            // 
-            this.dateend.CustomFormat = "yyyy-MM-dd";
-            this.dateend.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateend.Location = new System.Drawing.Point(174, 55);
-            this.dateend.Name = "dateend";
-            this.dateend.Size = new System.Drawing.Size(100, 20);
-            this.dateend.TabIndex = 4;
+            this.rankall.AutoSize = true;
+            this.rankall.Location = new System.Drawing.Point(7, 32);
+            this.rankall.Name = "rankall";
+            this.rankall.Size = new System.Drawing.Size(55, 17);
+            this.rankall.TabIndex = 0;
+            this.rankall.TabStop = true;
+            this.rankall.Text = "Todas";
+            this.rankall.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -200,6 +201,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "closing";
             this.Text = "Cierre";

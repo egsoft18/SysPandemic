@@ -202,7 +202,7 @@ namespace SysPandemic
 
                             if (Convert.ToInt32(iddoctor_txt.Text) == 1)
                             {
-                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '"+spnamepatient_txt.Text+"', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
                                 c.command3(querry2);
                             }
                             else
@@ -212,10 +212,10 @@ namespace SysPandemic
                                 decimal paygaindoctor = Convert.ToDecimal(qtypay.Text) * gaindoctor;
                                 decimal payfulldoctor = Convert.ToDecimal(qtypay.Text) * gainfulldoctor;
 
-                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
+                                string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + spnamepatient_txt.Text + "',  '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
                                 c.command3(querry2);
 
-                                string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
+                                string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + spnamepatient_txt.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
                                 c.command3(querry3);
                             }
 
@@ -256,7 +256,7 @@ namespace SysPandemic
 
                                 if (Convert.ToInt32(iddoctor_txt.Text) == 1)
                                 {
-                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
+                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + spnamepatient_txt.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + qtypay.Text + "', '" + datepay.Text + "')";
                                     c.command3(querry2);
                                 }
                                 else
@@ -266,10 +266,10 @@ namespace SysPandemic
                                     decimal paygaindoctor = Convert.ToDecimal(qtypay.Text) * gaindoctor;
                                     decimal payfulldoctor = Convert.ToDecimal(qtypay.Text) * gainfulldoctor;
 
-                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
+                                    string querry2 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('" + iddoctor_txt.Text + "', '" + sidpatient.Text + "', '" + spnamepatient_txt.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + paygaindoctor + "', '" + datepay.Text + "')";
                                     c.command3(querry2);
 
-                                    string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
+                                    string querry3 = "Insert into [payrolldoctors](iddoctor, idpatient, namepatient, idprocedure, reason, qty, date) values ('1', '" + sidpatient.Text + "', '" + spnamepatient_txt.Text + "', '" + idsubprocedure_txt.Text + "', '" + sprocedure_txt.Text + "', '" + payfulldoctor + "', '" + datepay.Text + "')";
                                     c.command3(querry3);
                                 }
 

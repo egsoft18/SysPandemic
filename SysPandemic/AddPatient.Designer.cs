@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatient));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.idpatient_txt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -872,9 +873,10 @@
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.delatepatient_btn);
             this.Controls.Add(this.clearform_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddPatient";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Paciente";
             this.Load += new System.EventHandler(this.AddPatient_Load);
             this.groupBox1.ResumeLayout(false);

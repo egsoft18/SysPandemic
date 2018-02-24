@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.passtxt = new System.Windows.Forms.TextBox();
             this.loginbtn = new System.Windows.Forms.Button();
             this.usercb = new System.Windows.Forms.ComboBox();
@@ -160,6 +161,7 @@
             this.ClientSize = new System.Drawing.Size(283, 241);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

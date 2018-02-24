@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homeform));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,11 @@
             this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeFacturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaDeDoctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descuentosADoctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.externoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,11 +69,6 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nominaDeDoctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.descuentosADoctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porProcedimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.externoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,14 +101,14 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // administrarToolStripMenuItem
             // 
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
             // 
@@ -266,6 +267,45 @@
             this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
             this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
+            // nominaToolStripMenuItem
+            // 
+            this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nominaDeDoctoresToolStripMenuItem,
+            this.descuentosADoctoresToolStripMenuItem});
+            this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
+            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.nominaToolStripMenuItem.Text = "Nomina";
+            // 
+            // nominaDeDoctoresToolStripMenuItem
+            // 
+            this.nominaDeDoctoresToolStripMenuItem.Name = "nominaDeDoctoresToolStripMenuItem";
+            this.nominaDeDoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.nominaDeDoctoresToolStripMenuItem.Text = "Nomina de Doctores";
+            this.nominaDeDoctoresToolStripMenuItem.Click += new System.EventHandler(this.nominaDeDoctoresToolStripMenuItem_Click);
+            // 
+            // descuentosADoctoresToolStripMenuItem
+            // 
+            this.descuentosADoctoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porProcedimientoToolStripMenuItem,
+            this.externoToolStripMenuItem});
+            this.descuentosADoctoresToolStripMenuItem.Name = "descuentosADoctoresToolStripMenuItem";
+            this.descuentosADoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.descuentosADoctoresToolStripMenuItem.Text = "Descuentos a Doctores";
+            this.descuentosADoctoresToolStripMenuItem.Click += new System.EventHandler(this.descuentosADoctoresToolStripMenuItem_Click);
+            // 
+            // porProcedimientoToolStripMenuItem
+            // 
+            this.porProcedimientoToolStripMenuItem.Name = "porProcedimientoToolStripMenuItem";
+            this.porProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.porProcedimientoToolStripMenuItem.Text = "Por Procedimiento";
+            // 
+            // externoToolStripMenuItem
+            // 
+            this.externoToolStripMenuItem.Name = "externoToolStripMenuItem";
+            this.externoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.externoToolStripMenuItem.Text = "Externo";
+            this.externoToolStripMenuItem.Click += new System.EventHandler(this.externoToolStripMenuItem_Click);
+            // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
@@ -355,44 +395,6 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
-            // nominaToolStripMenuItem
-            // 
-            this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nominaDeDoctoresToolStripMenuItem,
-            this.descuentosADoctoresToolStripMenuItem});
-            this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
-            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.nominaToolStripMenuItem.Text = "Nomina";
-            // 
-            // nominaDeDoctoresToolStripMenuItem
-            // 
-            this.nominaDeDoctoresToolStripMenuItem.Name = "nominaDeDoctoresToolStripMenuItem";
-            this.nominaDeDoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.nominaDeDoctoresToolStripMenuItem.Text = "Nomina de Doctores";
-            // 
-            // descuentosADoctoresToolStripMenuItem
-            // 
-            this.descuentosADoctoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porProcedimientoToolStripMenuItem,
-            this.externoToolStripMenuItem});
-            this.descuentosADoctoresToolStripMenuItem.Name = "descuentosADoctoresToolStripMenuItem";
-            this.descuentosADoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.descuentosADoctoresToolStripMenuItem.Text = "Descuentos a Doctores";
-            this.descuentosADoctoresToolStripMenuItem.Click += new System.EventHandler(this.descuentosADoctoresToolStripMenuItem_Click);
-            // 
-            // porProcedimientoToolStripMenuItem
-            // 
-            this.porProcedimientoToolStripMenuItem.Name = "porProcedimientoToolStripMenuItem";
-            this.porProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.porProcedimientoToolStripMenuItem.Text = "Por Procedimiento";
-            // 
-            // externoToolStripMenuItem
-            // 
-            this.externoToolStripMenuItem.Name = "externoToolStripMenuItem";
-            this.externoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.externoToolStripMenuItem.Text = "Externo";
-            this.externoToolStripMenuItem.Click += new System.EventHandler(this.externoToolStripMenuItem_Click);
-            // 
             // Homeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +403,7 @@
             this.ClientSize = new System.Drawing.Size(1077, 410);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;

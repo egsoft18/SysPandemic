@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(prescription));
             this.label1 = new System.Windows.Forms.Label();
             this.patientpre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,13 @@
             this.bdaypre = new System.Windows.Forms.TextBox();
             this.searchpatient = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bday3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicine = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,17 +52,10 @@
             this.addmedicine = new System.Windows.Forms.Button();
             this.printpre = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.today = new System.Windows.Forms.DateTimePicker();
             this.Patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.today2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bday3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.today = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +130,45 @@
             this.dataGridView1.Size = new System.Drawing.Size(705, 228);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dataGridView1_CellValueNeeded);
+            // 
+            // no
+            // 
+            this.no.HeaderText = "No.";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // medicamento
+            // 
+            this.medicamento.HeaderText = "Medicamento";
+            this.medicamento.Name = "medicamento";
+            this.medicamento.ReadOnly = true;
+            // 
+            // uso
+            // 
+            this.uso.HeaderText = "Uso";
+            this.uso.Name = "uso";
+            this.uso.ReadOnly = true;
+            // 
+            // periodo
+            // 
+            this.periodo.HeaderText = "Período";
+            this.periodo.Name = "periodo";
+            this.periodo.ReadOnly = true;
+            // 
+            // patient2
+            // 
+            this.patient2.HeaderText = "Paciente";
+            this.patient2.Name = "patient2";
+            // 
+            // bday3
+            // 
+            this.bday3.HeaderText = "bday";
+            this.bday3.Name = "bday3";
+            // 
+            // hoy
+            // 
+            this.hoy.HeaderText = "hoy";
+            this.hoy.Name = "hoy";
             // 
             // medicine
             // 
@@ -210,15 +250,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(349, 75);
             this.dataGridView2.TabIndex = 15;
             // 
-            // today
-            // 
-            this.today.CustomFormat = "dd-MM-yyyy";
-            this.today.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.today.Location = new System.Drawing.Point(367, 449);
-            this.today.Name = "today";
-            this.today.Size = new System.Drawing.Size(95, 20);
-            this.today.TabIndex = 16;
-            // 
             // Patient
             // 
             this.Patient.HeaderText = "Patient";
@@ -237,44 +268,14 @@
             this.today2.Name = "today2";
             this.today2.ReadOnly = true;
             // 
-            // no
+            // today
             // 
-            this.no.HeaderText = "No.";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // medicamento
-            // 
-            this.medicamento.HeaderText = "Medicamento";
-            this.medicamento.Name = "medicamento";
-            this.medicamento.ReadOnly = true;
-            // 
-            // uso
-            // 
-            this.uso.HeaderText = "Uso";
-            this.uso.Name = "uso";
-            this.uso.ReadOnly = true;
-            // 
-            // periodo
-            // 
-            this.periodo.HeaderText = "Período";
-            this.periodo.Name = "periodo";
-            this.periodo.ReadOnly = true;
-            // 
-            // patient2
-            // 
-            this.patient2.HeaderText = "Paciente";
-            this.patient2.Name = "patient2";
-            // 
-            // bday3
-            // 
-            this.bday3.HeaderText = "bday";
-            this.bday3.Name = "bday3";
-            // 
-            // hoy
-            // 
-            this.hoy.HeaderText = "hoy";
-            this.hoy.Name = "hoy";
+            this.today.CustomFormat = "dd-MM-yyyy";
+            this.today.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.today.Location = new System.Drawing.Point(367, 449);
+            this.today.Name = "today";
+            this.today.Size = new System.Drawing.Size(95, 20);
+            this.today.TabIndex = 16;
             // 
             // prescription
             // 
@@ -299,6 +300,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.patientpre);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "prescription";
             this.Text = "Crear Prescripcion";

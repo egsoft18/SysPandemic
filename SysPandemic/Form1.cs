@@ -457,6 +457,14 @@ namespace SysPandemic
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void nominaDeDoctoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            payroll frm = new payroll();
+            frm.MdiParent = this;
+            frm.condition_txt.Text = "Doctor";
+            frm.Show();
+        }
     }
     }
 

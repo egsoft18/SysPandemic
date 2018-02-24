@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(emerpatv));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
@@ -127,6 +128,7 @@
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "emerpatv";
             this.Text = "Ver pacientes ambulantes";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rdbid = new System.Windows.Forms.RadioButton();
             this.rdbpac = new System.Windows.Forms.RadioButton();
@@ -193,6 +194,7 @@
             this.Controls.Add(this.rdbpac);
             this.Controls.Add(this.rdbid);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Appointment";
             this.Text = "Citas";

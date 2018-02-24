@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(seeinsurance));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.search_txt = new System.Windows.Forms.TextBox();
             this.searchinsurance_btn = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@
             this.Controls.Add(this.searchinsurance_btn);
             this.Controls.Add(this.search_txt);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "seeinsurance";
             this.Text = "seeinsurance";

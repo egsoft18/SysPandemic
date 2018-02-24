@@ -30,7 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addsubprocedure));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gaindoctor_txt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.status_txt = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.iddoctor_txt = new System.Windows.Forms.TextBox();
             this.stooth_txt = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -41,8 +48,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.nowpay_txt = new System.Windows.Forms.TextBox();
-            this.status_txt = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.sppricepay_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -69,10 +74,6 @@
             this.typepay = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.iddoctor_txt = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gaindoctor_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -117,6 +118,60 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Procedimiento";
+            // 
+            // gaindoctor_txt
+            // 
+            this.gaindoctor_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gaindoctor_txt.Location = new System.Drawing.Point(192, 100);
+            this.gaindoctor_txt.Name = "gaindoctor_txt";
+            this.gaindoctor_txt.ReadOnly = true;
+            this.gaindoctor_txt.Size = new System.Drawing.Size(98, 20);
+            this.gaindoctor_txt.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(101, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Ganacia Doctor:";
+            // 
+            // status_txt
+            // 
+            this.status_txt.Location = new System.Drawing.Point(761, 101);
+            this.status_txt.Name = "status_txt";
+            this.status_txt.ReadOnly = true;
+            this.status_txt.Size = new System.Drawing.Size(100, 20);
+            this.status_txt.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 78);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 13);
+            this.label21.TabIndex = 36;
+            this.label21.Text = "Doctor:";
+            // 
+            // label13
+            // 
+            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(670, 103);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Estado de pago:";
+            // 
+            // iddoctor_txt
+            // 
+            this.iddoctor_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iddoctor_txt.Location = new System.Drawing.Point(54, 75);
+            this.iddoctor_txt.Name = "iddoctor_txt";
+            this.iddoctor_txt.ReadOnly = true;
+            this.iddoctor_txt.Size = new System.Drawing.Size(43, 20);
+            this.iddoctor_txt.TabIndex = 35;
             // 
             // stooth_txt
             // 
@@ -205,24 +260,6 @@
             this.nowpay_txt.ReadOnly = true;
             this.nowpay_txt.Size = new System.Drawing.Size(100, 20);
             this.nowpay_txt.TabIndex = 20;
-            // 
-            // status_txt
-            // 
-            this.status_txt.Location = new System.Drawing.Point(761, 101);
-            this.status_txt.Name = "status_txt";
-            this.status_txt.ReadOnly = true;
-            this.status_txt.Size = new System.Drawing.Size(100, 20);
-            this.status_txt.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(670, 103);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Estado de pago:";
             // 
             // label9
             // 
@@ -491,42 +528,6 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "Valor abonado:";
             // 
-            // iddoctor_txt
-            // 
-            this.iddoctor_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iddoctor_txt.Location = new System.Drawing.Point(54, 75);
-            this.iddoctor_txt.Name = "iddoctor_txt";
-            this.iddoctor_txt.ReadOnly = true;
-            this.iddoctor_txt.Size = new System.Drawing.Size(43, 20);
-            this.iddoctor_txt.TabIndex = 35;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 78);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 13);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "Doctor:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Ganacia Doctor:";
-            // 
-            // gaindoctor_txt
-            // 
-            this.gaindoctor_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gaindoctor_txt.Location = new System.Drawing.Point(192, 100);
-            this.gaindoctor_txt.Name = "gaindoctor_txt";
-            this.gaindoctor_txt.ReadOnly = true;
-            this.gaindoctor_txt.Size = new System.Drawing.Size(98, 20);
-            this.gaindoctor_txt.TabIndex = 38;
-            // 
             // addsubprocedure
             // 
             this.AllowDrop = true;
@@ -539,6 +540,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "addsubprocedure";
             this.Text = "Detalles del Procedimiento";

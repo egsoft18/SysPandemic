@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addprocedure));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.turnregular_btn = new System.Windows.Forms.Button();
             this.ptype_txt = new System.Windows.Forms.TextBox();
@@ -813,6 +814,7 @@
             this.Controls.Add(this.saveprocedure_btn);
             this.Controls.Add(this.groud2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "addprocedure";
             this.Text = "Información del procedimiento";
