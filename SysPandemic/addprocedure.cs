@@ -865,5 +865,15 @@ namespace SysPandemic
             }
 
         }
+
+        private void notes_btn_Click(object sender, EventArgs e)
+        {
+            string idpro = idprocedure_txt.Text;
+
+            viewnotes frm = new viewnotes();
+            frm.MdiParent = this.MdiParent;
+            frm.vn_idpro_txt.Text = idpro;
+            frm.Show();
+        }
     }
 }
