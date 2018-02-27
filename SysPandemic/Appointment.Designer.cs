@@ -175,6 +175,7 @@
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(92, 20);
             this.dtpfecha.TabIndex = 12;
+            this.dtpfecha.ValueChanged += new System.EventHandler(this.dtpfecha_ValueChanged);
             // 
             // Appointment
             // 

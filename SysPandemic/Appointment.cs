@@ -111,9 +111,9 @@ namespace SysPandemic
         private void Appointment_Load(object sender, EventArgs e)
         {
             rdbfecha.PerformClick();
-            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
+            //string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date = '" + dtpfecha.Text + "'";
             
-            c.load_dgv(dataGridView1, query);
+            //c.load_dgv(dataGridView1, query);
                 
         }
 
@@ -216,7 +216,14 @@ namespace SysPandemic
 
         private void Appointment_Activated(object sender, EventArgs e)
         {
-            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem ";
+            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date = '" + dtpfecha.Text + "'";
+
+            c.load_dgv(dataGridView1, query);
+        }
+
+        private void dtpfecha_ValueChanged(object sender, EventArgs e)
+        {
+            string query = "Select id as ID, idpatient as IdPaciente, namepa as Paciente, iddoctor as Iddoctor, namedoctor as Doctor,assist as Asistencia, date as Fecha, time as Hora from datem where date = '"+dtpfecha.Text+"'";
 
             c.load_dgv(dataGridView1, query);
         }

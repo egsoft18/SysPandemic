@@ -33,9 +33,6 @@
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pacienteAmbulanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pacienteDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.verPacientesDeEmergenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.procedimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procedimientosRegularesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProcedimientoRegularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +73,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
-            this.pacienteAmbulanteToolStripMenuItem,
             this.procedimientosToolStripMenuItem,
             this.agendaToolStripMenuItem,
             this.facturacionToolStripMenuItem,
@@ -101,39 +97,16 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // administrarToolStripMenuItem
             // 
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
-            // 
-            // pacienteAmbulanteToolStripMenuItem
-            // 
-            this.pacienteAmbulanteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pacienteDeEmergenciaToolStripMenuItem1,
-            this.verPacientesDeEmergenciaToolStripMenuItem1});
-            this.pacienteAmbulanteToolStripMenuItem.Name = "pacienteAmbulanteToolStripMenuItem";
-            this.pacienteAmbulanteToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.pacienteAmbulanteToolStripMenuItem.Text = "Paciente ambulante";
-            // 
-            // pacienteDeEmergenciaToolStripMenuItem1
-            // 
-            this.pacienteDeEmergenciaToolStripMenuItem1.Name = "pacienteDeEmergenciaToolStripMenuItem1";
-            this.pacienteDeEmergenciaToolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
-            this.pacienteDeEmergenciaToolStripMenuItem1.Text = " Agregar paciente de ambulante";
-            this.pacienteDeEmergenciaToolStripMenuItem1.Click += new System.EventHandler(this.pacienteDeEmergenciaToolStripMenuItem1_Click);
-            // 
-            // verPacientesDeEmergenciaToolStripMenuItem1
-            // 
-            this.verPacientesDeEmergenciaToolStripMenuItem1.Name = "verPacientesDeEmergenciaToolStripMenuItem1";
-            this.verPacientesDeEmergenciaToolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
-            this.verPacientesDeEmergenciaToolStripMenuItem1.Text = "Ver pacientes ambulantes";
-            this.verPacientesDeEmergenciaToolStripMenuItem1.Click += new System.EventHandler(this.verPacientesDeEmergenciaToolStripMenuItem1_Click);
             // 
             // procedimientosToolStripMenuItem
             // 
@@ -430,9 +403,6 @@
         private System.Windows.Forms.ToolStripMenuItem verCitasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarCitaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doctoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pacienteAmbulanteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pacienteDeEmergenciaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem verPacientesDeEmergenciaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem segurosToolStripMenuItem;
