@@ -58,7 +58,7 @@ namespace SysPandemic
             c.load_dgv(dataGridView1, pacients);
             string doctors = "Select idstaff as ID, namestaff as Nombre, sexstaff as Sexo, idpersonstaff as Cedula from staff where rolestaff like 'Doctor'";
             c.load_dgv(dataGridView2, doctors);
-            string sprocedure = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+            string sprocedure = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, tooth as Diente, status as Estado, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
             c.load_dgv(dataGridView3, sprocedure);
             if (string.IsNullOrEmpty(pidpatient_txt.Text))
             {
@@ -427,6 +427,31 @@ namespace SysPandemic
         {
             try
                 {
+                if (variossubpro_cbx.Checked == true)
+                {
+                    string idpro = idprocedure_txt.Text;
+                    variussubpro frm = new variussubpro();
+                    frm.MdiParent = this.MdiParent;
+
+                    DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
+
+                    frm.vsp_activity_txt.Text = act.Cells["Descripcion"].Value.ToString();
+                    
+                    try{frm.vsp_tariff_txt.Text = act.Cells["Tarifa"].Value.ToString();
+                    }
+                    catch
+                    {
+                    }
+                    frm.vsp_coverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
+                    frm.vsp_difference_txt.Text = act.Cells["Diferencia"].Value.ToString();
+                    frm.vsp_codeinsu_txt.Text = act.Cells["Codigo"].Value.ToString();
+                    frm.vsp_insurance_txt.Text = act.Cells["Seguro"].Value.ToString();
+
+                    frm.vsp_idprocedure_txt.Text = idpro;
+                    frm.Show();
+                }
+                else  if (variossubpro_cbx.Checked == false)
+                {
                     DBManager c = new DBManager();
                     DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
                     string description = act.Cells["Descripcion"].Value.ToString();
@@ -435,16 +460,18 @@ namespace SysPandemic
                     string difference = act.Cells["Diferencia"].Value.ToString();
                     string code = act.Cells["Codigo"].Value.ToString();
                     string insurance = act.Cells["Seguro"].Value.ToString();
-                    string paystatus = "No Pagado";
+                    string paystatus = "Sin Realizar";
 
-                    string query = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, paystatus, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "')";
+                    string query = "INSERT INTO subprocedure(idprocedure, codeinsurance, subprocedure, tariff, coverage, difference, status, insurance) VALUES('" + idprocedure_txt.Text + "', '" + code + "','" + description + "','" + tariff + "', '" + coverage + "', '" + difference + "', '" + paystatus + "', '" + insurance + "')";
                     c.command3(query);
                     if (c.valor == "si")
                     {
-                    //MessageBox.Show("Done");
-                    c.valor = "";
+                        //MessageBox.Show("Done");
+                        c.valor = "";
 
                     }
+                }
+                
                 }
                 catch (Exception ex)
                 {
@@ -471,7 +498,7 @@ namespace SysPandemic
 
             try
             {
-                string query = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, paystatus as Pago, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
+                string query = "Select id as ID, idprocedure as IDProcedimiento, codeinsurance as Codigo, subprocedure as Procedimiento, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, tooth as Diente, status as Estado, insurance as Seguro from subprocedure where idprocedure = '" + idprocedure_txt.Text + "'";
                 c.load_dgv(dataGridView3, query);
             }
             catch (Exception ex)

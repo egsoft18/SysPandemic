@@ -442,6 +442,12 @@
     <Compile Include="topay.Designer.cs">
       <DependentUpon>topay.cs</DependentUpon>
     </Compile>
+    <Compile Include="variussubpro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="variussubpro.Designer.cs">
+      <DependentUpon>variussubpro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="adddoctor.resx">
       <DependentUpon>adddoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -628,6 +634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="topay.resx">
       <DependentUpon>topay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="variussubpro.resx">
+      <DependentUpon>variussubpro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
