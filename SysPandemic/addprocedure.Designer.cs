@@ -44,7 +44,7 @@
             this.pidpatient_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groud2 = new System.Windows.Forms.GroupBox();
-            this.variossubpro_cbx = new System.Windows.Forms.CheckBox();
+            this.notes_btn = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.gaindoctor_txt = new System.Windows.Forms.TextBox();
             this.des_rbtn = new System.Windows.Forms.RadioButton();
@@ -93,7 +93,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.delateprocedure_btn = new System.Windows.Forms.Button();
             this.printprocedure_btn = new System.Windows.Forms.Button();
-            this.notes_btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groud2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -243,8 +243,8 @@
             // 
             // groud2
             // 
+            this.groud2.Controls.Add(this.label2);
             this.groud2.Controls.Add(this.notes_btn);
-            this.groud2.Controls.Add(this.variossubpro_cbx);
             this.groud2.Controls.Add(this.label20);
             this.groud2.Controls.Add(this.gaindoctor_txt);
             this.groud2.Controls.Add(this.des_rbtn);
@@ -281,15 +281,15 @@
             this.groud2.TabStop = false;
             this.groud2.Text = "Información del Procedimiento";
             // 
-            // variossubpro_cbx
+            // notes_btn
             // 
-            this.variossubpro_cbx.AutoSize = true;
-            this.variossubpro_cbx.Location = new System.Drawing.Point(703, 53);
-            this.variossubpro_cbx.Name = "variossubpro_cbx";
-            this.variossubpro_cbx.Size = new System.Drawing.Size(141, 17);
-            this.variossubpro_cbx.TabIndex = 35;
-            this.variossubpro_cbx.Text = "Varios subprocedimiento";
-            this.variossubpro_cbx.UseVisualStyleBackColor = true;
+            this.notes_btn.Location = new System.Drawing.Point(520, 47);
+            this.notes_btn.Name = "notes_btn";
+            this.notes_btn.Size = new System.Drawing.Size(75, 23);
+            this.notes_btn.TabIndex = 36;
+            this.notes_btn.Text = "Notas";
+            this.notes_btn.UseVisualStyleBackColor = true;
+            this.notes_btn.Click += new System.EventHandler(this.notes_btn_Click);
             // 
             // label20
             // 
@@ -407,6 +407,7 @@
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(552, 287);
             this.dataGridView4.TabIndex = 24;
+            this.dataGridView4.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGridView4_CellContextMenuStripNeeded);
             this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
             // 
             // dataGridView3
@@ -767,15 +768,14 @@
             this.printprocedure_btn.UseVisualStyleBackColor = true;
             this.printprocedure_btn.Click += new System.EventHandler(this.printprocedure_btn_Click);
             // 
-            // notes_btn
+            // label2
             // 
-            this.notes_btn.Location = new System.Drawing.Point(520, 47);
-            this.notes_btn.Name = "notes_btn";
-            this.notes_btn.Size = new System.Drawing.Size(75, 23);
-            this.notes_btn.TabIndex = 36;
-            this.notes_btn.Text = "Notas";
-            this.notes_btn.UseVisualStyleBackColor = true;
-            this.notes_btn.Click += new System.EventHandler(this.notes_btn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(666, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(215, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "* Click derecho para editar antes de agregar";
             // 
             // addprocedure
             // 
@@ -884,7 +884,7 @@
         private System.Windows.Forms.Label label20;
         public System.Windows.Forms.TextBox gaindoctor_txt;
         private System.Windows.Forms.RadioButton spid_rbtn;
-        private System.Windows.Forms.CheckBox variossubpro_cbx;
         private System.Windows.Forms.Button notes_btn;
+        private System.Windows.Forms.Label label2;
     }
 }

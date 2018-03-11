@@ -427,31 +427,6 @@ namespace SysPandemic
         {
             try
                 {
-                if (variossubpro_cbx.Checked == true)
-                {
-                    string idpro = idprocedure_txt.Text;
-                    variussubpro frm = new variussubpro();
-                    frm.MdiParent = this.MdiParent;
-
-                    DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
-
-                    frm.vsp_activity_txt.Text = act.Cells["Descripcion"].Value.ToString();
-                    
-                    try{frm.vsp_tariff_txt.Text = act.Cells["Tarifa"].Value.ToString();
-                    }
-                    catch
-                    {
-                    }
-                    frm.vsp_coverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
-                    frm.vsp_difference_txt.Text = act.Cells["Diferencia"].Value.ToString();
-                    frm.vsp_codeinsu_txt.Text = act.Cells["Codigo"].Value.ToString();
-                    frm.vsp_insurance_txt.Text = act.Cells["Seguro"].Value.ToString();
-
-                    frm.vsp_idprocedure_txt.Text = idpro;
-                    frm.Show();
-                }
-                else  if (variossubpro_cbx.Checked == false)
-                {
                     DBManager c = new DBManager();
                     DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
                     string description = act.Cells["Descripcion"].Value.ToString();
@@ -470,8 +445,6 @@ namespace SysPandemic
                         c.valor = "";
 
                     }
-                }
-                
                 }
                 catch (Exception ex)
                 {
@@ -873,6 +846,32 @@ namespace SysPandemic
             viewnotes frm = new viewnotes();
             frm.MdiParent = this.MdiParent;
             frm.vn_idpro_txt.Text = idpro;
+            frm.Show();
+        }
+
+        private void dataGridView4_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            string idpro = idprocedure_txt.Text;
+            variussubpro frm = new variussubpro();
+            frm.MdiParent = this.MdiParent;
+
+            DataGridViewRow act = dataGridView4.Rows[e.RowIndex];
+
+            frm.vsp_activity_txt.Text = act.Cells["Descripcion"].Value.ToString();
+
+            try
+            {
+                frm.vsp_tariff_txt.Text = act.Cells["Tarifa"].Value.ToString();
+            }
+            catch
+            {
+            }
+            frm.vsp_coverage_txt.Text = act.Cells["Cobertura"].Value.ToString();
+            frm.vsp_difference_txt.Text = act.Cells["Diferencia"].Value.ToString();
+            frm.vsp_codeinsu_txt.Text = act.Cells["Codigo"].Value.ToString();
+            frm.vsp_insurance_txt.Text = act.Cells["Seguro"].Value.ToString();
+
+            frm.vsp_idprocedure_txt.Text = idpro;
             frm.Show();
         }
     }

@@ -55,6 +55,9 @@ namespace SysPandemic
             condition = "gaindoctor";
             c.fill_txt(gaindoctor_txt, query, condition);
 
+
+
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,7 +67,7 @@ namespace SysPandemic
         public void cargarDGV()
         {
             DBManager c = new DBManager();
-            string query = "Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, tariff as Tarifa, coverage as Covertura, difference as Diferencia from subprocedure where idprocedure = '" + idsubprocedure_txt.Text + "'";
+            string query = "Select id as ID, idprocedure as ProcedureNo, subprocedure as SubProceso, tooth as Diente, tariff as Tarifa, coverage as Covertura, difference as Diferencia, status as Estado from subprocedure where idprocedure = '" + idsubprocedure_txt.Text + "'";
             c.load_dgv(dataGridView1, query);
 
 
@@ -72,7 +75,19 @@ namespace SysPandemic
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            DBManager c = new DBManager();
+            DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
+            string id = act.Cells["ID"].Value.ToString();
+            string procedure = act.Cells["SubProceso"].Value.ToString();
+            string diente = act.Cells["Diente"].Value.ToString();
+
+            DialogResult result = MessageBox.Show("Desea convertir el procedimiento '" + procedure + "' en el diente '" + diente + "' como realizado?", "Sub Proceso realizado", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                string query = "update subprocedure set status = 'Realizado' where id = '" + id + "' ";
+                c.command(query);
+                cargarDGV();
+            }
         }
 
         private void checkout_btn_Click(object sender, EventArgs e)
@@ -313,6 +328,61 @@ namespace SysPandemic
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addsubprocedure_Activated(object sender, EventArgs e)
+        {
+            cargarDGV();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+
+                // comprobar el valor de una celda del grid 
+                // si se cumple la condición... 
+                if ((string)this.dataGridView1.Rows[e.RowIndex].Cells["Estado"].Value == "Realizado")
+                {
+                    // aplicar a todas las celdas de esa fila 
+                    // el estilo que necesitemos 
+                    foreach (DataGridViewCell celda in
+                    this.dataGridView1.Rows[e.RowIndex].Cells)
+                    {
+                        celda.Style.BackColor = Color.Red;
+                        celda.Style.ForeColor = Color.White;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            //// comprobar el valor de una celda del grid 
+            //// si se cumple la condición... 
+            //if ((string)this.dataGridView1.Rows[e.RowIndex].Cells["Estado"].Value == "Realizado")
+            //{
+            //    // aplicar a todas las celdas de esa fila 
+            //    // el estilo que necesitemos 
+            //    foreach (DataGridViewCell celda in
+            //    this.dataGridView1.Rows[e.RowIndex].Cells)
+            //    {
+            //        celda.Style.BackColor = Color.Red;
+            //        celda.Style.ForeColor = Color.White;
+            //    }
+            //}
+        }
+
+        private void procedurenotes_btn_Click(object sender, EventArgs e)
+        {
+            viewnotes frm = new viewnotes();
+           string pro = Convert.ToString(idsubprocedure_txt.Text);
+            frm.vn_idpro_txt.Text = pro;
+            frm.Show();
         }
     }
 }

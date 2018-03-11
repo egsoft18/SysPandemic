@@ -74,6 +74,7 @@
             this.typepay = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.procedurenotes_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.procedurenotes_btn);
             this.groupBox1.Controls.Add(this.gaindoctor_txt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.status_txt);
@@ -434,6 +436,8 @@
             this.dataGridView1.Size = new System.Drawing.Size(872, 236);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridView1_Scroll);
             // 
             // qtypay
             // 
@@ -528,6 +532,16 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "Valor abonado:";
             // 
+            // procedurenotes_btn
+            // 
+            this.procedurenotes_btn.Location = new System.Drawing.Point(6, 101);
+            this.procedurenotes_btn.Name = "procedurenotes_btn";
+            this.procedurenotes_btn.Size = new System.Drawing.Size(75, 23);
+            this.procedurenotes_btn.TabIndex = 39;
+            this.procedurenotes_btn.Text = "Notas";
+            this.procedurenotes_btn.UseVisualStyleBackColor = true;
+            this.procedurenotes_btn.Click += new System.EventHandler(this.procedurenotes_btn_Click);
+            // 
             // addsubprocedure
             // 
             this.AllowDrop = true;
@@ -544,6 +558,7 @@
             this.MaximizeBox = false;
             this.Name = "addsubprocedure";
             this.Text = "Detalles del Procedimiento";
+            this.Activated += new System.EventHandler(this.addsubprocedure_Activated);
             this.Load += new System.EventHandler(this.addsubprocedure_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -600,5 +615,6 @@
         public System.Windows.Forms.TextBox iddoctor_txt;
         public System.Windows.Forms.TextBox gaindoctor_txt;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button procedurenotes_btn;
     }
 }
