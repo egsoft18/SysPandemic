@@ -63,6 +63,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.diab_cb = new System.Windows.Forms.ComboBox();
@@ -102,7 +103,6 @@
             this.searchhistory_txt = new System.Windows.Forms.TextBox();
             this.patienthistory = new System.Windows.Forms.DataGridView();
             this.idph_txt = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -488,6 +488,16 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(491, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 23);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Todos son NO";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(317, 280);
@@ -861,16 +871,6 @@
             this.idph_txt.ReadOnly = true;
             this.idph_txt.Size = new System.Drawing.Size(100, 20);
             this.idph_txt.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(491, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 23);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Todos son NO";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // AddPatient
             // 

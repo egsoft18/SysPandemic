@@ -465,6 +465,18 @@ namespace SysPandemic
             frm.condition_txt.Text = "Doctor";
             frm.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            login frm = new login();
+            frm.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     }
 
