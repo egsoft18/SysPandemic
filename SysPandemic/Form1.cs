@@ -28,9 +28,6 @@ namespace SysPandemic
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            
-            
             AddPatient f = new AddPatient();
             f.MdiParent = this;
             f.delatepatient_btn.Hide();
@@ -53,8 +50,6 @@ namespace SysPandemic
                     string query2 = "DELETE FROM [patient] WHERE name is null";
                     c.command3(query2);
                     c.command3(query);
-
-
                 }
             }
             catch (Exception ex)
@@ -64,32 +59,22 @@ namespace SysPandemic
             }
             finally
             {
-
             }
-
-
-
             try
             {
-
                 string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
                 string condition = "idpatient";
                 DBManager c = new DBManager();
                 c.last_id(f.idpatient_txt, query, condition);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error TXT");
             }
             finally
-            {
-
-            }
-
+            {}
             f.Show();
         }
-
         private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             searchpatient f = new searchpatient();
@@ -98,11 +83,7 @@ namespace SysPandemic
         }
 
         private void agregarProcedimientoToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-           
-            
-        }
-
+        { }
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             doctors frm = new doctors();
@@ -112,22 +93,15 @@ namespace SysPandemic
 
         private void administrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
         }
-
         private void subProcedimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Modulo en revision", "No disponible");
-            //managesubprocedure frm = new managesubprocedure();
-            //frm.MdiParent = this;
-            //frm.Show();
         }
 
         private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
         }
-
         private void agregarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             agrescitas f = new agrescitas();
