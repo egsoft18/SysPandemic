@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatient));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.idpatient_txt = new System.Windows.Forms.TextBox();
@@ -103,6 +107,9 @@
             this.searchhistory_txt = new System.Windows.Forms.TextBox();
             this.patienthistory = new System.Windows.Forms.DataGridView();
             this.idph_txt = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -110,6 +117,9 @@
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -132,6 +142,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.namepatient_txt);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(565, 158);
@@ -141,6 +152,7 @@
             // 
             // idpatient_txt
             // 
+            this.idpatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.idpatient_txt.Enabled = false;
             this.idpatient_txt.Location = new System.Drawing.Point(42, 19);
             this.idpatient_txt.Name = "idpatient_txt";
@@ -158,6 +170,7 @@
             // 
             // idperson_txt
             // 
+            this.idperson_txt.BackColor = System.Drawing.SystemColors.Window;
             this.idperson_txt.Location = new System.Drawing.Point(403, 71);
             this.idperson_txt.Name = "idperson_txt";
             this.idperson_txt.Size = new System.Drawing.Size(143, 20);
@@ -166,7 +179,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(355, 74);
+            this.label9.Location = new System.Drawing.Point(354, 74);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 14;
@@ -174,6 +187,7 @@
             // 
             // tworkpatient_txt
             // 
+            this.tworkpatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.tworkpatient_txt.Location = new System.Drawing.Point(424, 129);
             this.tworkpatient_txt.Name = "tworkpatient_txt";
             this.tworkpatient_txt.Size = new System.Drawing.Size(122, 20);
@@ -193,6 +207,7 @@
             // 
             // celpatient_txt
             // 
+            this.celpatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.celpatient_txt.Location = new System.Drawing.Point(248, 129);
             this.celpatient_txt.Name = "celpatient_txt";
             this.celpatient_txt.Size = new System.Drawing.Size(122, 20);
@@ -210,6 +225,7 @@
             // 
             // telpatient_txt
             // 
+            this.telpatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.telpatient_txt.Location = new System.Drawing.Point(73, 129);
             this.telpatient_txt.Name = "telpatient_txt";
             this.telpatient_txt.Size = new System.Drawing.Size(122, 20);
@@ -227,6 +243,7 @@
             // 
             // addresspatient_txt
             // 
+            this.addresspatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.addresspatient_txt.Location = new System.Drawing.Point(76, 98);
             this.addresspatient_txt.Name = "addresspatient_txt";
             this.addresspatient_txt.Size = new System.Drawing.Size(470, 20);
@@ -252,7 +269,9 @@
             // 
             // sexpatient_cb
             // 
+            this.sexpatient_cb.BackColor = System.Drawing.SystemColors.Window;
             this.sexpatient_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sexpatient_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.sexpatient_cb.FormattingEnabled = true;
             this.sexpatient_cb.Items.AddRange(new object[] {
             "",
@@ -265,9 +284,14 @@
             // 
             // bdaypatient_dtp
             // 
+            this.bdaypatient_dtp.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.bdaypatient_dtp.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
+            this.bdaypatient_dtp.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.bdaypatient_dtp.CalendarTitleForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bdaypatient_dtp.CalendarTrailingForeColor = System.Drawing.Color.WhiteSmoke;
             this.bdaypatient_dtp.CustomFormat = "dd/MM/yyyy";
             this.bdaypatient_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdaypatient_dtp.Location = new System.Drawing.Point(130, 68);
+            this.bdaypatient_dtp.Location = new System.Drawing.Point(130, 71);
             this.bdaypatient_dtp.Name = "bdaypatient_dtp";
             this.bdaypatient_dtp.Size = new System.Drawing.Size(100, 20);
             this.bdaypatient_dtp.TabIndex = 3;
@@ -294,6 +318,7 @@
             // 
             // namepatient_txt
             // 
+            this.namepatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.namepatient_txt.Location = new System.Drawing.Point(121, 42);
             this.namepatient_txt.Name = "namepatient_txt";
             this.namepatient_txt.Size = new System.Drawing.Size(320, 20);
@@ -325,6 +350,7 @@
             // 
             // affiliatepatient_txt
             // 
+            this.affiliatepatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.affiliatepatient_txt.Location = new System.Drawing.Point(247, 24);
             this.affiliatepatient_txt.Name = "affiliatepatient_txt";
             this.affiliatepatient_txt.Size = new System.Drawing.Size(122, 20);
@@ -350,6 +376,7 @@
             // 
             // insurancepatient_txt
             // 
+            this.insurancepatient_txt.BackColor = System.Drawing.SystemColors.Window;
             this.insurancepatient_txt.FormattingEnabled = true;
             this.insurancepatient_txt.Location = new System.Drawing.Point(56, 24);
             this.insurancepatient_txt.Name = "insurancepatient_txt";
@@ -360,62 +387,86 @@
             // 
             // delatepatient_btn
             // 
-            this.delatepatient_btn.Location = new System.Drawing.Point(76, 294);
+            this.delatepatient_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.delatepatient_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delatepatient_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delatepatient_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.delatepatient_btn.Location = new System.Drawing.Point(70, 325);
             this.delatepatient_btn.Name = "delatepatient_btn";
             this.delatepatient_btn.Size = new System.Drawing.Size(75, 23);
             this.delatepatient_btn.TabIndex = 3;
             this.delatepatient_btn.Text = "Borrar";
-            this.delatepatient_btn.UseVisualStyleBackColor = true;
+            this.delatepatient_btn.UseVisualStyleBackColor = false;
             this.delatepatient_btn.Click += new System.EventHandler(this.delatepatient_btn_Click);
             // 
             // updatepatient_btn
             // 
-            this.updatepatient_btn.Location = new System.Drawing.Point(157, 294);
+            this.updatepatient_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.updatepatient_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.updatepatient_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatepatient_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.updatepatient_btn.Location = new System.Drawing.Point(151, 325);
             this.updatepatient_btn.Name = "updatepatient_btn";
             this.updatepatient_btn.Size = new System.Drawing.Size(75, 23);
             this.updatepatient_btn.TabIndex = 4;
             this.updatepatient_btn.Text = "Actualizar";
-            this.updatepatient_btn.UseVisualStyleBackColor = true;
+            this.updatepatient_btn.UseVisualStyleBackColor = false;
             this.updatepatient_btn.Click += new System.EventHandler(this.updatepatient_btn_Click);
             // 
             // savepatient_txt
             // 
-            this.savepatient_txt.Location = new System.Drawing.Point(241, 294);
+            this.savepatient_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.savepatient_txt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.savepatient_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savepatient_txt.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.savepatient_txt.Location = new System.Drawing.Point(235, 325);
             this.savepatient_txt.Name = "savepatient_txt";
             this.savepatient_txt.Size = new System.Drawing.Size(75, 23);
             this.savepatient_txt.TabIndex = 5;
             this.savepatient_txt.Text = "Guardar";
-            this.savepatient_txt.UseVisualStyleBackColor = true;
+            this.savepatient_txt.UseVisualStyleBackColor = false;
             this.savepatient_txt.Click += new System.EventHandler(this.savepatient_txt_Click);
             // 
             // clearform_btn
             // 
-            this.clearform_btn.Location = new System.Drawing.Point(322, 294);
+            this.clearform_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.clearform_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearform_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearform_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.clearform_btn.Location = new System.Drawing.Point(316, 325);
             this.clearform_btn.Name = "clearform_btn";
             this.clearform_btn.Size = new System.Drawing.Size(75, 23);
             this.clearform_btn.TabIndex = 6;
             this.clearform_btn.Text = "Limpiar";
-            this.clearform_btn.UseVisualStyleBackColor = true;
+            this.clearform_btn.UseVisualStyleBackColor = false;
             this.clearform_btn.Click += new System.EventHandler(this.clearform_btn_Click);
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(408, 294);
+            this.cancel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.cancel_btn.Location = new System.Drawing.Point(402, 325);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 23);
             this.cancel_btn.TabIndex = 7;
             this.cancel_btn.Text = "Cancelar";
-            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.UseVisualStyleBackColor = false;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // printpatient_btn
             // 
-            this.printpatient_btn.Location = new System.Drawing.Point(526, 294);
+            this.printpatient_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.printpatient_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.printpatient_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printpatient_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.printpatient_btn.Location = new System.Drawing.Point(520, 325);
             this.printpatient_btn.Name = "printpatient_btn";
             this.printpatient_btn.Size = new System.Drawing.Size(75, 23);
             this.printpatient_btn.TabIndex = 8;
             this.printpatient_btn.Text = "Imprimir";
-            this.printpatient_btn.UseVisualStyleBackColor = true;
+            this.printpatient_btn.UseVisualStyleBackColor = false;
             this.printpatient_btn.Click += new System.EventHandler(this.printpatient_btn_Click);
             // 
             // tabControl1
@@ -424,7 +475,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(1, 0);
+            this.tabControl1.Location = new System.Drawing.Point(2, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(618, 288);
@@ -432,6 +483,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -441,10 +493,10 @@
             this.tabPage1.Size = new System.Drawing.Size(610, 262);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion General";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
@@ -485,17 +537,20 @@
             this.tabPage2.Size = new System.Drawing.Size(610, 262);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Diagnostico";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button3.Location = new System.Drawing.Point(491, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 23);
             this.button3.TabIndex = 38;
             this.button3.Text = "Todos son NO";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
@@ -826,6 +881,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage4.Controls.Add(this.searchhistory_btn);
             this.tabPage4.Controls.Add(this.searchhistory_txt);
             this.tabPage4.Controls.Add(this.patienthistory);
@@ -836,16 +892,19 @@
             this.tabPage4.Size = new System.Drawing.Size(610, 262);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Historial";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // searchhistory_btn
             // 
+            this.searchhistory_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.searchhistory_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchhistory_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchhistory_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.searchhistory_btn.Location = new System.Drawing.Point(484, 32);
             this.searchhistory_btn.Name = "searchhistory_btn";
             this.searchhistory_btn.Size = new System.Drawing.Size(75, 20);
             this.searchhistory_btn.TabIndex = 3;
             this.searchhistory_btn.Text = "Buscar";
-            this.searchhistory_btn.UseVisualStyleBackColor = true;
+            this.searchhistory_btn.UseVisualStyleBackColor = false;
             // 
             // searchhistory_txt
             // 
@@ -857,9 +916,43 @@
             // 
             // patienthistory
             // 
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.patienthistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.patienthistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.patienthistory.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.patienthistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.patienthistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.patienthistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patienthistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.patienthistory.EnableHeadersVisualStyles = false;
+            this.patienthistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.patienthistory.Location = new System.Drawing.Point(8, 58);
             this.patienthistory.Name = "patienthistory";
+            this.patienthistory.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.patienthistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Empty;
+            this.patienthistory.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.patienthistory.Size = new System.Drawing.Size(588, 198);
             this.patienthistory.TabIndex = 1;
             // 
@@ -872,12 +965,53 @@
             this.idph_txt.Size = new System.Drawing.Size(100, 20);
             this.idph_txt.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(614, 21);
+            this.panel1.TabIndex = 10;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(590, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(567, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(618, 323);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(618, 358);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.printpatient_btn);
             this.Controls.Add(this.savepatient_txt);
@@ -885,12 +1019,16 @@
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.delatepatient_btn);
             this.Controls.Add(this.clearform_btn);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddPatient";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Paciente";
             this.Load += new System.EventHandler(this.AddPatient_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddPatient_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -903,6 +1041,9 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -983,5 +1124,8 @@
         private System.Windows.Forms.DataGridView patienthistory;
         public System.Windows.Forms.TextBox searchhistory_txt;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

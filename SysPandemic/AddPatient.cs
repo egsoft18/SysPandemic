@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Runtime.InteropServices;
 
 namespace SysPandemic
 {
@@ -19,6 +20,12 @@ namespace SysPandemic
             InitializeComponent();
             
         }
+
+        //Esta parte va debajo del public del formulario, fuera de las llavez de este.
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwmd, int wmsg, int wparam, int lparam);
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -390,6 +397,30 @@ namespace SysPandemic
             hemo_cb.Text = "No";
             aler_cb.Text = "No";
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form f = new AddPatient();
+            f.ShowInTaskbar = false;
+            f.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Esta parte va en el evento MouseDown del panel en la parte superior del formulario
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+        }
+
+        private void AddPatient_MouseDown(object sender, MouseEventArgs e)
+        {
         }
     }
 }
