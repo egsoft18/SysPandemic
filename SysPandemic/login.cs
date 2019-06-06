@@ -74,12 +74,17 @@ namespace SysPandemic
 
         private void label5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

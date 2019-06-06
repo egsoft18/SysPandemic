@@ -196,7 +196,6 @@ namespace SysPandemic
                 if (c.valor == "si")
                 {
                     Close();
-
                 }
             }
                 else if (result == DialogResult.No)
@@ -406,9 +405,9 @@ namespace SysPandemic
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form f = new AddPatient();
-            f.ShowInTaskbar = false;
-            f.WindowState = FormWindowState.Minimized;
+           // Form f = new AddPatient();
+            //f.ShowInTaskbar = false;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
