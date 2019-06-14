@@ -114,15 +114,17 @@
             // 
             // agregarToolStripMenuItem
             // 
+            this.agregarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // administrarToolStripMenuItem
             // 
+            this.administrarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
             // 
@@ -142,12 +144,14 @@
             this.procedimientosRegularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarProcedimientoRegularToolStripMenuItem,
             this.administrarProcedimientosRegularesToolStripMenuItem});
+            this.procedimientosRegularesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.procedimientosRegularesToolStripMenuItem.Name = "procedimientosRegularesToolStripMenuItem";
             this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.procedimientosRegularesToolStripMenuItem.Text = "Procedimientos Regulares";
             // 
             // agregarProcedimientoRegularToolStripMenuItem
             // 
+            this.agregarProcedimientoRegularToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarProcedimientoRegularToolStripMenuItem.Name = "agregarProcedimientoRegularToolStripMenuItem";
             this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.agregarProcedimientoRegularToolStripMenuItem.Text = "Agregar Procedimiento Regular";
@@ -155,6 +159,7 @@
             // 
             // administrarProcedimientosRegularesToolStripMenuItem
             // 
+            this.administrarProcedimientosRegularesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarProcedimientosRegularesToolStripMenuItem.Name = "administrarProcedimientosRegularesToolStripMenuItem";
             this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.administrarProcedimientosRegularesToolStripMenuItem.Text = "Administrar procedimientos Regulares";
@@ -165,12 +170,14 @@
             this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearCotizacionDeProcedimientoToolStripMenuItem,
             this.verCotizacionesToolStripMenuItem});
+            this.cotizacionesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
             this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.cotizacionesToolStripMenuItem.Text = "Presupuestos";
             // 
             // crearCotizacionDeProcedimientoToolStripMenuItem
             // 
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear presupuestos de procedimiento";
@@ -178,6 +185,7 @@
             // 
             // verCotizacionesToolStripMenuItem
             // 
+            this.verCotizacionesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
             this.verCotizacionesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
             this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(272, 20);
@@ -197,15 +205,17 @@
             // 
             // agregarCitaToolStripMenuItem
             // 
+            this.agregarCitaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarCitaToolStripMenuItem.Name = "agregarCitaToolStripMenuItem";
-            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.agregarCitaToolStripMenuItem.Text = "Agregar Cita";
             this.agregarCitaToolStripMenuItem.Click += new System.EventHandler(this.agregarCitaToolStripMenuItem_Click);
             // 
             // verCitasToolStripMenuItem
             // 
+            this.verCitasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             this.verCitasToolStripMenuItem.Click += new System.EventHandler(this.verCitasToolStripMenuItem_Click);
             // 
@@ -226,6 +236,7 @@
             // 
             // facturarToolStripMenuItem
             // 
+            this.facturarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
             this.facturarToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.facturarToolStripMenuItem.Text = "Facturar Procedimiento";
@@ -237,6 +248,7 @@
             this.suplidoresToolStripMenuItem1,
             this.entradaDeFacturaToolStripMenuItem1,
             this.verFacturasToolStripMenuItem});
+            this.entradaDeFacturaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.entradaDeFacturaToolStripMenuItem.Name = "entradaDeFacturaToolStripMenuItem";
             this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.entradaDeFacturaToolStripMenuItem.Text = "Facturas";
@@ -244,6 +256,7 @@
             // 
             // suplidoresToolStripMenuItem1
             // 
+            this.suplidoresToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
             this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.suplidoresToolStripMenuItem1.Text = "Suplidores";
@@ -251,6 +264,7 @@
             // 
             // entradaDeFacturaToolStripMenuItem1
             // 
+            this.entradaDeFacturaToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.entradaDeFacturaToolStripMenuItem1.Name = "entradaDeFacturaToolStripMenuItem1";
             this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.entradaDeFacturaToolStripMenuItem1.Text = "Entrada de Factura";
@@ -258,6 +272,7 @@
             // 
             // verFacturasToolStripMenuItem
             // 
+            this.verFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
             this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
@@ -268,12 +283,14 @@
             this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nominaDeDoctoresToolStripMenuItem,
             this.descuentosADoctoresToolStripMenuItem});
+            this.nominaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
             this.nominaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.nominaToolStripMenuItem.Text = "Nomina";
             // 
             // nominaDeDoctoresToolStripMenuItem
             // 
+            this.nominaDeDoctoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.nominaDeDoctoresToolStripMenuItem.Name = "nominaDeDoctoresToolStripMenuItem";
             this.nominaDeDoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.nominaDeDoctoresToolStripMenuItem.Text = "Nomina de Doctores";
@@ -284,6 +301,7 @@
             this.descuentosADoctoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.porProcedimientoToolStripMenuItem,
             this.externoToolStripMenuItem});
+            this.descuentosADoctoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.descuentosADoctoresToolStripMenuItem.Name = "descuentosADoctoresToolStripMenuItem";
             this.descuentosADoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.descuentosADoctoresToolStripMenuItem.Text = "Descuentos a Doctores";
@@ -291,12 +309,14 @@
             // 
             // porProcedimientoToolStripMenuItem
             // 
+            this.porProcedimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.porProcedimientoToolStripMenuItem.Name = "porProcedimientoToolStripMenuItem";
             this.porProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.porProcedimientoToolStripMenuItem.Text = "Por Procedimiento";
             // 
             // externoToolStripMenuItem
             // 
+            this.externoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.externoToolStripMenuItem.Name = "externoToolStripMenuItem";
             this.externoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.externoToolStripMenuItem.Text = "Externo";
@@ -304,6 +324,7 @@
             // 
             // cToolStripMenuItem
             // 
+            this.cToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
             this.cToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.cToolStripMenuItem.Text = "CxC/CP";
@@ -311,6 +332,7 @@
             // 
             // cierreToolStripMenuItem
             // 
+            this.cierreToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cierreToolStripMenuItem.Name = "cierreToolStripMenuItem";
             this.cierreToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.cierreToolStripMenuItem.Text = "Cierre";
@@ -339,6 +361,7 @@
             // 
             // agregarSeguroToolStripMenuItem
             // 
+            this.agregarSeguroToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarSeguroToolStripMenuItem.Name = "agregarSeguroToolStripMenuItem";
             this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.agregarSeguroToolStripMenuItem.Text = "Agregar Seguro";
@@ -346,6 +369,7 @@
             // 
             // administrarSegurosToolStripMenuItem
             // 
+            this.administrarSegurosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarSegurosToolStripMenuItem.Name = "administrarSegurosToolStripMenuItem";
             this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.administrarSegurosToolStripMenuItem.Text = "Administrar Seguros";
@@ -353,6 +377,7 @@
             // 
             // administrarProcesosSinSeguroToolStripMenuItem
             // 
+            this.administrarProcesosSinSeguroToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarProcesosSinSeguroToolStripMenuItem.Name = "administrarProcesosSinSeguroToolStripMenuItem";
             this.administrarProcesosSinSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.administrarProcesosSinSeguroToolStripMenuItem.Text = "Administrar procesos sin seguro";
@@ -372,6 +397,7 @@
             // 
             // resetaToolStripMenuItem
             // 
+            this.resetaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.resetaToolStripMenuItem.Name = "resetaToolStripMenuItem";
             this.resetaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.resetaToolStripMenuItem.Text = "Prescripción";
@@ -379,12 +405,14 @@
             // 
             // cartaDeIncapacidadToolStripMenuItem
             // 
+            this.cartaDeIncapacidadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cartaDeIncapacidadToolStripMenuItem.Name = "cartaDeIncapacidadToolStripMenuItem";
             this.cartaDeIncapacidadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cartaDeIncapacidadToolStripMenuItem.Text = "Carta de Incapacidad";
             // 
             // cartaDeAltaToolStripMenuItem
             // 
+            this.cartaDeAltaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cartaDeAltaToolStripMenuItem.Name = "cartaDeAltaToolStripMenuItem";
             this.cartaDeAltaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cartaDeAltaToolStripMenuItem.Text = "Carta de alta";

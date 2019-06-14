@@ -442,8 +442,8 @@ namespace SysPandemic
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            login frm = new login();
-            frm.Show();
+            //login frm = new login();
+            //frm.Show();
             this.Close();
         }
 

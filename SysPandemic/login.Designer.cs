@@ -162,6 +162,7 @@
             this.label4.Size = new System.Drawing.Size(181, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Iniciar sección";
+            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
             // 
             // label6
             // 
@@ -173,6 +174,7 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "SysPandemic";
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
             // 
             // panel1
             // 
@@ -181,9 +183,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 292);
             this.panel1.TabIndex = 8;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(459, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -205,7 +209,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -214,6 +218,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar - SysPandemic";
             this.Load += new System.EventHandler(this.login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
