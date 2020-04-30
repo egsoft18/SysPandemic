@@ -87,7 +87,7 @@ namespace SysPandemic
             
             string tablename = "patient";
             string xml = "patient.xml";
-            string report = "patient.rpt";
+            string report = "Reports/patient.rpt";
             c.printreport(query, tablename, xml, report);
 
             

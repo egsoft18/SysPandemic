@@ -417,7 +417,7 @@ namespace SysPandemic
                 }
                 else if (option == "Sin seguro")
                 {
-                    string query = "Select id as ID, code as Codigo, pinsurance as Descripcion, tariff as Tarifa, coverage as Cobertura, difference as Diferencia, insurance as Seguro from detailsinsurance where insurance = 'NO SEGURO'";
+                    string query = "Select di.id as ID, di.code as Codigo, di.pinsurance as Descripcion, di.tariff as Tarifa, di.coverage as Cobertura, di.[difference] as Diferencia, di.idinsurance as IDSeguro, i.nameinsurance as Seguro from detailsinsurance as di, insurances as i where di.idinsurance = '1004' and di.idinsurance = i.idinsurance";
                     c.load_dgv(dataGridView4, query);
                 }
             }
@@ -896,6 +896,11 @@ namespace SysPandemic
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

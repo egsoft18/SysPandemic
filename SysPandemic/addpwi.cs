@@ -49,7 +49,7 @@ namespace SysPandemic
             {
                     string idinsurance = "0";
                     string insurance = "NO SEGURO";
-                    string query = "INSERT INTO detailsinsurance(pinsurance, tariff, coverage, difference,  idinsurance, insurance) VALUES('" + process_txt.Text + "', '" + priceprocess_txt.Text + "', '00', '" + priceprocess_txt.Text + "', '" + idinsurance + "', '" + insurance + "');";
+                    string query = "INSERT INTO detailsinsurance(pinsurance, tariff, coverage, difference,  idinsurance) VALUES('" + process_txt.Text + "', '" + priceprocess_txt.Text + "', '00', '" + priceprocess_txt.Text + "', '1004');";
                     DBManager c = new DBManager();
                     c.command(query);
                     process_txt.Clear();
@@ -57,9 +57,6 @@ namespace SysPandemic
                     process_txt.Focus();
                        
             }
-        
-
-
 
             //if (process_txt.Text.Length < 1)
             //{
@@ -92,7 +89,6 @@ namespace SysPandemic
             //}
         
     }
-
         private void updatepwi_btn_Click(object sender, EventArgs e)
         {
             

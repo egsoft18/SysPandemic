@@ -32,7 +32,9 @@ namespace SysPandemic
                 //cnx = new SqlConnection(@"Server=INOA-PC\EGSOFT;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
                 //Conexion con red
-                cnx = new SqlConnection("Server=DESKTOP-RC55N5R, 49172;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
+                //cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS, 49172;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
+
+                cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
                 cnx.Open();
                 //MessageBox.Show("Conectado");
