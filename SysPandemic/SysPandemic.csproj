@@ -199,12 +199,6 @@
     <Compile Include="doctorpayroll.Designer.cs">
       <DependentUpon>doctorpayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="j.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="j.Designer.cs">
-      <DependentUpon>j.cs</DependentUpon>
-    </Compile>
     <Compile Include="payroll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,9 +491,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="doctorpayroll.resx">
       <DependentUpon>doctorpayroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="j.resx">
-      <DependentUpon>j.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="payroll.resx">
       <DependentUpon>payroll.cs</DependentUpon>
