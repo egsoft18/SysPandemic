@@ -179,6 +179,13 @@ namespace SysPandemic
             //Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is MdiClient)
+                {
+                    ctrl.BackColor = SystemColors.ControlLight;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
