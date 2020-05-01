@@ -63,6 +63,158 @@ namespace SysPandemic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2185047___dental_dental_ {
+            get {
+                object obj = ResourceManager.GetObject("2185047 - dental dental ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2185056___dental_dental_ {
+            get {
+                object obj = ResourceManager.GetObject("2185056 - dental dental ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2185056___dental_dental_1 {
+            get {
+                object obj = ResourceManager.GetObject("2185056 - dental dental 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2185059___dental_dentist {
+            get {
+                object obj = ResourceManager.GetObject("2185059 - dental dentist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592815___compose_create_edit_edit_file_office_pencil_writing {
+            get {
+                object obj = ResourceManager.GetObject("3592815 - compose create edit edit file office pencil writing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592817___document_envelope_envelope_general_large_envelope_mail_mailing_envelope_office {
+            get {
+                object obj = ResourceManager.GetObject("3592817 - document envelope envelope general large envelope mail mailing envelope" +
+                        " office", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592817___document_envelope_envelope_general_large_envelope_mail_mailing_envelope_office1 {
+            get {
+                object obj = ResourceManager.GetObject("3592817 - document envelope envelope general large envelope mail mailing envelope" +
+                        " office1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592819___general_graph_office_overview_part_pie_chart_portion {
+            get {
+                object obj = ResourceManager.GetObject("3592819 - general graph office overview part pie chart portion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592823___align_arrow_center_alignment_down_general_office_text_alignment {
+            get {
+                object obj = ResourceManager.GetObject("3592823 - align arrow center alignment down general office text alignment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592825___avatar_general_human_office_person_smile_user {
+            get {
+                object obj = ResourceManager.GetObject("3592825 - avatar general human office person smile user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592828___general_key_key_lock_lock_office_password_security {
+            get {
+                object obj = ResourceManager.GetObject("3592828 - general key key lock lock office password security", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592829___calendar_general_month_month_calendar_office_schedule_wall_calendar {
+            get {
+                object obj = ResourceManager.GetObject("3592829 - calendar general month month calendar office schedule wall calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592840___cog_gear_machine_office_radio_settings_setting_settings {
+            get {
+                object obj = ResourceManager.GetObject("3592840 - cog gear machine office radio settings setting settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592843___general_heart_heart_beat_heart_disease_heart_rate_heart_shape_office {
+            get {
+                object obj = ResourceManager.GetObject("3592843 - general heart heart beat heart disease heart rate heart shape office", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592851___calendar_general_month_month_calendar_office_schedule_wall_calendar {
+            get {
+                object obj = ResourceManager.GetObject("3592851 - calendar general month month calendar office schedule wall calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3592852___general_office_open_padlock_safety_unlock_unlock_padlock_unlocking {
             get {
                 object obj = ResourceManager.GetObject("3592852 - general office open padlock safety unlock unlock padlock unlocking", resourceCulture);
@@ -83,9 +235,109 @@ namespace SysPandemic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3592853___align_employee_general_human_human_list_list_member {
+            get {
+                object obj = ResourceManager.GetObject("3592853 - align employee general human human list list member", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592854___add_user_business_man_employee_general_human_member_office {
+            get {
+                object obj = ResourceManager.GetObject("3592854 - add user business man employee general human member office", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592856___general_group_office_personal_relation_team_team_structure {
+            get {
+                object obj = ResourceManager.GetObject("3592856 - general group office personal relation team team structure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592858___align_arrow_center_alignment_general_office_text_alignment_up {
+            get {
+                object obj = ResourceManager.GetObject("3592858 - align arrow center alignment general office text alignment up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592861___bag_briefcase_business_bag_documents_bag_general_office_portfolio {
+            get {
+                object obj = ResourceManager.GetObject("3592861 - bag briefcase business bag documents bag general office portfolio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592862___general_inkjet_printer_office_paper_printer_print_printer_scanner {
+            get {
+                object obj = ResourceManager.GetObject("3592862 - general inkjet printer office paper printer print printer scanner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592864___general_graph_increase_office_rise_statistics_success {
+            get {
+                object obj = ResourceManager.GetObject("3592864 - general graph increase office rise statistics success", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3592870___brochure_document_menu_note_office_page_papers {
             get {
                 object obj = ResourceManager.GetObject("3592870 - brochure document menu note office page papers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592871___document_general_letter_note_office_page_paper {
+            get {
+                object obj = ResourceManager.GetObject("3592871 - document general letter note office page paper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592873___document_general_letter_note_office_page_paper {
+            get {
+                object obj = ResourceManager.GetObject("3592873 - document general letter note office page paper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592874___document_general_letter_note_office_page_paper {
+            get {
+                object obj = ResourceManager.GetObject("3592874 - document general letter note office page paper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +358,26 @@ namespace SysPandemic.Properties {
         internal static System.Drawing.Bitmap big_logo_SysPandemic1 {
             get {
                 object obj = ResourceManager.GetObject("big_logo_SysPandemic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap big_logo_SysPandemic2 {
+            get {
+                object obj = ResourceManager.GetObject("big_logo_SysPandemic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_SysPandemic {
+            get {
+                object obj = ResourceManager.GetObject("logo_SysPandemic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

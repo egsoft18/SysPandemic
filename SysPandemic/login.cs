@@ -156,6 +156,21 @@ namespace SysPandemic
                             txt_u_password.Clear();
                             this.Hide();
                             Homeform frm = new Homeform();
+                            
+                            frm.txt_u_name.Text = Convert.ToString(leer["u_user"]);
+                            switch (Convert.ToString(leer["u_right"]))
+                            {
+                                case "A": frm.txt_u_right.Text = "Administrador";
+                                    break;
+                                case "M": frm.txt_u_right.Text = "Manejador";
+                                    break;
+                                case "P": frm.txt_u_right.Text = "Profesional";
+                                    break;
+                                default:
+                                    frm.txt_u_right.Text = "";
+                                    break;
+                            }
+
                             frm.ShowDialog();
                             this.Show();
                         }

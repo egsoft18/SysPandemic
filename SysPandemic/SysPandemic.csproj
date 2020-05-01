@@ -704,6 +704,30 @@
     <None Include="Resources\big_logo_SysPandemic.png" />
     <None Include="Resources\small_icons\office\3592870 - brochure document menu note office page papers.png" />
     <None Include="Resources\small_icons\office\3592852 - general office open padlock safety unlock unlock padlock unlocking.png" />
+    <None Include="Resources\logo_SysPandemic.png" />
+    <None Include="Resources\small_icons\office\3592854 - add user business man employee general human member office.png" />
+    <None Include="Resources\small_icons\office\3592853 - align employee general human human list list member.png" />
+    <None Include="Resources\small_icons\dental\2185056 - dental dental .png" />
+    <None Include="Resources\small_icons\dental\2185047 - dental dental .png" />
+    <None Include="Resources\small_icons\office\3592829 - calendar general month month calendar office schedule wall calendar.png" />
+    <None Include="Resources\small_icons\office\3592851 - calendar general month month calendar office schedule wall calendar.png" />
+    <None Include="Resources\small_icons\office\3592874 - document general letter note office page paper.png" />
+    <None Include="Resources\small_icons\office\3592817 - document envelope envelope general large envelope mail mailing envelope office.png" />
+    <None Include="Resources\small_icons\office\3592856 - general group office personal relation team team structure.png" />
+    <None Include="Resources\small_icons\office\3592861 - bag briefcase business bag documents bag general office portfolio.png" />
+    <None Include="Resources\small_icons\office\3592873 - document general letter note office page paper.png" />
+    <None Include="Resources\small_icons\office\3592825 - avatar general human office person smile user.png" />
+    <None Include="Resources\small_icons\office\3592871 - document general letter note office page paper.png" />
+    <None Include="Resources\small_icons\dental\2185059 - dental dentist.png" />
+    <None Include="Resources\small_icons\office\3592819 - general graph office overview part pie chart portion.png" />
+    <None Include="Resources\small_icons\office\3592828 - general key key lock lock office password security.png" />
+    <None Include="Resources\small_icons\office\3592823 - align arrow center alignment down general office text alignment.png" />
+    <None Include="Resources\small_icons\office\3592858 - align arrow center alignment general office text alignment up.png" />
+    <None Include="Resources\small_icons\office\3592815 - compose create edit edit file office pencil writing.png" />
+    <None Include="Resources\small_icons\office\3592843 - general heart heart beat heart disease heart rate heart shape office.png" />
+    <None Include="Resources\small_icons\office\3592864 - general graph increase office rise statistics success.png" />
+    <None Include="Resources\small_icons\office\3592862 - general inkjet printer office paper printer print printer scanner.png" />
+    <None Include="Resources\small_icons\office\3592840 - cog gear machine office radio settings setting settings.png" />
     <Content Include="SysPandemic.ico" />
   </ItemGroup>
   <ItemGroup>

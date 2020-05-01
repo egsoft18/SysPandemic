@@ -10,16 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Deployment.Application;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace SysPandemic
 {
     public partial class Homeform : Form
     {
+        SqlCommand cmd;
+        SqlDataReader dr;
+        OpenDB c = new OpenDB();
         public Homeform()
         {
             InitializeComponent();
-           
         }
+
 
         private void agregarProcedimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -29,66 +33,76 @@ namespace SysPandemic
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddPatient f = new AddPatient();
-            f.MdiParent = this;
-            f.delatepatient_btn.Hide();
-            f.updatepatient_btn.Hide();
-            f.printpatient_btn.Hide();
 
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is AddPatient);
                 if (frm2 != null)
                 {
-                    f.BringToFront();
+                    frm2.BringToFront();
                     MessageBox.Show("Esta ventana ya esta abierta.", "Error");
                     return;
                 }
                 else
                 {
-                    string query = "INSERT INTO [patient](idperson) VALUES('empty');";
-                    DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [patient] WHERE name is null";
-                    c.command3(query2);
-                    c.command3(query);
+                    f.MdiParent = this;
+                    f.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error New Procedure");
-
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: "+ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-            }
-            try
-            {
-                string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
-                string condition = "idpatient";
-                DBManager c = new DBManager();
-                c.last_id(f.idpatient_txt, query, condition);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error TXT");
-            }
-            finally
-            {}
-            f.Show();
+            
         }
         private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             searchpatient f = new searchpatient();
-            f.MdiParent = this;
-            f.Show();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is searchpatient);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregarProcedimientoToolStripMenuItem_Click_1(object sender, EventArgs e)
         { }
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            doctors frm = new doctors();
-            frm.MdiParent = this;
-            frm.Show();
+            doctors f = new doctors();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is doctors);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void administrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -105,18 +119,49 @@ namespace SysPandemic
         private void agregarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             agrescitas f = new agrescitas();
-            f.MdiParent = this;
-            f.btnactualizar.Hide();
-            f.btnborrar.Hide();
-            f.btnconfirmar.Hide();
-            f.Show();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is agrescitas);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void verCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Appointment f = new Appointment();
-            f.MdiParent = this;
-            f.Show();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Appointment);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pacienteDeEmergenciaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,7 +176,9 @@ namespace SysPandemic
 
         private void Homeform_Load(object sender, EventArgs e)
         {
-            Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -151,35 +198,97 @@ namespace SysPandemic
         private void pacienteDeEmergenciaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             emergencypatient f = new emergencypatient();
-            f.MdiParent = this;
-            f.updatepa_btn.Hide();
-            f.seebill_btn.Hide();
-            f.deletepa_btn.Hide();
-            f.billpa_btn.Hide();
-            f.Show();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is emergencypatient);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void verPacientesDeEmergenciaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             emerpatv f = new emerpatv();
-            f.MdiParent = this;
-            f.Show();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is emerpatv);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            topay frm = new topay();
-            frm.MdiParent = this;
-            frm.Show();
+            topay f = new topay();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is topay);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cxcp frm = new cxcp();
-            frm.cxc_rbtn.PerformClick();
-            frm.allcxc_rbtn.PerformClick();
-            frm.MdiParent = this;
-            frm.Show();
+            cxcp f = new cxcp();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is cxcp);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -189,23 +298,74 @@ namespace SysPandemic
 
         private void agregarSeguroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addinsurance frm = new addinsurance();
-            frm.MdiParent = this;
-            frm.Show();
+            addinsurance f = new addinsurance();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addinsurance);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void administrarSegurosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            seeinsurance frm = new seeinsurance();
-            frm.MdiParent = this;
-            frm.Show();
+            seeinsurance f = new seeinsurance();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is seeinsurance);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void administrarProcesosSinSeguroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            seepwi frm = new seepwi();
-            frm.MdiParent = this;
-            frm.Show();
+            seepwi f = new seepwi();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is seepwi);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -215,16 +375,50 @@ namespace SysPandemic
 
         private void resetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            prescription frm = new prescription();
-            frm.MdiParent = this;
-            frm.Show();
+            prescription f = new prescription();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is prescription);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cierreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closing frm = new closing();
-            frm.MdiParent = this;
-            frm.Show();
+            closing f = new closing();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is closing);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -239,185 +433,171 @@ namespace SysPandemic
 
         private void entradaDeFacturaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            enterinvoice frm = new enterinvoice();
-            frm.MdiParent = this;
-            frm.Show();
+            enterinvoice f = new enterinvoice();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is enterinvoice);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void suplidoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            suppliers frm = new suppliers();
-            frm.MdiParent = this;
-            frm.Show();
+            suppliers f = new suppliers();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is suppliers);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            seeinvoice frm = new seeinvoice();
-            frm.MdiParent = this;
-            frm.Show();
+            seeinvoice f = new seeinvoice();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is seeinvoice);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void crearCotizacionDeProcedimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addprocedure frm = new addprocedure();
-            frm.MdiParent = this;
-            frm.updateprocedure_btn.Hide();
-            frm.delateprocedure_btn.Hide();
-            frm.turnregular_btn.Hide();
-
+            addprocedure f = new addprocedure();
             try
             {
                 Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
                 if (frm2 != null)
                 {
-                    frm.BringToFront();
-                    MessageBox.Show("El formuario ya esta abierto.", "Error");
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
                     return;
                 }
                 else
                 {
-                    string status = "NO PAGADO";
-                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Presupuesto');";
-                    DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
-                    c.command3(query2);
-                    c.command3(query);
-
+                    f.MdiParent = this;
+                    f.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error New Procedure");
-
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-
-            }
-
-            try
-            {
-
-                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
-                string condition = "idprocedure";
-                DBManager c = new DBManager();
-                c.last_id(frm.idprocedure_txt, query, condition);
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error TXT");
-            }
-            finally
-            {
-
-            }
-
-            frm.Show();
         }
 
         private void agregarProcedimientoRegularToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addprocedure frm = new addprocedure();
-            frm.MdiParent = this;
-            frm.updateprocedure_btn.Hide();
-            frm.delateprocedure_btn.Hide();
-            frm.turnregular_btn.Hide();
-
+            addprocedure f = new addprocedure();
             try
             {
                 Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
                 if (frm2 != null)
                 {
-                    frm.BringToFront();
-                    MessageBox.Show("El formuario ya esta abierto.", "Error");
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
                     return;
                 }
                 else
                 {
-                    string status = "NO PAGADO";
-                    string query = "INSERT INTO [procedure](statuspay, ptype) VALUES('" + status + "', 'Regular');";
-                    DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [procedure] WHERE idpatient is null";
-                    c.command3(query2);
-                    c.command3(query);
-
+                    f.MdiParent = this;
+                    f.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error New Procedure");
-
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-
-            }
-
-            try
-            {
-
-                string query = "Select idprocedure from [procedure] where idprocedure = (select max(idprocedure) from [procedure])";
-                string condition = "idprocedure";
-                DBManager c = new DBManager();
-                c.last_id(frm.idprocedure_txt, query, condition);
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error TXT");
-            }
-            finally
-            {
-
-            }
-            frm.Show();
         }
 
         private void administrarProcedimientosRegularesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            procedures frm = new procedures();
-            frm.MdiParent = this;
-
-            frm.spatient_rbtn.PerformClick();
-            DBManager c = new DBManager();
+            procedures f = new procedures();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Regular' order by ID desc";
-                c.load_dgv(frm.dataGridView1, query);
-                frm.scondition_txt.Text = "Regular";
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is procedures);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            frm.Show();
         }
 
         private void verCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            procedures frm = new procedures();
-            frm.MdiParent = this;
-
-            frm.spatient_rbtn.PerformClick();
-            DBManager c = new DBManager();
+            procedures f = new procedures();
             try
             {
-                string query = "Select idprocedure as ID, idpatient as IdPaciente, namepatient as Paciente, iddoctor as IdDoctor, namedoctor as Doctor, [procedure] as Procedimiento, tooth as Diente, realprice as Precio, iscoverage as Cobertura, pricepay as Total, statuspay as Credito, dateprocedure as Fecha from [procedure] where pricepay > 0 and ptype = 'Presupuesto' order by idprocedure desc";
-                c.load_dgv(frm.dataGridView1, query);
-                frm.scondition_txt.Text = "Presupuesto";
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is procedures);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            frm.Show();
         }
 
         private void descuentosADoctoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -427,17 +607,50 @@ namespace SysPandemic
 
         private void externoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            descpayrolldocext frm = new descpayrolldocext();
-            frm.MdiParent = this;
-            frm.Show();
+            descpayrolldocext f = new descpayrolldocext();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is descpayrolldocext);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void nominaDeDoctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            payroll frm = new payroll();
-            frm.MdiParent = this;
-            frm.condition_txt.Text = "Doctor";
-            frm.Show();
+            payroll f = new payroll();
+            try
+            {
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is payroll);
+                if (frm2 != null)
+                {
+                    frm2.BringToFront();
+                    MessageBox.Show("Esta ventana ya esta abierta.", "Error");
+                    return;
+                }
+                else
+                {
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -450,6 +663,16 @@ namespace SysPandemic
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }
