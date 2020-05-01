@@ -29,73 +29,59 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            this.passtxt = new System.Windows.Forms.TextBox();
-            this.loginbtn = new System.Windows.Forms.Button();
-            this.usercb = new System.Windows.Forms.ComboBox();
+            this.txt_u_password = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_u_user = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.usercb1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_login = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // passtxt
+            // txt_u_password
             // 
-            this.passtxt.Location = new System.Drawing.Point(6, 101);
-            this.passtxt.Name = "passtxt";
-            this.passtxt.PasswordChar = '*';
-            this.passtxt.Size = new System.Drawing.Size(248, 20);
-            this.passtxt.TabIndex = 1;
-            this.passtxt.Text = "Nolopiense0";
-            this.passtxt.TextChanged += new System.EventHandler(this.passtxt_TextChanged);
-            this.passtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
-            // 
-            // loginbtn
-            // 
-            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.loginbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.loginbtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.loginbtn.Location = new System.Drawing.Point(91, 127);
-            this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(75, 23);
-            this.loginbtn.TabIndex = 2;
-            this.loginbtn.Text = "Iniciar";
-            this.loginbtn.UseVisualStyleBackColor = false;
-            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
-            // 
-            // usercb
-            // 
-            this.usercb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.usercb.FormattingEnabled = true;
-            this.usercb.Location = new System.Drawing.Point(6, 45);
-            this.usercb.Name = "usercb";
-            this.usercb.Size = new System.Drawing.Size(245, 21);
-            this.usercb.TabIndex = 3;
+            this.txt_u_password.Location = new System.Drawing.Point(6, 101);
+            this.txt_u_password.Name = "txt_u_password";
+            this.txt_u_password.PasswordChar = '*';
+            this.txt_u_password.Size = new System.Drawing.Size(248, 20);
+            this.txt_u_password.TabIndex = 1;
+            this.txt_u_password.Text = "Admin1234";
+            this.txt_u_password.TextChanged += new System.EventHandler(this.passtxt_TextChanged);
+            this.txt_u_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_u_user);
             this.groupBox1.Controls.Add(this.linkLabel1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.usercb1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.usercb);
-            this.groupBox1.Controls.Add(this.passtxt);
-            this.groupBox1.Controls.Add(this.loginbtn);
+            this.groupBox1.Controls.Add(this.txt_u_password);
+            this.groupBox1.Controls.Add(this.btn_login);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox1.Location = new System.Drawing.Point(211, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 193);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txt_u_user
+            // 
+            this.txt_u_user.Location = new System.Drawing.Point(6, 45);
+            this.txt_u_user.Name = "txt_u_user";
+            this.txt_u_user.Size = new System.Drawing.Size(248, 20);
+            this.txt_u_user.TabIndex = 8;
+            this.txt_u_user.Text = "Admin";
+            this.txt_u_user.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_u_user_KeyDown);
             // 
             // linkLabel1
             // 
@@ -132,16 +118,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Usuario:";
             // 
-            // usercb1
-            // 
-            this.usercb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.usercb1.FormattingEnabled = true;
-            this.usercb1.Location = new System.Drawing.Point(6, 45);
-            this.usercb1.Name = "usercb1";
-            this.usercb1.Size = new System.Drawing.Size(245, 21);
-            this.usercb1.TabIndex = 3;
-            this.usercb1.TextChanged += new System.EventHandler(this.usercb1_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -153,32 +129,38 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Contraseña:";
             // 
+            // btn_login
+            // 
+            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_login.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_login.Image = global::SysPandemic.Properties.Resources._3592852___general_office_open_padlock_safety_unlock_unlock_padlock_unlocking1;
+            this.btn_login.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_login.Location = new System.Drawing.Point(6, 127);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(248, 23);
+            this.btn_login.TabIndex = 2;
+            this.btn_login.Text = "Iniciar";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.loginbtn_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(256, 41);
+            this.label4.Location = new System.Drawing.Point(251, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Iniciar sección";
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(256, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 29);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "SysPandemic";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 292);
@@ -197,6 +179,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SysPandemic.Properties.Resources.big_logo_SysPandemic1;
+            this.pictureBox2.Location = new System.Drawing.Point(-26, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(255, 196);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,7 +198,6 @@
             this.ClientSize = new System.Drawing.Size(479, 290);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
@@ -221,7 +212,9 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,18 +222,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button loginbtn;
-        public System.Windows.Forms.ComboBox usercb;
-        public System.Windows.Forms.TextBox passtxt;
+        private System.Windows.Forms.Button btn_login;
+        public System.Windows.Forms.TextBox txt_u_password;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox usercb1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txt_u_user;
     }
 }

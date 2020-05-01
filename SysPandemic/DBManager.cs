@@ -25,16 +25,12 @@ namespace SysPandemic
         {
             try
             {
-                //Conexion para la PC de desarrollo
-                //cnx = new SqlConnection("Data Source=DESKTOP-RC55N5R;Initial Catalog=SysPandemic; Integrated Security=True; MultipleActiveResultSets=True");
+                //Conexion en PC de desarrollo
+                //cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
-                //Conexion para la pc del consultorio
-                //cnx = new SqlConnection(@"Server=INOA-PC\EGSOFT;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
+                //Conexion en el servidor SOMEE
+                cnx = new SqlConnection(@"Server=SysPandemic.mssql.somee.com;Database=SysPandemic;User Id=egsoft_SQLLogin_1; Password=gihpmzkagd; MultipleActiveResultSets=True");
 
-                //Conexion con red
-                //cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS, 49172;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
-
-                cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
                 cnx.Open();
                 //MessageBox.Show("Conectado");
@@ -49,11 +45,11 @@ namespace SysPandemic
         {
             try
             {
-                cmd = new SqlCommand("Select usu from userpass", cnx);
+                cmd = new SqlCommand("Select u_user from users", cnx);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    cb.Items.Add(dr["usu"].ToString());
+                    cb.Items.Add(dr["u_user"].ToString());
                 }
                 cb.SelectedIndex = 0;
                 dr.Close();
