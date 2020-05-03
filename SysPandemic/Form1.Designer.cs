@@ -103,7 +103,7 @@
             this.controlDeUsuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(939, 29);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,11 +112,11 @@
             this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem,
             this.administrarToolStripMenuItem});
-            this.pacientesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pacientesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.pacientesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.pacientesToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592856___general_group_office_personal_relation_team_team_structure;
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(102, 25);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             this.agregarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592854___add_user_business_man_employee_general_human_member_office;
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.agregarToolStripMenuItem.Text = "Agregar Paciente";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
@@ -134,17 +134,17 @@
             this.administrarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592853___align_employee_general_human_human_list_list_member;
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
             // 
             // doctoresToolStripMenuItem
             // 
-            this.doctoresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.doctoresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.doctoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.doctoresToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185059___dental_dentist;
             this.doctoresToolStripMenuItem.Name = "doctoresToolStripMenuItem";
-            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
             this.doctoresToolStripMenuItem.Text = "Doctores";
             this.doctoresToolStripMenuItem.Click += new System.EventHandler(this.doctoresToolStripMenuItem_Click);
             // 
@@ -154,11 +154,11 @@
             this.agregarSeguroToolStripMenuItem,
             this.administrarSegurosToolStripMenuItem,
             this.administrarProcesosSinSeguroToolStripMenuItem});
-            this.segurosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.segurosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.segurosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.segurosToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592828___general_key_key_lock_lock_office_password_security;
             this.segurosToolStripMenuItem.Name = "segurosToolStripMenuItem";
-            this.segurosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.segurosToolStripMenuItem.Size = new System.Drawing.Size(95, 25);
             this.segurosToolStripMenuItem.Text = "Seguros";
             // 
             // agregarSeguroToolStripMenuItem
@@ -166,7 +166,7 @@
             this.agregarSeguroToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarSeguroToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592828___general_key_key_lock_lock_office_password_security;
             this.agregarSeguroToolStripMenuItem.Name = "agregarSeguroToolStripMenuItem";
-            this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.agregarSeguroToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.agregarSeguroToolStripMenuItem.Text = "Agregar Seguro";
             this.agregarSeguroToolStripMenuItem.Click += new System.EventHandler(this.agregarSeguroToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             this.administrarSegurosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarSegurosToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592823___align_arrow_center_alignment_down_general_office_text_alignment;
             this.administrarSegurosToolStripMenuItem.Name = "administrarSegurosToolStripMenuItem";
-            this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.administrarSegurosToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.administrarSegurosToolStripMenuItem.Text = "Administrar Seguros";
             this.administrarSegurosToolStripMenuItem.Click += new System.EventHandler(this.administrarSegurosToolStripMenuItem_Click);
             // 
@@ -184,7 +184,7 @@
             this.administrarProcesosSinSeguroToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarProcesosSinSeguroToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592858___align_arrow_center_alignment_general_office_text_alignment_up;
             this.administrarProcesosSinSeguroToolStripMenuItem.Name = "administrarProcesosSinSeguroToolStripMenuItem";
-            this.administrarProcesosSinSeguroToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.administrarProcesosSinSeguroToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.administrarProcesosSinSeguroToolStripMenuItem.Text = "Administrar procesos sin seguro";
             this.administrarProcesosSinSeguroToolStripMenuItem.Click += new System.EventHandler(this.administrarProcesosSinSeguroToolStripMenuItem_Click);
             // 
@@ -193,11 +193,11 @@
             this.agendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarCitaToolStripMenuItem,
             this.verCitasToolStripMenuItem});
-            this.agendaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.agendaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.agendaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agendaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592851___calendar_general_month_month_calendar_office_schedule_wall_calendar;
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
             this.agendaToolStripMenuItem.Text = "Agenda";
             // 
             // agregarCitaToolStripMenuItem
@@ -205,7 +205,7 @@
             this.agregarCitaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarCitaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592829___calendar_general_month_month_calendar_office_schedule_wall_calendar;
             this.agregarCitaToolStripMenuItem.Name = "agregarCitaToolStripMenuItem";
-            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.agregarCitaToolStripMenuItem.Text = "Agregar Cita";
             this.agregarCitaToolStripMenuItem.Click += new System.EventHandler(this.agregarCitaToolStripMenuItem_Click);
             // 
@@ -214,7 +214,7 @@
             this.verCitasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verCitasToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592851___calendar_general_month_month_calendar_office_schedule_wall_calendar;
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.verCitasToolStripMenuItem.Text = "Ver Citas";
             this.verCitasToolStripMenuItem.Click += new System.EventHandler(this.verCitasToolStripMenuItem_Click);
             // 
@@ -223,11 +223,11 @@
             this.procedimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.procedimientosRegularesToolStripMenuItem,
             this.cotizacionesToolStripMenuItem});
-            this.procedimientosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.procedimientosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.procedimientosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.procedimientosToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185056___dental_dental_;
             this.procedimientosToolStripMenuItem.Name = "procedimientosToolStripMenuItem";
-            this.procedimientosToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.procedimientosToolStripMenuItem.Size = new System.Drawing.Size(146, 25);
             this.procedimientosToolStripMenuItem.Text = "Procedimientos";
             // 
             // procedimientosRegularesToolStripMenuItem
@@ -238,7 +238,7 @@
             this.procedimientosRegularesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.procedimientosRegularesToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185056___dental_dental_;
             this.procedimientosRegularesToolStripMenuItem.Name = "procedimientosRegularesToolStripMenuItem";
-            this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.procedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.procedimientosRegularesToolStripMenuItem.Text = "Procedimientos Regulares";
             // 
             // agregarProcedimientoRegularToolStripMenuItem
@@ -246,7 +246,7 @@
             this.agregarProcedimientoRegularToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarProcedimientoRegularToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185056___dental_dental_;
             this.agregarProcedimientoRegularToolStripMenuItem.Name = "agregarProcedimientoRegularToolStripMenuItem";
-            this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.agregarProcedimientoRegularToolStripMenuItem.Size = new System.Drawing.Size(347, 26);
             this.agregarProcedimientoRegularToolStripMenuItem.Text = "Agregar Procedimiento Regular";
             this.agregarProcedimientoRegularToolStripMenuItem.Click += new System.EventHandler(this.agregarProcedimientoRegularToolStripMenuItem_Click);
             // 
@@ -255,7 +255,7 @@
             this.administrarProcedimientosRegularesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.administrarProcedimientosRegularesToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185056___dental_dental_;
             this.administrarProcedimientosRegularesToolStripMenuItem.Name = "administrarProcedimientosRegularesToolStripMenuItem";
-            this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.administrarProcedimientosRegularesToolStripMenuItem.Size = new System.Drawing.Size(347, 26);
             this.administrarProcedimientosRegularesToolStripMenuItem.Text = "Administrar procedimientos Regulares";
             this.administrarProcedimientosRegularesToolStripMenuItem.Click += new System.EventHandler(this.administrarProcedimientosRegularesToolStripMenuItem_Click);
             // 
@@ -267,7 +267,7 @@
             this.cotizacionesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cotizacionesToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185047___dental_dental_;
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.cotizacionesToolStripMenuItem.Text = "Presupuestos";
             // 
             // crearCotizacionDeProcedimientoToolStripMenuItem
@@ -275,7 +275,7 @@
             this.crearCotizacionDeProcedimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185047___dental_dental_;
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Name = "crearCotizacionDeProcedimientoToolStripMenuItem";
-            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.crearCotizacionDeProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Text = "Crear presupuestos de procedimiento";
             this.crearCotizacionDeProcedimientoToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionDeProcedimientoToolStripMenuItem_Click);
             // 
@@ -285,7 +285,7 @@
             this.verCotizacionesToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185047___dental_dental_;
             this.verCotizacionesToolStripMenuItem.Name = "verCotizacionesToolStripMenuItem";
             this.verCotizacionesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
-            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(272, 20);
+            this.verCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(341, 24);
             this.verCotizacionesToolStripMenuItem.Text = "Ver presupuestos";
             this.verCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.verCotizacionesToolStripMenuItem_Click);
             // 
@@ -297,11 +297,11 @@
             this.nominaToolStripMenuItem,
             this.cToolStripMenuItem,
             this.cierreToolStripMenuItem});
-            this.facturacionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.facturacionToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.facturacionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.facturacionToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592864___general_graph_increase_office_rise_statistics_success;
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
             this.facturacionToolStripMenuItem.Text = "Finanzas";
             this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
@@ -310,7 +310,7 @@
             this.facturarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.facturarToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592874___document_general_letter_note_office_page_paper;
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.facturarToolStripMenuItem.Text = "Facturar Procedimiento";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
@@ -323,7 +323,7 @@
             this.entradaDeFacturaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.entradaDeFacturaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592817___document_envelope_envelope_general_large_envelope_mail_mailing_envelope_office;
             this.entradaDeFacturaToolStripMenuItem.Name = "entradaDeFacturaToolStripMenuItem";
-            this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.entradaDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.entradaDeFacturaToolStripMenuItem.Text = "Facturas";
             this.entradaDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem_Click);
             // 
@@ -332,7 +332,7 @@
             this.suplidoresToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.suplidoresToolStripMenuItem1.Image = global::SysPandemic.Properties.Resources._3592825___avatar_general_human_office_person_smile_user;
             this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
-            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.suplidoresToolStripMenuItem1.Text = "Suplidores";
             this.suplidoresToolStripMenuItem1.Click += new System.EventHandler(this.suplidoresToolStripMenuItem1_Click);
             // 
@@ -341,7 +341,7 @@
             this.entradaDeFacturaToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.entradaDeFacturaToolStripMenuItem1.Image = global::SysPandemic.Properties.Resources._3592871___document_general_letter_note_office_page_paper;
             this.entradaDeFacturaToolStripMenuItem1.Name = "entradaDeFacturaToolStripMenuItem1";
-            this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.entradaDeFacturaToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.entradaDeFacturaToolStripMenuItem1.Text = "Entrada de Factura";
             this.entradaDeFacturaToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeFacturaToolStripMenuItem1_Click);
             // 
@@ -349,7 +349,7 @@
             // 
             this.verFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.verFacturasToolStripMenuItem.Text = "Ver Facturas";
             this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
@@ -361,7 +361,7 @@
             this.nominaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.nominaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592856___general_group_office_personal_relation_team_team_structure;
             this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
-            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.nominaToolStripMenuItem.Text = "Nomina";
             // 
             // nominaDeDoctoresToolStripMenuItem
@@ -369,7 +369,7 @@
             this.nominaDeDoctoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.nominaDeDoctoresToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._2185059___dental_dentist;
             this.nominaDeDoctoresToolStripMenuItem.Name = "nominaDeDoctoresToolStripMenuItem";
-            this.nominaDeDoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.nominaDeDoctoresToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.nominaDeDoctoresToolStripMenuItem.Text = "Nomina de Doctores";
             this.nominaDeDoctoresToolStripMenuItem.Click += new System.EventHandler(this.nominaDeDoctoresToolStripMenuItem_Click);
             // 
@@ -381,7 +381,7 @@
             this.descuentosADoctoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.descuentosADoctoresToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592819___general_graph_office_overview_part_pie_chart_portion;
             this.descuentosADoctoresToolStripMenuItem.Name = "descuentosADoctoresToolStripMenuItem";
-            this.descuentosADoctoresToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.descuentosADoctoresToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.descuentosADoctoresToolStripMenuItem.Text = "Descuentos a Doctores";
             this.descuentosADoctoresToolStripMenuItem.Click += new System.EventHandler(this.descuentosADoctoresToolStripMenuItem_Click);
             // 
@@ -389,14 +389,14 @@
             // 
             this.porProcedimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.porProcedimientoToolStripMenuItem.Name = "porProcedimientoToolStripMenuItem";
-            this.porProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.porProcedimientoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.porProcedimientoToolStripMenuItem.Text = "Por Procedimiento";
             // 
             // externoToolStripMenuItem
             // 
             this.externoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.externoToolStripMenuItem.Name = "externoToolStripMenuItem";
-            this.externoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.externoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.externoToolStripMenuItem.Text = "Externo";
             this.externoToolStripMenuItem.Click += new System.EventHandler(this.externoToolStripMenuItem_Click);
             // 
@@ -405,7 +405,7 @@
             this.cToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592861___bag_briefcase_business_bag_documents_bag_general_office_portfolio;
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.cToolStripMenuItem.Text = "CxC/CP";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
             // 
@@ -414,7 +414,7 @@
             this.cierreToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cierreToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592873___document_general_letter_note_office_page_paper;
             this.cierreToolStripMenuItem.Name = "cierreToolStripMenuItem";
-            this.cierreToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.cierreToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.cierreToolStripMenuItem.Text = "Cierre";
             this.cierreToolStripMenuItem.Click += new System.EventHandler(this.cierreToolStripMenuItem_Click);
             // 
@@ -424,11 +424,11 @@
             this.resetaToolStripMenuItem,
             this.cartaDeIncapacidadToolStripMenuItem,
             this.cartaDeAltaToolStripMenuItem});
-            this.miselaneasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.miselaneasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.miselaneasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.miselaneasToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592862___general_inkjet_printer_office_paper_printer_print_printer_scanner;
             this.miselaneasToolStripMenuItem.Name = "miselaneasToolStripMenuItem";
-            this.miselaneasToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.miselaneasToolStripMenuItem.Size = new System.Drawing.Size(123, 25);
             this.miselaneasToolStripMenuItem.Text = "Impresiones";
             // 
             // resetaToolStripMenuItem
@@ -436,7 +436,7 @@
             this.resetaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.resetaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592815___compose_create_edit_edit_file_office_pencil_writing;
             this.resetaToolStripMenuItem.Name = "resetaToolStripMenuItem";
-            this.resetaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.resetaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.resetaToolStripMenuItem.Text = "Prescripción";
             this.resetaToolStripMenuItem.Click += new System.EventHandler(this.resetaToolStripMenuItem_Click);
             // 
@@ -445,7 +445,7 @@
             this.cartaDeIncapacidadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cartaDeIncapacidadToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592817___document_envelope_envelope_general_large_envelope_mail_mailing_envelope_office1;
             this.cartaDeIncapacidadToolStripMenuItem.Name = "cartaDeIncapacidadToolStripMenuItem";
-            this.cartaDeIncapacidadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cartaDeIncapacidadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cartaDeIncapacidadToolStripMenuItem.Text = "Carta de Incapacidad";
             // 
             // cartaDeAltaToolStripMenuItem
@@ -453,16 +453,16 @@
             this.cartaDeAltaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.cartaDeAltaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592843___general_heart_heart_beat_heart_disease_heart_rate_heart_shape_office;
             this.cartaDeAltaToolStripMenuItem.Name = "cartaDeAltaToolStripMenuItem";
-            this.cartaDeAltaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cartaDeAltaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cartaDeAltaToolStripMenuItem.Text = "Carta de alta";
             // 
             // controlDeUsuariosToolStripMenuItem
             // 
-            this.controlDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.controlDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.controlDeUsuariosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.controlDeUsuariosToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592840___cog_gear_machine_office_radio_settings_setting_settings;
             this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
-            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
+            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(176, 25);
             this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
             // 
             // label1
@@ -484,7 +484,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 23);
+            this.panel1.Size = new System.Drawing.Size(1065, 23);
             this.panel1.TabIndex = 5;
             // 
             // label2
@@ -512,7 +512,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(999, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(985, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(43, 17);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -524,7 +524,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1048, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1034, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -541,7 +541,7 @@
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Location = new System.Drawing.Point(0, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1079, 25);
+            this.panel2.Size = new System.Drawing.Size(1220, 29);
             this.panel2.TabIndex = 6;
             // 
             // panel3
@@ -556,14 +556,14 @@
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.panel3.Location = new System.Drawing.Point(0, 383);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1077, 27);
+            this.panel3.Size = new System.Drawing.Size(1065, 27);
             this.panel3.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(940, 3);
+            this.label4.Location = new System.Drawing.Point(930, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 3;
@@ -573,7 +573,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(780, 3);
+            this.label3.Location = new System.Drawing.Point(770, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
@@ -583,7 +583,7 @@
             // 
             this.txt_u_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_u_name.Enabled = false;
-            this.txt_u_name.Location = new System.Drawing.Point(832, 0);
+            this.txt_u_name.Location = new System.Drawing.Point(822, 3);
             this.txt_u_name.Name = "txt_u_name";
             this.txt_u_name.Size = new System.Drawing.Size(102, 20);
             this.txt_u_name.TabIndex = 1;
@@ -592,7 +592,7 @@
             // 
             this.txt_u_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_u_right.Enabled = false;
-            this.txt_u_right.Location = new System.Drawing.Point(995, 0);
+            this.txt_u_right.Location = new System.Drawing.Point(985, 3);
             this.txt_u_right.Name = "txt_u_right";
             this.txt_u_right.Size = new System.Drawing.Size(75, 20);
             this.txt_u_right.TabIndex = 0;
@@ -605,7 +605,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.BackgroundImage = global::SysPandemic.Properties.Resources.big_logo_SysPandemic2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1077, 410);
+            this.ClientSize = new System.Drawing.Size(1065, 410);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

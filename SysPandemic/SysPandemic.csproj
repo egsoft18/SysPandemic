@@ -230,6 +230,7 @@
     <Compile Include="doctorpayroll.Designer.cs">
       <DependentUpon>doctorpayroll.cs</DependentUpon>
     </Compile>
+    <Compile Include="functions.cs" />
     <Compile Include="OpenDB.cs" />
     <Compile Include="payroll.cs">
       <SubType>Form</SubType>
@@ -458,11 +459,11 @@
     <Compile Include="spatient.Designer.cs">
       <DependentUpon>spatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="seepatient.cs">
+    <Compile Include="searchpatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="seepatient.Designer.cs">
-      <DependentUpon>seepatient.cs</DependentUpon>
+    <Compile Include="searchpatient.Designer.cs">
+      <DependentUpon>searchpatient.cs</DependentUpon>
     </Compile>
     <Compile Include="suppliers.cs">
       <SubType>Form</SubType>
@@ -667,8 +668,8 @@
     <EmbeddedResource Include="spatient.resx">
       <DependentUpon>spatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="seepatient.resx">
-      <DependentUpon>seepatient.cs</DependentUpon>
+    <EmbeddedResource Include="searchpatient.resx">
+      <DependentUpon>searchpatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="suppliers.resx">
       <DependentUpon>suppliers.cs</DependentUpon>
@@ -729,6 +730,12 @@
     <None Include="Resources\small_icons\office\3592864 - general graph increase office rise statistics success.png" />
     <None Include="Resources\small_icons\office\3592862 - general inkjet printer office paper printer print printer scanner.png" />
     <None Include="Resources\small_icons\office\3592840 - cog gear machine office radio settings setting settings.png" />
+    <None Include="Resources\small_icons\ToolBar 32\1493283 - undo.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493283 - undo.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493294 - save.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493292 - new.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493282 - cancel.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493286 - print.png" />
     <Content Include="SysPandemic.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -27,6 +27,8 @@ namespace SysPandemic
             InitializeComponent();
         }
 
+        /***** Shadow en el Form *****/
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
    (
@@ -118,8 +120,10 @@ namespace SysPandemic
                 m.Result = (IntPtr)HTCAPTION;
         }
 
+        /***** FIN Shadow en el Form *****/
 
-            //Esta parte va debajo del public del formulario, fuera de las llavez de este.
+
+        //Codigo para movilidad del formulario.
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

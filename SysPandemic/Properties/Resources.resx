@@ -124,6 +124,9 @@
   <data name="3592825 - avatar general human office person smile user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592825 - avatar general human office person smile user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3592840 - cog gear machine office radio settings setting settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\office\3592840 - cog gear machine office radio settings setting settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="big_logo_SysPandemic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\big_logo_SysPandemic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,11 +181,17 @@
   <data name="3592858 - align arrow center alignment general office text alignment up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592858 - align arrow center alignment general office text alignment up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1493292 - new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 20\1493292 - new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="2185059 - dental dentist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\dental\2185059 - dental dentist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3592829 - calendar general month month calendar office schedule wall calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592829 - calendar general month month calendar office schedule wall calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1493283 - undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 32\1493283 - undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3592852 - general office open padlock safety unlock unlock padlock unlocking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592852 - general office open padlock safety unlock unlock padlock unlocking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +205,20 @@
   <data name="3592853 - align employee general human human list list member" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592853 - align employee general human human list list member.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1493294 - save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 20\1493294 - save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="big_logo_SysPandemic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\big_logo_SysPandemic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3592874 - document general letter note office page paper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592874 - document general letter note office page paper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1493282 - cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 20\1493282 - cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1493283 - undo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 20\1493283 - undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3592862 - general inkjet printer office paper printer print printer scanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592862 - general inkjet printer office paper printer print printer scanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +229,7 @@
   <data name="3592873 - document general letter note office page paper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_icons\office\3592873 - document general letter note office page paper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3592840 - cog gear machine office radio settings setting settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\small_icons\office\3592840 - cog gear machine office radio settings setting settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1493286 - print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small_icons\ToolBar 20\1493286 - print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

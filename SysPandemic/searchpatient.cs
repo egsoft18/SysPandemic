@@ -8,11 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace SysPandemic
 {
     public partial class searchpatient : Form
     {
+
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+        OpenDB c = new OpenDB();
+
+        public bool formulario_devolver = false;
+
         public searchpatient()
         {
             InitializeComponent();
@@ -41,24 +50,24 @@ namespace SysPandemic
                     DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
                     string realdate = +date.Day + "/" + date.Month + "/" + date.Year;
 
-                    frm.idpatient_txt.Text = act.Cells["ID"].Value.ToString();
-                    frm.namepatient_txt.Text = act.Cells["Nombre"].Value.ToString();
-                    frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
+                    frm.txt_p_id.Text = act.Cells["ID"].Value.ToString();
+                    frm.txt_p_name.Text = act.Cells["Nombre"].Value.ToString();
+                    //frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
                     //frm.bdaypatient_dtp.Text = realdate;
-                    frm.sexpatient_cb.Text = act.Cells["Sexo"].Value.ToString();
-                    frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
-                    frm.addresspatient_txt.Text = act.Cells["Direccion"].Value.ToString();
-                    frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
-                    frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
-                    frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
-                    frm.insurancepatient_txt.Text = act.Cells["Seguro"].Value.ToString();
-                    frm.affiliatepatient_txt.Text = act.Cells["Afiliado"].Value.ToString();
+                    frm.cb_p_sex.Text = act.Cells["Sexo"].Value.ToString();
+                    //frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
+                    frm.txt_p_address.Text = act.Cells["Direccion"].Value.ToString();
+                    //frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
+                    //frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
+                    //frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
+                    frm.cb_i_id.Text = act.Cells["Seguro"].Value.ToString();
+                    frm.txt_p_affiliate.Text = act.Cells["Afiliado"].Value.ToString();
                     String idpatient = act.Cells["ID"].Value.ToString();
                     DBManager c = new DBManager();
                     string query = "Select * from medicald where idpatient = '" + idpatient + "'";
-                    c.fill_diag(query, frm.tmed_cb, frm.tmedcom_txt, frm.mica_cb, frm.micacom_txt, frm.ps_cb, frm.diab_cb, frm.hep_cb, frm.hepcom_txt, frm.pr_cb, frm.pe_cb, frm.pecom_txt, frm.pa_cb, frm.pacom_txt, frm.hemo_cb, frm.aler_cb, frm.alercom_txt);
+                    c.fill_diag(query, frm.cb_pm_tmed, frm.txt_pm_tmedcom, frm.cb_pm_mica, frm.txt_pm_micacom, frm.cb_pm_ps, frm.cb_pm_diab, frm.cb_pm_hep, frm.txt_pm_hepcom, frm.cb_pm_pr, frm.cb_pm_pe, frm.txt_pm_pecom, frm.cb_pm_pa, frm.txt_pm_pacom, frm.cb_pm_hemo, frm.cb_pm_aler, frm.txt_pm_alercom);
 
-                    frm.savepatient_txt.Hide();
+                    frm.btn_save.Hide();
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
@@ -129,7 +138,7 @@ namespace SysPandemic
                 string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
                 string condition = "idpatient";
                 DBManager c = new DBManager();
-                c.last_id(frm.idpatient_txt, query, condition);
+                c.last_id(frm.txt_p_id, query, condition);
             }
 
             catch (Exception ex)

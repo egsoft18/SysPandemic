@@ -9,17 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace SysPandemic
 {
     public partial class AddPatient : Form
     {
-        DBManager c = new DBManager();
+        //DBManager c = new DBManager();
+
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+        OpenDB c = new OpenDB();
+
+        public bool formulario_devolver = false;
         public AddPatient()
         {
             InitializeComponent();
-            
         }
+
+
+
+
 
         //Esta parte va debajo del public del formulario, fuera de las llavez de este.
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -49,35 +60,6 @@ namespace SysPandemic
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
-            //    //if (idpatient_txt.Text )
-
-
-            //    DBManager c2 = new DBManager();
-            //    string query = "select idhistory as ID, tooth as Diente, activity as Actividad, qtypay as Abono, date as Fecha from patienthistory where idpatient = '"+ idpatient_txt.Text+"'";
-            //    c2.load_dgv(patienthistory, query);
-
-
-            //        idpatient_md_txt.Text = idpatient_txt.Text;
-            //        namep_md_txt.Text = namepatient_txt.Text;
-            //        idph_txt.Text = idpatient_txt.Text;
-
-
-
-            //    //SQLiteConnection cnx = new SQLiteConnection("Data Source=C:\\syspandemic\\db\\syspandemic.db;Version=3;");
-            //    //try
-            //    //{
-            //    //    string cmd = "Select idinsurance, nameinsurance from insurances";
-            //    //    SQLiteDataAdapter dept = new SQLiteDataAdapter(cmd, cnx);
-            //    //    DataTable user = new DataTable();
-            //    //    dept.Fill(user);
-            //    //    insurancepatient_txt.DataSource = user;
-            //    //    insurancepatient_txt.DisplayMember = "nameinsurance";
-            //    //    insurancepatient_txt.ValueMember = "idinsurance";
-            //    //}
-            //    //catch (Exception ex)
-            //    //{
-            //    //    MessageBox.Show(ex.Message);
-            //    //}
         }
 
         private void printpatient_btn_Click(object sender, EventArgs e)
@@ -95,101 +77,37 @@ namespace SysPandemic
         private void savepatient_txt_Click(object sender, EventArgs e)
         {
 
-            //DBManager c = new DBManager();
-            //string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
-            //c.command(query);
-            //string query5 = "INSERT INTO medicald(idpatient, tmed, tmedcom, mica, micacom, ps, diab, hep, hepcom, pr, pe, pecom, pa, pacom, hemo, aler, alercom) VALUES ('" + idpatient_md_txt.Text + "', '" + tmed_cb.Text + "', '" + tmedcom_txt.Text + "', '" + mica_cb.Text + "', '" + micacom_txt.Text + "', '" + ps_cb.Text + "', '" + diab_cb.Text + "', '" + hep_cb.Text + "', '" + hepcom_txt.Text + "', '" + pr_cb.Text + "', '" + pe_cb.Text + "', '" + pecom_txt.Text + "', '" + pa_cb.Text + "', '" + pacom_txt.Text + "', '" + hemo_cb.Text + "', '" + aler_cb.Text + "', '" + alercom_txt.Text + "')";
-            //c.command3(query5);
-
-
-            //if (c.valor == "si")
-            //{
-            //    namepatient_txt.Clear();
-            //    sexpatient_cb.Text = "";
-            //    idperson_txt.Clear();
-            //    addresspatient_txt.Clear();
-            //    telpatient_txt.Clear();
-            //    celpatient_txt.Clear();
-            //    tworkpatient_txt.Clear();
-            //    insurancepatient_txt.Text = "";
-            //    affiliatepatient_txt.Clear();
-            //    namepatient_txt.Focus();
-            //    c.valor = "";
-            //    //Borrar los datos del diagnostico de la ventana
-            //    tmed_cb.Text = "";
-            //    tmedcom_txt.Clear();
-            //    mica_cb.Text = "";
-            //    micacom_txt.Clear();
-            //    ps_cb.Text = "";
-            //    diab_cb.Text = "";
-            //    hep_cb.Text = "";
-            //    hepcom_txt.Clear();
-            //    pr_cb.Text = "";
-            //    pe_cb.Text = "";
-            //    pecom_txt.Clear();
-            //    pa_cb.Text = "";
-            //    pacom_txt.Clear();
-            //    hemo_cb.Text = "";
-            //    aler_cb.Text = "";
-            //    alercom_txt.Clear();
-
-            //    try
-            //    {
-            //        string query2 = "INSERT INTO [patient](idperson) VALUES('empty');";
-            //        string query3 = "DELETE FROM [patient] WHERE name is null";
-            //        c.command3(query3);
-            //        c.command3(query2);
-            //        string query4 = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
-            //        string condition = "idpatient";
-            //        c.last_id(idpatient_txt, query4, condition);
-            //        idpatient_md_txt.Text = idpatient_txt.Text;
-            //    }
-            //    catch
-            //    {
-
-            //    }
-            //}
-            //else
-            //{
-
-            //}
         }
 
         private void updatepatient_btn_Click(object sender, EventArgs e)
         {
-
-            //    DBManager c = new DBManager();
-            //    DialogResult result = MessageBox.Show("Seguro que desea Actualizar?", "Actualizar datos del Paciente", MessageBoxButtons.YesNo);
-            //        if (result == DialogResult.Yes)
-            //        {
-            //    string query = "UPDATE patient set name = '" + namepatient_txt.Text + "', sex = '" + sexpatient_cb.Text + "', bday = '" + bdaypatient_dtp.Text + "', idperson = '" + idperson_txt.Text + "', address = '" + addresspatient_txt.Text + "', tel = '" + telpatient_txt.Text + "', cel = '" + celpatient_txt.Text + "', telwork = '" + tworkpatient_txt.Text + "', insurance = '" + insurancepatient_txt.Text + "', affiliate = '" + affiliatepatient_txt.Text + "' WHERE idpatient = '" + idpatient_txt.Text + "'";
-            //    c.command3(query);
-            //    string query2 = "UPDATE medicald set tmed = '" + tmed_cb.Text + "', tmedcom = '" + tmedcom_txt.Text + "', mica = '" + mica_cb.Text + "', micacom = '" + micacom_txt.Text + "', ps = '" + ps_cb.Text + "', diab = '" + diab_cb.Text + "', hep = '" + hep_cb.Text + "', hepcom = '" + hepcom_txt.Text + "', pr = '" + pr_cb.Text + "', pe = '" + pe_cb.Text + "', pecom = '" + pecom_txt.Text + "', pa = '" + pa_cb.Text + "', pacom = '" + pacom_txt.Text + "', hemo = '" + hemo_cb.Text + "', aler = '" + aler_cb.Text + "', alercom = '" + alercom_txt.Text + "' WHERE idpatient = '" + idpatient_md_txt.Text + "';";
-            //    c.command(query2);
-
-            //        if (c.valor == "si")
-            //        {
-            //            Close();
-            //        }
-            //    }
-            //        else if (result == DialogResult.No)
-            //        {
-
-            //        }
         }
 
         private void clearform_btn_Click(object sender, EventArgs e)
         {
-            //namepatient_txt.Clear();
-            //sexpatient_cb.Text = "";
-            //idperson_txt.Clear();
-            //addresspatient_txt.Clear();
-            //telpatient_txt.Clear();
-            //celpatient_txt.Clear();
-            //tworkpatient_txt.Clear();
-            //insurancepatient_txt.Text = "";
-            //affiliatepatient_txt.Clear();
-            //namepatient_txt.Focus();
+            foreach (Control oControls in this.Controls)
+            {
+                if (oControls is TextBox)
+                {
+                    oControls.Text = "";
+                }
+            }
+
+            foreach (ComboBox oControls in this.Controls)
+            {
+                if (oControls.SelectedValue == null)
+                {
+                    oControls.SelectedIndex = -1;
+                }
+            }
+
+            foreach (DataGridView oControls in this.Controls)
+            {
+                if (oControls.Rows.Count > 0)
+                {
+                    oControls.Rows.Clear();
+                }
+            }
         }
 
         private void delatepatient_btn_Click(object sender, EventArgs e)
@@ -215,7 +133,7 @@ namespace SysPandemic
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -329,16 +247,16 @@ namespace SysPandemic
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tmed_cb.Text = "No";
-            mica_cb.Text = "No";
-            ps_cb.Text = "No";
-            diab_cb.Text = "No";
-            hep_cb.Text = "No";
-            pr_cb.Text = "No";
-            pe_cb.Text = "No";
-            pa_cb.Text = "No";
-            hemo_cb.Text = "No";
-            aler_cb.Text = "No";
+            cb_pm_tmed.Text = "No";
+            cb_pm_mica.Text = "No";
+            cb_pm_ps.Text = "No";
+            cb_pm_diab.Text = "No";
+            cb_pm_hep.Text = "No";
+            cb_pm_pr.Text = "No";
+            cb_pm_pe.Text = "No";
+            cb_pm_pa.Text = "No";
+            cb_pm_hemo.Text = "No";
+            cb_pm_aler.Text = "No";
 
         }
 
@@ -362,6 +280,22 @@ namespace SysPandemic
 
         private void AddPatient_MouseDown(object sender, MouseEventArgs e)
         {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            searchpatient f = new searchpatient();
+            f.formulario_devolver = true;
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                //limpiar();
+                //txt_p_id.Text = f.textBox1.Text;
+            }
         }
     }
 }
