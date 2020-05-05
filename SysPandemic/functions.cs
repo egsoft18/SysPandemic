@@ -20,29 +20,16 @@ namespace SysPandemic
                 }
             }
 
-            foreach (ComboBox oControls in f.Controls)
-            {
-                if (oControls.SelectedValue == null)
-                {
-                    oControls.SelectedIndex = -1;
-                }
-            }
-
-            foreach (DataGridView oControls in f.Controls)
-            {
-                if (oControls.Rows.Count > 0)
-                {
-                    oControls.Rows.Clear();
-                }
-            }
-
-            foreach (DateTimePicker oControls in f.Controls)
-            {
-                if (oControls.Text != DateTime.Today.ToString("dd-MM-yyyy"))
-                {
-                    oControls.Text = DateTime.Today.ToString("dd-MM-yyyy");
-                }
-            }
         }
+
+        public void starttext(MaskedTextBox txt)
+        {
+            if (txt.Text.Length <= 0)
+            {
+                txt.Select(0, 0);
+            }
+
+        }
+
     }
 }

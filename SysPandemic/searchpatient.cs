@@ -9,14 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace SysPandemic
 {
     public partial class searchpatient : Form
     {
+        /********** GLOSARIO **********/
+        // txt = TextBox or MaskedTextBox
+        // cb = ComboBox
+        // btn = Button
+        // cbx = CheckBox
+        // dtp = DateTimePicker
+        // dgv = DataGridView
+        // gb = GroupBox
 
-        SqlCommand cmd;
-        SqlDataReader dr;
+        // p = patient (paciente)
+        // pm = patient's medical (Diagnostico Medico)
+        // ph = patient's historial (Historial del Paciente)
+
+
+        //SqlCommand cmd;
+        //SqlDataReader dr;
 
         OpenDB c = new OpenDB();
 
@@ -25,57 +39,67 @@ namespace SysPandemic
         public searchpatient()
         {
             InitializeComponent();
-            
+        }
+        //Funcion especifica para movilidad del Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwmd, int wmsg, int wparam, int lparam);
+
+        /********** FUNCIONES & METODOS **********/
+        
+        private void load_patients_dgv()
+        {
+
+            SqlCommand comando = new SqlCommand();
+
+            SqlDataReader dr;
+            comando.Connection = c.cnx;
+
+
+            string query = "SELECT [p_id], [p_name], [p_idperson], [p_bday], [p_sex], [p_address], [p_tel], [p_cel], [p_telwork], [p_email], i.[i_name], [p_affiliate], u.u_user, [p_lu] FROM [dbo].[patient] as p inner join [dbo].[insurances] as i on i.i_id = p.i_id inner join [dbo].[users] as u on u.u_id = p.u_id  where [p_id] like '%"+txt_p_id.Text+"%'  and [p_name] like '%"+txt_p_name.Text+ "%' and [p_idperson] like '%"+txt_p_idperson.Text+"%'";
+
+            comando.CommandText = query;
+
+            comando.CommandType = CommandType.Text;
+            DataGridView dgv = dgv_patients;
+            dgv.Rows.Clear();
+
+            dr = comando.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int renglon = dgv.Rows.Add();
+
+                dgv.Rows[renglon].Cells["p_id"].Value = Convert.ToString(dr.GetInt32(dr.GetOrdinal("p_id")));
+                dgv.Rows[renglon].Cells["p_name"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_name")));
+                dgv.Rows[renglon].Cells["p_idperson"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_idperson")));
+                dgv.Rows[renglon].Cells["p_bday"].Value = Convert.ToString(dr.GetDateTime(dr.GetOrdinal("p_bday")).ToString("dd/MM/yyyy"));
+                dgv.Rows[renglon].Cells["p_sex"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_sex")));
+                dgv.Rows[renglon].Cells["p_address"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_address")));
+                dgv.Rows[renglon].Cells["p_tel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_tel")));
+                dgv.Rows[renglon].Cells["p_cel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_cel")));
+                dgv.Rows[renglon].Cells["p_telwork"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_telwork")));
+                dgv.Rows[renglon].Cells["p_email"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_email")));
+                dgv.Rows[renglon].Cells["i_name"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_name")));
+                dgv.Rows[renglon].Cells["p_affiliate"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_affiliate")));
+
+                dgv.Rows[renglon].Cells["u_user"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("u_user")));
+                dgv.Rows[renglon].Cells["p_lu"].Value = Convert.ToString(dr.GetDateTime(dr.GetOrdinal("p_lu")).ToString("dd/MM/yyyy"));
+
+            }
+            lb_results.Text = dgv_patients.Rows.Count.ToString();
         }
 
+        /********** FIN DE FUNCIONES & METODOS **********/
         private void seepatient_Load(object sender, EventArgs e)
         {
-            sname_rbtn.PerformClick();
-            DBManager c = new DBManager();
-            c.patient_administrator(dataGridView1);
+            load_patients_dgv();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            AddPatient frm = new AddPatient();
-            try
-            {
-                DataGridViewRow act = dataGridView1.Rows[e.RowIndex];
-                if (string.IsNullOrEmpty(act.Cells["ID"].Value.ToString()))
-                {
-
-                }
-                else
-                {
-                    DateTime date = DateTime.Parse(act.Cells["FechaNac"].Value.ToString());
-                    string realdate = +date.Day + "/" + date.Month + "/" + date.Year;
-
-                    frm.txt_p_id.Text = act.Cells["ID"].Value.ToString();
-                    frm.txt_p_name.Text = act.Cells["Nombre"].Value.ToString();
-                    //frm.bdaypatient_dtp.Text = act.Cells["FechaNac"].Value.ToString();
-                    //frm.bdaypatient_dtp.Text = realdate;
-                    frm.cb_p_sex.Text = act.Cells["Sexo"].Value.ToString();
-                    //frm.idperson_txt.Text = act.Cells["Cedula"].Value.ToString();
-                    frm.txt_p_address.Text = act.Cells["Direccion"].Value.ToString();
-                    //frm.telpatient_txt.Text = act.Cells["Telefono"].Value.ToString();
-                    //frm.celpatient_txt.Text = act.Cells["Celular"].Value.ToString();
-                    //frm.tworkpatient_txt.Text = act.Cells["TelTrabajo"].Value.ToString();
-                    frm.cb_i_id.Text = act.Cells["Seguro"].Value.ToString();
-                    frm.txt_p_affiliate.Text = act.Cells["Afiliado"].Value.ToString();
-                    String idpatient = act.Cells["ID"].Value.ToString();
-                    DBManager c = new DBManager();
-                    string query = "Select * from medicald where idpatient = '" + idpatient + "'";
-                    c.fill_diag(query, frm.cb_pm_tmed, frm.txt_pm_tmedcom, frm.cb_pm_mica, frm.txt_pm_micacom, frm.cb_pm_ps, frm.cb_pm_diab, frm.cb_pm_hep, frm.txt_pm_hepcom, frm.cb_pm_pr, frm.cb_pm_pe, frm.txt_pm_pecom, frm.cb_pm_pa, frm.txt_pm_pacom, frm.cb_pm_hemo, frm.cb_pm_aler, frm.txt_pm_alercom);
-
-                    frm.btn_save.Hide();
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se puede abrir a editar. La causa: " + ex.Message, "Error");
-            }
+           
         }
 
         private void sid_rbtn_CheckedChanged(object sender, EventArgs e)
@@ -84,177 +108,104 @@ namespace SysPandemic
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            buscar();
+            load_patients_dgv();
         }
 
         private void refreshpatient_btn_Click(object sender, EventArgs e)
         {
-            sname_rbtn.PerformClick();
-            DBManager c = new DBManager();
-            c.patient_administrator(dataGridView1);
         }
 
         private void addpatient_btn_Click(object sender, EventArgs e)
         {
-            AddPatient frm = new AddPatient();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            AddPatient f = new AddPatient();
 
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addprocedure);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is AddPatient);
                 if (frm2 != null)
                 {
-                    frm.BringToFront();
+                    frm2.BringToFront();
                     MessageBox.Show("Esta ventana ya esta abierta.", "Error");
                     return;
                 }
                 else
                 {
-                    string query = "INSERT INTO [patient](idperson) VALUES('empty');";
-                    DBManager c = new DBManager();
-                    string query2 = "DELETE FROM [patient] WHERE name is null";
-                    c.command3(query2);
-                    c.command3(query);
-
-
+                    f.MdiParent = this.MdiParent;
+                    f.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error New Procedure");
-
+                MessageBox.Show("No se puede abrir el ventana solicitado. Razón: " + ex.Message, "Error al abrir la ventana.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-
-            }
-
-
-
-            try
-            {
-
-                string query = "Select idpatient from [patient] where idpatient = (select max(idpatient) from [patient])";
-                string condition = "idpatient";
-                DBManager c = new DBManager();
-                c.last_id(frm.txt_p_id, query, condition);
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error TXT");
-            }
-            finally
-            {
-
-            }
-
-            frm.Show();
         }
 
         private void printpatientlist_btn_Click(object sender, EventArgs e)
         {
-            DBManager c = new DBManager();
-           try
-            {
-                if (search_txt.Text.Length == 0)
-                {
-                    string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
-                    string tablename = "Pacientes";
-                    string xml = "listpatient.xml";
-                    string report = "listpatient.rpt";
-                    c.printreport(query, tablename, xml, report);
+           // DBManager c = new DBManager();
+           //try
+           // {
+           //     if (search_txt.Text.Length == 0)
+           //     {
+           //         string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
+           //         string tablename = "Pacientes";
+           //         string xml = "listpatient.xml";
+           //         string report = "listpatient.rpt";
+           //         c.printreport(query, tablename, xml, report);
                     
-                }
-                else if (sid_rbtn.Checked)
-                {
-                    string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'";
-                    string tablename = "Pacientes";
-                    string xml = "listpatient.xml";
-                    string report = "listpatient.rpt";
-                    c.printreport(query, tablename, xml, report);
+           //     }
+           //     else if (sid_rbtn.Checked)
+           //     {
+           //         string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where id like '%" + search_txt.Text + "%'";
+           //         string tablename = "Pacientes";
+           //         string xml = "listpatient.xml";
+           //         string report = "listpatient.rpt";
+           //         c.printreport(query, tablename, xml, report);
 
-                }
-                else if (sname_rbtn.Checked)
-                {
-                    string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'";
-                    string tablename = "Pacientes";
-                    string xml = "listpatient.xml";
-                    string report = "listpatient.rpt";
-                    c.printreport(query, tablename, xml, report);
-                }
-                else if (sidperson_rbtn.Checked)
-                {
-                    string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'";
-                    string tablename = "Pacientes";
-                    string xml = "listpatient.xml";
-                    string report = "listpatient.rpt";
-                    c.printreport(query, tablename, xml, report);
-                }
-                else
-                {
-                    string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
-                    string tablename = "Pacientes";
-                    string xml = "listpatient.xml";
-                    string report = "listpatient.rpt";
-                    c.printreport(query, tablename, xml, report);
-                }
+           //     }
+           //     else if (sname_rbtn.Checked)
+           //     {
+           //         string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where name like '%" + search_txt.Text + "%'";
+           //         string tablename = "Pacientes";
+           //         string xml = "listpatient.xml";
+           //         string report = "listpatient.rpt";
+           //         c.printreport(query, tablename, xml, report);
+           //     }
+           //     else if (sidperson_rbtn.Checked)
+           //     {
+           //         string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient where idperson like '%" + search_txt.Text + "%'";
+           //         string tablename = "Pacientes";
+           //         string xml = "listpatient.xml";
+           //         string report = "listpatient.rpt";
+           //         c.printreport(query, tablename, xml, report);
+           //     }
+           //     else
+           //     {
+           //         string query = "Select idpatient as ID, name as Nombre, bday as FechaNac, sex as Sexo, idperson as Cedula, address as Direccion, tel as Telefono, cel as Celular, telwork as TelTrabajo, insurance as Seguro, affiliate as Afiliado from patient";
+           //         string tablename = "Pacientes";
+           //         string xml = "listpatient.xml";
+           //         string report = "listpatient.rpt";
+           //         c.printreport(query, tablename, xml, report);
+           //     }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
+           // }
+           // catch (Exception ex)
+           // {
+           //     MessageBox.Show(ex.Message, "Error");
+           // }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-        private void buscar()
-        {
-           string txtsearch = search_txt.Text;
-            if (search_txt.Text.Length == 0)
-            {
-                DBManager c = new DBManager();
-                c.patient_administrator(dataGridView1);
-            }
-            else if (sid_rbtn.Checked)
-            {
-                string condition = "idpatient";
-                DBManager c = new DBManager();
-                c.search_patient(dataGridView1,condition, txtsearch);
-            }
-            else if (sname_rbtn.Checked)
-            {
-                string condition = "name";
-                DBManager c = new DBManager();
-                c.search_patient(dataGridView1, condition, txtsearch);
-            }
-            else if (sidperson_rbtn.Checked)
-            {
-                string condition = "idperson";
-                DBManager c = new DBManager();
-                c.search_patient(dataGridView1, condition, txtsearch);
-            }
-            else
-            {
-                DBManager c = new DBManager();
-                c.patient_administrator(dataGridView1);
-            }
-        }
 
         private void search_txt_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buscar();
-            }
         }
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            buscar();
+            load_patients_dgv();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -264,8 +215,6 @@ namespace SysPandemic
 
         private void searchpatient_Activated(object sender, EventArgs e)
         {
-            DBManager c = new DBManager();
-            c.patient_administrator(dataGridView1);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -276,6 +225,56 @@ namespace SysPandemic
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Esta parte va en el evento MouseDown del panel en la parte superior del formulario
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txt_p_id_TextChanged(object sender, EventArgs e)
+        {
+            load_patients_dgv();
+        }
+
+        private void txt_p_idperson_TextChanged(object sender, EventArgs e)
+        {
+            load_patients_dgv();
+        }
+
+        private void txt_p_idperson_Click(object sender, EventArgs e)
+        {
+            functions fc = new functions();
+            fc.starttext(txt_p_idperson);
+        }
+
+        private void txt_p_idperson_Enter(object sender, EventArgs e)
+        {
+            functions fc = new functions();
+            fc.starttext(txt_p_idperson);
+        }
+
+        private void dgv_patients_DoubleClick(object sender, EventArgs e)
+        {
+            textBox1.Text = dgv_patients.Rows[dgv_patients.CurrentRow.Index].Cells["p_id"].Value.ToString();
+
+            if (formulario_devolver == true)
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else if (formulario_devolver == false)
+            {
+                AddPatient f = new AddPatient();
+                f.formulario_devolver = true;
+                f.txt_p_id.Text = dgv_patients.Rows[dgv_patients.CurrentRow.Index].Cells["p_id"].Value.ToString();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    load_patients_dgv();
+                }
+            }
         }
     }
 }

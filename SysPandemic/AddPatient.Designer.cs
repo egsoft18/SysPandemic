@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatient));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_p_email = new System.Windows.Forms.TextBox();
@@ -64,6 +63,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_pm_id = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_pm_commentary = new System.Windows.Forms.TextBox();
             this.btn_allno = new System.Windows.Forms.Button();
@@ -93,45 +93,56 @@
             this.txt_pm_tmedcom = new System.Windows.Forms.TextBox();
             this.cb_pm_tmed = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.namep_md_txt = new System.Windows.Forms.TextBox();
+            this.txt_mp_p_name = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.idpatient_md_txt = new System.Windows.Forms.TextBox();
+            this.txt_mp_p_id = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label29 = new System.Windows.Forms.Label();
+            this.gb_ph = new System.Windows.Forms.GroupBox();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.cbx_ph_date = new System.Windows.Forms.CheckBox();
+            this.cb_s_id = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.dtp_ph_date = new System.Windows.Forms.DateTimePicker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_ph_tooth = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txt_ph_activity = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.txt_ph_search = new System.Windows.Forms.TextBox();
-            this.patienthistory = new System.Windows.Forms.DataGridView();
+            this.txt_ph_id = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dgv_patient_history = new System.Windows.Forms.DataGridView();
             this.ph_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ph_activity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ph_tooth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ph_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ph_qtypay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.u_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.u_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ph_lu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_print = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.p_back = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.btn_print = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).BeginInit();
+            this.gb_ph.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_patient_history)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -174,6 +185,7 @@
             // txt_p_email
             // 
             this.txt_p_email.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_p_email.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_email.Location = new System.Drawing.Point(91, 249);
             this.txt_p_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -194,6 +206,7 @@
             // 
             // dtp_p_bday
             // 
+            this.dtp_p_bday.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dtp_p_bday.CustomFormat = "dd/MM/yyyy";
             this.dtp_p_bday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_p_bday.Location = new System.Drawing.Point(176, 103);
@@ -203,6 +216,7 @@
             // 
             // txt_p_telwork
             // 
+            this.txt_p_telwork.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_telwork.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_telwork.Location = new System.Drawing.Point(533, 213);
             this.txt_p_telwork.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -211,9 +225,12 @@
             this.txt_p_telwork.Size = new System.Drawing.Size(132, 26);
             this.txt_p_telwork.TabIndex = 22;
             this.txt_p_telwork.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_p_telwork.Enter += new System.EventHandler(this.txt_p_telwork_Enter);
+            this.txt_p_telwork.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_p_telwork_KeyPress);
             // 
             // txt_p_cel
             // 
+            this.txt_p_cel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_cel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_cel.Location = new System.Drawing.Point(312, 213);
             this.txt_p_cel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -222,9 +239,13 @@
             this.txt_p_cel.Size = new System.Drawing.Size(139, 26);
             this.txt_p_cel.TabIndex = 21;
             this.txt_p_cel.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_p_cel.Click += new System.EventHandler(this.txt_p_cel_Click);
+            this.txt_p_cel.Enter += new System.EventHandler(this.txt_p_cel_Enter);
+            this.txt_p_cel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_p_cel_KeyPress);
             // 
             // txt_p_idperson
             // 
+            this.txt_p_idperson.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_idperson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_idperson.Location = new System.Drawing.Point(521, 103);
             this.txt_p_idperson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -233,6 +254,9 @@
             this.txt_p_idperson.Size = new System.Drawing.Size(144, 26);
             this.txt_p_idperson.TabIndex = 20;
             this.txt_p_idperson.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_p_idperson.Click += new System.EventHandler(this.txt_p_idperson_Click);
+            this.txt_p_idperson.Enter += new System.EventHandler(this.txt_p_idperson_Enter);
+            this.txt_p_idperson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_p_idperson_KeyPress);
             // 
             // linkLabel1
             // 
@@ -248,6 +272,7 @@
             // 
             // txt_p_tel
             // 
+            this.txt_p_tel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_tel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_tel.Location = new System.Drawing.Point(91, 213);
             this.txt_p_tel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -256,10 +281,14 @@
             this.txt_p_tel.Size = new System.Drawing.Size(139, 26);
             this.txt_p_tel.TabIndex = 18;
             this.txt_p_tel.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_p_tel.Click += new System.EventHandler(this.txt_p_tel_Click);
+            this.txt_p_tel.Enter += new System.EventHandler(this.txt_p_tel_Enter);
+            this.txt_p_tel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_p_tel_KeyPress);
             // 
             // txt_p_id
             // 
             this.txt_p_id.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_p_id.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_id.Enabled = false;
             this.txt_p_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_id.Location = new System.Drawing.Point(44, 31);
@@ -267,6 +296,7 @@
             this.txt_p_id.Name = "txt_p_id";
             this.txt_p_id.Size = new System.Drawing.Size(98, 26);
             this.txt_p_id.TabIndex = 17;
+            this.txt_p_id.TextChanged += new System.EventHandler(this.txt_p_id_TextChanged);
             // 
             // label9
             // 
@@ -316,6 +346,7 @@
             // txt_p_address
             // 
             this.txt_p_address.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_p_address.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_address.Location = new System.Drawing.Point(95, 139);
             this.txt_p_address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -349,6 +380,7 @@
             // cb_p_sex
             // 
             this.cb_p_sex.BackColor = System.Drawing.SystemColors.Window;
+            this.cb_p_sex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_p_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_p_sex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_p_sex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
@@ -388,6 +420,7 @@
             // txt_p_name
             // 
             this.txt_p_name.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_p_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_name.Location = new System.Drawing.Point(164, 65);
             this.txt_p_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -420,11 +453,12 @@
             this.groupBox2.Size = new System.Drawing.Size(679, 82);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de seguro:";
+            this.groupBox2.Text = "Datos de la ARS (Seguro):";
             // 
             // txt_p_affiliate
             // 
             this.txt_p_affiliate.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_p_affiliate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_p_affiliate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_p_affiliate.Location = new System.Drawing.Point(370, 37);
             this.txt_p_affiliate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -436,7 +470,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(284, 42);
+            this.label11.Location = new System.Drawing.Point(284, 40);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 20);
@@ -447,16 +481,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 42);
+            this.label10.Location = new System.Drawing.Point(8, 40);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.Size = new System.Drawing.Size(47, 20);
             this.label10.TabIndex = 17;
-            this.label10.Text = "Seguro:";
+            this.label10.Text = "ARS:";
             // 
             // cb_i_id
             // 
             this.cb_i_id.BackColor = System.Drawing.SystemColors.Window;
+            this.cb_i_id.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_i_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_i_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_i_id.FormattingEnabled = true;
@@ -474,6 +509,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(3, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -499,6 +535,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.txt_pm_id);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txt_pm_commentary);
             this.tabPage2.Controls.Add(this.btn_allno);
@@ -528,9 +565,9 @@
             this.tabPage2.Controls.Add(this.txt_pm_tmedcom);
             this.tabPage2.Controls.Add(this.cb_pm_tmed);
             this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.namep_md_txt);
+            this.tabPage2.Controls.Add(this.txt_mp_p_name);
             this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.idpatient_md_txt);
+            this.tabPage2.Controls.Add(this.txt_mp_p_id);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -541,6 +578,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Diagnóstico Médico";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // txt_pm_id
+            // 
+            this.txt_pm_id.Enabled = false;
+            this.txt_pm_id.Location = new System.Drawing.Point(70, 10);
+            this.txt_pm_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pm_id.Name = "txt_pm_id";
+            this.txt_pm_id.Size = new System.Drawing.Size(122, 26);
+            this.txt_pm_id.TabIndex = 41;
+            this.txt_pm_id.Visible = false;
             // 
             // label12
             // 
@@ -565,6 +612,7 @@
             // btn_allno
             // 
             this.btn_allno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_allno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_allno.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_allno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_allno.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -579,6 +627,7 @@
             // 
             // cb_pm_diab
             // 
+            this.cb_pm_diab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_diab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_diab.FormattingEnabled = true;
             this.cb_pm_diab.Items.AddRange(new object[] {
@@ -612,6 +661,7 @@
             // 
             // cb_pm_pa
             // 
+            this.cb_pm_pa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_pa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_pa.FormattingEnabled = true;
             this.cb_pm_pa.Items.AddRange(new object[] {
@@ -645,6 +695,7 @@
             // 
             // cb_pm_pr
             // 
+            this.cb_pm_pr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_pr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_pr.FormattingEnabled = true;
             this.cb_pm_pr.Items.AddRange(new object[] {
@@ -678,6 +729,7 @@
             // 
             // cb_pm_aler
             // 
+            this.cb_pm_aler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_aler.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_aler.FormattingEnabled = true;
             this.cb_pm_aler.Items.AddRange(new object[] {
@@ -711,6 +763,7 @@
             // 
             // cb_pm_mica
             // 
+            this.cb_pm_mica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_mica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_mica.FormattingEnabled = true;
             this.cb_pm_mica.Items.AddRange(new object[] {
@@ -734,6 +787,7 @@
             // 
             // cb_pm_hemo
             // 
+            this.cb_pm_hemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_hemo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_hemo.FormattingEnabled = true;
             this.cb_pm_hemo.Items.AddRange(new object[] {
@@ -767,6 +821,7 @@
             // 
             // cb_pm_pe
             // 
+            this.cb_pm_pe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_pe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_pe.FormattingEnabled = true;
             this.cb_pm_pe.Items.AddRange(new object[] {
@@ -790,6 +845,7 @@
             // 
             // cb_pm_hep
             // 
+            this.cb_pm_hep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_hep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_hep.FormattingEnabled = true;
             this.cb_pm_hep.Items.AddRange(new object[] {
@@ -813,6 +869,7 @@
             // 
             // cb_pm_ps
             // 
+            this.cb_pm_ps.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_ps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_ps.FormattingEnabled = true;
             this.cb_pm_ps.Items.AddRange(new object[] {
@@ -846,6 +903,7 @@
             // 
             // cb_pm_tmed
             // 
+            this.cb_pm_tmed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_pm_tmed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_pm_tmed.FormattingEnabled = true;
             this.cb_pm_tmed.Items.AddRange(new object[] {
@@ -867,15 +925,16 @@
             this.label16.TabIndex = 7;
             this.label16.Text = "¿Está bajo tratamiento médico?";
             // 
-            // namep_md_txt
+            // txt_mp_p_name
             // 
-            this.namep_md_txt.Enabled = false;
-            this.namep_md_txt.Location = new System.Drawing.Point(346, 45);
-            this.namep_md_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.namep_md_txt.Name = "namep_md_txt";
-            this.namep_md_txt.Size = new System.Drawing.Size(455, 26);
-            this.namep_md_txt.TabIndex = 6;
-            this.namep_md_txt.TextChanged += new System.EventHandler(this.namep_md_txt_TextChanged);
+            this.txt_mp_p_name.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_mp_p_name.Enabled = false;
+            this.txt_mp_p_name.Location = new System.Drawing.Point(346, 45);
+            this.txt_mp_p_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_mp_p_name.Name = "txt_mp_p_name";
+            this.txt_mp_p_name.Size = new System.Drawing.Size(455, 26);
+            this.txt_mp_p_name.TabIndex = 6;
+            this.txt_mp_p_name.TextChanged += new System.EventHandler(this.namep_md_txt_TextChanged);
             // 
             // label15
             // 
@@ -887,15 +946,16 @@
             this.label15.TabIndex = 5;
             this.label15.Text = "Nombre del Paciente:";
             // 
-            // idpatient_md_txt
+            // txt_mp_p_id
             // 
-            this.idpatient_md_txt.Enabled = false;
-            this.idpatient_md_txt.Location = new System.Drawing.Point(48, 45);
-            this.idpatient_md_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.idpatient_md_txt.Name = "idpatient_md_txt";
-            this.idpatient_md_txt.Size = new System.Drawing.Size(122, 26);
-            this.idpatient_md_txt.TabIndex = 4;
-            this.idpatient_md_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_mp_p_id.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_mp_p_id.Enabled = false;
+            this.txt_mp_p_id.Location = new System.Drawing.Point(48, 45);
+            this.txt_mp_p_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_mp_p_id.Name = "txt_mp_p_id";
+            this.txt_mp_p_id.Size = new System.Drawing.Size(122, 26);
+            this.txt_mp_p_id.TabIndex = 4;
+            this.txt_mp_p_id.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label14
             // 
@@ -931,10 +991,9 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage4.Controls.Add(this.gb_ph);
             this.tabPage4.Controls.Add(this.label29);
-            this.tabPage4.Controls.Add(this.label28);
-            this.tabPage4.Controls.Add(this.txt_ph_search);
-            this.tabPage4.Controls.Add(this.patienthistory);
+            this.tabPage4.Controls.Add(this.dgv_patient_history);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
@@ -942,6 +1001,147 @@
             this.tabPage4.Size = new System.Drawing.Size(813, 412);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Historial del Paciente";
+            // 
+            // gb_ph
+            // 
+            this.gb_ph.Controls.Add(this.btn_refresh);
+            this.gb_ph.Controls.Add(this.cbx_ph_date);
+            this.gb_ph.Controls.Add(this.cb_s_id);
+            this.gb_ph.Controls.Add(this.label33);
+            this.gb_ph.Controls.Add(this.dtp_ph_date);
+            this.gb_ph.Controls.Add(this.label31);
+            this.gb_ph.Controls.Add(this.txt_ph_tooth);
+            this.gb_ph.Controls.Add(this.label30);
+            this.gb_ph.Controls.Add(this.txt_ph_activity);
+            this.gb_ph.Controls.Add(this.label28);
+            this.gb_ph.Controls.Add(this.txt_ph_id);
+            this.gb_ph.Location = new System.Drawing.Point(7, 33);
+            this.gb_ph.Name = "gb_ph";
+            this.gb_ph.Size = new System.Drawing.Size(799, 103);
+            this.gb_ph.TabIndex = 5;
+            this.gb_ph.TabStop = false;
+            this.gb_ph.Text = "Buscador:";
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_refresh.Image = global::SysPandemic.Properties.Resources._1493284___redo;
+            this.btn_refresh.Location = new System.Drawing.Point(712, 63);
+            this.btn_refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(80, 29);
+            this.btn_refresh.TabIndex = 12;
+            this.btn_refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // cbx_ph_date
+            // 
+            this.cbx_ph_date.AutoSize = true;
+            this.cbx_ph_date.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbx_ph_date.Location = new System.Drawing.Point(11, 67);
+            this.cbx_ph_date.Name = "cbx_ph_date";
+            this.cbx_ph_date.Size = new System.Drawing.Size(77, 24);
+            this.cbx_ph_date.TabIndex = 13;
+            this.cbx_ph_date.Text = "Fecha:";
+            this.cbx_ph_date.UseVisualStyleBackColor = true;
+            this.cbx_ph_date.CheckedChanged += new System.EventHandler(this.cbx_ph_date_CheckedChanged);
+            // 
+            // cb_s_id
+            // 
+            this.cb_s_id.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cb_s_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_s_id.FormattingEnabled = true;
+            this.cb_s_id.Location = new System.Drawing.Point(294, 63);
+            this.cb_s_id.Name = "cb_s_id";
+            this.cb_s_id.Size = new System.Drawing.Size(405, 28);
+            this.cb_s_id.TabIndex = 12;
+            this.cb_s_id.SelectedIndexChanged += new System.EventHandler(this.cb_s_id_SelectedIndexChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(222, 68);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(61, 20);
+            this.label33.TabIndex = 11;
+            this.label33.Text = "Doctor:";
+            // 
+            // dtp_ph_date
+            // 
+            this.dtp_ph_date.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ph_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ph_date.Location = new System.Drawing.Point(94, 63);
+            this.dtp_ph_date.Name = "dtp_ph_date";
+            this.dtp_ph_date.Size = new System.Drawing.Size(121, 26);
+            this.dtp_ph_date.TabIndex = 10;
+            this.dtp_ph_date.ValueChanged += new System.EventHandler(this.dtp_ph_date_ValueChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(639, 32);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(60, 20);
+            this.label31.TabIndex = 7;
+            this.label31.Text = "Diente:";
+            // 
+            // txt_ph_tooth
+            // 
+            this.txt_ph_tooth.Location = new System.Drawing.Point(707, 29);
+            this.txt_ph_tooth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_ph_tooth.Name = "txt_ph_tooth";
+            this.txt_ph_tooth.Size = new System.Drawing.Size(85, 26);
+            this.txt_ph_tooth.TabIndex = 6;
+            this.txt_ph_tooth.TextChanged += new System.EventHandler(this.txt_ph_tooth_TextChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(106, 32);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(77, 20);
+            this.label30.TabIndex = 5;
+            this.label30.Text = "Actividad:";
+            // 
+            // txt_ph_activity
+            // 
+            this.txt_ph_activity.Location = new System.Drawing.Point(191, 29);
+            this.txt_ph_activity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_ph_activity.Name = "txt_ph_activity";
+            this.txt_ph_activity.Size = new System.Drawing.Size(440, 26);
+            this.txt_ph_activity.TabIndex = 4;
+            this.txt_ph_activity.TextChanged += new System.EventHandler(this.txt_ph_activity_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(7, 32);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(30, 20);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "ID:";
+            // 
+            // txt_ph_id
+            // 
+            this.txt_ph_id.Location = new System.Drawing.Point(45, 29);
+            this.txt_ph_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_ph_id.Name = "txt_ph_id";
+            this.txt_ph_id.Size = new System.Drawing.Size(53, 26);
+            this.txt_ph_id.TabIndex = 2;
+            this.txt_ph_id.TextChanged += new System.EventHandler(this.searchhistory_txt_TextChanged);
             // 
             // label29
             // 
@@ -954,83 +1154,56 @@
             this.label29.TabIndex = 4;
             this.label29.Text = "Historial del Paciente";
             // 
-            // label28
+            // dgv_patient_history
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(8, 42);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(63, 20);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Buscar:";
-            // 
-            // txt_ph_search
-            // 
-            this.txt_ph_search.Location = new System.Drawing.Point(79, 39);
-            this.txt_ph_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_ph_search.Name = "txt_ph_search";
-            this.txt_ph_search.Size = new System.Drawing.Size(726, 26);
-            this.txt_ph_search.TabIndex = 2;
-            this.txt_ph_search.TextChanged += new System.EventHandler(this.searchhistory_txt_TextChanged);
-            // 
-            // patienthistory
-            // 
-            this.patienthistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.patienthistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.patienthistory.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.patienthistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.patienthistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.patienthistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patienthistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_patient_history.AllowUserToAddRows = false;
+            this.dgv_patient_history.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_patient_history.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            this.dgv_patient_history.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_patient_history.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_patient_history.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.dgv_patient_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_patient_history.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ph_id,
             this.ph_activity,
             this.ph_tooth,
             this.ph_date,
-            this.s_id,
+            this.s_name,
             this.ph_qtypay,
             this.p_id,
-            this.u_id,
+            this.u_user,
             this.ph_lu});
-            this.patienthistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.patienthistory.DefaultCellStyle = dataGridViewCellStyle3;
-            this.patienthistory.EnableHeadersVisualStyles = false;
-            this.patienthistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.patienthistory.Location = new System.Drawing.Point(2, 75);
-            this.patienthistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.patienthistory.Name = "patienthistory";
-            this.patienthistory.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.patienthistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.patienthistory.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patienthistory.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.patienthistory.Size = new System.Drawing.Size(807, 332);
-            this.patienthistory.TabIndex = 1;
+            this.dgv_patient_history.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgv_patient_history.EnableHeadersVisualStyles = false;
+            this.dgv_patient_history.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.dgv_patient_history.Location = new System.Drawing.Point(2, 144);
+            this.dgv_patient_history.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_patient_history.Name = "dgv_patient_history";
+            this.dgv_patient_history.ReadOnly = true;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_patient_history.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            this.dgv_patient_history.RowHeadersVisible = false;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_patient_history.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            this.dgv_patient_history.Size = new System.Drawing.Size(807, 263);
+            this.dgv_patient_history.TabIndex = 1;
             // 
             // ph_id
             // 
@@ -1038,7 +1211,7 @@
             this.ph_id.HeaderText = "ID";
             this.ph_id.Name = "ph_id";
             this.ph_id.ReadOnly = true;
-            this.ph_id.Width = 43;
+            this.ph_id.Width = 50;
             // 
             // ph_activity
             // 
@@ -1046,7 +1219,7 @@
             this.ph_activity.HeaderText = "Actividad";
             this.ph_activity.Name = "ph_activity";
             this.ph_activity.ReadOnly = true;
-            this.ph_activity.Width = 79;
+            this.ph_activity.Width = 97;
             // 
             // ph_tooth
             // 
@@ -1054,7 +1227,7 @@
             this.ph_tooth.HeaderText = "Diente";
             this.ph_tooth.Name = "ph_tooth";
             this.ph_tooth.ReadOnly = true;
-            this.ph_tooth.Width = 67;
+            this.ph_tooth.Width = 80;
             // 
             // ph_date
             // 
@@ -1062,15 +1235,15 @@
             this.ph_date.HeaderText = "Fecha";
             this.ph_date.Name = "ph_date";
             this.ph_date.ReadOnly = true;
-            this.ph_date.Width = 65;
+            this.ph_date.Width = 78;
             // 
-            // s_id
+            // s_name
             // 
-            this.s_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_id.HeaderText = "Doctor";
-            this.s_id.Name = "s_id";
-            this.s_id.ReadOnly = true;
-            this.s_id.Width = 67;
+            this.s_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_name.HeaderText = "Doctor";
+            this.s_name.Name = "s_name";
+            this.s_name.ReadOnly = true;
+            this.s_name.Width = 81;
             // 
             // ph_qtypay
             // 
@@ -1078,7 +1251,7 @@
             this.ph_qtypay.HeaderText = "Costo";
             this.ph_qtypay.Name = "ph_qtypay";
             this.ph_qtypay.ReadOnly = true;
-            this.ph_qtypay.Width = 62;
+            this.ph_qtypay.Width = 75;
             // 
             // p_id
             // 
@@ -1088,13 +1261,13 @@
             this.p_id.ReadOnly = true;
             this.p_id.Visible = false;
             // 
-            // u_id
+            // u_user
             // 
-            this.u_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.u_id.HeaderText = "Modificado por:";
-            this.u_id.Name = "u_id";
-            this.u_id.ReadOnly = true;
-            this.u_id.Width = 106;
+            this.u_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.u_user.HeaderText = "Modificado por:";
+            this.u_user.Name = "u_user";
+            this.u_user.ReadOnly = true;
+            this.u_user.Width = 129;
             // 
             // ph_lu
             // 
@@ -1102,7 +1275,7 @@
             this.ph_lu.HeaderText = "Fecha modificado:";
             this.ph_lu.Name = "ph_lu";
             this.ph_lu.ReadOnly = true;
-            this.ph_lu.Width = 121;
+            this.ph_lu.Width = 149;
             // 
             // panel1
             // 
@@ -1121,6 +1294,16 @@
             this.panel1.Size = new System.Drawing.Size(832, 21);
             this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.WindowText;
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(831, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 21);
+            this.panel3.TabIndex = 12;
             // 
             // pictureBox3
             // 
@@ -1173,6 +1356,93 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // p_back
+            // 
+            this.p_back.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.p_back.Controls.Add(this.tabControl1);
+            this.p_back.Controls.Add(this.btn_save);
+            this.p_back.Controls.Add(this.btn_cancel);
+            this.p_back.Controls.Add(this.btn_update);
+            this.p_back.Controls.Add(this.btn_clear);
+            this.p_back.Location = new System.Drawing.Point(1, 14);
+            this.p_back.Name = "p_back";
+            this.p_back.Padding = new System.Windows.Forms.Padding(5);
+            this.p_back.Size = new System.Drawing.Size(825, 495);
+            this.p_back.TabIndex = 11;
+            this.p_back.Paint += new System.Windows.Forms.PaintEventHandler(this.p_back_Paint);
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_save.Image = global::SysPandemic.Properties.Resources._1493294___save;
+            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_save.Location = new System.Drawing.Point(226, 462);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(103, 29);
+            this.btn_save.TabIndex = 5;
+            this.btn_save.Text = "Guardar";
+            this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.savepatient_txt_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cancel.Image = global::SysPandemic.Properties.Resources._1493282___cancel;
+            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cancel.Location = new System.Drawing.Point(448, 462);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(103, 29);
+            this.btn_cancel.TabIndex = 7;
+            this.btn_cancel.Text = "Cancelar";
+            this.btn_cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.cancel_btn_Click);
+            // 
+            // btn_update
+            // 
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_update.Image = global::SysPandemic.Properties.Resources._1493283___undo1;
+            this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_update.Location = new System.Drawing.Point(226, 462);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(103, 29);
+            this.btn_update.TabIndex = 4;
+            this.btn_update.Text = "Actualizar";
+            this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.updatepatient_btn_Click);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_clear.Image = global::SysPandemic.Properties.Resources._1493292___new;
+            this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clear.Location = new System.Drawing.Point(337, 462);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(103, 29);
+            this.btn_clear.TabIndex = 6;
+            this.btn_clear.Text = "Limpiar";
+            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.clearform_btn_Click);
+            // 
             // btn_print
             // 
             this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
@@ -1191,98 +1461,6 @@
             this.btn_print.UseVisualStyleBackColor = false;
             this.btn_print.Click += new System.EventHandler(this.printpatient_btn_Click);
             // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_save.Image = global::SysPandemic.Properties.Resources._1493294___save;
-            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(188, 476);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(103, 29);
-            this.btn_save.TabIndex = 5;
-            this.btn_save.Text = "Guardar";
-            this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.savepatient_txt_Click);
-            // 
-            // btn_update
-            // 
-            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_update.Image = global::SysPandemic.Properties.Resources._1493283___undo1;
-            this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.Location = new System.Drawing.Point(299, 476);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(103, 29);
-            this.btn_update.TabIndex = 4;
-            this.btn_update.Text = "Actualizar";
-            this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_update.UseVisualStyleBackColor = false;
-            this.btn_update.Click += new System.EventHandler(this.updatepatient_btn_Click);
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cancel.Image = global::SysPandemic.Properties.Resources._1493282___cancel;
-            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.Location = new System.Drawing.Point(521, 476);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(103, 29);
-            this.btn_cancel.TabIndex = 7;
-            this.btn_cancel.Text = "Cancelar";
-            this.btn_cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.cancel_btn_Click);
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_clear.Image = global::SysPandemic.Properties.Resources._1493292___new;
-            this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(410, 476);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(103, 29);
-            this.btn_clear.TabIndex = 6;
-            this.btn_clear.Text = "Limpiar";
-            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_clear.UseVisualStyleBackColor = false;
-            this.btn_clear.Click += new System.EventHandler(this.clearform_btn_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.WindowText;
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(831, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 21);
-            this.panel3.TabIndex = 12;
-            // 
-            // p_back
-            // 
-            this.p_back.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.p_back.Controls.Add(this.tabControl1);
-            this.p_back.Location = new System.Drawing.Point(1, 14);
-            this.p_back.Name = "p_back";
-            this.p_back.Padding = new System.Windows.Forms.Padding(5);
-            this.p_back.Size = new System.Drawing.Size(825, 495);
-            this.p_back.TabIndex = 11;
-            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1292,10 +1470,6 @@
             this.ClientSize = new System.Drawing.Size(827, 510);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_print);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.p_back);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1321,7 +1495,9 @@
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patienthistory)).EndInit();
+            this.gb_ph.ResumeLayout(false);
+            this.gb_ph.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_patient_history)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -1362,7 +1538,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        public System.Windows.Forms.TextBox idpatient_md_txt;
+        public System.Windows.Forms.TextBox txt_mp_p_id;
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox txt_pm_alercom;
@@ -1383,7 +1559,7 @@
         public System.Windows.Forms.TextBox txt_pm_tmedcom;
         public System.Windows.Forms.ComboBox cb_pm_tmed;
         public System.Windows.Forms.Label label16;
-        public System.Windows.Forms.TextBox namep_md_txt;
+        public System.Windows.Forms.TextBox txt_mp_p_name;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.ComboBox cb_pm_pr;
         public System.Windows.Forms.Label label23;
@@ -1394,8 +1570,8 @@
         public System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox txt_pm_hepcom;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView patienthistory;
-        public System.Windows.Forms.TextBox txt_ph_search;
+        private System.Windows.Forms.DataGridView dgv_patient_history;
+        public System.Windows.Forms.TextBox txt_ph_id;
         private System.Windows.Forms.Button btn_allno;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1414,16 +1590,27 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel p_back;
+        public System.Windows.Forms.TextBox txt_pm_id;
+        private System.Windows.Forms.GroupBox gb_ph;
+        public System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.CheckBox cbx_ph_date;
+        private System.Windows.Forms.ComboBox cb_s_id;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.DateTimePicker dtp_ph_date;
+        private System.Windows.Forms.Label label31;
+        public System.Windows.Forms.TextBox txt_ph_tooth;
+        private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.TextBox txt_ph_activity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_activity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_tooth;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn s_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_qtypay;
         private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn u_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn u_user;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_lu;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel p_back;
     }
 }

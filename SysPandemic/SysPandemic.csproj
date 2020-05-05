@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>2.2.7.%2a</ApplicationVersion>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>2.3.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -736,6 +736,7 @@
     <None Include="Resources\small_icons\ToolBar 20\1493292 - new.png" />
     <None Include="Resources\small_icons\ToolBar 20\1493282 - cancel.png" />
     <None Include="Resources\small_icons\ToolBar 20\1493286 - print.png" />
+    <None Include="Resources\small_icons\ToolBar 20\1493284 - redo.png" />
     <Content Include="SysPandemic.ico" />
   </ItemGroup>
   <ItemGroup>

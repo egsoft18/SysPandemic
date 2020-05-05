@@ -93,6 +93,16 @@ namespace SysPandemic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1493284___redo {
+            get {
+                object obj = ResourceManager.GetObject("1493284 - redo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1493286___print {
             get {
                 object obj = ResourceManager.GetObject("1493286 - print", resourceCulture);
