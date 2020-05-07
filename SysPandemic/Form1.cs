@@ -83,10 +83,10 @@ namespace SysPandemic
         { }
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            doctors f = new doctors();
+            searchdoctors f = new searchdoctors();
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is doctors);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is searchdoctors);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();

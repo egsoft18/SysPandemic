@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>2.3.5.%2a</ApplicationVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>2.4.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -291,12 +291,6 @@
       <DependentUpon>cxcp.cs</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
-    <Compile Include="doctors.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="doctors.Designer.cs">
-      <DependentUpon>doctors.cs</DependentUpon>
-    </Compile>
     <Compile Include="emergencypatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +423,12 @@
     <Compile Include="reportview.Designer.cs">
       <DependentUpon>reportview.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchdoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchdoctors.Designer.cs">
+      <DependentUpon>searchdoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchpatientpre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,9 +560,6 @@
     <EmbeddedResource Include="cxcp.resx">
       <DependentUpon>cxcp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="doctors.resx">
-      <DependentUpon>doctors.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="emergencypatient.resx">
       <DependentUpon>emergencypatient.cs</DependentUpon>
     </EmbeddedResource>
@@ -652,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportview.resx">
       <DependentUpon>reportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchdoctors.resx">
+      <DependentUpon>searchdoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchpatientpre.resx">
       <DependentUpon>searchpatientpre.cs</DependentUpon>

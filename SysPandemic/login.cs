@@ -135,7 +135,7 @@ namespace SysPandemic
         {
             try
             {
-                cmd = new SqlCommand("SELECT [u_id], [u_user], [u_password], [u_right] FROM [users] where [u_user] = '" + txt_u_user.Text + "' and [u_password] = '" + txt_u_password.Text + "'", c.cnx);
+                cmd = new SqlCommand("SELECT [u_id], [u_user], [u_password], [u_right] FROM [users] where [u_user] = '" + txt_u_user.Text + "' and [u_password] = '" + txt_u_password.Text + "' and [u_status] = 1", c.cnx);
                 DataSet ds = new DataSet();
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -143,7 +143,7 @@ namespace SysPandemic
                 ds.Tables.Add(dt);
                 if (dt.Rows.Count <= 0)
                 {
-                    MessageBox.Show("Usuario o contraseña invalida, intente de nuevo.", "Error en datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Usuario o contraseña invalida o bien el usuario no se encuantra activo en el sistema, intente de nuevo.", "Error en datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_u_user.Focus();
                 }
                 else

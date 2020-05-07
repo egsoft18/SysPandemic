@@ -80,7 +80,7 @@ namespace SysPandemic
         // generales del Paciente
         private void adminpaciente()
         {
-            if (!cb_i_id.SelectedIndex.Equals(-1) && txt_p_name.Text.Length > 0 && dtp_p_bday.Text.Length > 0 && !cb_i_id.SelectedIndex.Equals(-1) && txt_p_address.Text.Length > 0)
+            if (!cb_p_sex.SelectedIndex.Equals(-1) && txt_p_name.Text.Length > 0 && dtp_p_bday.Text.Length > 0 && !cb_i_id.SelectedIndex.Equals(-1) && txt_p_address.Text.Length > 0)
             {
                 try
                 {
@@ -577,6 +577,8 @@ namespace SysPandemic
             if (dtp_p_bday.Value.Date <= ayer)
             {
                 dm_check();
+                clear(0);
+                this.Close();
             }
             else
             {
@@ -893,6 +895,20 @@ namespace SysPandemic
         {
             functions fc = new functions();
             fc.starttext(txt_p_telwork);
+        }
+
+        private void label26_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Esta parte va en el evento MouseDown del panel en la parte superior del formulario
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Esta parte va en el evento MouseDown del panel en la parte superior del formulario
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
