@@ -511,26 +511,6 @@ namespace SysPandemic
 
         /********** FIN DE FUNCIONES & METODOS **********/
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddPatient_Load(object sender, EventArgs e)
         {
             load_insurance();
@@ -546,11 +526,6 @@ namespace SysPandemic
                 gb_ph.Enabled = false;
             }
             dtp_ph_date.Enabled = false;
-        }
-
-        private void printpatient_btn_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void savepatient_txt_Click(object sender, EventArgs e)
@@ -592,38 +567,12 @@ namespace SysPandemic
             clear(0);
         }
 
-        private void delatepatient_btn_Click(object sender, EventArgs e)
-        {
-        }
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void namep_md_txt_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void telpatient_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -678,15 +627,6 @@ namespace SysPandemic
             load_ph_dgv();
         }
 
-        private void insurancepatient_txt_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void insurancepatient_txt_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             allnot();
@@ -707,16 +647,6 @@ namespace SysPandemic
             //Esta parte va en el evento MouseDown del panel en la parte superior del formulario
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-
-        }
-
-        private void AddPatient_MouseDown(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -728,11 +658,6 @@ namespace SysPandemic
                 clear(0);
                 txt_p_id.Text = f.textBox1.Text;
             }
-        }
-
-        private void p_back_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void txt_p_id_TextChanged(object sender, EventArgs e)

@@ -41,7 +41,6 @@
             this.txt_s_doctorprocent = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_s_id = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,6 +74,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabel1);
             this.groupBox1.Controls.Add(this.txt_s_cel);
             this.groupBox1.Controls.Add(this.txt_s_tel);
             this.groupBox1.Controls.Add(this.cbx_s_status);
@@ -85,7 +86,6 @@
             this.groupBox1.Controls.Add(this.txt_s_doctorprocent);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_s_id);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -228,16 +228,6 @@
             this.txt_s_id.Size = new System.Drawing.Size(98, 26);
             this.txt_s_id.TabIndex = 17;
             this.txt_s_id.TextChanged += new System.EventHandler(this.txt_s_id_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 35);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 20);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "ID:";
             // 
             // label9
             // 
@@ -525,6 +515,18 @@
             this.panel2.Size = new System.Drawing.Size(680, 332);
             this.panel2.TabIndex = 15;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.linkLabel1.Location = new System.Drawing.Point(8, 35);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(30, 20);
+            this.linkLabel1.TabIndex = 29;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "ID:";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // adddoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -561,7 +563,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox txt_s_id;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -594,5 +595,6 @@
         public System.Windows.Forms.TextBox txt_s_doctorprocent;
         private System.Windows.Forms.MaskedTextBox txt_s_cel;
         private System.Windows.Forms.MaskedTextBox txt_s_tel;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

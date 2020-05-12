@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>2.4.5.%2a</ApplicationVersion>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>2.6.12.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -429,17 +429,17 @@
     <Compile Include="searchdoctors.Designer.cs">
       <DependentUpon>searchdoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchinsurances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchinsurances.Designer.cs">
+      <DependentUpon>searchinsurances.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchpatientpre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="searchpatientpre.Designer.cs">
       <DependentUpon>searchpatientpre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="seeinsurance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seeinsurance.Designer.cs">
-      <DependentUpon>seeinsurance.cs</DependentUpon>
     </Compile>
     <Compile Include="seeinvoice.cs">
       <SubType>Form</SubType>
@@ -653,11 +653,11 @@
     <EmbeddedResource Include="searchdoctors.resx">
       <DependentUpon>searchdoctors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="searchinsurances.resx">
+      <DependentUpon>searchinsurances.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchpatientpre.resx">
       <DependentUpon>searchpatientpre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="seeinsurance.resx">
-      <DependentUpon>seeinsurance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seeinvoice.resx">
       <DependentUpon>seeinvoice.cs</DependentUpon>

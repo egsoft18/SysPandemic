@@ -18,7 +18,7 @@ namespace SysPandemic
     {
 
         SqlCommand cmd;
-        SqlDataReader dr;
+        //SqlDataReader dr;
         OpenDB c = new OpenDB();
 
         public login()
@@ -209,11 +209,6 @@ namespace SysPandemic
             MessageBox.Show("Si no tiene un usuario no puede acceder a el sistema, en cambio, puede comunicarse con el administrador del sistema para concederle uno de ser necesario.", "No tengo Usuario");
         }
 
-        private void passtxt_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void passtxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -221,21 +216,6 @@ namespace SysPandemic
                 iniciar();
                 
             }
-        }
-
-        private void usercb1_TextChanged(object sender, EventArgs e)
-        {
-            //passtxt.Text = "";
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

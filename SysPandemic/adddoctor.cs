@@ -428,5 +428,16 @@ namespace SysPandemic
                 cbx_s_status.Text = "Inactivo";
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //searchdoctors f = new searchdoctors();
+            //f.formulario_devolver = true;
+            //if (f.ShowDialog() == DialogResult.OK)
+            //{
+            //    clear(0);
+            //    txt_s_id.Text = f.textBox1.Text;
+            //}
+        }
     }
 }

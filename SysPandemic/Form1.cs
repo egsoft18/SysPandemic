@@ -329,10 +329,10 @@ namespace SysPandemic
 
         private void administrarSegurosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            seeinsurance f = new seeinsurance();
+            searchinsurances f = new searchinsurances();
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is seeinsurance);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is searchinsurances);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();
@@ -662,8 +662,6 @@ namespace SysPandemic
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //login frm = new login();
-            //frm.Show();
             this.Close();
         }
 

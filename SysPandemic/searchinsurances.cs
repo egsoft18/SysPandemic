@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace SysPandemic
 {
-    public partial class searchpatient : Form
+    public partial class searchinsurances : Form
     {
         /********** GLOSARIO **********/
         // txt = TextBox or MaskedTextBox
@@ -36,7 +36,7 @@ namespace SysPandemic
 
         public bool formulario_devolver = false;
 
-        public searchpatient()
+        public searchinsurances()
         {
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace SysPandemic
 
         /********** FUNCIONES & METODOS **********/
         
-        private void load_patients_dgv()
+        private void load_insurance_dgv()
         {
 
             SqlCommand comando = new SqlCommand();
@@ -57,12 +57,12 @@ namespace SysPandemic
             comando.Connection = c.cnx;
 
 
-            string query = "SELECT [p_id], [p_name], [p_idperson], [p_bday], [p_sex], [p_address], [p_tel], [p_cel], [p_telwork], [p_email], i.[i_name], [p_affiliate], u.u_user, [p_lu] FROM [dbo].[patient] as p inner join [dbo].[insurances] as i on i.i_id = p.i_id inner join [dbo].[users] as u on u.u_id = p.u_id  where [p_id] like '%"+txt_p_id.Text+"%'  and [p_name] like '%"+txt_p_name.Text+ "%' and [p_idperson] like '%"+txt_p_idperson.Text+"%'";
+            string query = "SELECT [i_id], [i_name], [i_contract], [i_pss], isnull([i_telephone], '') as i_telephone, isnull([i_email], '') as i_email, [i_status], u.u_user, [i_lu] FROM [dbo].[insurances] as i inner join [dbo].[users] as u on i.u_id = u.u_id where [i_id] like '%" + txt_i_id.Text+ "%' and [i_name] like '%" + txt_i_name.Text+ "%' and [i_contract] like '%" + txt_i_contract.Text+"%'";
 
             comando.CommandText = query;
 
             comando.CommandType = CommandType.Text;
-            DataGridView dgv = dgv_patients;
+            DataGridView dgv = dgv_insurance;
             dgv.Rows.Clear();
 
             dr = comando.ExecuteReader();
@@ -71,44 +71,47 @@ namespace SysPandemic
             {
                 int renglon = dgv.Rows.Add();
 
-                dgv.Rows[renglon].Cells["p_id"].Value = Convert.ToString(dr.GetInt32(dr.GetOrdinal("p_id")));
-                dgv.Rows[renglon].Cells["p_name"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_name")));
-                dgv.Rows[renglon].Cells["p_idperson"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_idperson")));
-                dgv.Rows[renglon].Cells["p_bday"].Value = Convert.ToString(dr.GetDateTime(dr.GetOrdinal("p_bday")).ToString("dd/MM/yyyy"));
-                dgv.Rows[renglon].Cells["p_sex"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_sex")));
-                dgv.Rows[renglon].Cells["p_address"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_address")));
-                dgv.Rows[renglon].Cells["p_tel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_tel")));
-                dgv.Rows[renglon].Cells["p_cel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_cel")));
-                dgv.Rows[renglon].Cells["p_telwork"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_telwork")));
-                dgv.Rows[renglon].Cells["p_email"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_email")));
+                dgv.Rows[renglon].Cells["i_id"].Value = Convert.ToString(dr.GetInt32(dr.GetOrdinal("i_id")));
                 dgv.Rows[renglon].Cells["i_name"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_name")));
-                dgv.Rows[renglon].Cells["p_affiliate"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("p_affiliate")));
+                dgv.Rows[renglon].Cells["i_contract"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_contract")));
+                dgv.Rows[renglon].Cells["i_pss"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_pss")));
+                dgv.Rows[renglon].Cells["i_telephone"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_telephone")));
+                dgv.Rows[renglon].Cells["i_email"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("i_email")));
 
-                dgv.Rows[renglon].Cells["u_user"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("u_user")));
-                dgv.Rows[renglon].Cells["p_lu"].Value = Convert.ToString(dr.GetDateTime(dr.GetOrdinal("p_lu")).ToString("dd/MM/yyyy"));
+                //dgv.Rows[renglon].Cells["i_status"].Value = Convert.ToString(dr.GetInt32(dr.GetOrdinal("i_status")));
+                if(Convert.ToInt32(dr.GetInt32(dr.GetOrdinal("i_status"))) == 1)
+                {
+                    dgv.Rows[renglon].Cells["i_status"].Value = "Activo";
+                }
+                else
+                {
+                    dgv.Rows[renglon].Cells["i_status"].Value = "inactivo";
+                }
+                dgv.Rows[renglon].Cells["u_id"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("u_user")));
+                dgv.Rows[renglon].Cells["i_lu"].Value = Convert.ToString(dr.GetDateTime(dr.GetOrdinal("i_lu")).ToString("dd/MM/yyyy"));
 
             }
-            lb_results.Text = dgv_patients.Rows.Count.ToString();
+            lb_results.Text = dgv_insurance.Rows.Count.ToString();
         }
 
         /********** FIN DE FUNCIONES & METODOS **********/
         private void seepatient_Load(object sender, EventArgs e)
         {
-            load_patients_dgv();
+            load_insurance_dgv();
         }
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            load_patients_dgv();
+            load_insurance_dgv();
         }
 
         private void addpatient_btn_Click(object sender, EventArgs e)
         {
-            AddPatient f = new AddPatient();
+            addinsurance f = new addinsurance();
 
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is AddPatient);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addinsurance);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();
@@ -184,7 +187,7 @@ namespace SysPandemic
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            load_patients_dgv();
+            load_insurance_dgv();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -206,29 +209,12 @@ namespace SysPandemic
 
         private void txt_p_id_TextChanged(object sender, EventArgs e)
         {
-            load_patients_dgv();
-        }
-
-        private void txt_p_idperson_TextChanged(object sender, EventArgs e)
-        {
-            load_patients_dgv();
-        }
-
-        private void txt_p_idperson_Click(object sender, EventArgs e)
-        {
-            functions fc = new functions();
-            fc.starttext(txt_p_idperson);
-        }
-
-        private void txt_p_idperson_Enter(object sender, EventArgs e)
-        {
-            functions fc = new functions();
-            fc.starttext(txt_p_idperson);
+            load_insurance_dgv();
         }
 
         private void dgv_patients_DoubleClick(object sender, EventArgs e)
         {
-            textBox1.Text = dgv_patients.Rows[dgv_patients.CurrentRow.Index].Cells["p_id"].Value.ToString();
+            textBox1.Text = dgv_insurance.Rows[dgv_insurance.CurrentRow.Index].Cells["i_id"].Value.ToString();
 
             if (formulario_devolver == true)
             {
@@ -237,14 +223,19 @@ namespace SysPandemic
             }
             else if (formulario_devolver == false)
             {
-                AddPatient f = new AddPatient();
+                addinsurance f = new addinsurance();
                 f.formulario_devolver = true;
-                f.txt_p_id.Text = dgv_patients.Rows[dgv_patients.CurrentRow.Index].Cells["p_id"].Value.ToString();
+                f.txt_i_id.Text = dgv_insurance.Rows[dgv_insurance.CurrentRow.Index].Cells["i_id"].Value.ToString();
                 if (f.ShowDialog() == DialogResult.OK)
                 {
-                    load_patients_dgv();
+                    load_insurance_dgv();
                 }
             }
+        }
+
+        private void txt_i_contract_TextChanged(object sender, EventArgs e)
+        {
+            load_insurance_dgv();
         }
     }
 }
