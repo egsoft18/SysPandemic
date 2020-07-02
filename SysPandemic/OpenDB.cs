@@ -17,10 +17,10 @@ namespace SysPandemic
             try
             {
                 //Conexion en PC de desarrollo
-                //cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
+                cnx = new SqlConnection(@"Server=DESKTOP-8IKC9CN\SQLEXPRESS;Database=SysPandemic;User Id=egsoft; Password=1234; MultipleActiveResultSets=True");
 
                 //Conexion en el servidor SOMEE
-                cnx = new SqlConnection(@"Server=SysPandemic.mssql.somee.com;Database=SysPandemic;User Id=egsoft_SQLLogin_1; Password=gihpmzkagd; MultipleActiveResultSets=True");
+                //cnx = new SqlConnection(@"Server=SysPandemic.mssql.somee.com;Database=SysPandemic;User Id=egsoft_SQLLogin_1; Password=gihpmzkagd; MultipleActiveResultSets=True");
 
                 cnx.Open();
                 //MessageBox.Show("Conectado 1 ");

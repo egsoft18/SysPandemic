@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -135,6 +136,7 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -148,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.p_back.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -743,7 +746,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(131, 20);
             this.label22.TabIndex = 25;
-            this.label22.Text = "¿Alérgico a algo?";
+            this.label22.Text = "¿Alérgias a algo?";
             // 
             // txt_pm_micacom
             // 
@@ -1454,6 +1457,10 @@
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.clearform_btn_Click);
             // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1495,6 +1502,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.p_back.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1603,5 +1611,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn p_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn u_user;
         private System.Windows.Forms.DataGridViewTextBoxColumn ph_lu;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

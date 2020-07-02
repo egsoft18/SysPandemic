@@ -77,7 +77,7 @@ namespace SysPandemic
                 dgv.Rows[renglon].Cells["s_tel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("s_tel")));
                 dgv.Rows[renglon].Cells["s_cel"].Value = Convert.ToString(dr.GetString(dr.GetOrdinal("s_cel")));
                 dgv.Rows[renglon].Cells["s_salary"].Value = "RD$ "+Convert.ToString(dr.GetDecimal(dr.GetOrdinal("s_salary")));
-                dgv.Rows[renglon].Cells["s_doctorprocent"].Value = Convert.ToString(dr.GetDecimal(dr.GetOrdinal("s_doctorprocent")));
+                dgv.Rows[renglon].Cells["s_doctorprocent"].Value = Convert.ToString(dr.GetDecimal(dr.GetOrdinal("s_doctorprocent"))) + "%";
                 //dgv.Rows[renglon].Cells["s_status"].Value = Convert.ToString(dr.(dr.GetOrdinal("")));
                 if (Convert.ToInt32(dr.GetInt32(dr.GetOrdinal("s_status"))) == 0)
                 {
@@ -102,22 +102,9 @@ namespace SysPandemic
             load_doctors_dgv();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-        private void sid_rbtn_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
         private void search_btn_Click(object sender, EventArgs e)
         {
             load_doctors_dgv();
-        }
-
-        private void refreshpatient_btn_Click(object sender, EventArgs e)
-        {
         }
 
         private void addpatient_btn_Click(object sender, EventArgs e)
@@ -200,22 +187,9 @@ namespace SysPandemic
            // }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void search_txt_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
-
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
             load_doctors_dgv();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void searchpatient_Activated(object sender, EventArgs e)

@@ -75,24 +75,6 @@ namespace SysPandemic
 
         private void difference()
         {
-            //decimal tariff;
-            //try
-            //{
-            //    tariff = Convert.ToDecimal(txt_di_tariff.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("No convirtuio la tarifa." + ex.Message);
-            //}
-            //decimal coverage;
-            //try
-            //{
-            //    coverage = Convert.ToDecimal(txt_di_coverage.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("No convirtuio la covertura." + ex.Message);
-            //}
 
             if (txt_di_tariff.Text.Length > 0 && txt_di_coverage.Text.Length > 0)
             {

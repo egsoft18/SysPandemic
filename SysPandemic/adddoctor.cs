@@ -171,11 +171,18 @@ namespace SysPandemic
 
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            //adminpacientemd(Convert.ToInt32(cmd.Parameters["@id"].Value));
                             MessageBox.Show("Se ha realizado la accion", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //clear(0);
                             txt_s_id.Text = Convert.ToString(cmd.Parameters["@id"].Value);
                             txt_s_name.Select();
+
+                            if (formulario_devolver == true)
+                            {
+                                clear(0);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+
+                            }
                         }
                     }
                 }
@@ -322,22 +329,6 @@ namespace SysPandemic
 
             load_users();
             buttons();
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -28,12 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchdoctors));
             this.dgv_doctors = new System.Windows.Forms.DataGridView();
+            this.s_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_idpersons = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_cel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_doctorprocent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s_lu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_s_name = new System.Windows.Forms.TextBox();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_adddoctor = new System.Windows.Forms.Button();
@@ -54,20 +68,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_s_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.s_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.r_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_idpersons = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_cel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_doctorprocent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_lu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doctors)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -81,25 +81,25 @@
             // 
             this.dgv_doctors.AllowUserToAddRows = false;
             this.dgv_doctors.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dgv_doctors.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_doctors.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_doctors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_doctors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_doctors.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_doctors.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_doctors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_doctors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_doctors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.s_id,
             this.r_role,
@@ -116,35 +116,145 @@
             this.user2,
             this.s_lu});
             this.dgv_doctors.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_doctors.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_doctors.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_doctors.EnableHeadersVisualStyles = false;
             this.dgv_doctors.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.dgv_doctors.Location = new System.Drawing.Point(11, 108);
             this.dgv_doctors.Name = "dgv_doctors";
             this.dgv_doctors.ReadOnly = true;
             this.dgv_doctors.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_doctors.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_doctors.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_doctors.RowHeadersVisible = false;
             this.dgv_doctors.RowTemplate.ReadOnly = true;
             this.dgv_doctors.Size = new System.Drawing.Size(1181, 443);
             this.dgv_doctors.TabIndex = 0;
-            this.dgv_doctors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dgv_doctors.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dgv_doctors.DoubleClick += new System.EventHandler(this.dgv_patients_DoubleClick);
+            // 
+            // s_id
+            // 
+            this.s_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_id.HeaderText = "ID";
+            this.s_id.Name = "s_id";
+            this.s_id.ReadOnly = true;
+            this.s_id.Width = 47;
+            // 
+            // r_role
+            // 
+            this.r_role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.r_role.HeaderText = "Rol";
+            this.r_role.Name = "r_role";
+            this.r_role.ReadOnly = true;
+            this.r_role.Visible = false;
+            // 
+            // s_name
+            // 
+            this.s_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_name.HeaderText = "Doctor";
+            this.s_name.Name = "s_name";
+            this.s_name.ReadOnly = true;
+            this.s_name.Width = 78;
+            // 
+            // s_idpersons
+            // 
+            this.s_idpersons.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_idpersons.HeaderText = "Cedula";
+            this.s_idpersons.Name = "s_idpersons";
+            this.s_idpersons.ReadOnly = true;
+            this.s_idpersons.Width = 81;
+            // 
+            // s_sex
+            // 
+            this.s_sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_sex.HeaderText = "Sexo";
+            this.s_sex.Name = "s_sex";
+            this.s_sex.ReadOnly = true;
+            this.s_sex.Width = 67;
+            // 
+            // s_address
+            // 
+            this.s_address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_address.HeaderText = "Dirección";
+            this.s_address.Name = "s_address";
+            this.s_address.ReadOnly = true;
+            this.s_address.Width = 98;
+            // 
+            // s_tel
+            // 
+            this.s_tel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_tel.HeaderText = "Teléfono";
+            this.s_tel.Name = "s_tel";
+            this.s_tel.ReadOnly = true;
+            this.s_tel.Width = 94;
+            // 
+            // s_cel
+            // 
+            this.s_cel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_cel.HeaderText = "Celular";
+            this.s_cel.Name = "s_cel";
+            this.s_cel.ReadOnly = true;
+            this.s_cel.Width = 81;
+            // 
+            // s_salary
+            // 
+            this.s_salary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_salary.HeaderText = "Salario";
+            this.s_salary.Name = "s_salary";
+            this.s_salary.ReadOnly = true;
+            this.s_salary.Width = 82;
+            // 
+            // s_doctorprocent
+            // 
+            this.s_doctorprocent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_doctorprocent.HeaderText = "% Ganancia";
+            this.s_doctorprocent.Name = "s_doctorprocent";
+            this.s_doctorprocent.ReadOnly = true;
+            this.s_doctorprocent.Width = 115;
+            // 
+            // s_user
+            // 
+            this.s_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_user.HeaderText = "Usuario";
+            this.s_user.Name = "s_user";
+            this.s_user.ReadOnly = true;
+            this.s_user.Width = 86;
+            // 
+            // s_status
+            // 
+            this.s_status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_status.HeaderText = "Estado";
+            this.s_status.Name = "s_status";
+            this.s_status.ReadOnly = true;
+            this.s_status.Width = 81;
+            // 
+            // user2
+            // 
+            this.user2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.user2.HeaderText = "Modificado por:";
+            this.user2.Name = "user2";
+            this.user2.ReadOnly = true;
+            this.user2.Width = 140;
+            // 
+            // s_lu
+            // 
+            this.s_lu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.s_lu.HeaderText = "Fecha Modificado:";
+            this.s_lu.Name = "s_lu";
+            this.s_lu.ReadOnly = true;
+            this.s_lu.Width = 160;
             // 
             // txt_s_name
             // 
@@ -154,7 +264,6 @@
             this.txt_s_name.Size = new System.Drawing.Size(576, 26);
             this.txt_s_name.TabIndex = 4;
             this.txt_s_name.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
-            this.txt_s_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_txt_KeyDown);
             // 
             // btn_refresh
             // 
@@ -392,119 +501,6 @@
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 14;
             this.label4.Text = "Cedula:";
-            // 
-            // s_id
-            // 
-            this.s_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_id.HeaderText = "ID";
-            this.s_id.Name = "s_id";
-            this.s_id.ReadOnly = true;
-            this.s_id.Width = 47;
-            // 
-            // r_role
-            // 
-            this.r_role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.r_role.HeaderText = "Rol";
-            this.r_role.Name = "r_role";
-            this.r_role.ReadOnly = true;
-            this.r_role.Visible = false;
-            this.r_role.Width = 56;
-            // 
-            // s_name
-            // 
-            this.s_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_name.HeaderText = "Doctor";
-            this.s_name.Name = "s_name";
-            this.s_name.ReadOnly = true;
-            this.s_name.Width = 78;
-            // 
-            // s_idpersons
-            // 
-            this.s_idpersons.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_idpersons.HeaderText = "Cedula";
-            this.s_idpersons.Name = "s_idpersons";
-            this.s_idpersons.ReadOnly = true;
-            this.s_idpersons.Width = 81;
-            // 
-            // s_sex
-            // 
-            this.s_sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_sex.HeaderText = "Sexo";
-            this.s_sex.Name = "s_sex";
-            this.s_sex.ReadOnly = true;
-            this.s_sex.Width = 67;
-            // 
-            // s_address
-            // 
-            this.s_address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_address.HeaderText = "Dirección";
-            this.s_address.Name = "s_address";
-            this.s_address.ReadOnly = true;
-            this.s_address.Width = 98;
-            // 
-            // s_tel
-            // 
-            this.s_tel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_tel.HeaderText = "Teléfono";
-            this.s_tel.Name = "s_tel";
-            this.s_tel.ReadOnly = true;
-            this.s_tel.Width = 94;
-            // 
-            // s_cel
-            // 
-            this.s_cel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_cel.HeaderText = "Celular";
-            this.s_cel.Name = "s_cel";
-            this.s_cel.ReadOnly = true;
-            this.s_cel.Width = 81;
-            // 
-            // s_salary
-            // 
-            this.s_salary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_salary.HeaderText = "Salario";
-            this.s_salary.Name = "s_salary";
-            this.s_salary.ReadOnly = true;
-            this.s_salary.Width = 82;
-            // 
-            // s_doctorprocent
-            // 
-            this.s_doctorprocent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_doctorprocent.HeaderText = "% Ganancia";
-            this.s_doctorprocent.Name = "s_doctorprocent";
-            this.s_doctorprocent.ReadOnly = true;
-            this.s_doctorprocent.Width = 115;
-            // 
-            // s_user
-            // 
-            this.s_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_user.HeaderText = "Usuario";
-            this.s_user.Name = "s_user";
-            this.s_user.ReadOnly = true;
-            this.s_user.Width = 86;
-            // 
-            // s_status
-            // 
-            this.s_status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_status.HeaderText = "Estado";
-            this.s_status.Name = "s_status";
-            this.s_status.ReadOnly = true;
-            this.s_status.Width = 81;
-            // 
-            // user2
-            // 
-            this.user2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.user2.HeaderText = "Modificado por:";
-            this.user2.Name = "user2";
-            this.user2.ReadOnly = true;
-            this.user2.Width = 140;
-            // 
-            // s_lu
-            // 
-            this.s_lu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.s_lu.HeaderText = "Fecha Modificado:";
-            this.s_lu.Name = "s_lu";
-            this.s_lu.ReadOnly = true;
-            this.s_lu.Width = 160;
             // 
             // searchdoctors
             // 

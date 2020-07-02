@@ -73,6 +73,7 @@ namespace SysPandemic
             else
             {
                 MessageBox.Show("No ha realizado el diagnostico medico completo para poder procesar la información, por favor verifique y vuelva a intentar. \n\n Si considera que esto es un error del sistema, favor comuníquese con el administrador.", "Falta Diagnostico Medico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errors();
             }
         }
         
@@ -133,6 +134,7 @@ namespace SysPandemic
             else
             {
                 MessageBox.Show("Los campos: Nombre, Fecha de nacimiento, Sexo y Dirección del Paciente son campos obligatorios, favor verifique y vuelva a intentar. \n\n Si considera que esto es un error del sistema, favor comuníquese con el administrador.", "No se ha podido realizar la acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errors();
                 txt_p_name.Select();
             }
         }
@@ -223,7 +225,7 @@ namespace SysPandemic
         {
             try
             {
-                string query = "SELECT [i_id], [i_name] FROM [dbo].[insurances] where [i_status] = 1";
+                string query = "SELECT [i_id], [i_name] FROM [dbo].[insurances]";
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand(query, c.cnx);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -267,7 +269,7 @@ namespace SysPandemic
         {
             try
             {
-                string query = "SELECT [s_id], [s_name] FROM [dbo].[staff] where [s_status] = 1 and [r_id] = 2";
+                string query = "SELECT [s_id], [s_name] FROM [dbo].[staff] where [r_id] = 2";
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand(query, c.cnx);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -507,6 +509,33 @@ namespace SysPandemic
             cb_pm_pa.SelectedIndex = 0;
             cb_pm_hemo.SelectedIndex = 0;
             cb_pm_aler.SelectedIndex = 0;
+        }
+
+        // Poner los marcadores de Error en los distintos campos obligatorios
+        private void errors()
+        {
+            error.Clear();
+
+            // Diagnostico medico
+            if (cb_pm_tmed.SelectedIndex.Equals(-1)) error.SetError(cb_pm_tmed, "Debe seleccionar un valor");
+            if (cb_pm_mica.SelectedIndex.Equals(-1)) error.SetError(cb_pm_mica, "Debe seleccionar un valor");
+            if (cb_pm_ps.SelectedIndex.Equals(-1)) error.SetError(cb_pm_ps, "Debe seleccionar un valor");
+            if (cb_pm_diab.SelectedIndex.Equals(-1)) error.SetError(cb_pm_diab, "Debe seleccionar un valor");
+            if (cb_pm_hep.SelectedIndex.Equals(-1)) error.SetError(cb_pm_hep, "Debe seleccionar un valor");
+            if (cb_pm_pr.SelectedIndex.Equals(-1)) error.SetError(cb_pm_pr, "Debe seleccionar un valor");
+            if (cb_pm_pe.SelectedIndex.Equals(-1)) error.SetError(cb_pm_pe, "Debe seleccionar un valor");
+            if (cb_pm_pa.SelectedIndex.Equals(-1)) error.SetError(cb_pm_pa, "Debe seleccionar un valor");
+            if (cb_pm_hemo.SelectedIndex.Equals(-1)) error.SetError(cb_pm_hemo, "Debe seleccionar un valor");
+            if (cb_pm_aler.SelectedIndex.Equals(-1)) error.SetError(cb_pm_aler, "Debe seleccionar un valor");
+
+            //Datos del Paciente
+            if (cb_p_sex.SelectedIndex.Equals(-1)) error.SetError(cb_p_sex, "Debe seleccionar un valor");
+            if (txt_p_name.Text.Length <= 0) error.SetError(txt_p_name, "No puede estar vacío.");
+            if (dtp_p_bday.Text.Length <= 0) error.SetError(dtp_p_bday, "No puede estar vacío.");
+            if (cb_i_id.SelectedIndex.Equals(-1)) error.SetError(cb_i_id, "Debe seleccionar un valor");
+            if (txt_p_address.Text.Length <= 0) error.SetError(txt_p_address, "No puede estar vacío.");
+
+
         }
 
         /********** FIN DE FUNCIONES & METODOS **********/
