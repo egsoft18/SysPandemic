@@ -150,6 +150,7 @@ namespace SysPandemic
             else
             {
                 MessageBox.Show("Los campos: Nombre de la ARS, Contrato y PSS son campos obligatorios, favor verifique y vuelva a intentar. \n\n Si considera que esto es un error del sistema, favor comuníquese con el administrador.", "No se ha podido realizar la acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errors1();
                 txt_i_name.Select();
             }
         }
@@ -208,7 +209,8 @@ namespace SysPandemic
             else
             {
                 MessageBox.Show("Todos los campos deben contener información, favor verifique y vuelva a intentar. \n\n Si considera que esto es un error del sistema, favor comuníquese con el administrador.", "No se ha podido realizar la acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_i_name.Select();
+                txt_di_procedure.Select();
+                errors2();
             }
         }
 
@@ -332,6 +334,31 @@ namespace SysPandemic
             txt_di_difference.Clear();
         }
 
+        private void errors1()
+        {
+            error.Clear();
+
+            // Datos Generales
+          
+            if (txt_i_name.Text.Length <= 0) error.SetError(txt_i_name, "No puede estar vacío.");
+            if (txt_i_contract.Text.Length <= 0) error.SetError(txt_i_contract, "No puede estar vacío.");
+            if (txt_i_pss.Text.Length <= 0) error.SetError(txt_i_pss, "No puede estar vacío.");
+
+        }
+
+        private void errors2()
+        {
+            error.Clear();
+
+            // Datos Generales
+
+            if (txt_di_code.Text.Length <= 0) error.SetError(txt_di_code, "No puede estar vacío.");
+            if (txt_di_procedure.Text.Length <= 0) error.SetError(txt_di_procedure, "No puede estar vacío.");
+            if (txt_di_tariff.Text.Length <= 0) error.SetError(txt_di_tariff, "No puede estar vacío.");
+            if (txt_di_coverage.Text.Length <= 0) error.SetError(txt_di_coverage, "No puede estar vacío.");
+
+        }
+
         /********** FIN DE FUNCIONES & METODOS **********/
 
 
@@ -342,6 +369,17 @@ namespace SysPandemic
             {
                 cbx_i_status.Checked = true;
                 cbx_i_status.Text = "Activo";
+            }
+
+            if (txt_i_id.Text.Length > 0)
+            {
+                load_details_insurance_dgv();
+                groupBox2.Enabled = true;
+            }
+            else
+            {
+                groupBox2.Enabled = false;
+                dgv_detail_insurance.Rows.Clear();
             }
 
             load_details_insurance_dgv();

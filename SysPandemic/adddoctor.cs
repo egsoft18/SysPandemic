@@ -194,6 +194,7 @@ namespace SysPandemic
             else
             {
                 MessageBox.Show("Los campos: Usuario del sistema, Nombre, Cedula,  Sexo y Dirección del Doctor son campos obligatorios, favor verifique y vuelva a intentar. \n\n Si considera que esto es un error del sistema, favor comuníquese con el administrador.", "No se ha podido realizar la acción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errors();
                 txt_s_name.Select();
             }
         }
@@ -315,6 +316,20 @@ namespace SysPandemic
 
             cbx_s_status.Checked = true;
 
+        }
+
+        private void errors()
+        {
+            error.Clear();
+
+            // Datos Generales
+            if (cb_s_user.SelectedIndex.Equals(-1)) error.SetError(cb_s_user, "Debe seleccionar un valor");
+            if (cb_s_sex.SelectedIndex.Equals(-1)) error.SetError(cb_s_sex, "Debe seleccionar un valor");
+        
+            if (txt_s_name.Text.Length <= 0) error.SetError(txt_s_name, "No puede estar vacío.");
+            if (txt_s_idpersons.Text.Length <= 0) error.SetError(txt_s_idpersons, "No puede estar vacío.");
+            if (txt_s_address.Text.Length <= 0) error.SetError(txt_s_address, "No puede estar vacío.");
+            
         }
 
         /********** FIN DE FUNCIONES & METODOS **********/
