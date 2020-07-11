@@ -32,8 +32,8 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
-    <ApplicationVersion>2.8.5.%2a</ApplicationVersion>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>2.8.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -158,6 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActualUser.cs" />
+    <Compile Include="addappointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addappointment.Designer.cs">
+      <DependentUpon>addappointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="adddoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,12 +205,6 @@
     </Compile>
     <Compile Include="agresitas.Designer.cs">
       <DependentUpon>agresitas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Appointment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Appointment.Designer.cs">
-      <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="closing.cs">
       <SubType>Form</SubType>
@@ -423,6 +423,12 @@
     <Compile Include="reportview.Designer.cs">
       <DependentUpon>reportview.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchappointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchappointment.Designer.cs">
+      <DependentUpon>searchappointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchdoctors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -489,6 +495,9 @@
     <Compile Include="viewnotes.Designer.cs">
       <DependentUpon>viewnotes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addappointment.resx">
+      <DependentUpon>addappointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adddoctor.resx">
       <DependentUpon>adddoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,9 +518,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="agresitas.resx">
       <DependentUpon>agresitas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Appointment.resx">
-      <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="closing.resx">
       <DependentUpon>closing.cs</DependentUpon>
@@ -649,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportview.resx">
       <DependentUpon>reportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchappointment.resx">
+      <DependentUpon>searchappointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchdoctors.resx">
       <DependentUpon>searchdoctors.cs</DependentUpon>

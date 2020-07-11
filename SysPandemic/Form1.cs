@@ -118,10 +118,10 @@ namespace SysPandemic
         }
         private void agregarCitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            agrescitas f = new agrescitas();
+            addappointment f = new addappointment();
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is agrescitas);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is addappointment);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();
@@ -142,10 +142,10 @@ namespace SysPandemic
 
         private void verCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Appointment f = new Appointment();
+            searchappointment f = new searchappointment();
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Appointment);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is searchappointment);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();

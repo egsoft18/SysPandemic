@@ -234,7 +234,7 @@
             this.controlDeUsuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1031, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(911, 29);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -326,8 +326,8 @@
             this.agregarCitaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.agregarCitaToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592829___calendar_general_month_month_calendar_office_schedule_wall_calendar;
             this.agregarCitaToolStripMenuItem.Name = "agregarCitaToolStripMenuItem";
-            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
-            this.agregarCitaToolStripMenuItem.Text = "Agregar Cita";
+            this.agregarCitaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.agregarCitaToolStripMenuItem.Text = "Agregar Visita";
             this.agregarCitaToolStripMenuItem.Click += new System.EventHandler(this.agregarCitaToolStripMenuItem_Click);
             // 
             // verCitasToolStripMenuItem
@@ -335,8 +335,8 @@
             this.verCitasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.verCitasToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592851___calendar_general_month_month_calendar_office_schedule_wall_calendar;
             this.verCitasToolStripMenuItem.Name = "verCitasToolStripMenuItem";
-            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
-            this.verCitasToolStripMenuItem.Text = "Ver Citas";
+            this.verCitasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.verCitasToolStripMenuItem.Text = "Ver Visitas";
             this.verCitasToolStripMenuItem.Click += new System.EventHandler(this.verCitasToolStripMenuItem_Click);
             // 
             // procedimientosToolStripMenuItem

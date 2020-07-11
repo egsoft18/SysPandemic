@@ -255,6 +255,16 @@ namespace SysPandemic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3592829___calendar_general_month_month_calendar_office_schedule_wall_calendar1 {
+            get {
+                object obj = ResourceManager.GetObject("3592829 - calendar general month month calendar office schedule wall calendar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3592840___cog_gear_machine_office_radio_settings_setting_settings {
             get {
                 object obj = ResourceManager.GetObject("3592840 - cog gear machine office radio settings setting settings", resourceCulture);

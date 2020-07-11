@@ -518,7 +518,6 @@ namespace SysPandemic
         private void dgv_detail_insurance_DoubleClick(object sender, EventArgs e)
         {
             txt_di_id.Text = dgv_detail_insurance.Rows[dgv_detail_insurance.CurrentRow.Index].Cells["di_id"].Value.ToString();
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
