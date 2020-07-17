@@ -77,6 +77,9 @@
             this.cartaDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartaDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeUsuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.administradorDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilDeLaEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -234,7 +237,7 @@
             this.controlDeUsuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(911, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 29);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -579,12 +582,38 @@
             // 
             // controlDeUsuariosToolStripMenuItem
             // 
+            this.controlDeUsuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlDeUsuariosToolStripMenuItem1,
+            this.administradorDeRolesToolStripMenuItem,
+            this.perfilDeLaEmpresaToolStripMenuItem});
             this.controlDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.controlDeUsuariosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
             this.controlDeUsuariosToolStripMenuItem.Image = global::SysPandemic.Properties.Resources._3592840___cog_gear_machine_office_radio_settings_setting_settings;
             this.controlDeUsuariosToolStripMenuItem.Name = "controlDeUsuariosToolStripMenuItem";
-            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(176, 25);
-            this.controlDeUsuariosToolStripMenuItem.Text = "Control de Usuarios";
+            this.controlDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(136, 25);
+            this.controlDeUsuariosToolStripMenuItem.Text = "Configuración";
+            this.controlDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.controlDeUsuariosToolStripMenuItem_Click);
+            // 
+            // controlDeUsuariosToolStripMenuItem1
+            // 
+            this.controlDeUsuariosToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.controlDeUsuariosToolStripMenuItem1.Name = "controlDeUsuariosToolStripMenuItem1";
+            this.controlDeUsuariosToolStripMenuItem1.Size = new System.Drawing.Size(243, 26);
+            this.controlDeUsuariosToolStripMenuItem1.Text = "Control de Usuarios";
+            // 
+            // administradorDeRolesToolStripMenuItem
+            // 
+            this.administradorDeRolesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.administradorDeRolesToolStripMenuItem.Name = "administradorDeRolesToolStripMenuItem";
+            this.administradorDeRolesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.administradorDeRolesToolStripMenuItem.Text = "Administrador de Roles";
+            // 
+            // perfilDeLaEmpresaToolStripMenuItem
+            // 
+            this.perfilDeLaEmpresaToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(140)))), ((int)(((byte)(245)))));
+            this.perfilDeLaEmpresaToolStripMenuItem.Name = "perfilDeLaEmpresaToolStripMenuItem";
+            this.perfilDeLaEmpresaToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.perfilDeLaEmpresaToolStripMenuItem.Text = "Perfil de la Empresa";
             // 
             // Homeform
             // 
@@ -675,6 +704,9 @@
         private System.Windows.Forms.ToolStripMenuItem cartaDeIncapacidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartaDeAltaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeUsuariosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem administradorDeRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem perfilDeLaEmpresaToolStripMenuItem;
     }
 }
 

@@ -31,5 +31,84 @@ namespace SysPandemic
 
         }
 
+        public static void onlyletters(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                //MessageBox.Show("Solo Letras.");
+            }
+        }
+
+        public static void onlynumbers(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                //MessageBox.Show("Solo Numeros.");
+            }
+        }
+
+        public static void onlylettersnumbers(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                //MessageBox.Show("Solo Numeros.");
+            }
+        }
+
+        public static void onlydecimals(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (v.KeyChar.ToString().Equals("."))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                //MessageBox.Show("Solo numeros o numeros con punto decimal.");
+            }
+        }
     }
 }

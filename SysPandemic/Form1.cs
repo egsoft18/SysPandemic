@@ -464,10 +464,10 @@ namespace SysPandemic
 
         private void suplidoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            suppliers f = new suppliers();
+            searchsuppliers f = new searchsuppliers();
             try
             {
-                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is suppliers);
+                Form frm2 = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is searchsuppliers);
                 if (frm2 != null)
                 {
                     frm2.BringToFront();
@@ -676,6 +676,11 @@ namespace SysPandemic
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void controlDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

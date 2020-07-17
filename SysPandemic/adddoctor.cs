@@ -203,7 +203,7 @@ namespace SysPandemic
         {
             try
             {
-                string query = "SELECT [u_id], [u_user] FROM [dbo].[users] where u_status = 1";
+                string query = "SELECT [u_id], [u_user] FROM [dbo].[users]";
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand(query, c.cnx);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

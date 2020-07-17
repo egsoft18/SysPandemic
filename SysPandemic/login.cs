@@ -253,5 +253,15 @@ namespace SysPandemic
                 txt_u_password.Select();
             }
         }
+
+        private void txt_u_user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            functions.onlylettersnumbers(e);
+        }
+
+        private void txt_u_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            functions.onlylettersnumbers(e);
+        }
     }
 }

@@ -56,6 +56,7 @@
             this.txt_u_password.TabIndex = 1;
             this.txt_u_password.Text = "Admin1234";
             this.txt_u_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
+            this.txt_u_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_u_password_KeyPress);
             // 
             // groupBox1
             // 
@@ -81,6 +82,7 @@
             this.txt_u_user.TabIndex = 8;
             this.txt_u_user.Text = "Admin";
             this.txt_u_user.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_u_user_KeyDown);
+            this.txt_u_user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_u_user_KeyPress);
             // 
             // linkLabel1
             // 
